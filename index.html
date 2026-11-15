@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reported Speech Quiz</title>
+<style>
+  :root {
+    --primary: #007AFF;
+    --primary-hover: #0066D6;
+    --primary-soft: rgba(0, 122, 255, 0.08);
+    --bg: #F5F5F7;
+    --card: rgba(255, 255, 255, 0.85);
+    --card-border: rgba(255, 255, 255, 0.7);
+    --surface: #FFFFFF;
+    --grouped: #EFEFF4;
+    --text: #1D1D1F;
+    --secondary: #86868B;
+    --hairline: rgba(60, 60, 67, 0.12);
+    --success: #34C759;
+    --error: #FF3B30;
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.04);
+    --ease: cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --primary: #0A84FF;
+      --primary-hover: #409CFF;
+      --primary-soft: rgba(10, 132, 255, 0.15);
+      --bg: #000000;
+      --card: rgba(28, 28, 30, 0.8);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --surface: #2C2C2E;
+      --grouped: #1C1C1E;
+      --text: #F5F5F7;
+      --secondary: #98989D;
+      --hairline: rgba(84, 84, 88, 0.45);
+      --success: #30D158;
+      --error: #FF453A;
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: -20%;
+    background:
+      radial-gradient(40% 35% at 20% 15%, rgba(0, 122, 255, 0.10), transparent 70%),
+      radial-gradient(35% 30% at 85% 90%, rgba(175, 82, 222, 0.08), transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+  }
+  button { font-family: inherit; }
+  .hidden { display: none !important; }
+
+  /* ---------- Top bar ---------- */
+  .topbar {
+    position: sticky;
+    top: 12px;
+    z-index: 10;
+    max-width: 880px;
+    margin: 12px auto 0;
+    padding: 0 16px;
+  }
+  .topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 8px 8px 14px;
+    border-radius: 999px;
+    background: var(--card);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    backdrop-filter: blur(30px) saturate(180%);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow);
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--text);
+    padding: 0;
+  }
+  .brand-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-size: 16px;
+    background: linear-gradient(135deg, #007AFF, #5E5CE6);
+    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+  }
+  .pill-btn {
+    border: none;
+    border-radius: 999px;
+    padding: 9px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    background: var(--grouped);
+    color: var(--text);
+    transition: background 0.2s, transform 0.15s var(--ease);
+  }
+  .pill-btn:hover { background: var(--hairline); }
+  .pill-btn:active { transform: scale(0.96); }
+
+  /* ---------- Layout ---------- */
+  main {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 32px 16px 60px;
+  }
+  .screen { animation: fadeUp 0.45s var(--ease); }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .card {
+    background: var(--card);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    backdrop-filter: blur(30px) saturate(180%);
+    border: 1px solid var(--card-border);
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+    padding: 36px;
+  }
+
+  /* ---------- Home ---------- */
+  .hero { text-align: center; margin: 12px 0 32px; }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    margin: 0 0 10px;
+  }
+  .hero p {
+    color: var(--secondary);
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 520px;
+  }
+  .section-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--secondary);
+    margin: 0 4px 12px;
+  }
+  .type-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .type-card {
+    position: relative;
+    text-align: left;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 18px;
+    border-radius: 22px;
+    background: var(--surface);
+    border: 1.5px solid var(--hairline);
+    color: var(--text);
+    cursor: pointer;
+    transition: transform 0.2s var(--ease), border-color 0.2s, box-shadow 0.2s;
+  }
+  .type-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+  }
+  .type-card.active {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px var(--primary-soft);
+  }
+  .type-letter {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .type-name { font-weight: 600; font-size: 15px; margin-bottom: 3px; }
+  .type-desc { color: var(--secondary); font-size: 13px; line-height: 1.4; }
+  .type-meta { margin-top: 8px; font-size: 12px; color: var(--secondary); }
+  .type-meta b { color: var(--success); font-weight: 600; }
+
+  .setup {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .segmented {
+    display: inline-flex;
+    padding: 4px;
+    border-radius: 999px;
+    background: var(--grouped);
+    border: 1px solid var(--hairline);
+    flex-wrap: wrap;
+  }
+  .segmented button {
+    border: none;
+    background: transparent;
+    color: var(--secondary);
+    padding: 9px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.25s var(--ease);
+  }
+  .segmented button:hover { color: var(--text); }
+  .segmented button.active {
+    background: var(--surface);
+    color: var(--text);
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  .primary-btn {
+    border: none;
+    border-radius: 999px;
+    padding: 15px 28px;
+    background: var(--primary);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0, 122, 255, 0.25);
+    transition: background 0.2s, transform 0.15s var(--ease), box-shadow 0.2s;
+  }
+  .primary-btn:hover { background: var(--primary-hover); box-shadow: 0 8px 24px rgba(0, 122, 255, 0.32); }
+  .primary-btn:active { transform: scale(0.97); }
+  .primary-btn:disabled { opacity: 0.4; pointer-events: none; }
+  .block { display: block; width: 100%; margin-top: 24px; }
+
+  .info-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-top: 28px;
+  }
+  .info {
+    padding: 16px 18px;
+    border-radius: 18px;
+    background: var(--grouped);
+    font-size: 13px;
+    color: var(--secondary);
+    line-height: 1.45;
+  }
+  .info strong { display: block; color: var(--text); font-size: 14px; margin-bottom: 2px; }
+
+  /* ---------- Quiz ---------- */
+  .quiz-card { max-width: 620px; margin: 0 auto; }
+  .quiz-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    background: var(--grouped);
+    color: var(--text);
+  }
+  .progress-text {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--secondary);
+  }
+  .track {
+    height: 4px;
+    background: var(--hairline);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 26px;
+  }
+  .fill {
+    height: 100%;
+    width: 0;
+    background: var(--primary);
+    border-radius: inherit;
+    transition: width 0.5s var(--ease);
+  }
+  .instruction {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--secondary);
+    margin-bottom: 8px;
+  }
+  .question {
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: -0.02em;
+    margin: 0 0 22px;
+    white-space: pre-line;
+  }
+  .blank {
+    display: inline-block;
+    min-width: 64px;
+    border-bottom: 2px solid var(--primary);
+    color: var(--primary);
+    text-align: center;
+  }
+  .reported {
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: var(--grouped);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: -8px 0 20px;
+  }
+  .reported span { color: var(--secondary); font-size: 12px; font-weight: 600; display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  .options { counter-reset: opt; }
+  .option {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    border: 1px solid var(--hairline);
+    border-radius: 14px;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 0.98rem;
+    line-height: 1.4;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.2s var(--ease), border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  }
+  .option::before {
+    counter-increment: opt;
+    content: counter(opt, upper-alpha);
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--secondary);
+    background: var(--grouped);
+    transition: all 0.2s;
+  }
+  .option:hover {
+    border-color: var(--primary);
+    background: var(--primary-soft);
+    transform: translateY(-1px);
+  }
+  .option:hover::before { background: var(--primary); color: #fff; }
+  .option:active { transform: scale(0.985); }
+  .option:disabled { pointer-events: none; }
+  .option:disabled:not(.correct):not(.wrong) { opacity: 0.45; }
+  .option.correct { background: rgba(52, 199, 89, 0.10); border-color: var(--success); animation: pop 0.35s var(--ease); }
+  .option.correct::before { content: "✓"; background: var(--success); color: #fff; }
+  .option.wrong { background: rgba(255, 59, 48, 0.10); border-color: var(--error); animation: shake 0.4s var(--ease); }
+  .option.wrong::before { content: "✕"; background: var(--error); color: #fff; }
+  @keyframes pop { 50% { transform: scale(1.02); } }
+  @keyframes shake { 20%, 60% { transform: translateX(-5px); } 40%, 80% { transform: translateX(5px); } }
+
+  .fill-row { display: flex; gap: 10px; }
+  .fill-input {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 18px;
+    border-radius: 999px;
+    border: 1.5px solid var(--hairline);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .fill-input:focus { border-color: var(--primary); box-shadow: 0 0 0 4px var(--primary-soft); }
+  .fill-input.correct { border-color: var(--success); background: rgba(52, 199, 89, 0.08); }
+  .fill-input.wrong { border-color: var(--error); background: rgba(255, 59, 48, 0.08); animation: shake 0.4s var(--ease); }
+  .fill-row .primary-btn { padding: 14px 22px; }
+
+  .feedback {
+    margin-top: 16px;
+    padding: 16px 18px;
+    border-radius: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    animation: fadeUp 0.35s var(--ease);
+  }
+  .feedback.ok { background: rgba(52, 199, 89, 0.10); }
+  .feedback.bad { background: rgba(255, 59, 48, 0.08); }
+  .feedback b { display: block; font-size: 15px; margin-bottom: 4px; }
+  .feedback.ok b { color: var(--success); }
+  .feedback.bad b { color: var(--error); }
+  .hint { text-align: center; font-size: 12px; color: var(--secondary); margin-top: 14px; }
+  kbd {
+    font-family: inherit;
+    font-size: 11px;
+    padding: 1px 6px;
+    border-radius: 5px;
+    border: 1px solid var(--hairline);
+    background: var(--grouped);
+  }
+
+  /* ---------- Results ---------- */
+  .result-card { max-width: 620px; margin: 0 auto; text-align: center; }
+  .result-card h2 { font-size: 1.9rem; letter-spacing: -0.03em; margin: 0 0 4px; }
+  .ring {
+    width: 170px;
+    height: 170px;
+    margin: 26px auto 18px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    position: relative;
+    background: conic-gradient(var(--ring-color, var(--primary)) calc(var(--pct, 0) * 1%), var(--hairline) 0);
+  }
+  .ring::after {
+    content: "";
+    position: absolute;
+    inset: 15px;
+    border-radius: 50%;
+    background: var(--surface);
+  }
+  .ring-text { position: relative; z-index: 1; }
+  .ring-score { font-size: 3rem; font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
+  .ring-label { font-size: 12px; color: var(--secondary); margin-top: 4px; }
+  .result-msg { color: var(--secondary); font-size: 1.02rem; line-height: 1.5; max-width: 380px; margin: 0 auto; }
+  .stats { display: flex; justify-content: center; gap: 10px; margin: 20px 0 6px; flex-wrap: wrap; }
+  .result-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
+  .result-actions .pill-btn { padding: 14px 22px; font-size: 14px; }
+
+  .review { text-align: left; margin-top: 30px; }
+  .review-item {
+    padding: 14px 16px;
+    border-radius: 16px;
+    background: var(--grouped);
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .review-item summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-weight: 500;
+  }
+  .review-item summary::-webkit-details-marker { display: none; }
+  .mark {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 1px;
+  }
+  .review-body { margin: 10px 0 0 32px; color: var(--secondary); }
+  .review-body div { margin-bottom: 4px; }
+  .review-body .good { color: var(--success); font-weight: 500; }
+  .review-body .badc { color: var(--error); font-weight: 500; }
+
+  footer { text-align: center; color: var(--secondary); font-size: 12px; padding: 0 16px 30px; }
+
+  @media (max-width: 560px) {
+    .card { padding: 26px 20px; border-radius: 24px; }
+    .question { font-size: 1.15rem; }
+    .brand-text { display: none; }
+    .setup { flex-direction: column; align-items: stretch; }
+    .segmented { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <button class="brand" onclick="goHome()">
+      <span class="brand-icon">“”</span>
+      <span class="brand-text">Reported Speech Quiz</span>
+    </button>
+    <button class="pill-btn" onclick="downloadPage()" title="Save this quiz as one HTML file that works offline on any computer">⬇ Download HTML</button>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<footer>Works offline · Single HTML file · Your best scores are saved in this browser</footer>
+
+<script>
+  // Snapshot of the clean page, used by the "Download HTML" button
+  const PAGE_HTML = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+
+  /* =====================================================
+     QUESTION TYPES & LEVELS
+     ===================================================== */
+  const TYPES = {
+    A: { name: 'Multiple Choice', desc: 'Choose the correct reported sentence.', color: '#007AFF', instr: 'Choose the correct reported speech.' },
+    B: { name: 'True or False', desc: 'Decide if the reported sentence is correct.', color: '#34C759', instr: 'Is the reported sentence correct?' },
+    C: { name: 'Fill in the Blank', desc: 'Type the missing word(s).', color: '#FF9500', instr: 'Type the missing word(s).' },
+    D: { name: 'Error Spotting', desc: 'Find the incorrect part of the sentence.', color: '#FF3B30', instr: 'Which part of the reported sentence is wrong?' },
+    E: { name: 'Word & Tense Changes', desc: 'How tenses, time and place words change.', color: '#AF52DE', instr: 'Choose the correct change.' },
+    F: { name: 'Back to Direct', desc: 'Find the original direct words.', color: '#30B0C7', instr: 'What were the original (direct) words?' },
+    M: { name: 'Mixed Challenge', desc: 'Random questions from every type.', color: '#1D1D1F', instr: '' }
+  };
+  const LEVELS = [
+    { id: 1, name: 'Easy', color: '#34C759' },
+    { id: 2, name: 'Medium', color: '#FF9500' },
+    { id: 3, name: 'Hard', color: '#FF3B30' },
+    { id: 0, name: 'All Levels', color: '#007AFF' }
+  ];
+  const QUIZ_LENGTH = 10;
+
+  /* =====================================================
+     QUESTION BANK
+     add(type, level, question, options, answer, explanation)
+     - B: options are True/False automatically, answer 0 = True, 1 = False
+     - C: answer is a list of accepted answers
+     - D: options are the parts of the reported sentence
+     ===================================================== */
+  const BANK = [];
+  function add(t, l, q, o, a, e) {
+    if (t === 'B') o = ['True', 'False'];
+    BANK.push({ t, l, q, o, a, e });
+  }
+
+  // ---------- TYPE A · Multiple Choice ----------
+  add('A', 1, `She said, "I am hungry."`, [`She said that she was hungry.`, `She said that she is hungry.`, `She said that I was hungry.`, `She said that she am hungry.`], 0, `"am" changes to "was", and "I" becomes "she".`);
+  add('A', 1, `He said, "I like pizza."`, [`He said that he liked pizza.`, `He said that I liked pizza.`, `He said that he like pizza.`, `He said that he had like pizza.`], 0, `Present simple "like" moves back to past simple "liked".`);
+  add('A', 1, `Tom said, "I play football."`, [`Tom said that he played football.`, `Tom said that he plays footballs.`, `Tom said that I played football.`, `Tom said he playing football.`], 0, `"play" → "played", "I" → "he".`);
+  add('A', 1, `She said, "I am reading a book."`, [`She said that she was reading a book.`, `She said that she is read a book.`, `She said that she reading a book.`, `She said that she were reading a book.`], 0, `Present continuous "am reading" → past continuous "was reading".`);
+  add('A', 1, `They said, "We are tired."`, [`They said that they were tired.`, `They said that we were tired.`, `They said that they was tired.`, `They said that they are tire.`], 0, `"We are" → "they were".`);
+  add('A', 1, `He said, "I can swim."`, [`He said that he could swim.`, `He said that he can swam.`, `He said that he could swam.`, `He said that I could swim.`], 0, `"can" → "could", followed by the base verb.`);
+  add('A', 1, `Mary said, "I will help you."`, [`Mary said that she would help me.`, `Mary said that she will helped me.`, `Mary said that I would help you.`, `Mary said that she would helps me.`], 0, `"will" → "would"; "you" (the listener) becomes "me".`);
+  add('A', 1, `He says, "I am busy."`, [`He says that he is busy.`, `He says that he was busy.`, `He said that he is busy.`, `He says that I am busy.`], 0, `The reporting verb "says" is in the present, so the tense does not change.`);
+
+  add('A', 2, `He asked, "Do you speak English?"`, [`He asked if I spoke English.`, `He asked do I speak English.`, `He asked that I spoke English.`, `He asked if did I speak English.`], 0, `Yes/No questions use "if/whether" + normal word order (no "do").`);
+  add('A', 2, `She asked, "Where is the station?"`, [`She asked where the station was.`, `She asked where was the station.`, `She asked that where the station was.`, `She asked if the station was where.`], 0, `Wh-questions keep the question word but use statement order: subject + verb.`);
+  add('A', 2, `The teacher said, "Open your books."`, [`The teacher told us to open our books.`, `The teacher told us open our books.`, `The teacher said us to open our books.`, `The teacher asked if we opened our books.`], 0, `Commands use "tell + object + to + verb".`);
+  add('A', 2, `Mom said, "Don't forget your lunch."`, [`Mom told me not to forget my lunch.`, `Mom told me don't forget my lunch.`, `Mom said don't forget my lunch.`, `Mom told me to forgot my lunch.`], 0, `Negative commands use "tell + object + not to + verb".`);
+  add('A', 2, `He said, "I bought a new car."`, [`He said that he had bought a new car.`, `He said that he has bought a new car.`, `He says that he had bought a new car.`, `He said that he buys a new car.`], 0, `Past simple "bought" → past perfect "had bought".`);
+  add('A', 2, `He said, "I will call you tomorrow."`, [`He said that he would call me the following day.`, `He said that he will call me tomorrow.`, `He said that he would call me yesterday.`, `He said that he will call me the following day.`], 0, `"will" → "would" and "tomorrow" → "the following day".`);
+  add('A', 2, `She asked, "What are you doing?"`, [`She asked what I was doing.`, `She asked what was I doing.`, `She asked what are you doing.`, `She asked if what I was doing.`], 0, `Wh-question → statement order, and "are doing" → "was doing".`);
+  add('A', 2, `"I have finished my homework," Ana said.`, [`Ana said that she had finished her homework.`, `Ana said that she has finished my homework.`, `Ana said that she finished her homeworks.`, `Ana said that she have finished her homework.`], 0, `Present perfect "have finished" → past perfect "had finished".`);
+
+  add('A', 3, `They said, "Let's play football."`, [`They suggested playing football.`, `They suggested to play football.`, `They said let's play football.`, `They suggested us playing football.`], 0, `"Let's..." is reported with "suggest + verb-ing".`);
+  add('A', 3, `The doctor said, "You must stop smoking now."`, [`The doctor said that I had to stop smoking then.`, `The doctor said that I must stopped smoking now.`, `The doctor said me to stop smoking then.`, `The doctor said that I have to stop smoking now.`], 0, `"must" (obligation) → "had to"; "now" → "then".`);
+  add('A', 3, `He said, "I'm sorry I broke the vase."`, [`He apologized for breaking the vase.`, `He apologized to break the vase.`, `He apologized that breaking the vase.`, `He apologized for broke the vase.`], 0, `"apologize for + verb-ing".`);
+  add('A', 3, `She said, "I didn't steal the money."`, [`She denied stealing the money.`, `She denied to steal the money.`, `She denied that steal the money.`, `She denied not stealing the money.`], 0, `"deny + verb-ing" (the verb already contains the negative meaning).`);
+  add('A', 3, `"You should see a dentist," he told me.`, [`He advised me to see a dentist.`, `He advised me seeing a dentist.`, `He advised to me see a dentist.`, `He advised that me to see a dentist.`], 0, `Advice: "advise + object + to + verb".`);
+  add('A', 3, `The teacher said, "Water boils at 100°C."`, [`The teacher said that water boils at 100°C.`, `The teacher said that water had boiled at 100°C.`, `The teacher said that water would boil at 100°C.`, `The teacher said that water is boiling at 100°C.`], 0, `General truths usually keep the present tense.`);
+  add('A', 3, `"Shall I open the window?" he asked.`, [`He offered to open the window.`, `He offered opening the window.`, `He offered me open the window.`, `He asked shall he open the window.`], 0, `An offer ("Shall I...?") is reported with "offer + to + verb".`);
+  add('A', 3, `The manager asked, "Have you finished the report?"`, [`The manager asked if I had finished the report.`, `The manager asked had I finished the report.`, `The manager asked if I finished the report.`, `The manager asked that I had finished the report.`], 0, `"if" + statement order; present perfect → past perfect.`);
+
+  // ---------- TYPE B · True or False ----------
+  add('B', 1, `She said, "I am happy."\n→ She said that she was happy.`, null, 0, `Correct: "am" → "was".`);
+  add('B', 1, `He said, "I am a doctor."\n→ He said that I was a doctor.`, null, 1, `False: "I" must change to "he" → He said that he was a doctor.`);
+  add('B', 1, `They said, "We are late."\n→ They said that they were late.`, null, 0, `Correct: "we are" → "they were".`);
+  add('B', 1, `Tom said, "I can drive."\n→ Tom said that he can drove.`, null, 1, `False: it should be "he could drive".`);
+  add('B', 1, `She said, "I will come."\n→ She said that she would come.`, null, 0, `Correct: "will" → "would".`);
+  add('B', 1, `He said, "I am tired."\n→ He said that he were tired.`, null, 1, `False: "he" takes "was" → He said that he was tired.`);
+  add('B', 1, `Lisa said, "I live in Jakarta."\n→ Lisa said that she lived in Jakarta.`, null, 0, `Correct: "live" → "lived".`);
+
+  add('B', 2, `He asked, "Where do you live?"\n→ He asked where did I live.`, null, 1, `False: no "did" in reported questions → He asked where I lived.`);
+  add('B', 2, `She asked, "Are you ready?"\n→ She asked if I was ready.`, null, 0, `Correct: "if" + statement order + backshift.`);
+  add('B', 2, `The teacher said, "Sit down."\n→ The teacher told us to sit down.`, null, 0, `Correct: tell + object + to + verb.`);
+  add('B', 2, `He said, "Don't shout."\n→ He told me don't shout.`, null, 1, `False: it should be "He told me not to shout".`);
+  add('B', 2, `She said, "I saw him yesterday."\n→ She said that she had seen him the day before.`, null, 0, `Correct: "saw" → "had seen", "yesterday" → "the day before".`);
+  add('B', 2, `He said, "I will see you tomorrow."\n→ He said that he will see me the next day.`, null, 1, `False: "will" must change to "would".`);
+  add('B', 2, `She asked, "Can you help me?"\n→ She asked if I could help her.`, null, 0, `Correct: "can" → "could", "me" → "her".`);
+
+  add('B', 3, `He said, "Let's go to the beach."\n→ He suggested going to the beach.`, null, 0, `Correct: suggest + verb-ing.`);
+  add('B', 3, `She said, "I didn't do it."\n→ She denied to do it.`, null, 1, `False: "deny" takes verb-ing → She denied doing it.`);
+  add('B', 3, `"You should rest," the doctor said.\n→ The doctor advised me to rest.`, null, 0, `Correct: advise + object + to + verb.`);
+  add('B', 3, `He said, "I had already eaten."\n→ He said that he had already eaten.`, null, 0, `Correct: past perfect does not change.`);
+  add('B', 3, `He said, "Shall I carry your bag?"\n→ He offered carrying my bag.`, null, 1, `False: "offer" takes "to + verb" → He offered to carry my bag.`);
+  add('B', 3, `She said, "I'm sorry I'm late."\n→ She apologized for being late.`, null, 0, `Correct: apologize for + verb-ing.`);
+  add('B', 3, `The guide said, "The sun rises in the east."\n→ The guide said that the sun rises in the east.`, null, 0, `Correct: general truths can stay in the present tense.`);
+
+  // ---------- TYPE C · Fill in the Blank ----------
+  add('C', 1, `She said, "I am cold."\n→ She said that she ___ cold.`, null, ['was'], `"am" → "was".`);
+  add('C', 1, `He said, "I have a dog."\n→ He said that he ___ a dog.`, null, ['had'], `"have" → "had".`);
+  add('C', 1, `They said, "We can come."\n→ They said that they ___ come.`, null, ['could'], `"can" → "could".`);
+  add('C', 1, `Ana said, "I will call."\n→ Ana said that she ___ call.`, null, ['would'], `"will" → "would".`);
+  add('C', 1, `He said, "I like tea."\n→ He said that he ___ tea.`, null, ['liked'], `"like" → "liked".`);
+  add('C', 1, `Tom said, "My bike is new."\n→ Tom said that ___ bike was new.`, null, ['his'], `"my" → "his" (Tom is the speaker).`);
+  add('C', 1, `Sara said, "I am happy."\n→ Sara said that ___ was happy.`, null, ['she'], `"I" → "she" (Sara is the speaker).`);
+
+  add('C', 2, `He asked, "Are you OK?"\n→ He asked ___ I was OK.`, null, ['if', 'whether'], `Yes/No questions are reported with "if" or "whether".`);
+  add('C', 2, `She said, "I went home."\n→ She said that she ___ home.`, null, ['had gone'], `Past simple "went" → past perfect "had gone".`);
+  add('C', 2, `He said, "I am working."\n→ He said that he ___ working.`, null, ['was'], `"am working" → "was working".`);
+  add('C', 2, `He said, "Come here."\n→ He told me ___ come there.`, null, ['to'], `Commands: tell + object + to + verb.`);
+  add('C', 2, `She said, "Don't cry."\n→ She told me ___ cry.`, null, ['not to'], `Negative commands: tell + object + not to + verb.`);
+  add('C', 2, `He said, "I saw her yesterday."\n→ He said that he had seen her the ___.`, null, ['day before', 'previous day'], `"yesterday" → "the day before / the previous day".`);
+  add('C', 2, `She asked, "Where do you work?"\n→ She asked where I ___.`, null, ['worked'], `Statement order, and "do you work" → "I worked".`);
+
+  add('C', 3, `He said, "I'm sorry I lied."\n→ He apologized for ___.`, null, ['lying', 'having lied'], `apologize for + verb-ing.`);
+  add('C', 3, `"Let's eat out," she said.\n→ She suggested ___ out.`, null, ['eating'], `suggest + verb-ing.`);
+  add('C', 3, `"I didn't break it," he said.\n→ He denied ___ it.`, null, ['breaking', 'having broken'], `deny + verb-ing.`);
+  add('C', 3, `"You must wear a helmet," he said.\n→ He said that I ___ wear a helmet.`, null, ['had to'], `"must" (obligation) → "had to".`);
+  add('C', 3, `"I will finish it tomorrow," she said.\n→ She said that she would finish it the ___.`, null, ['next day', 'following day', 'day after'], `"tomorrow" → "the next day / the following day".`);
+  add('C', 3, `"Have you ever been to Bali?" he asked.\n→ He asked if I ___ ever been to Bali.`, null, ['had'], `Present perfect "have been" → past perfect "had been".`);
+  add('C', 3, `"This book is mine," she said.\n→ She said that ___ book was hers.`, null, ['that'], `"this" → "that".`);
+
+  // ---------- TYPE D · Error Spotting ----------
+  add('D', 1, `"I am sick," he said.`, [`He said`, `that`, `he am`, `sick.`], 2, `It should be "he was".`);
+  add('D', 1, `"I like music," she said.`, [`She said`, `that I`, `liked`, `music.`], 1, `The pronoun must change: "that she".`);
+  add('D', 1, `"We are ready," they said.`, [`They said`, `that`, `they is`, `ready.`], 2, `It should be "they were".`);
+  add('D', 1, `"I can dance," Mia said.`, [`Mia said`, `that she`, `can`, `dance.`], 2, `"can" should change to "could".`);
+  add('D', 1, `"I will go," he said.`, [`He said`, `that he`, `will`, `go.`], 2, `"will" should change to "would".`);
+  add('D', 1, `"My car is red," she said.`, [`She said`, `that my`, `car was`, `red.`], 1, `"my" should change to "her".`);
+  add('D', 1, `"I played chess," Tom said.`, [`Tom said`, `that he`, `has played`, `chess.`], 2, `Past simple → past perfect: "had played".`);
+
+  add('D', 2, `"Where do you live?" she asked.`, [`She asked me`, `where`, `did I`, `live.`], 2, `No "did" in reported questions: "where I lived".`);
+  add('D', 2, `"Are you hungry?" he asked.`, [`He asked`, `that`, `I was`, `hungry.`], 1, `Yes/No questions need "if" or "whether", not "that".`);
+  add('D', 2, `"Close the door," she said.`, [`She told`, `me`, `close`, `the door.`], 2, `It should be "to close".`);
+  add('D', 2, `"Don't be late," he said.`, [`He told`, `me`, `don't be`, `late.`], 2, `It should be "not to be".`);
+  add('D', 2, `"I saw it yesterday," she said.`, [`She said`, `that she`, `had seen it`, `yesterday.`], 3, `"yesterday" should change to "the day before".`);
+  add('D', 2, `"I have lost my keys," he said.`, [`He said`, `that he`, `has lost`, `his keys.`], 2, `Present perfect → past perfect: "had lost".`);
+  add('D', 2, `"What time is it?" she asked.`, [`She wanted`, `to know`, `what time`, `is it.`], 3, `Statement order + backshift: "it was".`);
+
+  add('D', 3, `"Let's watch a movie," he said.`, [`He suggested`, `to watch`, `a movie`, `that night.`], 1, `"suggest" takes verb-ing: "watching".`);
+  add('D', 3, `"I didn't take the money," she said.`, [`She denied`, `to take`, `the`, `money.`], 1, `"deny" takes verb-ing: "taking".`);
+  add('D', 3, `"You should study more," the teacher said.`, [`The teacher`, `advised`, `me`, `studying more.`], 3, `advise + object + to + verb: "to study more".`);
+  add('D', 3, `"I'm sorry I'm late," he said.`, [`He`, `apologized`, `to be`, `late.`], 2, `apologize for + verb-ing: "for being".`);
+  add('D', 3, `"You must leave now," the guard said.`, [`The guard said`, `that I`, `had to leave`, `now.`], 3, `"now" should change to "then".`);
+  add('D', 3, `"The earth goes around the sun," the teacher said.`, [`The teacher said`, `that the earth`, `had gone`, `around the sun.`], 2, `General truths keep the present tense: "goes".`);
+  add('D', 3, `"Shall I help you?" he asked.`, [`He`, `offered`, `helping`, `me.`], 2, `offer + to + verb: "to help".`);
+
+  // ---------- TYPE E · Word & Tense Changes ----------
+  add('E', 1, `In reported speech, "am / is" usually becomes…`, [`was`, `were`, `been`, `be`], 0, `Present "am/is" → past "was".`);
+  add('E', 1, `"will" usually becomes…`, [`would`, `will`, `could`, `shall`], 0, `"will" → "would".`);
+  add('E', 1, `"can" usually becomes…`, [`could`, `can`, `might`, `would`], 0, `"can" → "could".`);
+  add('E', 1, `"today" usually becomes…`, [`that day`, `yesterday`, `the next day`, `today`], 0, `"today" → "that day".`);
+  add('E', 1, `"this" usually becomes…`, [`that`, `these`, `those`, `it`], 0, `"this" → "that".`);
+  add('E', 1, `"here" usually becomes…`, [`there`, `where`, `near`, `here`], 0, `"here" → "there".`);
+  add('E', 1, `"now" usually becomes…`, [`then`, `soon`, `later`, `now`], 0, `"now" → "then".`);
+
+  add('E', 2, `Present continuous "is eating" becomes…`, [`was eating`, `had eaten`, `ate`, `has been eating`], 0, `Present continuous → past continuous.`);
+  add('E', 2, `Present perfect "have done" becomes…`, [`had done`, `did`, `have done`, `was doing`], 0, `Present perfect → past perfect.`);
+  add('E', 2, `Past simple "went" becomes…`, [`had gone`, `go`, `was going`, `has gone`], 0, `Past simple → past perfect.`);
+  add('E', 2, `"yesterday" becomes…`, [`the day before`, `the next day`, `that day`, `tomorrow`], 0, `"yesterday" → "the day before / the previous day".`);
+  add('E', 2, `"tomorrow" becomes…`, [`the next day`, `the day before`, `that day`, `yesterday`], 0, `"tomorrow" → "the next day / the following day".`);
+  add('E', 2, `"two days ago" becomes…`, [`two days before`, `two days after`, `two days later`, `in two days`], 0, `"ago" → "before".`);
+  add('E', 2, `"these" becomes…`, [`those`, `this`, `that`, `them`], 0, `"these" → "those".`);
+  add('E', 2, `"may" (possibility) becomes…`, [`might`, `must`, `would`, `may have`], 0, `"may" → "might".`);
+
+  add('E', 3, `"next week" becomes…`, [`the following week`, `the previous week`, `that week`, `last week`], 0, `"next week" → "the following week".`);
+  add('E', 3, `"last month" becomes…`, [`the previous month`, `the following month`, `that month`, `next month`], 0, `"last month" → "the previous month / the month before".`);
+  add('E', 3, `"must" (obligation) usually becomes…`, [`had to`, `must have`, `should`, `would`], 0, `"must" (obligation) → "had to".`);
+  add('E', 3, `Past perfect "had finished" becomes…`, [`had finished (no change)`, `has finished`, `finished`, `would have finished`], 0, `Past perfect cannot go further back, so it stays the same.`);
+  add('E', 3, `"should" becomes…`, [`should (no change)`, `shall`, `would`, `must`], 0, `"should" does not change.`);
+  add('E', 3, `Which of these does NOT change in reported speech?`, [`might`, `will`, `can`, `may`], 0, `"might" stays "might"; the others move back.`);
+  add('E', 3, `When the reporting verb is present ("She says…"), the tense…`, [`stays the same`, `moves one step back`, `becomes past perfect`, `becomes future`], 0, `No backshift after a present reporting verb.`);
+  add('E', 3, `"Let's…" is usually reported with…`, [`suggest + verb-ing`, `tell + to + verb`, `ask + if`, `say + that + let's`], 0, `e.g. "Let's go" → He suggested going.`);
+
+  // ---------- TYPE F · Back to Direct ----------
+  add('F', 1, `She said that she was tired.`, [`"I am tired."`, `"She is tired."`, `"I was tiring."`, `"You are tired."`], 0, `"she was" → "I am".`);
+  add('F', 1, `He said that he liked apples.`, [`"I like apples."`, `"He likes apples."`, `"I liking apples."`, `"I will like apples."`], 0, `"liked" → "like".`);
+  add('F', 1, `They said that they could swim.`, [`"We can swim."`, `"They can swim."`, `"We could swum."`, `"You can swim."`], 0, `"could" → "can", "they" → "we".`);
+  add('F', 1, `Tom said that he would come.`, [`"I will come."`, `"He will come."`, `"I would came."`, `"I am come."`], 0, `"would" → "will".`);
+  add('F', 1, `She said that she was cooking.`, [`"I am cooking."`, `"I was cook."`, `"She is cooking."`, `"I cooking."`], 0, `"was cooking" → "am cooking".`);
+  add('F', 1, `He said that his sister was a nurse.`, [`"My sister is a nurse."`, `"His sister is a nurse."`, `"My sister was nursing."`, `"Your sister is a nurse."`], 0, `"his" → "my", "was" → "is".`);
+  add('F', 1, `Mia said that she had a cat.`, [`"I have a cat."`, `"She has a cat."`, `"I had have a cat."`, `"You have a cat."`], 0, `"had" → "have".`);
+
+  add('F', 2, `He asked if I was ready.`, [`"Are you ready?"`, `"Is he ready?"`, `"Was I ready?"`, `"Do you ready?"`], 0, `"if I was" → "Are you…?"`);
+  add('F', 2, `She asked where I lived.`, [`"Where do you live?"`, `"Where you live?"`, `"Where did I live?"`, `"Where does she live?"`], 0, `Back to question order with "do".`);
+  add('F', 2, `The teacher told us to be quiet.`, [`"Be quiet."`, `"You were quiet."`, `"Are you quiet?"`, `"We are quiet."`], 0, `"told us to…" → an imperative.`);
+  add('F', 2, `Mom told me not to run.`, [`"Don't run."`, `"Run."`, `"You didn't run."`, `"I don't run."`], 0, `"not to run" → "Don't run."`);
+  add('F', 2, `He said that he had seen the film.`, [`"I have seen the film."`, `"I see the film."`, `"I will see the film."`, `"I had see the film."`], 0, `"had seen" → "have seen" (or "saw").`);
+  add('F', 2, `She said that she would visit us the next day.`, [`"I will visit you tomorrow."`, `"I visited you yesterday."`, `"She will visit us tomorrow."`, `"I would visit you today."`], 0, `"would" → "will", "the next day" → "tomorrow".`);
+  add('F', 2, `He asked what time the train left.`, [`"What time does the train leave?"`, `"What time the train leaves?"`, `"What time did the train left?"`, `"When the train left?"`], 0, `Back to question order with "does".`);
+
+  add('F', 3, `He suggested going to the cinema.`, [`"Let's go to the cinema."`, `"I went to the cinema."`, `"You must go to the cinema."`, `"Did you go to the cinema?"`], 0, `"suggested + -ing" often comes from "Let's…".`);
+  add('F', 3, `She apologized for being late.`, [`"I'm sorry I'm late."`, `"You are late."`, `"Don't be late."`, `"I will be late."`], 0, `"apologized for…" comes from "I'm sorry…".`);
+  add('F', 3, `He denied breaking the window.`, [`"I didn't break the window."`, `"I broke the window."`, `"Break the window."`, `"Who broke the window?"`], 0, `"denied" means he said he did NOT do it.`);
+  add('F', 3, `The doctor advised me to drink more water.`, [`"You should drink more water."`, `"I drink more water."`, `"Did you drink water?"`, `"Let's drink water."`], 0, `"advised" comes from "should".`);
+  add('F', 3, `He offered to carry my bag.`, [`"Shall I carry your bag?"`, `"Carry my bag."`, `"You carried my bag."`, `"Did you carry the bag?"`], 0, `An offer: "Shall I…?"`);
+  add('F', 3, `She said that she had been working there for two years.`, [`"I have been working here for two years."`, `"I was working there two years."`, `"She has worked here two years."`, `"I will work here for two years."`], 0, `"had been working" → "have been working", "there" → "here".`);
+  add('F', 3, `He warned me not to touch the wire.`, [`"Don't touch the wire!"`, `"Touch the wire!"`, `"I didn't touch the wire."`, `"Did you touch the wire?"`], 0, `"warned me not to…" → a negative command.`);
+
+  /* =====================================================
+     STATE & HELPERS
+     ===================================================== */
+  const app = document.getElementById('app');
+  let selType = 'A';
+  let selLevel = 1;
+  let questions = [];
+  let current = 0;
+  let answers = [];
+  let answered = false;
+  let lastPool = [];
+
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const norm = s => String(s).toLowerCase().replace(/[’']/g, "'").replace(/[.,!?]/g, '').replace(/\s+/g, ' ').trim();
+  const shuffle = arr => {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  };
+  const levelName = id => LEVELS.find(l => l.id === id).name;
+  const bestKey = (t, l) => `rsq-best-${t}-${l}`;
+  const getBest = (t, l) => {
+    try { const v = localStorage.getItem(bestKey(t, l)); return v === null ? null : Number(v); } catch (e) { return null; }
+  };
+  const setBest = (t, l, v) => {
+    try { const b = getBest(t, l); if (b === null || v > b) localStorage.setItem(bestKey(t, l), v); } catch (e) {}
+  };
+  const typeBadge = t => t === 'M'
+    ? 'background: linear-gradient(135deg, #007AFF, #AF52DE, #FF2D55, #FF9500);'
+    : `background: ${TYPES[t].color};`;
+
+  function getPool(t = selType, l = selLevel) {
+    return BANK.filter(q => (t === 'M' || q.t === t) && (l === 0 || q.l === l));
+  }
+
+  // Shuffle option order for types where order doesn't matter
+  function prepare(q) {
+    if (!['A', 'E', 'F'].includes(q.t)) return { ...q, orig: q };
+    const idx = shuffle(q.o.map((_, i) => i));
+    return { ...q, o: idx.map(i => q.o[i]), a: idx.indexOf(q.a), orig: q };
+  }
+
+  /* =====================================================
+     HOME
+     ===================================================== */
+  function goHome() {
+    window.scrollTo({ top: 0 });
+    const cards = Object.keys(TYPES).map(t => {
+      const count = getPool(t, 0).length;
+      const best = getBest(t, selLevel);
+      return `
+        <button class="type-card ${t === selType ? 'active' : ''}" onclick="selectType('${t}')">
+          <span class="type-letter" style="${typeBadge(t)}">${t === 'M' ? '★' : t}</span>
+          <span>
+            <div class="type-name">${t === 'M' ? '' : 'Type ' + t + ' · '}${TYPES[t].name}</div>
+            <div class="type-desc">${TYPES[t].desc}</div>
+            <div class="type-meta">${count} questions${best !== null ? ` · Best (${levelName(selLevel)}): <b>${best}</b>` : ''}</div>
+          </span>
+        </button>`;
+    }).join('');
+
+    const segs = LEVELS.map(l => `
+      <button class="${l.id === selLevel ? 'active' : ''}" onclick="selectLevel(${l.id})">
+        <span class="dot" style="background:${l.color}"></span>${l.name}
+      </button>`).join('');
+
+    const n = Math.min(QUIZ_LENGTH, getPool().length);
+
+    app.innerHTML = `
+      <section class="screen">
+        <div class="hero">
+          <h1>Reported Speech Quiz</h1>
+          <p>Practise direct and indirect speech with ${Object.keys(TYPES).length - 1} question types and 3 difficulty levels. Pick a type, choose a level, and start.</p>
+        </div>
+
+        <div class="section-label">1 · Choose a question type</div>
+        <div class="type-grid">${cards}</div>
+
+        <div class="section-label">2 · Choose a difficulty</div>
+        <div class="card setup">
+          <div class="segmented">${segs}</div>
+          <button class="primary-btn" ${n === 0 ? 'disabled' : ''} onclick="startQuiz()">Start Quiz · ${n} questions</button>
+        </div>
+
+        <div class="info-row">
+          <div class="info"><strong>Easy</strong>Basic tense and pronoun changes.</div>
+          <div class="info"><strong>Medium</strong>Questions, commands, time words.</div>
+          <div class="info"><strong>Hard</strong>Reporting verbs, modals, exceptions.</div>
+        </div>
+      </section>`;
+  }
+
+  function selectType(t) { selType = t; goHome(); }
+  function selectLevel(l) { selLevel = l; goHome(); }
+
+  /* =====================================================
+     QUIZ
+     ===================================================== */
+  function startQuiz(customList) {
+    const source = customList || getPool();
+    if (!customList) lastPool = source;
+    questions = shuffle(source).slice(0, QUIZ_LENGTH).map(prepare);
+    current = 0;
+    answers = [];
+    renderQuestion();
+  }
+
+  function renderQuestion() {
+    window.scrollTo({ top: 0 });
+    answered = false;
+    const q = questions[current];
+    const T = TYPES[q.t];
+    const pct = (current / questions.length) * 100;
+
+    let questionHtml = esc(q.q);
+    if (q.t === 'C') questionHtml = questionHtml.replace(/___/g, '<span class="blank">?</span>');
+
+    let body = '';
+    if (q.t === 'C') {
+      body = `
+        <div class="fill-row">
+          <input id="fill" class="fill-input" type="text" placeholder="Type your answer…" autocomplete="off" autocapitalize="off" spellcheck="false">
+          <button class="primary-btn" id="check-btn" onclick="checkFill()">Check</button>
+        </div>`;
+    } else {
+      const reported = q.t === 'D' ? `<div class="reported"><span>Reported</span>${esc(q.o.join(' '))}</div>` : '';
+      body = reported + `<div class="options">${q.o.map((o, i) => `<button class="option" onclick="choose(${i})">${esc(o)}</button>`).join('')}</div>`;
+    }
+
+    app.innerHTML = `
+      <section class="screen">
+        <div class="card quiz-card">
+          <div class="quiz-head">
+            <span class="chip"><span class="dot" style="${typeBadge(q.t)}"></span>Type ${q.t} · ${T.name}</span>
+            <span class="chip"><span class="dot" style="background:${LEVELS.find(l => l.id === q.l).color}"></span>${levelName(q.l)}</span>
+          </div>
+          <div class="quiz-head">
+            <span class="progress-text">Question ${current + 1} of ${questions.length}</span>
+            <button class="pill-btn" onclick="goHome()">Quit</button>
+          </div>
+          <div class="track"><div class="fill" id="fill-bar" style="width:${pct}%"></div></div>
+          <div class="instruction">${T.instr}</div>
+          <h2 class="question">${questionHtml}</h2>
+          ${body}
+          <div id="feedback"></div>
+          <button class="primary-btn block hidden" id="next-btn" onclick="nextQuestion()">${current === questions.length - 1 ? 'See Results' : 'Next Question'}</button>
+          <div class="hint">${q.t === 'C' ? 'Press <kbd>Enter</kbd> to check' : 'Use <kbd>1</kbd>–<kbd>4</kbd> or <kbd>A</kbd>–<kbd>D</kbd> to answer'} · <kbd>Enter</kbd> for next</div>
+        </div>
+      </section>`;
+
+    if (q.t === 'C') {
+      const input = document.getElementById('fill');
+      input.focus();
+      input.addEventListener('keydown', e => {
+        if (e.key === 'Enter' && !answered) { e.preventDefault(); e.stopPropagation(); checkFill(); }
+      });
+    }
+  }
+
+  function showFeedback(correct, correctText, explanation) {
+    const fb = document.getElementById('feedback');
+    fb.innerHTML = `
+      <div class="feedback ${correct ? 'ok' : 'bad'}">
+        <b>${correct ? 'Correct!' : 'Not quite'}</b>
+        ${correct ? '' : `Answer: <strong>${esc(correctText)}</strong><br>`}
+        ${esc(explanation)}
+      </div>`;
+    document.getElementById('fill-bar').style.width = `${((current + 1) / questions.length) * 100}%`;
+    document.getElementById('next-btn').classList.remove('hidden');
+    answered = true;
+  }
+
+  function choose(i) {
+    if (answered) return;
+    const q = questions[current];
+    const buttons = document.querySelectorAll('.option');
+    buttons.forEach((b, idx) => {
+      b.disabled = true;
+      if (idx === q.a) b.classList.add('correct');
+    });
+    const correct = i === q.a;
+    if (!correct) buttons[i].classList.add('wrong');
+    answers.push({ q, user: q.o[i], correct });
+    showFeedback(correct, q.o[q.a], q.e);
+  }
+
+  function checkFill() {
+    if (answered) return;
+    const q = questions[current];
+    const input = document.getElementById('fill');
+    const val = input.value;
+    if (!val.trim()) { input.focus(); return; }
+    const correct = q.a.some(x => norm(x) === norm(val));
+    input.disabled = true;
+    input.classList.add(correct ? 'correct' : 'wrong');
+    document.getElementById('check-btn').disabled = true;
+    answers.push({ q, user: val.trim(), correct });
+    showFeedback(correct, q.a.join(' / '), q.e);
+  }
+
+  function nextQuestion() {
+    current++;
+    if (current < questions.length) renderQuestion();
+    else showResults();
+  }
+
+  /* =====================================================
+     RESULTS
+     ===================================================== */
+  function showResults() {
+    window.scrollTo({ top: 0 });
+    const correctCount = answers.filter(a => a.correct).length;
+    const score = Math.round((correctCount / answers.length) * 100);
+    const wrong = answers.filter(a => !a.correct);
+
+    // Save best score only for full (non-retry) quizzes
+    if (questions.length === Math.min(QUIZ_LENGTH, lastPool.length) && answers.every(a => lastPool.includes(a.q.orig))) {
+      setBest(selType, selLevel, score);
+    }
+
+    let msg;
+    if (score === 100) msg = 'Perfect! You have mastered this set.';
+    else if (score >= 80) msg = 'Excellent! Just a little more for a perfect score.';
+    else if (score >= 60) msg = 'Good job! Review the tricky ones and try again.';
+    else msg = "Don't give up! Read the explanations below and try again.";
+
+    const review = answers.map((a, i) => {
+      const correctText = a.q.t === 'C' ? a.q.a.join(' / ') : a.q.o[a.q.a];
+      return `
+        <details class="review-item" ${a.correct ? '' : 'open'}>
+          <summary>
+            <span class="mark" style="background:${a.correct ? 'var(--success)' : 'var(--error)'}">${a.correct ? '✓' : '✕'}</span>
+            <span>${i + 1}. ${esc(a.q.q.split('\n')[0])}</span>
+          </summary>
+          <div class="review-body">
+            <div>Type ${a.q.t} · ${TYPES[a.q.t].name} · ${levelName(a.q.l)}</div>
+            <div>Your answer: <span class="${a.correct ? 'good' : 'badc'}">${esc(a.user)}</span></div>
+            ${a.correct ? '' : `<div>Correct answer: <span class="good">${esc(correctText)}</span></div>`}
+            <div>${esc(a.q.e)}</div>
+          </div>
+        </details>`;
+    }).join('');
+
+    const ringColor = score >= 80 ? 'var(--success)' : score >= 60 ? 'var(--primary)' : 'var(--error)';
+
+    app.innerHTML = `
+      <section class="screen">
+        <div class="card result-card">
+          <h2>Quiz Complete!</h2>
+          <div class="result-msg">${msg}</div>
+          <div class="ring" id="ring" style="--ring-color:${ringColor}">
+            <div class="ring-text">
+              <div class="ring-score">${score}</div>
+              <div class="ring-label">out of 100</div>
+            </div>
+          </div>
+          <div class="stats">
+            <span class="chip">✓ ${correctCount} correct</span>
+            <span class="chip">✕ ${wrong.length} wrong</span>
+            <span class="chip">${selType === 'M' ? 'Mixed' : 'Type ' + selType} · ${levelName(selLevel)}</span>
+          </div>
+          <div class="result-actions">
+            ${wrong.length ? `<button class="primary-btn" onclick="retryWrong()">Retry Wrong Answers</button>` : ''}
+            <button class="pill-btn" onclick="startQuiz(lastPool)">New Quiz</button>
+            <button class="pill-btn" onclick="goHome()">Home</button>
+          </div>
+          <div class="review">
+            <div class="section-label">Review</div>
+            ${review}
+          </div>
+        </div>
+      </section>`;
+
+    const ring = document.getElementById('ring');
+    let p = 0;
+    const timer = setInterval(() => {
+      p = Math.min(p + 2, score);
+      ring.style.setProperty('--pct', p);
+      if (p >= score) clearInterval(timer);
+    }, 16);
+  }
+
+  function retryWrong() {
+    const wrongOriginals = answers.filter(a => !a.correct).map(a => a.q.orig);
+    startQuiz(wrongOriginals);
+  }
+
+  /* =====================================================
+     KEYBOARD SHORTCUTS
+     ===================================================== */
+  document.addEventListener('keydown', e => {
+    if (!questions.length || !document.querySelector('.quiz-card')) return;
+    const nextBtn = document.getElementById('next-btn');
+    if ((e.key === 'Enter' || e.key === ' ') && nextBtn && !nextBtn.classList.contains('hidden')) {
+      e.preventDefault();
+      nextQuestion();
+      return;
+    }
+    if (answered || document.activeElement.tagName === 'INPUT') return;
+    const map = { '1': 0, '2': 1, '3': 2, '4': 3, a: 0, b: 1, c: 2, d: 3 };
+    const idx = map[e.key.toLowerCase()];
+    const q = questions[current];
+    if (idx !== undefined && q.o && idx < q.o.length) choose(idx);
+  });
+
+  /* =====================================================
+     DOWNLOAD (save this page as one offline HTML file)
+     ===================================================== */
+  function downloadPage() {
+    const blob = new Blob([PAGE_HTML], { type: 'text/html' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'reported-speech-quiz.html';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
+  goHome();
+</script>
+</body>
+</html>

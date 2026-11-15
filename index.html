@@ -3,221 +3,406 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reported Speech Quiz</title>
+<title>Reported Speech Studio — Apple-Style Grammar Quiz</title>
 <style>
+  /* =========================================================
+     SOFT APPLE DESIGN SYSTEM (macOS Sequoia & iOS 18 Pastel)
+     ========================================================= */
   :root {
-    --primary: #007AFF;
-    --primary-hover: #0066D6;
-    --primary-soft: rgba(0, 122, 255, 0.08);
-    --bg: #F5F5F7;
-    --card: rgba(255, 255, 255, 0.85);
-    --card-border: rgba(255, 255, 255, 0.7);
-    --surface: #FFFFFF;
-    --grouped: #EFEFF4;
+    --bg: #F4F5F9;
+    --bg-gradient-1: rgba(147, 197, 253, 0.28);
+    --bg-gradient-2: rgba(196, 181, 253, 0.24);
+    --bg-gradient-3: rgba(253, 186, 140, 0.16);
+
+    --card: rgba(255, 255, 255, 0.78);
+    --card-border: rgba(255, 255, 255, 0.88);
+    --surface: rgba(255, 255, 255, 0.92);
+    --surface-hover: #FFFFFF;
+    --grouped: rgba(235, 237, 245, 0.85);
+
     --text: #1D1D1F;
-    --secondary: #86868B;
-    --hairline: rgba(60, 60, 67, 0.12);
-    --success: #34C759;
-    --error: #FF3B30;
-    --shadow: 0 8px 30px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.04);
-    --ease: cubic-bezier(0.25, 1, 0.5, 1);
+    --text-soft: #424245;
+    --secondary: #7E7E87;
+    --hairline: rgba(60, 60, 67, 0.09);
+    --hairline-strong: rgba(60, 60, 67, 0.15);
+
+    --primary: #3A7BFF;
+    --primary-hover: #2563EB;
+    --primary-soft: rgba(58, 123, 255, 0.10);
+    --primary-glow: rgba(58, 123, 255, 0.22);
+
+    --success: #2EB872;
+    --success-soft: rgba(46, 184, 114, 0.11);
+    --warning: #F59E0B;
+    --warning-soft: rgba(245, 158, 11, 0.12);
+    --error: #E5484D;
+    --error-soft: rgba(229, 72, 77, 0.10);
+
+    --shadow-sm: 0 2px 10px rgba(20, 24, 40, 0.03);
+    --shadow-card: 0 14px 40px rgba(20, 24, 40, 0.05), 0 2px 6px rgba(20, 24, 40, 0.02);
+    --shadow-hover: 0 18px 44px rgba(20, 24, 40, 0.08);
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --primary: #0A84FF;
-      --primary-hover: #409CFF;
-      --primary-soft: rgba(10, 132, 255, 0.15);
-      --bg: #000000;
-      --card: rgba(28, 28, 30, 0.8);
-      --card-border: rgba(255, 255, 255, 0.08);
-      --surface: #2C2C2E;
-      --grouped: #1C1C1E;
-      --text: #F5F5F7;
-      --secondary: #98989D;
-      --hairline: rgba(84, 84, 88, 0.45);
-      --success: #30D158;
-      --error: #FF453A;
-      --shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    }
+
+  html[data-theme="dark"] {
+    --bg: #0B0C10;
+    --bg-gradient-1: rgba(59, 130, 246, 0.13);
+    --bg-gradient-2: rgba(139, 92, 246, 0.12);
+    --bg-gradient-3: rgba(236, 72, 153, 0.08);
+
+    --card: rgba(24, 26, 34, 0.78);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --surface: rgba(34, 37, 48, 0.88);
+    --surface-hover: rgba(42, 46, 59, 0.98);
+    --grouped: rgba(18, 20, 27, 0.9);
+
+    --text: #F5F5F7;
+    --text-soft: #D1D1D6;
+    --secondary: #9496A1;
+    --hairline: rgba(255, 255, 255, 0.08);
+    --hairline-strong: rgba(255, 255, 255, 0.15);
+
+    --primary: #5E9EFF;
+    --primary-hover: #7DB1FF;
+    --primary-soft: rgba(94, 158, 255, 0.15);
+    --primary-glow: rgba(94, 158, 255, 0.25);
+
+    --success: #3DD68C;
+    --success-soft: rgba(61, 214, 140, 0.14);
+    --warning: #FBBF24;
+    --warning-soft: rgba(251, 191, 36, 0.14);
+    --error: #FF6369;
+    --error-soft: rgba(255, 99, 105, 0.14);
+
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.25);
+    --shadow-card: 0 20px 50px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 22px 54px rgba(0, 0, 0, 0.6);
   }
 
   * { box-sizing: border-box; }
+
   body {
     margin: 0;
     min-height: 100vh;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: var(--bg);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg);
     color: var(--text);
     -webkit-font-smoothing: antialiased;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.012em;
+    transition: background-color 0.35s var(--ease), color 0.35s var(--ease);
+    position: relative;
+    overflow-x: hidden;
   }
+
+  /* Ambient Soft Pastel Mesh Background */
   body::before {
     content: "";
     position: fixed;
-    inset: -20%;
+    inset: -15%;
     background:
-      radial-gradient(40% 35% at 20% 15%, rgba(0, 122, 255, 0.10), transparent 70%),
-      radial-gradient(35% 30% at 85% 90%, rgba(175, 82, 222, 0.08), transparent 70%);
+      radial-gradient(42% 38% at 18% 15%, var(--bg-gradient-1), transparent 70%),
+      radial-gradient(38% 36% at 82% 20%, var(--bg-gradient-2), transparent 70%),
+      radial-gradient(40% 35% at 50% 88%, var(--bg-gradient-3), transparent 72%);
     pointer-events: none;
     z-index: -1;
+    filter: blur(10px);
   }
+
   button { font-family: inherit; }
   .hidden { display: none !important; }
 
-  /* ---------- Top bar ---------- */
+  /* ---------- Floating Frosted Dock Topbar ---------- */
   .topbar {
     position: sticky;
-    top: 12px;
-    z-index: 10;
-    max-width: 880px;
-    margin: 12px auto 0;
-    padding: 0 16px;
+    top: 14px;
+    z-index: 30;
+    max-width: 920px;
+    margin: 14px auto 0;
+    padding: 0 18px;
   }
+
   .topbar-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    padding: 8px 8px 8px 14px;
+    padding: 8px 10px 8px 14px;
     border-radius: 999px;
     background: var(--card);
-    -webkit-backdrop-filter: blur(30px) saturate(180%);
-    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    backdrop-filter: blur(28px) saturate(180%);
     border: 1px solid var(--card-border);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-card);
   }
+
   .brand {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-weight: 700;
+    gap: 11px;
+    font-weight: 650;
     font-size: 15px;
     cursor: pointer;
     background: none;
     border: none;
     color: var(--text);
     padding: 0;
+    letter-spacing: -0.02em;
   }
+
   .brand-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 9px;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
     display: grid;
     place-items: center;
     color: #fff;
-    font-size: 16px;
-    background: linear-gradient(135deg, #007AFF, #5E5CE6);
-    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+    font-size: 15px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #5B8DEF, #8B6CEF, #DF75B7);
+    box-shadow: 0 4px 14px rgba(105, 118, 235, 0.28);
   }
+
+  .topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
   .pill-btn {
-    border: none;
+    border: 1px solid var(--hairline);
     border-radius: 999px;
-    padding: 9px 16px;
+    padding: 8px 15px;
     font-size: 13px;
     font-weight: 600;
     cursor: pointer;
-    background: var(--grouped);
+    background: var(--surface);
     color: var(--text);
-    transition: background 0.2s, transform 0.15s var(--ease);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s var(--ease);
   }
-  .pill-btn:hover { background: var(--hairline); }
+  .pill-btn:hover {
+    background: var(--surface-hover);
+    border-color: var(--hairline-strong);
+    transform: translateY(-1px);
+  }
   .pill-btn:active { transform: scale(0.96); }
 
-  /* ---------- Layout ---------- */
-  main {
-    max-width: 880px;
-    margin: 0 auto;
-    padding: 32px 16px 60px;
+  .icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--hairline);
+    background: var(--surface);
+    color: var(--text);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 15px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s var(--ease);
   }
-  .screen { animation: fadeUp 0.45s var(--ease); }
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(12px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .card {
-    background: var(--card);
-    -webkit-backdrop-filter: blur(30px) saturate(180%);
-    backdrop-filter: blur(30px) saturate(180%);
-    border: 1px solid var(--card-border);
-    border-radius: 28px;
-    box-shadow: var(--shadow);
-    padding: 36px;
+  .icon-btn:hover {
+    background: var(--surface-hover);
+    transform: translateY(-1px);
   }
 
-  /* ---------- Home ---------- */
-  .hero { text-align: center; margin: 12px 0 32px; }
-  .hero h1 {
-    font-size: clamp(2rem, 5vw, 2.8rem);
-    font-weight: 700;
-    letter-spacing: -0.035em;
-    margin: 0 0 10px;
-  }
-  .hero p {
-    color: var(--secondary);
-    font-size: 1.05rem;
-    line-height: 1.5;
+  /* ---------- Main Layout ---------- */
+  main {
+    max-width: 920px;
     margin: 0 auto;
-    max-width: 520px;
+    padding: 28px 18px 64px;
   }
-  .section-label {
+
+  .screen { animation: fadeUp 0.45s var(--ease); }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .card {
+    background: var(--card);
+    -webkit-backdrop-filter: blur(32px) saturate(180%);
+    backdrop-filter: blur(32px) saturate(180%);
+    border: 1px solid var(--card-border);
+    border-radius: 28px;
+    box-shadow: var(--shadow-card);
+    padding: 34px;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    text-align: center;
+    margin: 8px 0 32px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow-sm);
     font-size: 12px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
     color: var(--secondary);
-    margin: 0 4px 12px;
+    margin-bottom: 14px;
   }
+
+  .hero-badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3A7BFF, #9B6BFF);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.6vw, 2.75rem);
+    font-weight: 750;
+    letter-spacing: -0.034em;
+    margin: 0 0 10px;
+    line-height: 1.12;
+  }
+
+  .hero p {
+    color: var(--secondary);
+    font-size: 1.02rem;
+    line-height: 1.55;
+    margin: 0 auto;
+    max-width: 540px;
+  }
+
+  .section-label {
+    font-size: 11.5px;
+    font-weight: 650;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--secondary);
+    margin: 0 6px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* ---------- Bento Type Cards ---------- */
   .type-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 12px;
-    margin-bottom: 32px;
+    grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+    gap: 13px;
+    margin-bottom: 28px;
   }
+
   .type-card {
     position: relative;
     text-align: left;
     display: flex;
     gap: 14px;
     align-items: flex-start;
-    padding: 18px;
+    padding: 18px 18px;
     border-radius: 22px;
     background: var(--surface);
     border: 1.5px solid var(--hairline);
     color: var(--text);
     cursor: pointer;
-    transition: transform 0.2s var(--ease), border-color 0.2s, box-shadow 0.2s;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.22s var(--ease), border-color 0.22s var(--ease), box-shadow 0.22s var(--ease), background 0.22s var(--ease);
   }
+
   .type-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+    background: var(--surface-hover);
+    box-shadow: var(--shadow-hover);
   }
+
   .type-card.active {
     border-color: var(--primary);
-    box-shadow: 0 0 0 4px var(--primary-soft);
+    background: var(--surface-hover);
+    box-shadow: 0 0 0 4px var(--primary-soft), var(--shadow-card);
   }
+
   .type-letter {
     flex-shrink: 0;
-    width: 42px;
-    height: 42px;
-    border-radius: 12px;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
     display: grid;
     place-items: center;
-    color: #fff;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 17px;
+    letter-spacing: -0.02em;
   }
-  .type-name { font-weight: 600; font-size: 15px; margin-bottom: 3px; }
-  .type-desc { color: var(--secondary); font-size: 13px; line-height: 1.4; }
-  .type-meta { margin-top: 8px; font-size: 12px; color: var(--secondary); }
-  .type-meta b { color: var(--success); font-weight: 600; }
 
-  .setup {
+  .type-name {
+    font-weight: 650;
+    font-size: 15px;
+    margin-bottom: 3px;
+    letter-spacing: -0.015em;
+  }
+
+  .type-desc {
+    color: var(--secondary);
+    font-size: 13px;
+    line-height: 1.42;
+  }
+
+  .type-meta {
+    margin-top: 9px;
+    font-size: 11.5px;
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .meta-pill {
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--grouped);
+    font-weight: 600;
+    color: var(--text-soft);
+  }
+
+  .type-meta b {
+    color: var(--success);
+    font-weight: 650;
+  }
+
+  /* ---------- Setup Bar ---------- */
+  .setup-card {
+    padding: 24px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .setup-row {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
+    gap: 14px;
   }
+
+  .control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .control-title {
+    font-size: 11px;
+    font-weight: 650;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--secondary);
+    padding-left: 4px;
+  }
+
   .segmented {
     display: inline-flex;
     padding: 4px;
@@ -226,191 +411,273 @@
     border: 1px solid var(--hairline);
     flex-wrap: wrap;
   }
+
   .segmented button {
     border: none;
     background: transparent;
     color: var(--secondary);
-    padding: 9px 16px;
+    padding: 8px 15px;
     border-radius: 999px;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 550;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    transition: all 0.25s var(--ease);
+    transition: all 0.22s var(--ease);
   }
+
   .segmented button:hover { color: var(--text); }
+
   .segmented button.active {
-    background: var(--surface);
+    background: var(--surface-hover);
     color: var(--text);
-    font-weight: 600;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    font-weight: 650;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   }
+
   .dot { width: 8px; height: 8px; border-radius: 50%; }
 
   .primary-btn {
     border: none;
     border-radius: 999px;
-    padding: 15px 28px;
-    background: var(--primary);
+    padding: 14px 28px;
+    background: linear-gradient(180deg, #4B89FF 0%, var(--primary) 100%);
     color: #fff;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 0.98rem;
+    font-weight: 650;
     cursor: pointer;
-    box-shadow: 0 6px 18px rgba(0, 122, 255, 0.25);
-    transition: background 0.2s, transform 0.15s var(--ease), box-shadow 0.2s;
+    box-shadow: 0 8px 22px var(--primary-glow);
+    transition: transform 0.18s var(--ease), box-shadow 0.2s var(--ease), filter 0.2s;
+    letter-spacing: -0.01em;
   }
-  .primary-btn:hover { background: var(--primary-hover); box-shadow: 0 8px 24px rgba(0, 122, 255, 0.32); }
+
+  .primary-btn:hover {
+    filter: brightness(1.04);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 26px var(--primary-glow);
+  }
+
   .primary-btn:active { transform: scale(0.97); }
   .primary-btn:disabled { opacity: 0.4; pointer-events: none; }
-  .block { display: block; width: 100%; margin-top: 24px; }
+  .block { display: block; width: 100%; margin-top: 22px; }
 
   .info-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     gap: 12px;
-    margin-top: 28px;
+    margin-top: 22px;
   }
+
   .info {
     padding: 16px 18px;
-    border-radius: 18px;
-    background: var(--grouped);
+    border-radius: 20px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow-sm);
     font-size: 13px;
     color: var(--secondary);
-    line-height: 1.45;
+    line-height: 1.48;
   }
-  .info strong { display: block; color: var(--text); font-size: 14px; margin-bottom: 2px; }
 
-  /* ---------- Quiz ---------- */
-  .quiz-card { max-width: 620px; margin: 0 auto; }
+  .info strong {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--text);
+    font-size: 13.5px;
+    margin-bottom: 4px;
+  }
+
+  /* ---------- Quiz Player ---------- */
+  .quiz-card { max-width: 650px; margin: 0 auto; }
+
   .quiz-head {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 8px;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
+
   .chip {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 5px 11px;
+    padding: 5px 12px;
     border-radius: 999px;
     font-size: 12px;
     font-weight: 600;
     background: var(--grouped);
-    color: var(--text);
+    color: var(--text-soft);
   }
+
   .progress-text {
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 650;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--secondary);
   }
+
   .track {
-    height: 4px;
-    background: var(--hairline);
+    height: 6px;
+    background: var(--grouped);
     border-radius: 999px;
     overflow: hidden;
     margin-bottom: 26px;
   }
+
   .fill {
     height: 100%;
     width: 0;
-    background: var(--primary);
+    background: linear-gradient(90deg, #5B8DEF, #8B6CEF);
     border-radius: inherit;
     transition: width 0.5s var(--ease);
   }
+
   .instruction {
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 12.5px;
+    font-weight: 650;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     color: var(--secondary);
     margin-bottom: 8px;
   }
+
   .question {
-    font-size: 1.3rem;
-    font-weight: 600;
-    line-height: 1.45;
+    font-size: 1.28rem;
+    font-weight: 650;
+    line-height: 1.48;
     letter-spacing: -0.02em;
     margin: 0 0 22px;
     white-space: pre-line;
+    color: var(--text);
   }
+
   .blank {
     display: inline-block;
-    min-width: 64px;
+    min-width: 72px;
+    padding: 0 8px;
+    margin: 0 2px;
+    border-radius: 8px;
+    background: var(--primary-soft);
     border-bottom: 2px solid var(--primary);
     color: var(--primary);
     text-align: center;
+    font-weight: 700;
   }
+
   .reported {
-    padding: 14px 16px;
-    border-radius: 14px;
+    padding: 14px 18px;
+    border-radius: 16px;
     background: var(--grouped);
+    border: 1px solid var(--hairline);
     font-size: 1rem;
     line-height: 1.5;
-    margin: -8px 0 20px;
+    margin: -6px 0 20px;
   }
-  .reported span { color: var(--secondary); font-size: 12px; font-weight: 600; display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  .reported span {
+    color: var(--secondary);
+    font-size: 11px;
+    font-weight: 650;
+    display: block;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
 
   .options { counter-reset: opt; }
+
   .option {
     display: flex;
     align-items: center;
     gap: 14px;
     width: 100%;
-    padding: 14px 16px;
+    padding: 15px 18px;
     margin-bottom: 10px;
-    border: 1px solid var(--hairline);
-    border-radius: 14px;
+    border: 1.5px solid var(--hairline);
+    border-radius: 16px;
     background: var(--surface);
     color: var(--text);
-    font-size: 0.98rem;
-    line-height: 1.4;
+    font-size: 0.97rem;
+    line-height: 1.42;
     text-align: left;
     cursor: pointer;
+    box-shadow: var(--shadow-sm);
     transition: transform 0.2s var(--ease), border-color 0.2s, background 0.2s, box-shadow 0.2s;
   }
+
   .option::before {
     counter-increment: opt;
     content: counter(opt, upper-alpha);
     flex-shrink: 0;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
     display: grid;
     place-items: center;
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 650;
     color: var(--secondary);
     background: var(--grouped);
-    transition: all 0.2s;
+    transition: all 0.2s var(--ease);
   }
+
   .option:hover {
     border-color: var(--primary);
-    background: var(--primary-soft);
+    background: var(--surface-hover);
     transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(58, 123, 255, 0.09);
   }
-  .option:hover::before { background: var(--primary); color: #fff; }
-  .option:active { transform: scale(0.985); }
+
+  .option:hover::before {
+    background: var(--primary);
+    color: #fff;
+  }
+
+  .option:active { transform: scale(0.988); }
   .option:disabled { pointer-events: none; }
-  .option:disabled:not(.correct):not(.wrong) { opacity: 0.45; }
-  .option.correct { background: rgba(52, 199, 89, 0.10); border-color: var(--success); animation: pop 0.35s var(--ease); }
-  .option.correct::before { content: "✓"; background: var(--success); color: #fff; }
-  .option.wrong { background: rgba(255, 59, 48, 0.10); border-color: var(--error); animation: shake 0.4s var(--ease); }
-  .option.wrong::before { content: "✕"; background: var(--error); color: #fff; }
-  @keyframes pop { 50% { transform: scale(1.02); } }
-  @keyframes shake { 20%, 60% { transform: translateX(-5px); } 40%, 80% { transform: translateX(5px); } }
+  .option:disabled:not(.correct):not(.wrong) { opacity: 0.48; }
+
+  .option.correct {
+    background: var(--success-soft);
+    border-color: var(--success);
+    animation: pop 0.35s var(--ease);
+  }
+  .option.correct::before {
+    content: "✓";
+    background: var(--success);
+    color: #fff;
+  }
+
+  .option.wrong {
+    background: var(--error-soft);
+    border-color: var(--error);
+    animation: shake 0.4s var(--ease);
+  }
+  .option.wrong::before {
+    content: "✕";
+    background: var(--error);
+    color: #fff;
+  }
+
+  @keyframes pop { 50% { transform: scale(1.015); } }
+  @keyframes shake {
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+  }
 
   .fill-row { display: flex; gap: 10px; }
+
   .fill-input {
     flex: 1;
     min-width: 0;
-    padding: 14px 18px;
+    padding: 14px 20px;
     border-radius: 999px;
-    border: 1.5px solid var(--hairline);
+    border: 1.5px solid var(--hairline-strong);
     background: var(--surface);
     color: var(--text);
     font-size: 1rem;
@@ -418,80 +685,150 @@
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
   }
-  .fill-input:focus { border-color: var(--primary); box-shadow: 0 0 0 4px var(--primary-soft); }
-  .fill-input.correct { border-color: var(--success); background: rgba(52, 199, 89, 0.08); }
-  .fill-input.wrong { border-color: var(--error); background: rgba(255, 59, 48, 0.08); animation: shake 0.4s var(--ease); }
-  .fill-row .primary-btn { padding: 14px 22px; }
+
+  .fill-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px var(--primary-soft);
+  }
+
+  .fill-input.correct {
+    border-color: var(--success);
+    background: var(--success-soft);
+  }
+
+  .fill-input.wrong {
+    border-color: var(--error);
+    background: var(--error-soft);
+    animation: shake 0.4s var(--ease);
+  }
+
+  .fill-row .primary-btn { padding: 14px 24px; }
 
   .feedback {
     margin-top: 16px;
     padding: 16px 18px;
-    border-radius: 16px;
+    border-radius: 18px;
     font-size: 14px;
-    line-height: 1.5;
-    animation: fadeUp 0.35s var(--ease);
+    line-height: 1.52;
+    border: 1px solid transparent;
+    animation: fadeUp 0.32s var(--ease);
   }
-  .feedback.ok { background: rgba(52, 199, 89, 0.10); }
-  .feedback.bad { background: rgba(255, 59, 48, 0.08); }
-  .feedback b { display: block; font-size: 15px; margin-bottom: 4px; }
+
+  .feedback.ok {
+    background: var(--success-soft);
+    border-color: rgba(46, 184, 114, 0.25);
+  }
+
+  .feedback.bad {
+    background: var(--error-soft);
+    border-color: rgba(229, 72, 77, 0.22);
+  }
+
+  .feedback b {
+    display: block;
+    font-size: 14.5px;
+    margin-bottom: 4px;
+  }
+
   .feedback.ok b { color: var(--success); }
   .feedback.bad b { color: var(--error); }
-  .hint { text-align: center; font-size: 12px; color: var(--secondary); margin-top: 14px; }
+
+  .hint {
+    text-align: center;
+    font-size: 12px;
+    color: var(--secondary);
+    margin-top: 16px;
+  }
+
   kbd {
     font-family: inherit;
     font-size: 11px;
-    padding: 1px 6px;
-    border-radius: 5px;
-    border: 1px solid var(--hairline);
-    background: var(--grouped);
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 6px;
+    border: 1px solid var(--hairline-strong);
+    background: var(--surface);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
   }
 
   /* ---------- Results ---------- */
-  .result-card { max-width: 620px; margin: 0 auto; text-align: center; }
-  .result-card h2 { font-size: 1.9rem; letter-spacing: -0.03em; margin: 0 0 4px; }
+  .result-card { max-width: 650px; margin: 0 auto; text-align: center; }
+  .result-card h2 { font-size: 1.95rem; letter-spacing: -0.03em; margin: 0 0 6px; }
+
   .ring {
-    width: 170px;
-    height: 170px;
-    margin: 26px auto 18px;
+    width: 172px;
+    height: 172px;
+    margin: 24px auto 18px;
     border-radius: 50%;
     display: grid;
     place-items: center;
     position: relative;
-    background: conic-gradient(var(--ring-color, var(--primary)) calc(var(--pct, 0) * 1%), var(--hairline) 0);
+    background: conic-gradient(var(--ring-color, var(--primary)) calc(var(--pct, 0) * 1%), var(--grouped) 0);
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.04);
   }
+
   .ring::after {
     content: "";
     position: absolute;
-    inset: 15px;
+    inset: 16px;
     border-radius: 50%;
     background: var(--surface);
+    box-shadow: var(--shadow-sm);
   }
-  .ring-text { position: relative; z-index: 1; }
-  .ring-score { font-size: 3rem; font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
-  .ring-label { font-size: 12px; color: var(--secondary); margin-top: 4px; }
-  .result-msg { color: var(--secondary); font-size: 1.02rem; line-height: 1.5; max-width: 380px; margin: 0 auto; }
-  .stats { display: flex; justify-content: center; gap: 10px; margin: 20px 0 6px; flex-wrap: wrap; }
-  .result-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
-  .result-actions .pill-btn { padding: 14px 22px; font-size: 14px; }
 
-  .review { text-align: left; margin-top: 30px; }
+  .ring-text { position: relative; z-index: 1; }
+  .ring-score { font-size: 3rem; font-weight: 750; letter-spacing: -0.04em; line-height: 1; }
+  .ring-label { font-size: 12px; color: var(--secondary); margin-top: 4px; font-weight: 500; }
+
+  .result-msg {
+    color: var(--secondary);
+    font-size: 1.02rem;
+    line-height: 1.5;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0 6px;
+    flex-wrap: wrap;
+  }
+
+  .result-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+
+  .result-actions .pill-btn { padding: 13px 22px; font-size: 14px; }
+
+  .review { text-align: left; margin-top: 32px; }
+
   .review-item {
     padding: 14px 16px;
     border-radius: 16px;
-    background: var(--grouped);
-    margin-bottom: 8px;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    margin-bottom: 9px;
     font-size: 14px;
     line-height: 1.5;
   }
+
   .review-item summary {
     cursor: pointer;
     list-style: none;
     display: flex;
     gap: 10px;
     align-items: flex-start;
-    font-weight: 500;
+    font-weight: 550;
   }
+
   .review-item summary::-webkit-details-marker { display: none; }
+
   .mark {
     flex-shrink: 0;
     width: 22px;
@@ -504,18 +841,28 @@
     font-weight: 700;
     margin-top: 1px;
   }
-  .review-body { margin: 10px 0 0 32px; color: var(--secondary); }
+
+  .review-body {
+    margin: 10px 0 0 32px;
+    color: var(--secondary);
+    font-size: 13.5px;
+  }
   .review-body div { margin-bottom: 4px; }
-  .review-body .good { color: var(--success); font-weight: 500; }
-  .review-body .badc { color: var(--error); font-weight: 500; }
+  .review-body .good { color: var(--success); font-weight: 600; }
+  .review-body .badc { color: var(--error); font-weight: 600; }
 
-  footer { text-align: center; color: var(--secondary); font-size: 12px; padding: 0 16px 30px; }
+  footer {
+    text-align: center;
+    color: var(--secondary);
+    font-size: 12px;
+    padding: 0 16px 34px;
+  }
 
-  @media (max-width: 560px) {
-    .card { padding: 26px 20px; border-radius: 24px; }
-    .question { font-size: 1.15rem; }
+  @media (max-width: 600px) {
+    .card { padding: 24px 18px; border-radius: 24px; }
+    .question { font-size: 1.14rem; }
     .brand-text { display: none; }
-    .setup { flex-direction: column; align-items: stretch; }
+    .setup-row { flex-direction: column; align-items: stretch; }
     .segmented { justify-content: center; }
   }
 </style>
@@ -526,46 +873,73 @@
   <div class="topbar-inner">
     <button class="brand" onclick="goHome()">
       <span class="brand-icon">“”</span>
-      <span class="brand-text">Reported Speech Quiz</span>
+      <span class="brand-text">Reported Speech Studio</span>
     </button>
-    <button class="pill-btn" onclick="downloadPage()" title="Save this quiz as one HTML file that works offline on any computer">⬇ Download HTML</button>
+    <div class="topbar-actions">
+      <button class="pill-btn" onclick="downloadPage()" title="Save this quiz as one HTML file that works offline on any computer">⬇ Download HTML</button>
+      <button class="icon-btn" id="theme-btn" onclick="toggleTheme()" title="Switch Light / Dark Appearance">☀️</button>
+    </div>
   </div>
 </header>
 
 <main id="app"></main>
 
-<footer>Works offline · Single HTML file · Your best scores are saved in this browser</footer>
+<footer>Works 100% offline · Single HTML file · 250+ curated questions including Hard exam traps</footer>
 
 <script>
   // Snapshot of the clean page, used by the "Download HTML" button
   const PAGE_HTML = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
 
   /* =====================================================
-     QUESTION TYPES & LEVELS
+     THEME APPEARANCE (Soft Light Default + Dark Toggle)
+     ===================================================== */
+  let darkTheme = false;
+  try {
+    const savedTheme = localStorage.getItem('rsq-theme');
+    if (savedTheme) darkTheme = savedTheme === 'dark';
+    else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) darkTheme = false; // default soft light
+  } catch (e) {}
+
+  function applyTheme() {
+    document.documentElement.setAttribute('data-theme', darkTheme ? 'dark' : 'light');
+    const btn = document.getElementById('theme-btn');
+    if (btn) btn.textContent = darkTheme ? '☀️' : '🌙';
+  }
+  function toggleTheme() {
+    darkTheme = !darkTheme;
+    try { localStorage.setItem('rsq-theme', darkTheme ? 'dark' : 'light'); } catch (e) {}
+    applyTheme();
+  }
+  applyTheme();
+
+  /* =====================================================
+     QUESTION TYPES & LEVELS (Soft Pastel Accents)
      ===================================================== */
   const TYPES = {
-    A: { name: 'Multiple Choice', desc: 'Choose the correct reported sentence.', color: '#007AFF', instr: 'Choose the correct reported speech.' },
-    B: { name: 'True or False', desc: 'Decide if the reported sentence is correct.', color: '#34C759', instr: 'Is the reported sentence correct?' },
-    C: { name: 'Fill in the Blank', desc: 'Type the missing word(s).', color: '#FF9500', instr: 'Type the missing word(s).' },
-    D: { name: 'Error Spotting', desc: 'Find the incorrect part of the sentence.', color: '#FF3B30', instr: 'Which part of the reported sentence is wrong?' },
-    E: { name: 'Word & Tense Changes', desc: 'How tenses, time and place words change.', color: '#AF52DE', instr: 'Choose the correct change.' },
-    F: { name: 'Back to Direct', desc: 'Find the original direct words.', color: '#30B0C7', instr: 'What were the original (direct) words?' },
-    M: { name: 'Mixed Challenge', desc: 'Random questions from every type.', color: '#1D1D1F', instr: '' }
+    A: { name: 'Multiple Choice', desc: 'Choose the accurate reported sentence.', color: '#3B82F6', tint: 'rgba(59, 130, 246, 0.14)', instr: 'Choose the correct reported speech.' },
+    B: { name: 'True or False', desc: 'Spot subtle grammar traps in conversions.', color: '#10B981', tint: 'rgba(16, 185, 129, 0.14)', instr: 'Is the reported sentence grammatically correct?' },
+    C: { name: 'Fill in the Blank', desc: 'Type the exact missing word or phrase.', color: '#F59E0B', tint: 'rgba(245, 158, 11, 0.15)', instr: 'Type the missing word(s).' },
+    D: { name: 'Error Spotting', desc: 'Identify the flawed segment in the sentence.', color: '#F43F5E', tint: 'rgba(244, 63, 94, 0.14)', instr: 'Which part of the reported sentence contains an error?' },
+    E: { name: 'Word & Tense Shifts', desc: 'Master backshifts, modals & exceptions.', color: '#8B5CF6', tint: 'rgba(139, 92, 246, 0.14)', instr: 'Choose the correct transformation rule.' },
+    F: { name: 'Back to Direct', desc: 'Reconstruct the speaker’s original words.', color: '#06B6D4', tint: 'rgba(6, 182, 212, 0.15)', instr: 'What were the speaker’s original (direct) words?' },
+    M: { name: 'Mixed Challenge', desc: 'Random questions across all 6 categories.', color: '#6366F1', tint: 'rgba(99, 102, 241, 0.14)', instr: '' }
   };
+
   const LEVELS = [
-    { id: 1, name: 'Easy', color: '#34C759' },
-    { id: 2, name: 'Medium', color: '#FF9500' },
-    { id: 3, name: 'Hard', color: '#FF3B30' },
-    { id: 0, name: 'All Levels', color: '#007AFF' }
+    { id: 1, name: 'Easy', color: '#2EB872' },
+    { id: 2, name: 'Medium', color: '#F59E0B' },
+    { id: 3, name: 'Hard (Tricky)', color: '#E5484D' },
+    { id: 0, name: 'All Levels', color: '#3A7BFF' }
   ];
-  const QUIZ_LENGTH = 10;
+
+  const COUNT_OPTIONS = [10, 20, 0]; // 0 = All available
 
   /* =====================================================
      QUESTION BANK
      add(type, level, question, options, answer, explanation)
      - B: options are True/False automatically, answer 0 = True, 1 = False
      - C: answer is a list of accepted answers
-     - D: options are the parts of the reported sentence
+     - D: options are the 4 parts of the reported sentence
      ===================================================== */
   const BANK = [];
   function add(t, l, q, o, a, e) {
@@ -573,7 +947,9 @@
     BANK.push({ t, l, q, o, a, e });
   }
 
-  // ---------- TYPE A · Multiple Choice ----------
+  // =====================================================
+  // TYPE A · MULTIPLE CHOICE
+  // =====================================================
   add('A', 1, `She said, "I am hungry."`, [`She said that she was hungry.`, `She said that she is hungry.`, `She said that I was hungry.`, `She said that she am hungry.`], 0, `"am" changes to "was", and "I" becomes "she".`);
   add('A', 1, `He said, "I like pizza."`, [`He said that he liked pizza.`, `He said that I liked pizza.`, `He said that he like pizza.`, `He said that he had like pizza.`], 0, `Present simple "like" moves back to past simple "liked".`);
   add('A', 1, `Tom said, "I play football."`, [`Tom said that he played football.`, `Tom said that he plays footballs.`, `Tom said that I played football.`, `Tom said he playing football.`], 0, `"play" → "played", "I" → "he".`);
@@ -592,16 +968,40 @@
   add('A', 2, `She asked, "What are you doing?"`, [`She asked what I was doing.`, `She asked what was I doing.`, `She asked what are you doing.`, `She asked if what I was doing.`], 0, `Wh-question → statement order, and "are doing" → "was doing".`);
   add('A', 2, `"I have finished my homework," Ana said.`, [`Ana said that she had finished her homework.`, `Ana said that she has finished my homework.`, `Ana said that she finished her homeworks.`, `Ana said that she have finished her homework.`], 0, `Present perfect "have finished" → past perfect "had finished".`);
 
-  add('A', 3, `They said, "Let's play football."`, [`They suggested playing football.`, `They suggested to play football.`, `They said let's play football.`, `They suggested us playing football.`], 0, `"Let's..." is reported with "suggest + verb-ing".`);
+  // Type A · Hard (8 existing + 20 new tricky questions)
+  add('A', 3, `They said, "Let's play football."`, [`They suggested playing football.`, `They suggested to play football.`, `They said let's play football.`, `They suggested us playing football.`], 0, `"Let's..." is reported with "suggest + verb-ing" (never "suggest to do").`);
   add('A', 3, `The doctor said, "You must stop smoking now."`, [`The doctor said that I had to stop smoking then.`, `The doctor said that I must stopped smoking now.`, `The doctor said me to stop smoking then.`, `The doctor said that I have to stop smoking now.`], 0, `"must" (obligation) → "had to"; "now" → "then".`);
   add('A', 3, `He said, "I'm sorry I broke the vase."`, [`He apologized for breaking the vase.`, `He apologized to break the vase.`, `He apologized that breaking the vase.`, `He apologized for broke the vase.`], 0, `"apologize for + verb-ing".`);
-  add('A', 3, `She said, "I didn't steal the money."`, [`She denied stealing the money.`, `She denied to steal the money.`, `She denied that steal the money.`, `She denied not stealing the money.`], 0, `"deny + verb-ing" (the verb already contains the negative meaning).`);
-  add('A', 3, `"You should see a dentist," he told me.`, [`He advised me to see a dentist.`, `He advised me seeing a dentist.`, `He advised to me see a dentist.`, `He advised that me to see a dentist.`], 0, `Advice: "advise + object + to + verb".`);
-  add('A', 3, `The teacher said, "Water boils at 100°C."`, [`The teacher said that water boils at 100°C.`, `The teacher said that water had boiled at 100°C.`, `The teacher said that water would boil at 100°C.`, `The teacher said that water is boiling at 100°C.`], 0, `General truths usually keep the present tense.`);
-  add('A', 3, `"Shall I open the window?" he asked.`, [`He offered to open the window.`, `He offered opening the window.`, `He offered me open the window.`, `He asked shall he open the window.`], 0, `An offer ("Shall I...?") is reported with "offer + to + verb".`);
+  add('A', 3, `She said, "I didn't steal the money."`, [`She denied stealing the money.`, `She denied to steal the money.`, `She denied that steal the money.`, `She denied not stealing the money.`], 0, `"deny + verb-ing" (avoid double negative "denied not stealing").`);
+  add('A', 3, `"You should see a dentist," he told me.`, [`He advised me to see a dentist.`, `He advised me seeing a dentist.`, `He advised to me see a dentist.`, `He advised that me to see a dentist.`], 0, `Advice with object: "advise + object + to + verb".`);
+  add('A', 3, `The teacher said, "Water boils at 100°C."`, [`The teacher said that water boils at 100°C.`, `The teacher said that water had boiled at 100°C.`, `The teacher said that water would boil at 100°C.`, `The teacher said that water is boiling at 100°C.`], 0, `Universal scientific truths keep the present simple tense.`);
+  add('A', 3, `"Shall I open the window?" he asked.`, [`He offered to open the window.`, `He offered opening the window.`, `He offered me open the window.`, `He asked shall he open the window.`], 0, `"Shall I...?" (offer) is reported with "offer + to + verb".`);
   add('A', 3, `The manager asked, "Have you finished the report?"`, [`The manager asked if I had finished the report.`, `The manager asked had I finished the report.`, `The manager asked if I finished the report.`, `The manager asked that I had finished the report.`], 0, `"if" + statement order; present perfect → past perfect.`);
+  // 20 NEW TRICKY HARD QUESTIONS FOR TYPE A
+  add('A', 3, `She said, "If I had more time, I would learn Japanese."`, [`She said that if she had more time, she would learn Japanese.`, `She said that if she had had more time, she would have learned Japanese.`, `She said that if she has more time, she will learn Japanese.`, `She said if had she more time, she would learn Japanese.`], 0, `TRAP: Second Conditional ("If I had..., I would...") does NOT backshift to Third Conditional because doing so changes the meaning to a past regret.`);
+  add('A', 3, `He said, "I wish I knew her phone number."`, [`He said that he wished he knew her phone number.`, `He said that he wished he had known her phone number.`, `He said that he wishes he knew her phone number.`, `He said that he wished to know her phone number.`], 0, `TRAP: Unreal past after "wish" ("knew") stays "knew" in reported speech; only "wish" shifts to "wished".`);
+  add('A', 3, `"I'd rather you didn't tell anyone about this," Sarah said to me.`, [`Sarah said she'd rather I didn't tell anyone about that.`, `Sarah said she'd rather I hadn't told anyone about that.`, `Sarah told me not to rather tell anyone about this.`, `Sarah said she'd rather me not to tell anyone about that.`], 0, `TRAP: "would rather + someone + past simple" keeps the past simple ("didn't tell") when referring to present/future preference.`);
+  add('A', 3, `"It's high time we left for the airport," Dad said.`, [`Dad said that it was high time they left for the airport.`, `Dad said that it was high time they had left for the airport.`, `Dad said that it is high time we leave for the airport.`, `Dad told us that it was high time to left for the airport.`], 0, `TRAP: After "It's (high) time + subject + past tense", the verb "left" does NOT backshift to "had left".`);
+  add('A', 3, `She said, "The lights are out; they must be asleep."`, [`She said that the lights were out and they must be asleep.`, `She said that the lights were out and they had to be asleep.`, `She said that the lights had been out and they must have been asleep.`, `She said that the lights were out and they must were asleep.`], 0, `TRAP: When "must" expresses logical deduction ("pasti sedang tidur"), it stays "must be" — it does NOT change to "had to be".`);
+  add('A', 3, `"You mustn't touch that switch!" the engineer told the intern.`, [`The engineer told the intern that he mustn't touch that switch.`, `The engineer told the intern that he didn't have to touch that switch.`, `The engineer told the intern to not must touch that switch.`, `The engineer forbade the intern not to touch that switch.`], 0, `TRAP: "mustn't" (prohibition) stays "mustn't" (or "wasn't to"). Changing it to "didn't have to" changes the meaning to "tidak perlu"!`);
+  add('A', 3, `"I confessed to taking the confidential file," the clerk said.`, [`The clerk admitted that he had confessed to taking the confidential file.`, `The clerk said that he had confessed to take the confidential file.`, `The clerk confessed taking to the confidential file.`, `The clerk said he confessed to have take the confidential file.`], 0, `TRAP: In "confess to", "to" is a preposition, so it must be followed by a gerund ("taking"), never an infinitive ("to take").`);
+  add('A', 3, `"You stole the diamond ring, didn't you?" the detective said to him.`, [`The detective accused him of stealing the diamond ring.`, `The detective accused him to steal the diamond ring.`, `The detective accused him for stealing the diamond ring.`, `The detective accused that he had stolen the diamond ring.`], 0, `TRAP: The fixed structure is "accuse someone OF + verb-ing" (never "for" or "to").`);
+  add('A', 3, `"I will definitely pay for the dinner," Leo said, refusing to let me pay.`, [`Leo insisted on paying for the dinner.`, `Leo insisted to pay for the dinner.`, `Leo insisted me on paying for the dinner.`, `Leo insisted that he pays for the dinner.`], 0, `TRAP: "insist ON + verb-ing" (never "insist to do").`);
+  add('A', 3, `"Do not enter the laboratory under any circumstances," the professor said to us.`, [`The professor forbade us to enter the laboratory under any circumstances.`, `The professor forbade us not to enter the laboratory under any circumstances.`, `The professor forbade that we entered the laboratory.`, `The professor forbade us entering to the laboratory.`], 0, `TRAP: "forbid" already means "tell someone NOT to", so "forbade us not to enter" is a double-negative error.`);
+  add('A', 3, `"Who left the freezer door open last night?" the chef asked.`, [`The chef asked who had left the freezer door open the night before.`, `The chef asked who did leave the freezer door open the night before.`, `The chef asked who the freezer door had left open the night before.`, `The chef asked that who had left the freezer door open.`], 0, `TRAP: Here "Who" is the SUBJECT of the question, so the word order is directly "who + had left".`);
+  add('A', 3, `"Who did you invite to the gala?" she asked me.`, [`She asked me who I had invited to the gala.`, `She asked me who had I invited to the gala.`, `She asked me who had invited me to the gala.`, `She asked me who did I invite to the gala.`], 0, `TRAP: Here "Who" is the OBJECT ("you invited who"), so it shifts to statement order: "who + I + had invited".`);
+  add('A', 3, `"When I was crossing the street, I dropped my wallet," he said.`, [`He said that when he was crossing the street, he had dropped his wallet.`, `He said that when he had crossed the street, he was dropping his wallet.`, `He said that when was he crossing the street, he dropped his wallet.`, `He said that while crossing the street, his wallet had dropped.`], 0, `TRAP: The background action in past continuous ("was crossing") stays past continuous while the interrupting short action ("dropped") shifts to past perfect.`);
+  add('A', 3, `"I used to wake up at 5 a.m. when I lived in Tokyo," she said.`, [`She said that she used to wake up at 5 a.m. when she lived in Tokyo.`, `She said that she had used to wake up at 5 a.m. when she had lived in Tokyo.`, `She said that she was used to wake up at 5 a.m. in Tokyo.`, `She said that she used to woke up at 5 a.m. in Tokyo.`], 0, `TRAP: Marginal modal "used to + V1" does NOT backshift to "had used to".`);
+  add('A', 3, `"You had better apologize before she gets angry," my brother said.`, [`My brother said that I had better apologize before she got angry.`, `My brother said that I had had better apologize before she had got angry.`, `My brother said that I would better apologize before she got angry.`, `My brother advised me that I had better to apologize.`], 0, `TRAP: "had better + bare infinitive" stays unchanged ("had better apologize"); only the subordinate present verb "gets" shifts to "got".`);
+  add('A', 3, `He has just told the press, "I will not step down next month."`, [`He has just told the press that he will not step down next month.`, `He has just told the press that he would not step down the following month.`, `He just told the press that he will not step down the following month.`, `He has just told to the press that he won't step down.`], 0, `TRAP: The reporting verb "has just told" is in the Present Perfect, so neither the tense ("will") nor time expression ("next month") needs to backshift.`);
+  add('A', 3, `"Where is the passport office, and what time does it close?" the tourist asked.`, [`The tourist asked where the passport office was and what time it closed.`, `The tourist asked where was the passport office and what time did it close.`, `The tourist asked where the passport office was and what time did it close.`, `The tourist asked if where the passport office was and when it closed.`], 0, `TRAP: In compound questions, BOTH clauses must switch to statement word order ("where it was" AND "what time it closed").`);
+  add('A', 3, `"What a breathtaking view this is!" Clara exclaimed.`, [`Clara exclaimed that it was a breathtaking view.`, `Clara exclaimed what a breathtaking view was that.`, `Clara asked what a breathtaking view it was.`, `Clara exclaimed that what a breathtaking view it had been.`], 0, `TRAP: Exclamations with "What a + noun!" become statements with "that it was..." (not reported as questions).`);
+  add('A', 3, `"Why don't you apply for the scholarship?" Prof. Miller said to me.`, [`Prof. Miller encouraged me to apply for the scholarship.`, `Prof. Miller asked me why didn't I apply for the scholarship.`, `Prof. Miller suggested me to apply for the scholarship.`, `Prof. Miller advised that I applied to the scholarship.`], 0, `TRAP: "Why don't you...?" functions as advice/encouragement, and "suggest me to apply" is ungrammatical.`);
+  add('A', 3, `"I object to working unpaid overtime," the engineer said.`, [`The engineer said that he objected to working unpaid overtime.`, `The engineer said that he objected to work unpaid overtime.`, `The engineer objected working to unpaid overtime.`, `The engineer said that he had objected to work unpaid overtime.`], 0, `TRAP: In "object to", "to" is a preposition, so it must be followed by "-ing" ("working"), even after backshifting "object" → "objected".`);
 
-  // ---------- TYPE B · True or False ----------
+  // =====================================================
+  // TYPE B · TRUE OR FALSE
+  // =====================================================
   add('B', 1, `She said, "I am happy."\n→ She said that she was happy.`, null, 0, `Correct: "am" → "was".`);
   add('B', 1, `He said, "I am a doctor."\n→ He said that I was a doctor.`, null, 1, `False: "I" must change to "he" → He said that he was a doctor.`);
   add('B', 1, `They said, "We are late."\n→ They said that they were late.`, null, 0, `Correct: "we are" → "they were".`);
@@ -618,6 +1018,7 @@
   add('B', 2, `He said, "I will see you tomorrow."\n→ He said that he will see me the next day.`, null, 1, `False: "will" must change to "would".`);
   add('B', 2, `She asked, "Can you help me?"\n→ She asked if I could help her.`, null, 0, `Correct: "can" → "could", "me" → "her".`);
 
+  // Type B · Hard (7 existing + 20 new tricky questions)
   add('B', 3, `He said, "Let's go to the beach."\n→ He suggested going to the beach.`, null, 0, `Correct: suggest + verb-ing.`);
   add('B', 3, `She said, "I didn't do it."\n→ She denied to do it.`, null, 1, `False: "deny" takes verb-ing → She denied doing it.`);
   add('B', 3, `"You should rest," the doctor said.\n→ The doctor advised me to rest.`, null, 0, `Correct: advise + object + to + verb.`);
@@ -625,8 +1026,31 @@
   add('B', 3, `He said, "Shall I carry your bag?"\n→ He offered carrying my bag.`, null, 1, `False: "offer" takes "to + verb" → He offered to carry my bag.`);
   add('B', 3, `She said, "I'm sorry I'm late."\n→ She apologized for being late.`, null, 0, `Correct: apologize for + verb-ing.`);
   add('B', 3, `The guide said, "The sun rises in the east."\n→ The guide said that the sun rises in the east.`, null, 0, `Correct: general truths can stay in the present tense.`);
+  // 20 NEW TRICKY HARD QUESTIONS FOR TYPE B
+  add('B', 3, `He said, "If I were rich, I would buy a yacht."\n→ He said that if he had been rich, he would have bought a yacht.`, null, 1, `False! TRAP: Second Conditional ("If I were..., I would...") stays Second Conditional in reported speech; changing it to Third Conditional alters the meaning to the past.`);
+  add('B', 3, `She said, "I suggest you see a specialist."\n→ She suggested me to see a specialist.`, null, 1, `False! TRAP: "suggest" NEVER takes "object + to-infinitive". Use "She suggested that I (should) see..." or "She suggested seeing...".`);
+  add('B', 3, `He said, "I'll help you tomorrow."\n→ He promised me to help me the next day.`, null, 0, `Correct! Unlike "suggest" or "explain", "promise" CAN take an indirect object + to-infinitive ("promised me to help" / "promised to help me").`);
+  add('B', 3, `She said, "Let me explain the rules to you."\n→ She explained me the rules.`, null, 1, `False! TRAP: "explain" always requires the preposition "to" before the person → "She explained the rules TO me."`);
+  add('B', 3, `"You must not tell anyone," he said.\n→ He said that I didn't have to tell anyone.`, null, 1, `False! TRAP: "must not" expresses prohibition, whereas "didn't have to" means "not necessary". It should remain "must not" or become "wasn't to".`);
+  add('B', 3, `"She must have missed the train," he said.\n→ He said that she must have missed the train.`, null, 0, `Correct! Modal perfect of deduction ("must have + V3") remains unchanged in reported speech.`);
+  add('B', 3, `"I wish I lived closer to the office," Mia said.\n→ Mia said she wished she had lived closer to the office.`, null, 1, `False! TRAP: After "wish", a past tense referring to the present ("lived") does NOT backshift to "had lived".`);
+  add('B', 3, `"Don't park in front of the gate," the guard told me.\n→ The guard forbade me not to park in front of the gate.`, null, 1, `False! TRAP: "forbade" is already negative; adding "not to" creates an incorrect double negative. Correct: "forbade me to park".`);
+  add('B', 3, `"Yes, I leaked the document," the manager said.\n→ The manager admitted to leaking the document.`, null, 0, `Correct! Both "admitted leaking" and "admitted to leaking" (where "to" is a preposition) are grammatically correct.`);
+  add('B', 3, `"I didn't cheat on the exam," Tom said.\n→ Tom denied not cheating on the exam.`, null, 1, `False! TRAP: "denied not cheating" is a double negative that means he DID cheat! It should be "Tom denied cheating".`);
+  add('B', 3, `"Who called you at midnight?" she asked.\n→ She asked who had called me at midnight.`, null, 0, `Correct! "Who" is the subject here, followed directly by past perfect "had called".`);
+  add('B', 3, `"I would rather you paid in cash," the shopkeeper said.\n→ The shopkeeper said he would rather I paid in cash.`, null, 0, `Correct! Unreal past "paid" after "would rather" stays "paid" when reporting a general/present preference.`);
+  add('B', 3, `"I'll call the police if you don't leave!" she said to the stranger.\n→ She threatened the stranger to call the police if he didn't leave.`, null, 1, `False! TRAP: In standard grammar, "threaten" does not take "object + to-infinitive"; it is "She threatened to call the police...".`);
+  add('B', 3, `"Congratulations on winning the gold medal!" Coach said to her.\n→ Coach congratulated her on winning the gold medal.`, null, 0, `Correct! The idiomatic preposition is "congratulate someone ON + verb-ing".`);
+  add('B', 3, `"It's time the children went to bed," Mother said.\n→ Mother said that it was time the children had gone to bed.`, null, 1, `False! TRAP: The subjunctive past "went" after "It's time..." never backshifts to "had gone".`);
+  add('B', 3, `"I used to play the violin," he said.\n→ He said that he had used to play the violin.`, null, 1, `False! TRAP: "used to" never takes "had" in reported speech; it stays "he used to play".`);
+  add('B', 3, `"Where did you buy this jacket?" he asked.\n→ He wanted to know where had I bought that jacket.`, null, 1, `False! TRAP: Auxiliary inversion ("had I bought") is wrong in embedded questions; it must be "where I had bought".`);
+  add('B', 3, `"If you heat ice, it melts," the teacher said.\n→ The teacher said that if you heat ice, it melts.`, null, 0, `Correct! Zero Conditional expressing a physical law remains in the present simple.`);
+  add('B', 3, `"Why don't we take a taxi?" she said.\n→ She suggested that we should take a taxi.`, null, 0, `Correct! "suggest + that + subject + (should) + base verb" is a valid formal structure.`);
+  add('B', 3, `"You broke the printer!" he said to me.\n→ He blamed me on breaking the printer.`, null, 1, `False! TRAP: It is "blame someone FOR something" OR "blame something ON someone" — never "blame someone on doing".`);
 
-  // ---------- TYPE C · Fill in the Blank ----------
+  // =====================================================
+  // TYPE C · FILL IN THE BLANK
+  // =====================================================
   add('C', 1, `She said, "I am cold."\n→ She said that she ___ cold.`, null, ['was'], `"am" → "was".`);
   add('C', 1, `He said, "I have a dog."\n→ He said that he ___ a dog.`, null, ['had'], `"have" → "had".`);
   add('C', 1, `They said, "We can come."\n→ They said that they ___ come.`, null, ['could'], `"can" → "could".`);
@@ -643,6 +1067,7 @@
   add('C', 2, `He said, "I saw her yesterday."\n→ He said that he had seen her the ___.`, null, ['day before', 'previous day'], `"yesterday" → "the day before / the previous day".`);
   add('C', 2, `She asked, "Where do you work?"\n→ She asked where I ___.`, null, ['worked'], `Statement order, and "do you work" → "I worked".`);
 
+  // Type C · Hard (7 existing + 20 new tricky questions)
   add('C', 3, `He said, "I'm sorry I lied."\n→ He apologized for ___.`, null, ['lying', 'having lied'], `apologize for + verb-ing.`);
   add('C', 3, `"Let's eat out," she said.\n→ She suggested ___ out.`, null, ['eating'], `suggest + verb-ing.`);
   add('C', 3, `"I didn't break it," he said.\n→ He denied ___ it.`, null, ['breaking', 'having broken'], `deny + verb-ing.`);
@@ -650,8 +1075,31 @@
   add('C', 3, `"I will finish it tomorrow," she said.\n→ She said that she would finish it the ___.`, null, ['next day', 'following day', 'day after'], `"tomorrow" → "the next day / the following day".`);
   add('C', 3, `"Have you ever been to Bali?" he asked.\n→ He asked if I ___ ever been to Bali.`, null, ['had'], `Present perfect "have been" → past perfect "had been".`);
   add('C', 3, `"This book is mine," she said.\n→ She said that ___ book was hers.`, null, ['that'], `"this" → "that".`);
+  // 20 NEW TRICKY HARD QUESTIONS FOR TYPE C
+  add('C', 3, `"You cheated in the tournament!" he said to her.\n→ He accused her ___ cheating in the tournament.`, null, ['of'], `Fixed collocation: "accuse someone OF + verb-ing".`);
+  add('C', 3, `"I'll pay the bill, no matter what," she said.\n→ She insisted ___ paying the bill.`, null, ['on', 'upon'], `Fixed collocation: "insist ON + verb-ing".`);
+  add('C', 3, `"If I knew the answer, I would tell you," he said.\n→ He said that if he ___ the answer, he would tell me.`, null, ['knew'], `TRAP: Type 2 Conditional ("knew") does NOT backshift to "had known".`);
+  add('C', 3, `"I wish I had a faster laptop," Leo said.\n→ Leo said he wished he ___ a faster laptop.`, null, ['had'], `TRAP: Unreal past "had" after "wish" stays "had" (not "had had").`);
+  add('C', 3, `"It's high time you found a job," my father said.\n→ My father said it was high time I ___ a job.`, null, ['found'], `TRAP: After "It's high time + subject", the past simple "found" does NOT backshift to "had found".`);
+  add('C', 3, `"Yes, I took the company car without permission," he said.\n→ He confessed to ___ the company car without permission.`, null, ['taking', 'having taken'], `TRAP: In "confess to", "to" is a preposition, so it requires the gerund "taking"!`);
+  add('C', 3, `"Well done on passing your driving test!" she said to me.\n→ She congratulated me ___ passing my driving test.`, null, ['on', 'upon'], `Fixed collocation: "congratulate someone ON + verb-ing".`);
+  add('C', 3, `"Don't swim near the rocks," the lifeguard told us.\n→ The lifeguard warned us ___ swimming near the rocks.`, null, ['against'], `When followed by a gerund ("swimming"), use the preposition "warn someone AGAINST + verb-ing".`);
+  add('C', 3, `"Do not use calculators during the test," the proctor said.\n→ The proctor forbade us ___ calculators during the test.`, null, ['to use', 'from using'], `"forbid someone TO use" (or "FROM using") — never "not to use".`);
+  add('C', 3, `"I'd rather you didn't smoke inside," she said to him.\n→ She said she'd rather he ___ smoke inside.`, null, ["didn't", 'did not'], `TRAP: Past simple after "would rather" stays "didn't" (not "hadn't").`);
+  add('C', 3, `"The streets are wet; it must have rained," he said.\n→ He said the streets were wet and it ___ have rained.`, null, ['must'], `TRAP: Modal of logical deduction "must have rained" stays "must".`);
+  add('C', 3, `"You had better lock the back door," Mom said.\n→ Mom said that I ___ better lock the back door.`, null, ['had'], `TRAP: "had better" remains "had better" (never "had had better").`);
+  add('C', 3, `"I used to live in Surabaya," Pak Budi said.\n→ Pak Budi said that he ___ to live in Surabaya.`, null, ['used'], `TRAP: "used to" stays "used to" in reported speech.`);
+  add('C', 3, `"Why don't we hire a designer?" the director said.\n→ The director suggested that we ___ a designer.`, null, ['hire', 'should hire', 'hired'], `Subjunctive/modal structure after "suggest that we...": "hire" or "should hire".`);
+  add('C', 3, `"Don't forget to send the invoice," my boss told me.\n→ My boss reminded me ___ send the invoice.`, null, ['to'], `"remind someone TO + base verb".`);
+  add('C', 3, `"It's your fault we missed the flight!" she said to him.\n→ She blamed him ___ missing the flight.`, null, ['for'], `"blame someone FOR + verb-ing".`);
+  add('C', 3, `"Are you going to accept the offer or not?" he asked me.\n→ He asked me ___ I was going to accept the offer or not.`, null, ['whether', 'if'], `With "...or not", "whether" (or "if") introduces the reported question.`);
+  add('C', 3, `"I will never speak to you again," she said.\n→ She refused ___ speak to me again.`, null, ['to'], `"refuse + to-infinitive".`);
+  add('C', 3, `"Who is knocking at the door?" he asked.\n→ He asked who ___ knocking at the door.`, null, ['was'], `"Who" is the subject, so "is knocking" becomes "was knocking".`);
+  add('C', 3, `"I have been waiting here since noon," she said.\n→ She said that she ___ waiting there since noon.`, null, ['had been'], `Present perfect continuous "have been waiting" → past perfect continuous "had been waiting".`);
 
-  // ---------- TYPE D · Error Spotting ----------
+  // =====================================================
+  // TYPE D · ERROR SPOTTING
+  // =====================================================
   add('D', 1, `"I am sick," he said.`, [`He said`, `that`, `he am`, `sick.`], 2, `It should be "he was".`);
   add('D', 1, `"I like music," she said.`, [`She said`, `that I`, `liked`, `music.`], 1, `The pronoun must change: "that she".`);
   add('D', 1, `"We are ready," they said.`, [`They said`, `that`, `they is`, `ready.`], 2, `It should be "they were".`);
@@ -668,6 +1116,7 @@
   add('D', 2, `"I have lost my keys," he said.`, [`He said`, `that he`, `has lost`, `his keys.`], 2, `Present perfect → past perfect: "had lost".`);
   add('D', 2, `"What time is it?" she asked.`, [`She wanted`, `to know`, `what time`, `is it.`], 3, `Statement order + backshift: "it was".`);
 
+  // Type D · Hard (7 existing + 20 new tricky questions)
   add('D', 3, `"Let's watch a movie," he said.`, [`He suggested`, `to watch`, `a movie`, `that night.`], 1, `"suggest" takes verb-ing: "watching".`);
   add('D', 3, `"I didn't take the money," she said.`, [`She denied`, `to take`, `the`, `money.`], 1, `"deny" takes verb-ing: "taking".`);
   add('D', 3, `"You should study more," the teacher said.`, [`The teacher`, `advised`, `me`, `studying more.`], 3, `advise + object + to + verb: "to study more".`);
@@ -675,8 +1124,31 @@
   add('D', 3, `"You must leave now," the guard said.`, [`The guard said`, `that I`, `had to leave`, `now.`], 3, `"now" should change to "then".`);
   add('D', 3, `"The earth goes around the sun," the teacher said.`, [`The teacher said`, `that the earth`, `had gone`, `around the sun.`], 2, `General truths keep the present tense: "goes".`);
   add('D', 3, `"Shall I help you?" he asked.`, [`He`, `offered`, `helping`, `me.`], 2, `offer + to + verb: "to help".`);
+  // 20 NEW TRICKY HARD QUESTIONS FOR TYPE D
+  add('D', 3, `"Why don't you take a break?" she said to me.`, [`She`, `suggested me`, `to take`, `a break.`], 1, `TRAP: Never say "suggested me to...". Use "suggested that I take" or "advised me to take".`);
+  add('D', 3, `"Let me explain the issue to you," he said.`, [`He`, `explained me`, `the issue`, `patiently.`], 1, `TRAP: "explain" cannot take an indirect object without "to" → "explained the issue to me".`);
+  add('D', 3, `"Do not open that folder," the boss told me.`, [`The boss`, `forbade me`, `not to open`, `that folder.`], 2, `TRAP: "forbade" is already negative; "not to open" is a double negative. Use "to open".`);
+  add('D', 3, `"I didn't leak the password," the intern said.`, [`The intern`, `denied`, `not leaking`, `the password.`], 2, `TRAP: "denied not leaking" means he DID leak it! Use "leaking".`);
+  add('D', 3, `"I'll pay for the tickets," Daniel said.`, [`Daniel`, `insisted`, `to pay`, `for the tickets.`], 2, `TRAP: "insist" requires "on + verb-ing" → "on paying".`);
+  add('D', 3, `"You copied my essay!" she said to him.`, [`She`, `accused him`, `for copying`, `her essay.`], 2, `TRAP: The preposition with "accuse" is "OF", not "for" → "of copying".`);
+  add('D', 3, `"Yes, I forged the signature," the suspect said.`, [`The suspect`, `confessed to`, `forge`, `the signature.`], 2, `TRAP: In "confess to", "to" is a preposition, so it must be "forging".`);
+  add('D', 3, `"If I had wings, I would fly," the boy said.`, [`The boy said`, `that if he`, `had had wings,`, `he would fly.`], 2, `TRAP: Second Conditional "had wings" does NOT backshift to "had had wings".`);
+  add('D', 3, `"I wish I spoke Spanish fluently," Ana said.`, [`Ana said`, `she wished`, `she had spoken`, `Spanish fluently.`], 2, `TRAP: After "wish", unreal present "spoke" stays "spoke" (not "had spoken").`);
+  add('D', 3, `"It's high time we upgraded our server," the CTO said.`, [`The CTO said`, `it was high time`, `they had upgraded`, `their server.`], 2, `TRAP: After "It's high time", the past simple "upgraded" never backshifts to "had upgraded".`);
+  add('D', 3, `"I'd rather you stayed home tonight," Mom said.`, [`Mom said`, `she'd rather`, `I had stayed`, `home that night.`], 2, `TRAP: After "would rather", the past simple "stayed" stays "stayed" for present/future preference.`);
+  add('D', 3, `"You mustn't feed the animals," the keeper told us.`, [`The keeper told us`, `that we`, `didn't have to`, `feed the animals.`], 2, `TRAP: "mustn't" (prohibition) cannot become "didn't have to" (lack of necessity); keep "mustn't" or "weren't to".`);
+  add('D', 3, `"I used to smoke," my uncle said.`, [`My uncle said`, `that he`, `had used to`, `smoke.`], 2, `TRAP: "used to" never takes "had"; it remains "used to".`);
+  add('D', 3, `"You had better leave early," she told me.`, [`She told me`, `that I`, `had had better`, `leave early.`], 2, `TRAP: Idiom "had better" stays "had better" (never "had had better").`);
+  add('D', 3, `"Where is the exit, and how do I get there?" he asked.`, [`He asked where`, `the exit was`, `and how did he`, `get there.`], 2, `TRAP: The second question clause still has inverted question order ("did he"); it should be "and how he got".`);
+  add('D', 3, `"I will sue you if you breach the contract," he told me.`, [`He threatened`, `me`, `to sue me`, `if I breached it.`], 1, `TRAP: "threaten" does not take a personal object before "to-infinitive" → "He threatened to sue me...".`);
+  add('D', 3, `"Congratulations on getting promoted!" he said to Sara.`, [`He`, `congratulated Sara`, `for getting`, `promoted.`], 2, `TRAP: Standard grammar uses "congratulate someone ON getting", not "for getting".`);
+  add('D', 3, `"I object to paying extra fees," the client said.`, [`The client said`, `he objected`, `to pay`, `extra fees.`], 2, `TRAP: "object to" takes a gerund → "to paying".`);
+  add('D', 3, `"What a terrible mistake I've made!" he said.`, [`He exclaimed`, `what a terrible`, `mistake had he`, `made.`], 2, `TRAP: Reported exclamations use statement word order → "mistake he had".`);
+  add('D', 3, `She has just said, "I am flying to Rome tomorrow."`, [`She has just said`, `that she`, `was flying to Rome`, `the next day.`], 2, `TRAP: Because the reporting verb "has just said" is present perfect, the tense and "tomorrow" should not backshift.`);
 
-  // ---------- TYPE E · Word & Tense Changes ----------
+  // =====================================================
+  // TYPE E · WORD & TENSE CHANGES
+  // =====================================================
   add('E', 1, `In reported speech, "am / is" usually becomes…`, [`was`, `were`, `been`, `be`], 0, `Present "am/is" → past "was".`);
   add('E', 1, `"will" usually becomes…`, [`would`, `will`, `could`, `shall`], 0, `"will" → "would".`);
   add('E', 1, `"can" usually becomes…`, [`could`, `can`, `might`, `would`], 0, `"can" → "could".`);
@@ -694,6 +1166,7 @@
   add('E', 2, `"these" becomes…`, [`those`, `this`, `that`, `them`], 0, `"these" → "those".`);
   add('E', 2, `"may" (possibility) becomes…`, [`might`, `must`, `would`, `may have`], 0, `"may" → "might".`);
 
+  // Type E · Hard (8 existing + 20 new tricky questions)
   add('E', 3, `"next week" becomes…`, [`the following week`, `the previous week`, `that week`, `last week`], 0, `"next week" → "the following week".`);
   add('E', 3, `"last month" becomes…`, [`the previous month`, `the following month`, `that month`, `next month`], 0, `"last month" → "the previous month / the month before".`);
   add('E', 3, `"must" (obligation) usually becomes…`, [`had to`, `must have`, `should`, `would`], 0, `"must" (obligation) → "had to".`);
@@ -702,8 +1175,31 @@
   add('E', 3, `Which of these does NOT change in reported speech?`, [`might`, `will`, `can`, `may`], 0, `"might" stays "might"; the others move back.`);
   add('E', 3, `When the reporting verb is present ("She says…"), the tense…`, [`stays the same`, `moves one step back`, `becomes past perfect`, `becomes future`], 0, `No backshift after a present reporting verb.`);
   add('E', 3, `"Let's…" is usually reported with…`, [`suggest + verb-ing`, `tell + to + verb`, `ask + if`, `say + that + let's`], 0, `e.g. "Let's go" → He suggested going.`);
+  // 20 NEW TRICKY HARD QUESTIONS FOR TYPE E
+  add('E', 3, `When "must" expresses logical deduction ("He must be rich"), how does it change?`, [`must be (stays unchanged)`, `had to be`, `would have to be`, `might be`], 0, `TRAP: Only "must" for obligation changes to "had to". "Must" for deduction stays "must".`);
+  add('E', 3, `How does "mustn't" (prohibition: "You mustn't smoke") change in reported speech?`, [`mustn't / wasn't to`, `didn't have to`, `needn't have`, `wouldn't have to`], 0, `TRAP: Never change "mustn't" to "didn't have to" (which means "not necessary").`);
+  add('E', 3, `In Second Conditional ("If I knew, I would tell"), how do the verbs change after "He said…"?`, [`knew / would tell (no change)`, `had known / would have told`, `know / will tell`, `knew / will have told`], 0, `TRAP: Unreal Second Conditional does NOT backshift to Third Conditional.`);
+  add('E', 3, `How does "used to + V1" ("I used to swim") change in reported speech?`, [`used to swim (no change)`, `had used to swim`, `was used to swimming`, `would used to swim`], 0, `TRAP: "used to" has no past perfect form and remains unchanged.`);
+  add('E', 3, `How does "had better + V1" ("You had better go") change in reported speech?`, [`had better go (no change)`, `had had better go`, `would better go`, `should better have gone`], 0, `TRAP: "had better" is a fixed modal idiom and does not backshift.`);
+  add('E', 3, `After "I wish…" or "If only…", how does the unreal past simple ("I wish I had a car") change?`, [`stays past simple ("wished he had")`, `becomes past perfect ("wished he had had")`, `becomes "would have"`, `becomes present simple`], 0, `TRAP: Only "wish" shifts to "wished"; the unreal past verb stays past simple.`);
+  add('E', 3, `After "It's high time we left", what happens to the verb "left" in reported speech?`, [`left (stays past simple)`, `had left`, `would leave`, `should have left`], 0, `TRAP: Subjunctive past after "It's (high) time" never shifts to past perfect.`);
+  add('E', 3, `Which reporting verb can NEVER be followed by "object + to-infinitive"?`, [`suggest (✕ suggested me to go)`, `advise (✓ advised me to go)`, `persuade (✓ persuaded me to go)`, `remind (✓ reminded me to go)`], 0, `TRAP: "suggest", "recommend", and "explain" cannot take "person + to + V1".`);
+  add('E', 3, `Which reporting verb takes "to + verb-ing" (where "to" is a preposition)?`, [`confess to / object to`, `refuse to / promise to`, `offer to / agree to`, `threaten to / claim to`], 0, `TRAP: "confess to doing", "object to doing", and "admit to doing" require "-ing" after "to".`);
+  add('E', 3, `When "shall" asks for advice or an offer ("Shall I lock the door?"), it becomes…`, [`should (asked if he should…)`, `would (asked if he would…)`, `had to`, `shall`], 0, `TRAP: While "Shall we go to Paris?" (future prediction) uses "would", "Shall I...?" (offer/advice) shifts to "should".`);
+  add('E', 3, `What is the correct pattern for the verb "accuse"?`, [`accuse + object + of + verb-ing`, `accuse + object + for + verb-ing`, `accuse + object + to + verb`, `accuse + that + clause`], 0, `Always "accuse someone OF doing something".`);
+  add('E', 3, `What is the correct pattern for the verb "forbid"?`, [`forbid + object + to + V1 (affirmative)`, `forbid + object + not to + V1`, `forbid + verb-ing without object`, `forbid + to + object`], 0, `TRAP: Using "not to" after "forbid" creates a double negative.`);
+  add('E', 3, `"the day after tomorrow" changes in reported speech to…`, [`in two days' time / two days later`, `two days before`, `the following day`, `the previous day`], 0, `"the day after tomorrow" → "in two days' time" or "two days later".`);
+  add('E', 3, `"the day before yesterday" changes in reported speech to…`, [`two days before / two days earlier`, `the previous day`, `two days later`, `the day before`], 0, `"the day before yesterday" → "two days before / two days earlier".`);
+  add('E', 3, `How does "needn't" ("You needn't wait") change in reported speech?`, [`didn't have to / needn't`, `mustn't`, `hadn't to`, `wouldn't need`], 0, `"You needn't..." becomes "didn't have to" (or stays "needn't").`);
+  add('E', 3, `How does "ought to" change in reported speech?`, [`ought to (no change)`, `had ought to`, `oughted to`, `would ought to`], 0, `Modal "ought to" has no past form and stays unchanged.`);
+  add('E', 3, `If a statement is reported on the SAME day it was spoken, "today" and "tomorrow"…`, [`remain "today" and "tomorrow"`, `must still change to "that day" and "the next day"`, `change to "yesterday"`, `are deleted`], 0, `TRAP: Time words only shift when the time reference has actually passed!`);
+  add('E', 3, `Which reporting verb ALWAYS requires "to" before a personal object?`, [`explain ("explained it TO me")`, `tell ("told me")`, `promise ("promised me")`, `warn ("warned me")`], 0, `TRAP: "He explained me the problem" is a classic exam error; it must be "He explained the problem to me".`);
+  add('E', 3, `In "I'd rather you went home", how does "went" change in reported speech?`, [`went (stays past simple)`, `had gone`, `would go`, `go`], 0, `TRAP: Unreal past after "would rather + subject" does not backshift to past perfect.`);
+  add('E', 3, `Present Perfect Continuous ("have been studying") changes to…`, [`had been studying`, `was studying`, `had studied`, `would have been studying`], 0, `Present perfect continuous → past perfect continuous ("had been + V-ing").`);
 
-  // ---------- TYPE F · Back to Direct ----------
+  // =====================================================
+  // TYPE F · BACK TO DIRECT
+  // =====================================================
   add('F', 1, `She said that she was tired.`, [`"I am tired."`, `"She is tired."`, `"I was tiring."`, `"You are tired."`], 0, `"she was" → "I am".`);
   add('F', 1, `He said that he liked apples.`, [`"I like apples."`, `"He likes apples."`, `"I liking apples."`, `"I will like apples."`], 0, `"liked" → "like".`);
   add('F', 1, `They said that they could swim.`, [`"We can swim."`, `"They can swim."`, `"We could swum."`, `"You can swim."`], 0, `"could" → "can", "they" → "we".`);
@@ -720,6 +1216,7 @@
   add('F', 2, `She said that she would visit us the next day.`, [`"I will visit you tomorrow."`, `"I visited you yesterday."`, `"She will visit us tomorrow."`, `"I would visit you today."`], 0, `"would" → "will", "the next day" → "tomorrow".`);
   add('F', 2, `He asked what time the train left.`, [`"What time does the train leave?"`, `"What time the train leaves?"`, `"What time did the train left?"`, `"When the train left?"`], 0, `Back to question order with "does".`);
 
+  // Type F · Hard (7 existing + 20 new tricky questions)
   add('F', 3, `He suggested going to the cinema.`, [`"Let's go to the cinema."`, `"I went to the cinema."`, `"You must go to the cinema."`, `"Did you go to the cinema?"`], 0, `"suggested + -ing" often comes from "Let's…".`);
   add('F', 3, `She apologized for being late.`, [`"I'm sorry I'm late."`, `"You are late."`, `"Don't be late."`, `"I will be late."`], 0, `"apologized for…" comes from "I'm sorry…".`);
   add('F', 3, `He denied breaking the window.`, [`"I didn't break the window."`, `"I broke the window."`, `"Break the window."`, `"Who broke the window?"`], 0, `"denied" means he said he did NOT do it.`);
@@ -727,13 +1224,35 @@
   add('F', 3, `He offered to carry my bag.`, [`"Shall I carry your bag?"`, `"Carry my bag."`, `"You carried my bag."`, `"Did you carry the bag?"`], 0, `An offer: "Shall I…?"`);
   add('F', 3, `She said that she had been working there for two years.`, [`"I have been working here for two years."`, `"I was working there two years."`, `"She has worked here two years."`, `"I will work here for two years."`], 0, `"had been working" → "have been working", "there" → "here".`);
   add('F', 3, `He warned me not to touch the wire.`, [`"Don't touch the wire!"`, `"Touch the wire!"`, `"I didn't touch the wire."`, `"Did you touch the wire?"`], 0, `"warned me not to…" → a negative command.`);
+  // 20 NEW TRICKY HARD QUESTIONS FOR TYPE F
+  add('F', 3, `She accused me of deleting the database.`, [`"You deleted the database!"`, `"Did you delete the database?"`, `"I deleted the database."`, `"Don't delete the database!"`], 0, `"accused me of..." comes from a direct accusation ("You did it!").`);
+  add('F', 3, `He confessed to losing the company keys.`, [`"I lost the company keys."`, `"You lost the company keys."`, `"Did I lose the company keys?"`, `"Don't lose the company keys."`], 0, `"confessed to + -ing" means the speaker admitted their own past action.`);
+  add('F', 3, `The principal forbade the students to use phones in class.`, [`"Do not use phones in class."`, `"You didn't use phones in class."`, `"Have you used phones in class?"`, `"We must not use my phone."`], 0, `"forbade ... to use" comes from a negative command ("Do not use...").`);
+  add('F', 3, `She said that if she knew his address, she would visit him.`, [`"If I knew his address, I would visit him."`, `"If I know his address, I will visit him."`, `"If I had known his address, I would have visited him."`, `"If she knew his address, she will visit him."`], 0, `TRAP: Actually both Type 1 and Type 2 can look like this, OR Type 2 stays Type 2 ("If I knew..., I would..."). Notice how "his" stayed "his", matching Type 2!`);
+  add('F', 3, `He said that he wished he hadn't bought that car.`, [`"I wish I hadn't bought this car."`, `"I wish I didn't buy this car."`, `"I didn't wish to buy that car."`, `"I hope I didn't buy this car."`], 0, `"wished he hadn't bought that car" comes from a past regret: "I wish I hadn't bought this car."`);
+  add('F', 3, `She said she'd rather I didn't tell her parents.`, [`"I'd rather you didn't tell my parents."`, `"I'd rather not tell your parents."`, `"You'd rather not tell her parents."`, `"I didn't tell my parents."`], 0, `"she'd rather I didn't... her parents" → "I'd rather you didn't... my parents."`);
+  add('F', 3, `He exclaimed that it was a dreadful storm.`, [`"What a dreadful storm!"`, `"Is it a dreadful storm?"`, `"It was a dreadful storm."`, `"Which dreadful storm is it?"`], 0, `"exclaimed that it was a + adj + noun" comes from "What a + adj + noun!".`);
+  add('F', 3, `She asked me whether I had ever ridden a camel.`, [`"Have you ever ridden a camel?"`, `"Had you ever ridden a camel?"`, `"Did you ever rode a camel?"`, `"Are you ever riding a camel?"`], 0, `"whether I had ever ridden" reconstructs to Present Perfect "Have you ever ridden...?".`);
+  add('F', 3, `He asked who had left the muddy footprints in the hall.`, [`"Who left the muddy footprints in the hall?"`, `"Who did leave the muddy footprints in the hall?"`, `"Whom did the muddy footprints leave?"`, `"Did who leave the footprints?"`], 0, `TRAP: Subject question in past simple takes no "did": "Who left...?".`);
+  add('F', 3, `She reminded me to lock the balcony door before leaving.`, [`"Remember to lock the balcony door before leaving."`, `"I locked the balcony door before leaving."`, `"Did you lock the balcony door?"`, `"Why didn't you lock the balcony door?"`], 0, `"reminded me to..." comes from "Remember to..." or "Don't forget to...".`);
+  add('F', 3, `He congratulated me on winning the scholarship.`, [`"Congratulations on winning the scholarship!"`, `"I won the scholarship!"`, `"You must win the scholarship!"`, `"Will you win the scholarship?"`], 0, `"congratulated me on..." comes from "Congratulations on..." or "Well done on...".`);
+  add('F', 3, `She insisted on driving me to the station.`, [`"I really must drive you to the station; I won't take no for an answer."`, `"You must drive me to the station."`, `"Did I drive you to the station?"`, `"Drive me to the station, please."`], 0, `"insisted on driving me" means the speaker strongly wanted to do the action themselves.`);
+  add('F', 3, `He said that he had to submit the thesis two days later.`, [`"I must submit the thesis the day after tomorrow."`, `"I had to submit the thesis two days ago."`, `"I must submit the thesis yesterday."`, `"I have submitted the thesis tomorrow."`], 0, `TRAP: "had to" ← "must", and "two days later" ← "the day after tomorrow"!`);
+  add('F', 3, `She said that she had met him two days before.`, [`"I met him the day before yesterday."`, `"I meet him two days ago."`, `"I will meet him in two days."`, `"I have met him tomorrow."`], 0, `TRAP: "had met" ← "met", and "two days before" ← "two days ago / the day before yesterday".`);
+  add('F', 3, `The lawyer advised his client not to sign the document.`, [`"If I were you, I wouldn't sign this document."`, `"I won't sign this document."`, `"Why did you sign the document?"`, `"Sign this document immediately."`], 0, `"If I were you, I wouldn't..." is classically reported with "advised ... not to...".`);
+  add('F', 3, `He asked if he should call a doctor.`, [`"Shall I call a doctor?"`, `"Will you call a doctor?"`, `"Did I call a doctor?"`, `"Must you call a doctor?"`], 0, `TRAP: "asked if he should..." comes from "Shall I...?" (asking for instructions/offer).`);
+  add('F', 3, `She said that it was high time they went home.`, [`"It's high time we went home."`, `"It was high time they go home."`, `"It's high time we had gone home."`, `"We went home on time."`], 0, `TRAP: Even in direct speech, "It's high time" already uses the past tense "went"!`);
+  add('F', 3, `He blamed me for losing the match.`, [`"It's your fault that we lost the match!"`, `"It's my fault that we lost the match!"`, `"Did we lose the match?"`, `"We will lose the match."`], 0, `"blamed me for..." means the speaker said it was my fault.`);
+  add('F', 3, `She refused to lend him any more money.`, [`"No, I will not lend you any more money."`, `"Please lend me some more money."`, `"I didn't borrow any money."`, `"Should I lend you money?"`], 0, `"refused to lend him" comes from a strong refusal ("No, I won't lend you...").`);
+  add('F', 3, `He said that the package must have arrived by then.`, [`"The package must have arrived by now."`, `"The package had to arrive now."`, `"The package will arrive then."`, `"Must the package arrive now?"`], 0, `TRAP: "must have arrived" stays "must have arrived", while "by then" comes from "by now"!`);
 
   /* =====================================================
      STATE & HELPERS
      ===================================================== */
   const app = document.getElementById('app');
   let selType = 'A';
-  let selLevel = 1;
+  let selLevel = 3; // Default to Hard (Tricky) so the user immediately sees the new 20+ Hard mode!
+  let selCount = 20; // Default to 20 questions
   let questions = [];
   let current = 0;
   let answers = [];
@@ -758,9 +1277,10 @@
   const setBest = (t, l, v) => {
     try { const b = getBest(t, l); if (b === null || v > b) localStorage.setItem(bestKey(t, l), v); } catch (e) {}
   };
+
   const typeBadge = t => t === 'M'
-    ? 'background: linear-gradient(135deg, #007AFF, #AF52DE, #FF2D55, #FF9500);'
-    : `background: ${TYPES[t].color};`;
+    ? 'background: linear-gradient(135deg, #60A5FA, #A78BFA, #F472B6, #FBBF24); color: #fff;'
+    : `background: ${TYPES[t].tint}; color: ${TYPES[t].color}; border: 1px solid ${TYPES[t].color}30;`;
 
   function getPool(t = selType, l = selLevel) {
     return BANK.filter(q => (t === 'M' || q.t === t) && (l === 0 || q.l === l));
@@ -774,65 +1294,99 @@
   }
 
   /* =====================================================
-     HOME
+     HOME SCREEN
      ===================================================== */
   function goHome() {
     window.scrollTo({ top: 0 });
     const cards = Object.keys(TYPES).map(t => {
-      const count = getPool(t, 0).length;
+      const totalInType = getPool(t, 0).length;
+      const countInLevel = getPool(t, selLevel).length;
       const best = getBest(t, selLevel);
       return `
         <button class="type-card ${t === selType ? 'active' : ''}" onclick="selectType('${t}')">
           <span class="type-letter" style="${typeBadge(t)}">${t === 'M' ? '★' : t}</span>
-          <span>
+          <span style="flex:1">
             <div class="type-name">${t === 'M' ? '' : 'Type ' + t + ' · '}${TYPES[t].name}</div>
             <div class="type-desc">${TYPES[t].desc}</div>
-            <div class="type-meta">${count} questions${best !== null ? ` · Best (${levelName(selLevel)}): <b>${best}</b>` : ''}</div>
+            <div class="type-meta">
+              <span class="meta-pill">${countInLevel} in ${levelName(selLevel)}</span>
+              <span>${totalInType} total</span>
+              ${best !== null ? `<span>· Best: <b>${best}</b></span>` : ''}
+            </div>
           </span>
         </button>`;
     }).join('');
 
-    const segs = LEVELS.map(l => `
+    const levelSegs = LEVELS.map(l => `
       <button class="${l.id === selLevel ? 'active' : ''}" onclick="selectLevel(${l.id})">
         <span class="dot" style="background:${l.color}"></span>${l.name}
       </button>`).join('');
 
-    const n = Math.min(QUIZ_LENGTH, getPool().length);
+    const poolLen = getPool().length;
+    const countSegs = COUNT_OPTIONS.map(c => {
+      const label = c === 0 ? `All (${poolLen})` : `${c} Soal`;
+      return `<button class="${c === selCount ? 'active' : ''}" onclick="selectCount(${c})">${label}</button>`;
+    }).join('');
+
+    const n = selCount === 0 ? poolLen : Math.min(selCount, poolLen);
 
     app.innerHTML = `
       <section class="screen">
         <div class="hero">
-          <h1>Reported Speech Quiz</h1>
-          <p>Practise direct and indirect speech with ${Object.keys(TYPES).length - 1} question types and 3 difficulty levels. Pick a type, choose a level, and start.</p>
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            <span>Cupertino Grammar Studio · ${BANK.length} Curated Questions</span>
+          </div>
+          <h1>Reported Speech Mastery</h1>
+          <p>Practice Direct &amp; Indirect Speech across 6 interactive formats — now featuring 20+ deceptive Hard exam traps in every category.</p>
         </div>
 
-        <div class="section-label">1 · Choose a question type</div>
+        <div class="section-label">
+          <span>1 · Choose Question Type</span>
+          <span>Showing counts for ${levelName(selLevel)}</span>
+        </div>
         <div class="type-grid">${cards}</div>
 
-        <div class="section-label">2 · Choose a difficulty</div>
-        <div class="card setup">
-          <div class="segmented">${segs}</div>
-          <button class="primary-btn" ${n === 0 ? 'disabled' : ''} onclick="startQuiz()">Start Quiz · ${n} questions</button>
+        <div class="section-label"><span>2 · Difficulty &amp; Session Length</span></div>
+        <div class="card setup-card">
+          <div class="setup-row">
+            <div class="control-group">
+              <span class="control-title">Difficulty Level</span>
+              <div class="segmented">${levelSegs}</div>
+            </div>
+            <div class="control-group">
+              <span class="control-title">Number of Questions</span>
+              <div class="segmented">${countSegs}</div>
+            </div>
+          </div>
+          <div class="setup-row" style="padding-top: 6px; border-top: 1px solid var(--hairline);">
+            <div style="font-size: 13.5px; color: var(--secondary);">
+              Selected: <strong style="color: var(--text)">${selType === 'M' ? 'Mixed Challenge' : 'Type ' + selType + ' (' + TYPES[selType].name + ')'}</strong> · <strong style="color: var(--text)">${levelName(selLevel)}</strong>
+            </div>
+            <button class="primary-btn" ${n === 0 ? 'disabled' : ''} onclick="startQuiz()">Start Quiz · ${n} Questions →</button>
+          </div>
         </div>
 
         <div class="info-row">
-          <div class="info"><strong>Easy</strong>Basic tense and pronoun changes.</div>
-          <div class="info"><strong>Medium</strong>Questions, commands, time words.</div>
-          <div class="info"><strong>Hard</strong>Reporting verbs, modals, exceptions.</div>
+          <div class="info"><strong><span class="dot" style="background:#2EB872"></span>Easy Mode</strong>Foundational tense backshifts and personal pronoun changes.</div>
+          <div class="info"><strong><span class="dot" style="background:#F59E0B"></span>Medium Mode</strong>Wh- &amp; Yes/No questions, imperatives, and time/place shifts.</div>
+          <div class="info"><strong><span class="dot" style="background:#E5484D"></span>Hard (Tricky Traps)</strong>Conditionals, wish/would rather, modals of deduction, gerund vs. infinitive verbs &amp; exceptions.</div>
         </div>
       </section>`;
   }
 
   function selectType(t) { selType = t; goHome(); }
   function selectLevel(l) { selLevel = l; goHome(); }
+  function selectCount(c) { selCount = c; goHome(); }
 
   /* =====================================================
-     QUIZ
+     QUIZ SCREEN
      ===================================================== */
   function startQuiz(customList) {
     const source = customList || getPool();
     if (!customList) lastPool = source;
-    questions = shuffle(source).slice(0, QUIZ_LENGTH).map(prepare);
+    const limit = customList ? customList.length : (selCount === 0 ? source.length : Math.min(selCount, source.length));
+    questions = shuffle(source).slice(0, limit).map(prepare);
     current = 0;
     answers = [];
     renderQuestion();
@@ -856,7 +1410,7 @@
           <button class="primary-btn" id="check-btn" onclick="checkFill()">Check</button>
         </div>`;
     } else {
-      const reported = q.t === 'D' ? `<div class="reported"><span>Reported</span>${esc(q.o.join(' '))}</div>` : '';
+      const reported = q.t === 'D' ? `<div class="reported"><span>Full Reported Sentence</span>${esc(q.o.join(' '))}</div>` : '';
       body = reported + `<div class="options">${q.o.map((o, i) => `<button class="option" onclick="choose(${i})">${esc(o)}</button>`).join('')}</div>`;
     }
 
@@ -864,20 +1418,20 @@
       <section class="screen">
         <div class="card quiz-card">
           <div class="quiz-head">
-            <span class="chip"><span class="dot" style="${typeBadge(q.t)}"></span>Type ${q.t} · ${T.name}</span>
+            <span class="chip"><span class="dot" style="background:${T.color}"></span>Type ${q.t} · ${T.name}</span>
             <span class="chip"><span class="dot" style="background:${LEVELS.find(l => l.id === q.l).color}"></span>${levelName(q.l)}</span>
           </div>
           <div class="quiz-head">
             <span class="progress-text">Question ${current + 1} of ${questions.length}</span>
-            <button class="pill-btn" onclick="goHome()">Quit</button>
+            <button class="pill-btn" onclick="goHome()">✕ Quit</button>
           </div>
           <div class="track"><div class="fill" id="fill-bar" style="width:${pct}%"></div></div>
           <div class="instruction">${T.instr}</div>
           <h2 class="question">${questionHtml}</h2>
           ${body}
           <div id="feedback"></div>
-          <button class="primary-btn block hidden" id="next-btn" onclick="nextQuestion()">${current === questions.length - 1 ? 'See Results' : 'Next Question'}</button>
-          <div class="hint">${q.t === 'C' ? 'Press <kbd>Enter</kbd> to check' : 'Use <kbd>1</kbd>–<kbd>4</kbd> or <kbd>A</kbd>–<kbd>D</kbd> to answer'} · <kbd>Enter</kbd> for next</div>
+          <button class="primary-btn block hidden" id="next-btn" onclick="nextQuestion()">${current === questions.length - 1 ? 'See Final Score →' : 'Next Question →'}</button>
+          <div class="hint">${q.t === 'C' ? 'Press <kbd>Enter</kbd> to check' : 'Shortcuts: <kbd>1</kbd>–<kbd>4</kbd> or <kbd>A</kbd>–<kbd>D</kbd>'} · <kbd>Enter</kbd> for next</div>
         </div>
       </section>`;
 
@@ -894,8 +1448,8 @@
     const fb = document.getElementById('feedback');
     fb.innerHTML = `
       <div class="feedback ${correct ? 'ok' : 'bad'}">
-        <b>${correct ? 'Correct!' : 'Not quite'}</b>
-        ${correct ? '' : `Answer: <strong>${esc(correctText)}</strong><br>`}
+        <b>${correct ? '✓ Correct!' : '✕ Watch out for the trap!'}</b>
+        ${correct ? '' : `Correct Answer: <strong>${esc(correctText)}</strong><br>`}
         ${esc(explanation)}
       </div>`;
     document.getElementById('fill-bar').style.width = `${((current + 1) / questions.length) * 100}%`;
@@ -938,7 +1492,7 @@
   }
 
   /* =====================================================
-     RESULTS
+     RESULTS SCREEN
      ===================================================== */
   function showResults() {
     window.scrollTo({ top: 0 });
@@ -946,16 +1500,16 @@
     const score = Math.round((correctCount / answers.length) * 100);
     const wrong = answers.filter(a => !a.correct);
 
-    // Save best score only for full (non-retry) quizzes
-    if (questions.length === Math.min(QUIZ_LENGTH, lastPool.length) && answers.every(a => lastPool.includes(a.q.orig))) {
+    // Save best score
+    if (answers.every(a => lastPool.includes(a.q.orig))) {
       setBest(selType, selLevel, score);
     }
 
     let msg;
-    if (score === 100) msg = 'Perfect! You have mastered this set.';
-    else if (score >= 80) msg = 'Excellent! Just a little more for a perfect score.';
-    else if (score >= 60) msg = 'Good job! Review the tricky ones and try again.';
-    else msg = "Don't give up! Read the explanations below and try again.";
+    if (score === 100) msg = 'Flawless! Not a single grammar trap caught you.';
+    else if (score >= 80) msg = 'Impressive work! You navigated most of the tricky exceptions.';
+    else if (score >= 60) msg = 'Good effort! Review the explanations below to master the traps.';
+    else msg = 'Tricky set! Read through the explanations below and retry the ones you missed.';
 
     const review = answers.map((a, i) => {
       const correctText = a.q.t === 'C' ? a.q.a.join(' / ') : a.q.o[a.q.a];
@@ -979,7 +1533,7 @@
     app.innerHTML = `
       <section class="screen">
         <div class="card result-card">
-          <h2>Quiz Complete!</h2>
+          <h2>Session Complete!</h2>
           <div class="result-msg">${msg}</div>
           <div class="ring" id="ring" style="--ring-color:${ringColor}">
             <div class="ring-text">
@@ -993,12 +1547,12 @@
             <span class="chip">${selType === 'M' ? 'Mixed' : 'Type ' + selType} · ${levelName(selLevel)}</span>
           </div>
           <div class="result-actions">
-            ${wrong.length ? `<button class="primary-btn" onclick="retryWrong()">Retry Wrong Answers</button>` : ''}
-            <button class="pill-btn" onclick="startQuiz(lastPool)">New Quiz</button>
-            <button class="pill-btn" onclick="goHome()">Home</button>
+            ${wrong.length ? `<button class="primary-btn" onclick="retryWrong()">Retry Wrong Answers (${wrong.length})</button>` : ''}
+            <button class="pill-btn" onclick="startQuiz(lastPool)">New Random Set</button>
+            <button class="pill-btn" onclick="goHome()">Back to Studio</button>
           </div>
           <div class="review">
-            <div class="section-label">Review</div>
+            <div class="section-label"><span>Detailed Answer Review</span></div>
             ${review}
           </div>
         </div>

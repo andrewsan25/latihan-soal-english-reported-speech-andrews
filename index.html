@@ -618,7 +618,7 @@
     { slug: 'matematika', name: 'Matematika', category: 'Sains & STEM', description: 'Aljabar, fungsi kuadrat, trigonometri, matriks, barisan & deret, peluang, dan kalkulus dasar.', icon: '📐', color: '#2563EB', display_order: 5 },
     { slug: 'mandarin', name: 'Mandarin', category: 'Bahasa & Sastra', description: 'Pinyin, perubahan nada (tone sandhi), Hanzi, tata bahasa HSK, partikel le/guo, dan kosakata.', icon: '🏮', color: '#EF4444', display_order: 6 },
     { slug: 'seni-budaya', name: 'Seni Budaya', category: 'Karakter, Seni & Kebugaran', description: 'Seni rupa murni & terapan, teori musik, tari tradisional Nusantara, teater, dan kritik seni.', icon: '🎨', color: '#EC4899', display_order: 7 },
-    { slug: 'biologi', name: 'Biologi', category: 'Sains & STEM', description: 'Biologi sel, metabolisme, genetika & sintesis protein, sistem organ manusia, dan ekologi.', icon: '🧬', color: '#059669', display_order: 8 },
+    { slug: 'biologi', name: 'Biologi', category: 'Sains & STEM', description: '160 Soal SAS Gasal Biologi Kelas X (Ruang Lingkup, Keanekaragaman Hayati, Klasifikasi, Virus, Bakteri) + Tabel & Diagram SVG.', icon: '🧬', color: '#059669', display_order: 8 },
     { slug: 'agama-katolik', name: 'Agama Katolik', category: 'Karakter, Seni & Kebugaran', description: 'Kitab Suci Perjanjian Lama & Baru, Sakramen Gereja, Ajaran Sosial Gereja, liturgi, dan iman.', icon: '✝️', color: '#8B5CF6', display_order: 9 },
     { slug: 'fisika', name: 'Fisika', category: 'Sains & STEM', description: 'Kinematika, dinamika Newton, usaha & energi, fluida, termodinamika, gelombang, dan listrik.', icon: '⚛️', color: '#0EA5E9', display_order: 10 },
     { slug: 'informatika', name: 'Informatika', category: 'Sains & STEM', description: 'Algoritma & pemrograman, struktur data, basis data SQL, jaringan komputer, dan keamanan siber.', icon: '💻', color: '#14B8A6', display_order: 11 },
@@ -629,6 +629,19 @@
     { slug: 'ekonomi', name: 'Ekonomi', category: 'Sosial & Humaniora', description: 'Permintaan & penawaran, elastisitas, pendapatan nasional, inflasi, kebijakan moneter, dan akuntansi.', icon: '📈', color: '#0D9488', display_order: 16 }
   ];
 
+  // Categories for Biologi Kelas X (from table public.biologi_questions)
+  const BIO_TOPICS = {
+    ALL_BIO: { name: 'Semua Topik Biologi X (160 Soal)', desc: 'Campuran 5 bab SAS Gasal Biologi Kelas X (C1–C5 lengkap dengan Tabel & SVG).', color: '#059669', tint: 'rgba(5, 150, 105, 0.14)', slug: null, badge: '160' },
+    T1: { name: '1. Ruang Lingkup & Metode Ilmiah', desc: 'Hierarki kehidupan, cabang biologi, variabel eksperimen, mikroskop, dan K3 laboratorium.', color: '#3B82F6', tint: 'rgba(59, 130, 246, 0.14)', slug: 'ruang-lingkup', badge: 'T1' },
+    T2: { name: '2. Keanekaragaman Hayati & Konservasi', desc: 'Tingkat gen-jenis-ekosistem, garis Wallace-Weber, endemisme, dan konservasi in-situ/ex-situ.', color: '#10B981', tint: 'rgba(16, 185, 129, 0.14)', slug: 'keanekaragaman-hayati', badge: 'T2' },
+    T3: { name: '3. Klasifikasi Makhluk Hidup', desc: 'Binomial nomenclature, kunci determinasi dikotomis, 5 Kingdom, 3 Domain, dan kladogram.', color: '#F59E0B', tint: 'rgba(245, 158, 11, 0.15)', slug: 'klasifikasi', badge: 'T3' },
+    T4: { name: '4. Virus & Peranannya', desc: 'Struktur aseluler, daur litik & lisogenik, aturan Chargaff genom virus, HIV, vaksin, dan prion.', color: '#8B5CF6', tint: 'rgba(139, 92, 246, 0.14)', slug: 'virus', badge: 'T4' },
+    T5: { name: '5. Bakteri (Prokariota / Monera)', desc: 'Pewarnaan Gram, rekombinasi genetik, kurva pertumbuhan, siklus nitrogen, dan resistensi antibiotik.', color: '#EC4899', tint: 'rgba(236, 72, 153, 0.14)', slug: 'bakteri', badge: 'T5' }
+  };
+
+  let bioQuestions = []; // 160 rows from public.biologi_questions
+  let selBioTopic = 'ALL_BIO';
+  let selBioDiff = 'ALL'; // 'ALL' | 'mudah' | 'medium' | 'sulit'
   // Categories for SAS Bahasa Indonesia (from table public.bank_soal_sas)
   const SAS_CATEGORIES = {
     ALL_SAS: { name: 'Semua Soal SAS (HOTS)', desc: 'Campuran Teks LHO, Teks Anekdot, dan Teks Hikayat (Pilihan Ganda A–E berbasis cerita).', color: '#3B82F6', tint: 'rgba(59, 130, 246, 0.14)', filter: null },
@@ -707,10 +720,11 @@
      ===================================================== */
   async function syncFromSupabase() {
     try {
-      const [subRes, qRes, sasRes, attRes] = await Promise.all([
+      const [subRes, qRes, sasRes, bioRes, attRes] = await Promise.all([
         fetch(`${SUPABASE_URL}/rest/v1/subjects?select=*&order=display_order.asc`, { headers: sbHeaders }),
         fetch(`${SUPABASE_URL}/rest/v1/questions?select=*&order=created_at.asc`, { headers: sbHeaders }),
         fetch(`${SUPABASE_URL}/rest/v1/bank_soal_sas?select=*&order=id.asc`, { headers: sbHeaders }),
+        fetch(`${SUPABASE_URL}/rest/v1/biologi_questions?select=*&order=code.asc`, { headers: sbHeaders }),
         fetch(`${SUPABASE_URL}/rest/v1/quiz_attempts?select=*&order=created_at.desc&limit=30`, { headers: sbHeaders })
       ]);
 
@@ -723,12 +737,16 @@
           const sasData = await sasRes.json();
           if (Array.isArray(sasData) && sasData.length > 0) sasQuestions = sasData;
         }
+        if (bioRes.ok) {
+          const bioData = await bioRes.json();
+          if (Array.isArray(bioData) && bioData.length > 0) bioQuestions = bioData;
+        }
         if (attRes.ok) {
           const attData = await attRes.json();
           if (Array.isArray(attData)) recentAttempts = attData;
         }
         isSupabaseLive = true;
-        updateDbBadge(true, `Supabase Live · ${sasQuestions.length} Soal SAS + 16 Mapel`);
+        updateDbBadge(true, `Supabase Live · ${sasQuestions.length} SAS B.Indo + ${bioQuestions.length} Biologi X`);
         if (!quizQuestions.length) {
           if (activeSubjectSlug) renderSubjectSection(activeSubjectSlug);
           else renderAllSubjectsDirectory();
@@ -742,6 +760,8 @@
     try {
       const localRes = await fetch('./data/bank_soal_sas_bahasa_indonesia_100.json');
       if (localRes.ok) sasQuestions = await localRes.json();
+      const localBio = await fetch('./data/bank_soal_biologi_kelas_x.json');
+      if (localBio.ok) bioQuestions = await localBio.json();
     } catch (e) {}
     updateDbBadge(false, `Mode Lokal (${sasQuestions.length} Soal SAS)`);
     if (!quizQuestions.length) {
@@ -775,6 +795,16 @@
     });
   }
 
+  function getFilteredBioQuestions(topicKey = selBioTopic, diffFilter = selBioDiff) {
+    const topObj = BIO_TOPICS[topicKey];
+    if (!topObj) return [];
+    return bioQuestions.filter(q => {
+      const matchTop = !topObj.slug || q.topic_slug === topObj.slug;
+      const matchDiff = diffFilter === 'ALL' || q.difficulty === diffFilter;
+      return matchTop && matchDiff;
+    });
+  }
+
   /* =====================================================
      SCREEN 1: 16 SUBJECTS DIRECTORY
      ===================================================== */
@@ -803,7 +833,11 @@
 
     const cards = filtered.map(s => {
       const baseCount = getSubjectQuestions(s.slug, 'M', 0).length;
-      const qCount = s.slug === 'bahasa-indonesia' ? (sasQuestions.length + baseCount) : baseCount;
+      const qCount = s.slug === 'bahasa-indonesia'
+        ? (sasQuestions.length + baseCount)
+        : s.slug === 'biologi'
+        ? (bioQuestions.length + baseCount)
+        : baseCount;
       const best = getBest(s.slug);
       return `
         <button class="subject-card" onclick="openSubjectSection('${s.slug}')">
@@ -876,6 +910,8 @@
   function selectType(t) { selType = t; renderSubjectSection(activeSubjectSlug); }
   function selectSasCat(k) { selSasCat = k; renderSubjectSection(activeSubjectSlug); }
   function selectSasDiff(d) { selSasDiff = d; renderSubjectSection(activeSubjectSlug); }
+  function selectBioTopic(k) { selBioTopic = k; renderSubjectSection(activeSubjectSlug); }
+  function selectBioDiff(d) { selBioDiff = d; renderSubjectSection(activeSubjectSlug); }
   function selectLevel(l) { selLevel = l; renderSubjectSection(activeSubjectSlug); }
   function selectCount(c) { selCount = c; renderSubjectSection(activeSubjectSlug); }
 
@@ -977,6 +1013,98 @@
                 Kategori Aktif: <strong style="color:var(--text)">${esc(SAS_CATEGORIES[selSasCat].name)}</strong> · <strong style="color:var(--text)">${n} Soal</strong>
               </div>
               <button class="primary-btn" ${n === 0 ? 'disabled' : ''} onclick="startQuiz()">Mulai Latihan SAS (${n} Soal) →</button>
+            </div>
+          </div>
+        </section>`;
+      return;
+    }
+
+    // Special rich SAS Gasal view for Biologi Kelas X (160 Soal)
+    if (slug === 'biologi' && bioQuestions.length > 0) {
+      const totalBio = bioQuestions.length;
+      const bioCards = Object.keys(BIO_TOPICS).map(k => {
+        const top = BIO_TOPICS[k];
+        const count = getFilteredBioQuestions(k, selBioDiff).length;
+        const totalInTop = getFilteredBioQuestions(k, 'ALL').length;
+        return `
+          <button class="type-card ${k === selBioTopic ? 'active' : ''}" onclick="selectBioTopic('${k}')">
+            <span class="type-letter" style="background:${top.tint}; color:${top.color}; border:1px solid ${top.color}30;">${top.badge}</span>
+            <span style="flex:1">
+              <div class="type-name">${esc(top.name)}</div>
+              <div class="type-desc">${esc(top.desc)}</div>
+              <div class="type-meta">
+                <span class="meta-pill">${count} soal cocok</span>
+                <span>${totalInTop} total</span>
+              </div>
+            </span>
+          </button>`;
+      }).join('');
+
+      const bioDiffOptions = [
+        { id: 'ALL', label: 'Semua Level (C1–C5)', color: '#3A7BFF' },
+        { id: 'mudah', label: 'Mudah (C1–C2)', color: '#2EB872' },
+        { id: 'medium', label: 'Medium (C3)', color: '#F59E0B' },
+        { id: 'sulit', label: 'Sulit / HOTS (C4–C5 · Tabel & SVG)', color: '#E5484D' }
+      ];
+
+      const diffSegs = bioDiffOptions.map(d => `
+        <button class="${d.id === selBioDiff ? 'active' : ''}" onclick="selectBioDiff('${d.id}')">
+          <span class="dot" style="background:${d.color}"></span>${d.label}
+        </button>`).join('');
+
+      const poolLen = getFilteredBioQuestions(selBioTopic, selBioDiff).length;
+      const countSegs = COUNT_OPTIONS.map(c => {
+        const label = c === 0 ? `Semua (${poolLen})` : `${c} Soal`;
+        return `<button class="${c === selCount ? 'active' : ''}" onclick="selectCount(${c})">${label}</button>`;
+      }).join('');
+
+      const n = selCount === 0 ? poolLen : Math.min(selCount, poolLen);
+
+      app.innerHTML = `
+        <section class="screen">
+          <div style="margin-bottom: 14px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+            <button class="pill-btn" onclick="goAllSubjects()">← Kembali ke 16 Mata Pelajaran</button>
+            <span class="chip">☁️ Tabel Supabase: public.biologi_questions (${totalBio} Soal Unik)</span>
+          </div>
+
+          <div class="card section-banner" style="border-left: 5px solid ${subj.color};">
+            <div class="section-banner-left">
+              <div class="section-big-icon" style="background:${subj.color}18; color:${subj.color}; border:1px solid ${subj.color}30;">${subj.icon}</div>
+              <div>
+                <div style="font-size:12px; font-weight:650; color:${subj.color}; text-transform:uppercase; letter-spacing:0.06em;">Section Khusus SAS Gasal · ${esc(subj.category)}</div>
+                <h1 style="margin:3px 0 6px; font-size:clamp(1.5rem, 3.2vw, 2.1rem); letter-spacing:-0.03em;">Biologi Kelas X — Bank Soal SAS Gasal (160 Soal)</h1>
+                <p style="margin:0; color:var(--secondary); font-size:14px; max-width:620px;">160 soal terstruktur (30% Mudah C1–C2, 30% Medium C3, 40% Sulit/HOTS C4–C5) lengkap dengan Tabel Eksperimen, Diagram/Kladogram SVG, Hint, dan Pembahasan.</p>
+              </div>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <span class="chip">🧬 ${totalBio} Soal Terverifikasi</span>
+              ${best !== null ? `<span class="chip" style="color:var(--success)">🏆 Skor Terbaik: ${best}/100</span>` : ''}
+            </div>
+          </div>
+
+          <div class="section-label">
+            <span>1 · Pilih Topik Bab Biologi Kelas X (SAS Gasal)</span>
+            <span>Filter Kesulitan: ${selBioDiff.toUpperCase()}</span>
+          </div>
+          <div class="type-grid">${bioCards}</div>
+
+          <div class="section-label"><span>2 · Tingkat Kesulitan (C1–C5) &amp; Jumlah Soal</span></div>
+          <div class="card setup-card">
+            <div class="setup-row">
+              <div class="control-group">
+                <span class="control-title">Distribusi Kesulitan &amp; Level Kognitif</span>
+                <div class="segmented">${diffSegs}</div>
+              </div>
+              <div class="control-group">
+                <span class="control-title">Jumlah Soal Latihan</span>
+                <div class="segmented">${countSegs}</div>
+              </div>
+            </div>
+            <div class="setup-row" style="padding-top: 10px; border-top: 1px solid var(--hairline);">
+              <div style="font-size: 13.5px; color: var(--secondary);">
+                Topik Aktif: <strong style="color:var(--text)">${esc(BIO_TOPICS[selBioTopic].name)}</strong> · <strong style="color:var(--text)">${n} Soal</strong>
+              </div>
+              <button class="primary-btn" ${n === 0 ? 'disabled' : ''} onclick="startQuiz()">Mulai Latihan Biologi X (${n} Soal) →</button>
             </div>
           </div>
         </section>`;
@@ -1090,7 +1218,33 @@
     };
   }
 
+  function convertBioRowToPlayable(row) {
+    const optsArr = Array.isArray(row.options) ? row.options : [];
+    const keys = optsArr.map(o => o.key);
+    const texts = optsArr.map(o => o.text);
+    const correctIdx = Math.max(0, keys.indexOf(row.correct_answer));
+    return {
+      isBio: true,
+      bioCode: row.code,
+      subject_slug: 'biologi',
+      question_type: 'A',
+      topic: row.topic_name,
+      difficulty_label: `${row.difficulty.toUpperCase()} (${row.cognitive_level})`,
+      stimulus_type: row.stimulus_type || 'none',
+      stimulus_content: row.stimulus_content,
+      prompt: row.question_text,
+      hint: row.hint,
+      o: texts,
+      a: correctIdx,
+      explanation: row.explanation,
+      orig: row
+    };
+  }
+
   function prepareQuestion(q) {
+    if (q.code && q.question_text && Array.isArray(q.options)) {
+      return convertBioRowToPlayable(q);
+    }
     if (q.stimulus && q.opsi && q.kunci_jawaban) {
       return convertSasRowToPlayable(q);
     }
@@ -1114,6 +1268,8 @@
       pool = customList;
     } else if (activeSubjectSlug === 'bahasa-indonesia' && selSasCat !== 'KAIDAH') {
       pool = getFilteredSasQuestions(selSasCat, selSasDiff);
+    } else if (activeSubjectSlug === 'biologi' && bioQuestions.length > 0) {
+      pool = getFilteredBioQuestions(selBioTopic, selBioDiff);
     } else {
       pool = getSubjectQuestions(activeSubjectSlug, selType, selLevel);
     }
@@ -1134,14 +1290,33 @@
     const T = TYPES[q.question_type] || TYPES.A;
     const pct = (current / quizQuestions.length) * 100;
 
-    const stimulusHtml = q.stimulus
-      ? `<div class="stimulus-box">
+    let stimulusHtml = '';
+    if (q.stimulus) {
+      stimulusHtml = `<div class="stimulus-box">
            <div class="stimulus-label">
              <span>📄 Stimulus Bacaan · ${esc(q.topic || 'SAS Bahasa Indonesia')}</span>
              <span>${q.sasId ? 'Soal #' + q.sasId : ''}</span>
            </div>
            <div>${esc(q.stimulus)}</div>
-         </div>`
+         </div>`;
+    } else if (q.stimulus_content && q.stimulus_type && q.stimulus_type !== 'none') {
+      const innerStimulus = (q.stimulus_type === 'table' || q.stimulus_type === 'svg')
+        ? q.stimulus_content
+        : esc(q.stimulus_content);
+      stimulusHtml = `<div class="stimulus-box" style="max-height:none;">
+           <div class="stimulus-label">
+             <span>🔬 Stimulus ${q.stimulus_type.toUpperCase()} · ${esc(q.topic || 'Biologi Kelas X')}</span>
+             <span>${q.bioCode ? esc(q.bioCode) : ''}</span>
+           </div>
+           <div>${innerStimulus}</div>
+         </div>`;
+    }
+
+    const hintHtml = q.hint
+      ? `<details style="margin-bottom:14px;padding:10px 14px;border-radius:12px;background:var(--warning-soft);border:1px solid rgba(245,158,11,0.28);font-size:13px;color:var(--text-soft);">
+           <summary style="cursor:pointer;font-weight:650;color:var(--warning);">💡 Lihat Petunjuk (Hint)</summary>
+           <div style="margin-top:6px;">${esc(q.hint)}</div>
+         </details>`
       : '';
 
     let questionHtml = esc(q.prompt);
@@ -1178,8 +1353,9 @@
           </div>
           <div class="track"><div class="fill" id="fill-bar" style="width:${pct}%"></div></div>
           ${stimulusHtml}
-          <div class="instruction">${q.isSas ? 'Pilih satu jawaban yang paling tepat (A, B, C, D, atau E)' : T.instr}</div>
+          <div class="instruction">${(q.isSas || q.isBio) ? 'Pilih satu jawaban yang paling tepat (A, B, C, D, atau E)' : T.instr}</div>
           <h2 class="question">${questionHtml}</h2>
+          ${hintHtml}
           ${body}
           <div id="feedback"></div>
           <button class="primary-btn block hidden" id="next-btn" onclick="nextQuestion()">${current === quizQuestions.length - 1 ? 'Lihat Hasil Akhir →' : 'Soal Berikutnya →'}</button>

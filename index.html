@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nusantara Quiz Studio — 16 Mata Pelajaran (Supabase Cloud)</title>
+<title>Nusantara Quiz Studio — Bank Soal SAS Bahasa Indonesia (100 Soal HOTS) & 16 Mapel</title>
 <style>
   /* =========================================================
      SOFT APPLE DESIGN SYSTEM (macOS Sequoia & iOS 18 Pastel)
@@ -14,14 +14,15 @@
     --bg-gradient-2: rgba(196, 181, 253, 0.24);
     --bg-gradient-3: rgba(253, 186, 140, 0.16);
 
-    --card: rgba(255, 255, 255, 0.80);
-    --card-border: rgba(255, 255, 255, 0.88);
-    --surface: rgba(255, 255, 255, 0.94);
+    --card: rgba(255, 255, 255, 0.82);
+    --card-border: rgba(255, 255, 255, 0.90);
+    --surface: rgba(255, 255, 255, 0.95);
     --surface-hover: #FFFFFF;
     --grouped: rgba(235, 237, 245, 0.88);
+    --stimulus-bg: rgba(248, 250, 255, 0.92);
 
     --text: #1D1D1F;
-    --text-soft: #424245;
+    --text-soft: #3A3A3C;
     --secondary: #7E7E87;
     --hairline: rgba(60, 60, 67, 0.09);
     --hairline-strong: rgba(60, 60, 67, 0.16);
@@ -50,11 +51,12 @@
     --bg-gradient-2: rgba(139, 92, 246, 0.12);
     --bg-gradient-3: rgba(236, 72, 153, 0.08);
 
-    --card: rgba(24, 26, 34, 0.80);
+    --card: rgba(24, 26, 34, 0.82);
     --card-border: rgba(255, 255, 255, 0.09);
-    --surface: rgba(34, 37, 48, 0.90);
+    --surface: rgba(34, 37, 48, 0.92);
     --surface-hover: rgba(42, 46, 59, 0.98);
     --grouped: rgba(18, 20, 27, 0.92);
+    --stimulus-bg: rgba(20, 23, 32, 0.92);
 
     --text: #F5F5F7;
     --text-soft: #D1D1D6;
@@ -190,10 +192,7 @@
     box-shadow: 0 0 8px rgba(46, 184, 114, 0.6);
   }
 
-  .db-dot.offline {
-    background: #F59E0B;
-    box-shadow: none;
-  }
+  .db-dot.offline { background: #F59E0B; box-shadow: none; }
 
   .pill-btn {
     border: 1px solid var(--hairline);
@@ -231,10 +230,6 @@
     box-shadow: var(--shadow-sm);
     transition: all 0.2s var(--ease);
   }
-  .icon-btn:hover {
-    background: var(--surface-hover);
-    transform: translateY(-1px);
-  }
 
   /* ---------- Layout ---------- */
   main {
@@ -260,11 +255,7 @@
   }
 
   /* ---------- Hero ---------- */
-  .hero {
-    text-align: center;
-    margin: 6px 0 28px;
-  }
-
+  .hero { text-align: center; margin: 6px 0 26px; }
   .hero-badge {
     display: inline-flex;
     align-items: center;
@@ -279,33 +270,26 @@
     color: var(--secondary);
     margin-bottom: 12px;
   }
+  .hero h1 { font-size: clamp(1.85rem, 4.2vw, 2.65rem); font-weight: 760; letter-spacing: -0.034em; margin: 0 0 10px; line-height: 1.12; }
+  .hero p { color: var(--secondary); font-size: 1rem; line-height: 1.55; margin: 0 auto; max-width: 640px; }
 
-  .hero h1 {
-    font-size: clamp(1.9rem, 4.4vw, 2.7rem);
-    font-weight: 760;
-    letter-spacing: -0.034em;
-    margin: 0 0 10px;
-    line-height: 1.12;
-  }
-
-  .hero p {
-    color: var(--secondary);
-    font-size: 1rem;
-    line-height: 1.55;
-    margin: 0 auto;
-    max-width: 620px;
-  }
-
-  /* ---------- Filter Bar & Search ---------- */
-  .filter-bar {
+  /* ---------- Featured SAS Bahasa Indonesia Banner ---------- */
+  .sas-hero-card {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
-    margin-bottom: 20px;
+    gap: 18px;
+    padding: 22px 26px;
+    margin-bottom: 24px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.13), rgba(139, 92, 246, 0.13), rgba(236, 72, 153, 0.09));
+    border: 1.5px solid rgba(59, 130, 246, 0.30);
+    box-shadow: var(--shadow-card);
   }
 
+  /* ---------- Filter Bar & Search ---------- */
+  .filter-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
   .search-input {
     padding: 10px 16px;
     border-radius: 999px;
@@ -315,21 +299,10 @@
     font-size: 13.5px;
     min-width: 230px;
     outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-  .search-input:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px var(--primary-soft);
   }
 
   /* ---------- 16 Subject Bento Grid ---------- */
-  .subject-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 14px;
-    margin-bottom: 28px;
-  }
-
+  .subject-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin-bottom: 28px; }
   .subject-card {
     text-align: left;
     display: flex;
@@ -342,119 +315,24 @@
     color: var(--text);
     cursor: pointer;
     box-shadow: var(--shadow-sm);
-    transition: transform 0.22s var(--ease), border-color 0.22s var(--ease), box-shadow 0.22s var(--ease), background 0.22s var(--ease);
+    transition: all 0.22s var(--ease);
   }
-
-  .subject-card:hover {
-    transform: translateY(-3px);
-    background: var(--surface-hover);
-    box-shadow: var(--shadow-hover);
-    border-color: var(--primary);
-  }
-
-  .subject-top {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 12px;
-  }
-
-  .subject-icon {
-    width: 46px;
-    height: 46px;
-    border-radius: 14px;
-    display: grid;
-    place-items: center;
-    font-size: 22px;
-    flex-shrink: 0;
-  }
-
-  .subject-cat {
-    font-size: 11px;
-    font-weight: 650;
-    padding: 4px 10px;
-    border-radius: 999px;
-    background: var(--grouped);
-    color: var(--secondary);
-  }
-
-  .subject-title {
-    font-size: 16.5px;
-    font-weight: 700;
-    margin: 0 0 5px;
-    letter-spacing: -0.02em;
-  }
-
-  .subject-desc {
-    font-size: 12.8px;
-    color: var(--secondary);
-    line-height: 1.45;
-    margin: 0 0 14px;
-  }
-
-  .subject-foot {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 11px;
-    border-top: 1px solid var(--hairline);
-    font-size: 12px;
-    color: var(--secondary);
-    font-weight: 600;
-  }
-
-  .subject-foot b {
-    color: var(--success);
-  }
+  .subject-card:hover { transform: translateY(-3px); background: var(--surface-hover); box-shadow: var(--shadow-hover); border-color: var(--primary); }
+  .subject-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+  .subject-icon { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; font-size: 22px; flex-shrink: 0; }
+  .subject-cat { font-size: 11px; font-weight: 650; padding: 4px 10px; border-radius: 999px; background: var(--grouped); color: var(--secondary); }
+  .subject-title { font-size: 16.5px; font-weight: 700; margin: 0 0 5px; letter-spacing: -0.02em; }
+  .subject-desc { font-size: 12.8px; color: var(--secondary); line-height: 1.45; margin: 0 0 14px; }
+  .subject-foot { display: flex; align-items: center; justify-content: space-between; padding-top: 11px; border-top: 1px solid var(--hairline); font-size: 12px; color: var(--secondary); font-weight: 600; }
+  .subject-foot b { color: var(--success); }
 
   /* ---------- Subject Dedicated Section Hub ---------- */
-  .section-banner {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 18px;
-    margin-bottom: 24px;
-    padding: 26px 28px;
-  }
+  .section-banner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 24px; padding: 26px 28px; }
+  .section-banner-left { display: flex; align-items: center; gap: 18px; }
+  .section-big-icon { width: 64px; height: 64px; border-radius: 20px; display: grid; place-items: center; font-size: 32px; flex-shrink: 0; }
+  .section-label { font-size: 11.5px; font-weight: 650; text-transform: uppercase; letter-spacing: 0.07em; color: var(--secondary); margin: 0 6px 12px; display: flex; align-items: center; justify-content: space-between; }
 
-  .section-banner-left {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-  }
-
-  .section-big-icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 20px;
-    display: grid;
-    place-items: center;
-    font-size: 32px;
-    flex-shrink: 0;
-  }
-
-  .section-label {
-    font-size: 11.5px;
-    font-weight: 650;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    color: var(--secondary);
-    margin: 0 6px 12px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  /* ---------- Type Cards (A-F) inside a Subject Section ---------- */
-  .type-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-
+  .type-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(235px, 1fr)); gap: 12px; margin-bottom: 24px; }
   .type-card {
     text-align: left;
     display: flex;
@@ -469,63 +347,20 @@
     box-shadow: var(--shadow-sm);
     transition: all 0.2s var(--ease);
   }
-
-  .type-card:hover {
-    transform: translateY(-2px);
-    background: var(--surface-hover);
-    box-shadow: var(--shadow-hover);
-  }
-
-  .type-card.active {
-    border-color: var(--primary);
-    background: var(--surface-hover);
-    box-shadow: 0 0 0 4px var(--primary-soft);
-  }
-
-  .type-letter {
-    flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
-    display: grid;
-    place-items: center;
-    font-weight: 700;
-    font-size: 16px;
-  }
-
+  .type-card:hover { transform: translateY(-2px); background: var(--surface-hover); box-shadow: var(--shadow-hover); }
+  .type-card.active { border-color: var(--primary); background: var(--surface-hover); box-shadow: 0 0 0 4px var(--primary-soft); }
+  .type-letter { flex-shrink: 0; width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; font-weight: 700; font-size: 15px; }
   .type-name { font-weight: 650; font-size: 14.5px; margin-bottom: 2px; }
   .type-desc { color: var(--secondary); font-size: 12.5px; line-height: 1.4; }
   .type-meta { margin-top: 8px; font-size: 11.5px; color: var(--secondary); display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
   .meta-pill { padding: 2px 8px; border-radius: 999px; background: var(--grouped); font-weight: 600; color: var(--text-soft); }
 
   /* ---------- Setup Controls ---------- */
-  .setup-card {
-    padding: 22px 26px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .setup-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 14px;
-  }
-
+  .setup-card { padding: 22px 26px; display: flex; flex-direction: column; gap: 16px; }
+  .setup-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; }
   .control-group { display: flex; flex-direction: column; gap: 6px; }
   .control-title { font-size: 11px; font-weight: 650; text-transform: uppercase; letter-spacing: 0.06em; color: var(--secondary); padding-left: 4px; }
-
-  .segmented {
-    display: inline-flex;
-    padding: 4px;
-    border-radius: 999px;
-    background: var(--grouped);
-    border: 1px solid var(--hairline);
-    flex-wrap: wrap;
-  }
-
+  .segmented { display: inline-flex; padding: 4px; border-radius: 999px; background: var(--grouped); border: 1px solid var(--hairline); flex-wrap: wrap; }
   .segmented button {
     border: none;
     background: transparent;
@@ -541,13 +376,7 @@
     transition: all 0.2s var(--ease);
   }
   .segmented button:hover { color: var(--text); }
-  .segmented button.active {
-    background: var(--surface-hover);
-    color: var(--text);
-    font-weight: 650;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  }
-
+  .segmented button.active { background: var(--surface-hover); color: var(--text); font-weight: 650; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); }
   .dot { width: 8px; height: 8px; border-radius: 50%; }
 
   .primary-btn {
@@ -562,24 +391,50 @@
     box-shadow: 0 8px 22px var(--primary-glow);
     transition: transform 0.18s var(--ease), box-shadow 0.2s var(--ease), filter 0.2s;
   }
-  .primary-btn:hover {
-    filter: brightness(1.04);
-    transform: translateY(-1px);
-    box-shadow: 0 12px 26px var(--primary-glow);
-  }
+  .primary-btn:hover { filter: brightness(1.04); transform: translateY(-1px); box-shadow: 0 12px 26px var(--primary-glow); }
   .primary-btn:active { transform: scale(0.97); }
   .primary-btn:disabled { opacity: 0.4; pointer-events: none; }
   .block { display: block; width: 100%; margin-top: 20px; }
 
-  /* ---------- Quiz Player ---------- */
-  .quiz-card { max-width: 660px; margin: 0 auto; }
+  /* ---------- Quiz Player & Stimulus Story Box ---------- */
+  .quiz-card { max-width: 740px; margin: 0 auto; }
   .quiz-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 12px; }
   .chip { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; background: var(--grouped); color: var(--text-soft); }
   .progress-text { font-size: 12px; font-weight: 650; text-transform: uppercase; letter-spacing: 0.06em; color: var(--secondary); }
-  .track { height: 6px; background: var(--grouped); border-radius: 999px; overflow: hidden; margin-bottom: 24px; }
+  .track { height: 6px; background: var(--grouped); border-radius: 999px; overflow: hidden; margin-bottom: 22px; }
   .fill { height: 100%; width: 0; background: linear-gradient(90deg, #3A7BFF, #8B5CF6); border-radius: inherit; transition: width 0.45s var(--ease); }
   .instruction { font-size: 12px; font-weight: 650; text-transform: uppercase; letter-spacing: 0.05em; color: var(--secondary); margin-bottom: 8px; }
-  .question { font-size: 1.25rem; font-weight: 650; line-height: 1.48; letter-spacing: -0.02em; margin: 0 0 22px; white-space: pre-line; }
+
+  /* Apple Reader Style Stimulus Passage Box */
+  .stimulus-box {
+    padding: 18px 22px;
+    margin-bottom: 20px;
+    border-radius: 18px;
+    background: var(--stimulus-bg);
+    border: 1px solid var(--hairline-strong);
+    border-left: 4px solid var(--primary);
+    font-size: 0.96rem;
+    line-height: 1.65;
+    color: var(--text-soft);
+    white-space: pre-line;
+    max-height: 290px;
+    overflow-y: auto;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.02);
+  }
+
+  .stimulus-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--primary);
+    margin-bottom: 8px;
+  }
+
+  .question { font-size: 1.18rem; font-weight: 650; line-height: 1.48; letter-spacing: -0.015em; margin: 0 0 20px; white-space: pre-line; }
   .blank { display: inline-block; min-width: 72px; padding: 0 8px; margin: 0 2px; border-radius: 8px; background: var(--primary-soft); border-bottom: 2px solid var(--primary); color: var(--primary); text-align: center; font-weight: 700; }
   .reported { padding: 14px 18px; border-radius: 16px; background: var(--grouped); border: 1px solid var(--hairline); font-size: 0.98rem; line-height: 1.5; margin: -6px 0 20px; }
   .reported span { color: var(--secondary); font-size: 11px; font-weight: 650; display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
@@ -587,17 +442,17 @@
   .options { counter-reset: opt; }
   .option {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 14px;
     width: 100%;
-    padding: 15px 18px;
+    padding: 14px 18px;
     margin-bottom: 10px;
     border: 1.5px solid var(--hairline);
     border-radius: 16px;
     background: var(--surface);
     color: var(--text);
-    font-size: 0.96rem;
-    line-height: 1.42;
+    font-size: 0.95rem;
+    line-height: 1.45;
     text-align: left;
     cursor: pointer;
     box-shadow: var(--shadow-sm);
@@ -607,13 +462,14 @@
     counter-increment: opt;
     content: counter(opt, upper-alpha);
     flex-shrink: 0;
-    width: 30px;
-    height: 30px;
-    border-radius: 10px;
+    width: 28px;
+    height: 28px;
+    margin-top: 1px;
+    border-radius: 9px;
     display: grid;
     place-items: center;
-    font-size: 0.8rem;
-    font-weight: 650;
+    font-size: 0.78rem;
+    font-weight: 700;
     color: var(--secondary);
     background: var(--grouped);
     transition: all 0.2s var(--ease);
@@ -648,7 +504,7 @@
     padding: 16px 18px;
     border-radius: 18px;
     font-size: 14px;
-    line-height: 1.52;
+    line-height: 1.55;
     animation: fadeUp 0.3s var(--ease);
   }
   .feedback.ok { background: var(--success-soft); border: 1px solid rgba(46, 184, 114, 0.25); }
@@ -657,8 +513,11 @@
   .feedback.ok b { color: var(--success); }
   .feedback.bad b { color: var(--error); }
 
-  /* ---------- Results & Modal ---------- */
-  .result-card { max-width: 660px; margin: 0 auto; text-align: center; }
+  .hint { text-align: center; font-size: 12px; color: var(--secondary); margin-top: 14px; }
+  kbd { font-size: 11px; font-weight: 600; padding: 2px 6px; border-radius: 6px; border: 1px solid var(--hairline-strong); background: var(--surface); }
+
+  /* ---------- Results ---------- */
+  .result-card { max-width: 720px; margin: 0 auto; text-align: center; }
   .ring {
     width: 168px;
     height: 168px;
@@ -683,43 +542,6 @@
   .review-body .good { color: var(--success); font-weight: 600; }
   .review-body .badc { color: var(--error); font-weight: 600; }
 
-  /* ---------- Modal Studio Tambah Soal ---------- */
-  .modal-backdrop {
-    position: fixed;
-    inset: 0;
-    background: rgba(10, 12, 20, 0.45);
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
-    z-index: 60;
-    display: grid;
-    place-items: center;
-    padding: 18px;
-  }
-  .modal-card {
-    width: 100%;
-    max-width: 580px;
-    max-height: 90vh;
-    overflow-y: auto;
-    background: var(--surface-hover);
-    border: 1px solid var(--card-border);
-    border-radius: 26px;
-    box-shadow: var(--shadow-hover);
-    padding: 26px;
-  }
-  .form-group { margin-bottom: 14px; }
-  .form-group label { display: block; font-size: 12px; font-weight: 650; color: var(--secondary); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.05em; }
-  .form-control {
-    width: 100%;
-    padding: 11px 14px;
-    border-radius: 14px;
-    border: 1px solid var(--hairline-strong);
-    background: var(--surface);
-    color: var(--text);
-    font-size: 14px;
-    outline: none;
-  }
-  .form-control:focus { border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-soft); }
-
   footer { text-align: center; color: var(--secondary); font-size: 12px; padding: 0 16px 34px; }
 
   @media (max-width: 640px) {
@@ -735,14 +557,14 @@
   <div class="topbar-inner">
     <button class="brand" onclick="goAllSubjects()">
       <span class="brand-icon">🎓</span>
-      <span class="brand-text">Nusantara Quiz Studio · 16 Mapel</span>
+      <span class="brand-text">Nusantara Quiz Studio · 16 Mapel &amp; SAS Bahasa Indonesia</span>
     </button>
     <div class="topbar-actions">
-      <span class="db-badge" id="db-status-badge" title="Connected to Supabase Postgres Database">
+      <span class="db-badge" id="db-status-badge" title="Connected to Supabase Project Bahasa Indonesia (bgqhdqmgdvdiebxlpyhc)">
         <span class="db-dot" id="db-status-dot"></span>
         <span id="db-status-text">Supabase Cloud</span>
       </span>
-      <button class="pill-btn" onclick="openAddQuestionModal()">＋ Buat Soal ke Database</button>
+      <button class="pill-btn" onclick="openSubjectSection('bahasa-indonesia')">📖 Bank Soal SAS (100 HOTS)</button>
       <button class="pill-btn" onclick="downloadPage()" title="Download single offline HTML file">⬇ Download HTML</button>
       <button class="icon-btn" id="theme-btn" onclick="toggleTheme()" title="Switch Light / Dark Appearance">☀️</button>
     </div>
@@ -751,72 +573,13 @@
 
 <main id="app"></main>
 
-<!-- Modal: Add Custom Question directly to Supabase -->
-<div class="modal-backdrop hidden" id="add-modal">
-  <div class="modal-card">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-      <h3 style="margin:0; font-size:18px;">＋ Tambah Soal Baru ke Supabase</h3>
-      <button class="icon-btn" onclick="closeAddQuestionModal()">✕</button>
-    </div>
-    <form onsubmit="submitNewQuestion(event)">
-      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
-        <div class="form-group">
-          <label>Mata Pelajaran</label>
-          <select id="q-subject" class="form-control"></select>
-        </div>
-        <div class="form-group">
-          <label>Tipe Soal (A–F)</label>
-          <select id="q-type" class="form-control">
-            <option value="A">Type A · Pilihan Ganda</option>
-            <option value="B">Type B · Benar / Salah</option>
-            <option value="C">Type C · Isian Singkat</option>
-            <option value="D">Type D · Analisis Pengecoh</option>
-            <option value="E">Type E · Konsep &amp; Istilah</option>
-            <option value="F">Type F · Studi Kasus HOTS</option>
-          </select>
-        </div>
-      </div>
-      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
-        <div class="form-group">
-          <label>Tingkat Kesulitan</label>
-          <select id="q-diff" class="form-control">
-            <option value="1">Mudah (Easy)</option>
-            <option value="2">Sedang (Medium)</option>
-            <option value="3" selected>Sulit / HOTS (Hard &amp; Tricky)</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Topik / Bab</label>
-          <input id="q-topic" class="form-control" type="text" placeholder="Contoh: Hukum Newton / EYD V" required>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Pertanyaan (Gunakan ___ untuk Type C Isian Singkat)</label>
-        <textarea id="q-prompt" class="form-control" rows="3" placeholder="Tulis pertanyaan di sini..." required></textarea>
-      </div>
-      <div class="form-group">
-        <label>Opsi Jawaban (Pisahkan dengan baris baru; Opsi BARIS PERTAMA adalah Kunci Jawaban Benar)</label>
-        <textarea id="q-options" class="form-control" rows="4" placeholder="Jawaban Benar (Baris 1)&#10;Pengecoh 1 (Baris 2)&#10;Pengecoh 2 (Baris 3)&#10;Pengecoh 3 (Baris 4)" required></textarea>
-      </div>
-      <div class="form-group">
-        <label>Pembahasan Lengkap</label>
-        <textarea id="q-expl" class="form-control" rows="2" placeholder="Jelaskan mengapa jawaban tersebut benar..." required></textarea>
-      </div>
-      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:16px;">
-        <button type="button" class="pill-btn" onclick="closeAddQuestionModal()">Batal</button>
-        <button type="submit" class="primary-btn" id="save-q-btn">Simpan ke Supabase</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<footer>Terhubung ke Supabase Postgres (`bgqhdqmgdvdiebxlpyhc`) · 16 Mata Pelajaran · Mendukung Mode Offline &amp; Download HTML</footer>
+<footer>Terhubung ke Supabase Project Bahasa Indonesia (`bgqhdqmgdvdiebxlpyhc`) · Tabel `bank_soal_sas` (100 Soal HOTS) &amp; 16 Mata Pelajaran</footer>
 
 <script>
   const PAGE_HTML = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
 
   /* =====================================================
-     SUPABASE CONFIGURATION
+     SUPABASE CONFIGURATION (Publishable Key for Client)
      ===================================================== */
   const SUPABASE_URL = 'https://bgqhdqmgdvdiebxlpyhc.supabase.co';
   const SUPABASE_KEY = 'sb_publishable_03eafBoM4OiPJtXdFVP9jw_6BkqsrJW';
@@ -845,10 +608,10 @@
   applyTheme();
 
   /* =====================================================
-     16 SUBJECTS FALLBACK & METADATA
+     16 SUBJECTS METADATA
      ===================================================== */
   const DEFAULT_SUBJECTS = [
-    { slug: 'bahasa-indonesia', name: 'Bahasa Indonesia', category: 'Bahasa & Sastra', description: 'Ejaan PUEBI/EYD V, teks akademik, kalimat efektif, makna kata, dan sastra Indonesia.', icon: '📖', color: '#3B82F6', display_order: 1 },
+    { slug: 'bahasa-indonesia', name: 'Bahasa Indonesia', category: 'Bahasa & Sastra', description: '100 Soal HOTS SAS Berbasis Cerita (Teks LHO, Teks Anekdot, Teks Hikayat) + Kaidah EYD V.', icon: '📖', color: '#3B82F6', display_order: 1 },
     { slug: 'pjok', name: 'PJOK', category: 'Karakter, Seni & Kebugaran', description: 'Kebugaran jasmani, aturan permainan bola besar/kecil, atletik, renang, dan kesehatan olahraga.', icon: '🏃', color: '#10B981', display_order: 2 },
     { slug: 'bahasa-inggris', name: 'Bahasa Inggris', category: 'Bahasa & Sastra', description: 'Reported speech, conditional sentences, passive voice, tenses, reading, dan error spotting.', icon: '🇬🇧', color: '#6366F1', display_order: 3 },
     { slug: 'sejarah', name: 'Sejarah', category: 'Sosial & Humaniora', description: 'Sejarah Nusantara, pergerakan nasional, kemerdekaan RI, reformasi, dan sejarah dunia modern.', icon: '🏛️', color: '#D97706', display_order: 4 },
@@ -865,6 +628,15 @@
     { slug: 'sosiologi', name: 'Sosiologi', category: 'Sosial & Humaniora', description: 'Interaksi sosial, nilai & norma, stratifikasi, mobilitas sosial, konflik, dan perubahan sosial.', icon: '🤝', color: '#F59E0B', display_order: 15 },
     { slug: 'ekonomi', name: 'Ekonomi', category: 'Sosial & Humaniora', description: 'Permintaan & penawaran, elastisitas, pendapatan nasional, inflasi, kebijakan moneter, dan akuntansi.', icon: '📈', color: '#0D9488', display_order: 16 }
   ];
+
+  // Categories for SAS Bahasa Indonesia (from table public.bank_soal_sas)
+  const SAS_CATEGORIES = {
+    ALL_SAS: { name: 'Semua Soal SAS (HOTS)', desc: 'Campuran Teks LHO, Teks Anekdot, dan Teks Hikayat (Pilihan Ganda A–E berbasis cerita).', color: '#3B82F6', tint: 'rgba(59, 130, 246, 0.14)', filter: null },
+    LHO: { name: 'Teks LHO (Observasi)', desc: 'Analisis struktur, objektivitas ilmiah, istilah teknis, dan evaluasi ekologi pada Teks LHO.', color: '#059669', tint: 'rgba(5, 150, 105, 0.14)', filter: 'Teks LHO' },
+    ANEKDOT: { name: 'Teks Anekdot', desc: 'Analisis makna tersirat, sasaran kritik sosial, struktur Krisis-Reaksi, dan evaluasi ironi.', color: '#F59E0B', tint: 'rgba(245, 158, 11, 0.15)', filter: 'Teks Anekdot' },
+    HIKAYAT: { name: 'Teks Hikayat', desc: 'Analisis kata arkais Melayu Klasik, kemustahilan, istanasentris, dan relevansi nilai moral.', color: '#8B5CF6', tint: 'rgba(139, 92, 246, 0.14)', filter: 'Teks Hikayat' },
+    KAIDAH: { name: 'Kaidah & EYD V (Tipe A–F)', desc: 'Latihan kata baku, kalimat efektif, isian singkat, dan analisis pengecoh pleonasme.', color: '#EC4899', tint: 'rgba(236, 72, 153, 0.14)', filter: 'KAIDAH' }
+  };
 
   const TYPES = {
     A: { name: 'Pilihan Ganda', desc: 'Pilih satu jawaban yang paling tepat.', color: '#3B82F6', tint: 'rgba(59, 130, 246, 0.14)', instr: 'Pilih jawaban yang paling tepat.' },
@@ -884,46 +656,26 @@
   ];
 
   const CATEGORIES = ['Semua Mapel', 'Bahasa & Sastra', 'Sains & STEM', 'Sosial & Humaniora', 'Karakter, Seni & Kebugaran'];
-  const COUNT_OPTIONS = [6, 10, 20, 0];
-
-  /* =====================================================
-     EMBEDDED FALLBACK BANK (For 100% Offline Support)
-     ===================================================== */
-  const FALLBACK_QUESTIONS = [
-    { subject_slug: 'bahasa-indonesia', question_type: 'A', difficulty: 1, topic: 'Ejaan EYD V', prompt: 'Manakah penulisan kata baku yang tepat menurut EYD Edisi V?', options: ['apotek, analisis, risiko, praktik', 'apotik, analisa, resiko, praktek', 'apotek, analisa, risiko, praktek', 'apotik, analisis, resiko, praktik'], correct_index: 0, explanation: 'Bentuk baku menurut KBBI dan EYD V adalah apotek, analisis, risiko, dan praktik.' },
-    { subject_slug: 'bahasa-indonesia', question_type: 'D', difficulty: 3, topic: 'Kalimat Efektif', prompt: 'Para hadirin sekalian dimohon berdiri ketika menyanyikan lagu kebangsaan.', options: ['Para hadirin sekalian', 'dimohon berdiri', 'ketika menyanyikan', 'lagu kebangsaan.'], correct_index: 0, explanation: 'JEBAKAN PLEONASME: Kata "hadirin" sudah bermakna jamak.' },
-    { subject_slug: 'pjok', question_type: 'A', difficulty: 1, topic: 'Sepak Bola', prompt: 'Berapa jumlah pemain inti satu tim sepak bola di lapangan?', options: ['11 pemain', '10 pemain', '9 pemain', '12 pemain'], correct_index: 0, explanation: 'Satu tim sepak bola terdiri atas 11 pemain inti di lapangan.' },
-    { subject_slug: 'bahasa-inggris', question_type: 'A', difficulty: 3, topic: 'Reported Speech Trap', prompt: 'She said, "If I had more time, I would learn Japanese."', options: ['She said that if she had more time, she would learn Japanese.', 'She said that if she had had more time, she would have learned Japanese.', 'She said that if she has more time, she will learn Japanese.', 'She said if had she more time, she would learn Japanese.'], correct_index: 0, explanation: 'Conditional Tipe 2 tidak mengalami backshift ke Tipe 3 dalam Reported Speech.' },
-    { subject_slug: 'sejarah', question_type: 'D', difficulty: 3, topic: 'Perjanjian Linggarjati', prompt: 'Dalam Perjanjian Linggarjati (1946), Belanda mengakui secara de facto wilayah RI meliputi Jawa, Sumatera, dan Irian Barat.', options: ['Dalam Perjanjian Linggarjati (1946),', 'Belanda mengakui secara de facto', 'wilayah RI meliputi', 'Jawa, Sumatera, dan Irian Barat.'], correct_index: 3, explanation: 'Pengakuan de facto Perjanjian Linggarjati meliputi Jawa, Sumatera, dan Madura.' },
-    { subject_slug: 'matematika', question_type: 'F', difficulty: 3, topic: 'Peluang Bersyarat', prompt: 'Dua dadu dilempar bersamaan. Jika diketahui jumlah mata dadu yang muncul adalah 8, berapakah peluang salah satu dadu menunjukkan angka 3?', options: ['2/5', '2/36', '5/36', '1/2'], correct_index: 0, explanation: 'Pasangan berjumlah 8 ada 5: (2,6),(3,5),(4,4),(5,3),(6,2). Yang memuat angka 3 ada 2, sehingga peluangnya 2/5.' },
-    { subject_slug: 'mandarin', question_type: 'E', difficulty: 3, topic: 'Negasi Mandarin', prompt: 'Kata ingkar manakah yang wajib digunakan untuk mengingkari kata kerja 有 (yǒu - mempunyai)?', options: ['没 (méi) / 没有 (méiyǒu)', '不 (bù)', '别 (bié)', '非 (fēi)'], correct_index: 0, explanation: 'Kata kerja 有 (yǒu) selalu diingkari dengan 没 (méiyǒu).' },
-    { subject_slug: 'seni-budaya', question_type: 'E', difficulty: 3, topic: 'Seni Lukis', prompt: 'Teknik kontras gelap-terang yang tajam untuk menciptakan efek dramatis pada lukisan Renaisans/Barok disebut…', options: ['Chiaroscuro', 'Pointilisme', 'Aquarel', 'Fresco'], correct_index: 0, explanation: 'Chiaroscuro adalah teknik kontras gelap-terang dramatis.' },
-    { subject_slug: 'biologi', question_type: 'D', difficulty: 3, topic: 'Peredaran Darah', prompt: 'Seluruh pembuluh arteri (nadi) di dalam tubuh manusia selalu mengalirkan darah yang kaya akan oksigen (O2).', options: ['Seluruh pembuluh arteri (nadi)', 'di dalam tubuh manusia', 'selalu mengalirkan darah', 'yang kaya akan oksigen (O2).'], correct_index: 3, explanation: 'Arteri Pulmonalis membawa darah kaya CO2 dari bilik kanan jantung ke paru-paru.' },
-    { subject_slug: 'agama-katolik', question_type: 'E', difficulty: 3, topic: 'Ajaran Sosial Gereja', prompt: 'Prinsip ASG bahwa struktur yang lebih besar tidak boleh mematikan kemandirian komunitas kecil disebut…', options: ['Subsidiaritas', 'Solidaritas', 'Bonum Commune', 'Kolegialitas'], correct_index: 0, explanation: 'Prinsip Subsidiaritas melindungi kemandirian keluarga dan komunitas kecil.' },
-    { subject_slug: 'fisika', question_type: 'D', difficulty: 3, topic: 'Gerak Vertikal', prompt: 'Ketika bola dilempar vertikal ke atas, pada titik tertinggi kecepatannya nol dan percepatan gravitasinya juga menjadi nol.', options: ['Ketika bola dilempar vertikal ke atas,', 'pada saat mencapai titik tertinggi', 'kecepatannya bernilai nol', 'dan percepatan gravitasinya juga menjadi nol.'], correct_index: 3, explanation: 'Di titik tertinggi kecepatan v = 0, namun percepatan gravitasi g tetap bekerja ke bawah.' },
-    { subject_slug: 'informatika', question_type: 'D', difficulty: 3, topic: 'Algoritma', prompt: 'Algoritma Binary Search memiliki kompleksitas O(log n) dan dapat langsung digunakan pada array yang belum terurut.', options: ['Algoritma Binary Search', 'memiliki kompleksitas waktu O(log n)', 'dan dapat langsung digunakan', 'pada array yang belum terurut.'], correct_index: 3, explanation: 'Binary Search mewajibkan data sudah terurut (sorted) terlebih dahulu.' },
-    { subject_slug: 'geografi', question_type: 'F', difficulty: 3, topic: 'Teori Titik Henti', prompt: 'Kota A (20.000 jiwa) dan Kota B (80.000 jiwa) berjarak 30 km. Di mana lokasi Titik Henti di antara kedua kota?', options: ['10 km dari Kota A', '15 km dari Kota A', '10 km dari Kota B', '6 km dari Kota A'], correct_index: 0, explanation: 'D_AB = 30 / (1 + √(80.000/20.000)) = 30 / 3 = 10 km dari Kota A.' },
-    { subject_slug: 'pancasila', question_type: 'D', difficulty: 3, topic: 'Hierarki Hukum', prompt: 'Berdasarkan UU No. 12 Tahun 2011, Peraturan Presiden (Perpres) memiliki kedudukan lebih tinggi dibandingkan Undang-Undang.', options: ['Berdasarkan UU No. 12 Tahun 2011,', 'Peraturan Presiden (Perpres)', 'memiliki kedudukan hierarki yang lebih tinggi', 'dibandingkan Undang-Undang / Perppu.'], correct_index: 2, explanation: 'Hierarki: UUD 1945 > Tap MPR > UU/Perppu > PP > Perpres > Perda.' },
-    { subject_slug: 'kimia', question_type: 'F', difficulty: 3, topic: 'Kepolaran Molekul', prompt: 'Mengapa molekul CO2 bersifat non-polar padahal ikatan C=O bersifat polar?', options: ['Karena geometri molekulnya linear simetris (O=C=O) sehingga momen dipol saling meniadakan', 'Karena keelektronegatifan C dan O sama', 'Karena CO2 senyawa ionik', 'Karena atom pusat C memiliki 2 PEB'], correct_index: 0, explanation: 'Bentuk linear simetris CO2 membuat resultan momen dipolnya sama dengan nol.' },
-    { subject_slug: 'sosiologi', question_type: 'D', difficulty: 3, topic: 'Akulturasi vs Asimilasi', prompt: 'Masjid Menara Kudus yang memadukan arsitektur Islam dan corak Hindu-Jawa tanpa menghilangkan ciri khas budaya asli merupakan contoh asimilasi.', options: ['Masjid Menara Kudus yang memadukan', 'arsitektur Islam dan corak Hindu-Jawa', 'tanpa menghilangkan ciri khas budaya asli', 'merupakan contoh proses asimilasi.'], correct_index: 3, explanation: 'Perpaduan budaya tanpa menghilangkan ciri khas asli (A + B = AB) adalah Akulturasi.' },
-    { subject_slug: 'ekonomi', question_type: 'F', difficulty: 3, topic: 'Elastisitas Permintaan', prompt: 'Jika permintaan suatu barang bersifat elastis (Ed = 2,5), bagaimana cara meningkatkan Total Revenue (TR)?', options: ['Menurunkan harga jual per unit karena % kenaikan kuantitas lebih besar daripada % penurunan harga', 'Menaikkan harga jual setinggi mungkin', 'Mengurangi stok produksi', 'Menaikkan harga 25%'], correct_index: 0, explanation: 'Pada permintaan elastis (Ed > 1), penurunan harga akan meningkatkan Total Revenue.' }
-  ];
+  const COUNT_OPTIONS = [10, 20, 35, 0];
 
   /* =====================================================
      APP STATE
      ===================================================== */
   const app = document.getElementById('app');
   let subjects = [...DEFAULT_SUBJECTS];
-  let allQuestions = [...FALLBACK_QUESTIONS];
+  let allQuestions = [];
+  let sasQuestions = []; // 100 HOTS rows from public.bank_soal_sas
   let recentAttempts = [];
   let isSupabaseLive = false;
 
   let activeCategory = 'Semua Mapel';
   let searchQuery = '';
-  let activeSubjectSlug = null; // null = 16 Subject Directory, string = Subject Section Hub
+  let activeSubjectSlug = null;
   let selType = 'M';
+  let selSasCat = 'ALL_SAS'; // For Bahasa Indonesia SAS mode
+  let selSasDiff = 'ALL'; // 'ALL' | 'HOTS (C4 - Analisis)' | 'HOTS (C5 - Evaluasi)'
   let selLevel = 0;
-  let selCount = 6;
+  let selCount = 10;
 
   let quizQuestions = [];
   let current = 0;
@@ -951,13 +703,14 @@
   };
 
   /* =====================================================
-     LOAD DATA FROM SUPABASE POSTGRES
+     LOAD DATA FROM SUPABASE (`bank_soal_sas` + `subjects` + `questions`)
      ===================================================== */
   async function syncFromSupabase() {
     try {
-      const [subRes, qRes, attRes] = await Promise.all([
+      const [subRes, qRes, sasRes, attRes] = await Promise.all([
         fetch(`${SUPABASE_URL}/rest/v1/subjects?select=*&order=display_order.asc`, { headers: sbHeaders }),
         fetch(`${SUPABASE_URL}/rest/v1/questions?select=*&order=created_at.asc`, { headers: sbHeaders }),
+        fetch(`${SUPABASE_URL}/rest/v1/bank_soal_sas?select=*&order=id.asc`, { headers: sbHeaders }),
         fetch(`${SUPABASE_URL}/rest/v1/quiz_attempts?select=*&order=created_at.desc&limit=30`, { headers: sbHeaders })
       ]);
 
@@ -966,13 +719,16 @@
         const qData = await qRes.json();
         if (Array.isArray(subData) && subData.length > 0) subjects = subData;
         if (Array.isArray(qData) && qData.length > 0) allQuestions = qData;
+        if (sasRes.ok) {
+          const sasData = await sasRes.json();
+          if (Array.isArray(sasData) && sasData.length > 0) sasQuestions = sasData;
+        }
         if (attRes.ok) {
           const attData = await attRes.json();
           if (Array.isArray(attData)) recentAttempts = attData;
         }
         isSupabaseLive = true;
-        updateDbBadge(true, `${subjects.length} Mapel · ${allQuestions.length} Soal Live`);
-        populateSubjectDropdown();
+        updateDbBadge(true, `Supabase Live · ${sasQuestions.length} Soal SAS + 16 Mapel`);
         if (!quizQuestions.length) {
           if (activeSubjectSlug) renderSubjectSection(activeSubjectSlug);
           else renderAllSubjectsDirectory();
@@ -980,11 +736,18 @@
         return;
       }
     } catch (err) {
-      console.warn('Supabase offline fallback active:', err);
+      console.warn('Supabase fetch fallback:', err);
     }
-    isSupabaseLive = false;
-    updateDbBadge(false, 'Mode Offline Cache');
-    populateSubjectDropdown();
+    // Try local JSON fallback if offline
+    try {
+      const localRes = await fetch('./data/bank_soal_sas_bahasa_indonesia_100.json');
+      if (localRes.ok) sasQuestions = await localRes.json();
+    } catch (e) {}
+    updateDbBadge(false, `Mode Lokal (${sasQuestions.length} Soal SAS)`);
+    if (!quizQuestions.length) {
+      if (activeSubjectSlug) renderSubjectSection(activeSubjectSlug);
+      else renderAllSubjectsDirectory();
+    }
   }
 
   function updateDbBadge(online, text) {
@@ -992,12 +755,6 @@
     const txt = document.getElementById('db-status-text');
     if (dot) dot.className = online ? 'db-dot' : 'db-dot offline';
     if (txt) txt.textContent = text;
-  }
-
-  function populateSubjectDropdown() {
-    const sel = document.getElementById('q-subject');
-    if (!sel) return;
-    sel.innerHTML = subjects.map(s => `<option value="${s.slug}" ${s.slug === activeSubjectSlug ? 'selected' : ''}>${s.icon} ${esc(s.name)}</option>`).join('');
   }
 
   function getSubjectQuestions(slug, type = 'M', level = 0) {
@@ -1008,8 +765,18 @@
     );
   }
 
+  function getFilteredSasQuestions(catKey = selSasCat, diffFilter = selSasDiff) {
+    const catObj = SAS_CATEGORIES[catKey];
+    if (!catObj || catObj.filter === 'KAIDAH') return [];
+    return sasQuestions.filter(q => {
+      const matchCat = !catObj.filter || q.kategori === catObj.filter;
+      const matchDiff = diffFilter === 'ALL' || q.tingkat_kesulitan === diffFilter;
+      return matchCat && matchDiff;
+    });
+  }
+
   /* =====================================================
-     SCREEN 1: 16 SUBJECTS DIRECTORY (ALL SECTIONS)
+     SCREEN 1: 16 SUBJECTS DIRECTORY
      ===================================================== */
   function goAllSubjects() {
     activeSubjectSlug = null;
@@ -1018,15 +785,8 @@
     renderAllSubjectsDirectory();
   }
 
-  function setCategory(cat) {
-    activeCategory = cat;
-    renderAllSubjectsDirectory();
-  }
-
-  function onSearchInput(val) {
-    searchQuery = val;
-    renderAllSubjectsDirectory();
-  }
+  function setCategory(cat) { activeCategory = cat; renderAllSubjectsDirectory(); }
+  function onSearchInput(val) { searchQuery = val; renderAllSubjectsDirectory(); }
 
   function renderAllSubjectsDirectory() {
     const catSegs = CATEGORIES.map(cat =>
@@ -1042,7 +802,8 @@
     });
 
     const cards = filtered.map(s => {
-      const qCount = getSubjectQuestions(s.slug, 'M', 0).length;
+      const baseCount = getSubjectQuestions(s.slug, 'M', 0).length;
+      const qCount = s.slug === 'bahasa-indonesia' ? (sasQuestions.length + baseCount) : baseCount;
       const best = getBest(s.slug);
       return `
         <button class="subject-card" onclick="openSubjectSection('${s.slug}')">
@@ -1055,26 +816,47 @@
             <p class="subject-desc">${esc(s.description)}</p>
           </div>
           <div class="subject-foot">
-            <span>${qCount} Soal Tersedia</span>
-            <span>${best !== null ? `Skor Terbaik: <b>${best}</b>` : 'Buka Section →'}</span>
+            <span>${qCount} Soal di Supabase</span>
+            <span>${best !== null ? `Terbaik: <b>${best}</b>` : 'Buka Section →'}</span>
           </div>
         </button>`;
     }).join('');
+
+    const lhoCount = sasQuestions.filter(q => q.kategori === 'Teks LHO').length;
+    const anekdotCount = sasQuestions.filter(q => q.kategori === 'Teks Anekdot').length;
+    const hikayatCount = sasQuestions.filter(q => q.kategori === 'Teks Hikayat').length;
 
     app.innerHTML = `
       <section class="screen">
         <div class="hero">
           <div class="hero-badge">
             <span>☁️</span>
-            <span>Supabase Cloud Database · 16 Section Mata Pelajaran Kurikulum Nasional</span>
+            <span>Supabase Project Bahasa Indonesia · 100 Soal HOTS SAS + 16 Mata Pelajaran</span>
           </div>
-          <h1>Pilih Section Mata Pelajaran</h1>
-          <p>Setiap mata pelajaran memiliki ruang latihan mandiri dengan 6 format soal interaktif (Tipe A–F), tiga tingkat kesulitan termasuk jebakan HOTS, serta penyimpanan skor di Supabase.</p>
+          <h1>Nusantara Quiz Studio</h1>
+          <p>Pilih section mata pelajaran di bawah ini atau langsung mulai latihan <strong>Bank Soal SAS Bahasa Indonesia (100 Soal HOTS Berbasis Cerita)</strong>.</p>
+        </div>
+
+        <div class="sas-hero-card">
+          <div style="display:flex; align-items:center; gap:16px;">
+            <div class="section-big-icon" style="background:#3B82F620; color:#3B82F6; border:1px solid #3B82F640;">📖</div>
+            <div>
+              <div style="font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--primary);">Terintegrasi Penuh di Tabel Supabase bank_soal_sas</div>
+              <h2 style="margin:3px 0 6px; font-size:1.35rem; letter-spacing:-0.02em;">Bank Soal SAS Bahasa Indonesia — 100 Soal HOTS Berbasis Cerita</h2>
+              <div style="display:flex; gap:8px; flex-wrap:wrap; font-size:12.5px; color:var(--secondary);">
+                <span class="chip">🌿 Teks LHO: ${lhoCount || 34} Soal</span>
+                <span class="chip">🎭 Teks Anekdot: ${anekdotCount || 33} Soal</span>
+                <span class="chip">📜 Teks Hikayat: ${hikayatCount || 33} Soal</span>
+                <span class="chip">🧠 Pilihan Ganda A–E + Stimulus Bacaan</span>
+              </div>
+            </div>
+          </div>
+          <button class="primary-btn" onclick="openSubjectSection('bahasa-indonesia')">Buka Latihan SAS Bahasa Indonesia →</button>
         </div>
 
         <div class="filter-bar">
           <div class="segmented">${catSegs}</div>
-          <input class="search-input" type="search" placeholder="🔍 Cari mata pelajaran..." value="${esc(searchQuery)}" oninput="onSearchInput(this.value)">
+          <input class="search-input" type="search" placeholder="🔍 Cari dari 16 mata pelajaran..." value="${esc(searchQuery)}" oninput="onSearchInput(this.value)">
         </div>
 
         <div class="subject-grid">${cards}</div>
@@ -1087,20 +869,122 @@
   function openSubjectSection(slug) {
     activeSubjectSlug = slug;
     quizQuestions = [];
-    populateSubjectDropdown();
     window.scrollTo({ top: 0 });
     renderSubjectSection(slug);
   }
 
   function selectType(t) { selType = t; renderSubjectSection(activeSubjectSlug); }
+  function selectSasCat(k) { selSasCat = k; renderSubjectSection(activeSubjectSlug); }
+  function selectSasDiff(d) { selSasDiff = d; renderSubjectSection(activeSubjectSlug); }
   function selectLevel(l) { selLevel = l; renderSubjectSection(activeSubjectSlug); }
   function selectCount(c) { selCount = c; renderSubjectSection(activeSubjectSlug); }
 
   function renderSubjectSection(slug) {
     const subj = subjects.find(s => s.slug === slug) || subjects[0];
-    const totalSubjQuestions = getSubjectQuestions(slug, 'M', 0).length;
     const best = getBest(slug);
 
+    // Special rich SAS view for Bahasa Indonesia
+    if (slug === 'bahasa-indonesia') {
+      const totalSas = sasQuestions.length;
+      const baseCount = getSubjectQuestions(slug, 'M', 0).length;
+
+      const sasCards = Object.keys(SAS_CATEGORIES).map(k => {
+        const cat = SAS_CATEGORIES[k];
+        const count = k === 'KAIDAH'
+          ? baseCount
+          : getFilteredSasQuestions(k, selSasDiff).length;
+        const totalInCat = k === 'KAIDAH'
+          ? baseCount
+          : getFilteredSasQuestions(k, 'ALL').length;
+        return `
+          <button class="type-card ${k === selSasCat ? 'active' : ''}" onclick="selectSasCat('${k}')">
+            <span class="type-letter" style="background:${cat.tint}; color:${cat.color}; border:1px solid ${cat.color}30;">${k === 'ALL_SAS' ? '100' : k.slice(0, 3)}</span>
+            <span style="flex:1">
+              <div class="type-name">${esc(cat.name)}</div>
+              <div class="type-desc">${esc(cat.desc)}</div>
+              <div class="type-meta">
+                <span class="meta-pill">${count} soal cocok</span>
+                <span>${totalInCat} total</span>
+              </div>
+            </span>
+          </button>`;
+      }).join('');
+
+      const sasDiffOptions = [
+        { id: 'ALL', label: 'Semua Level HOTS (C4 & C5)', color: '#3A7BFF' },
+        { id: 'HOTS (C4 - Analisis)', label: 'HOTS (C4 - Analisis)', color: '#F59E0B' },
+        { id: 'HOTS (C5 - Evaluasi)', label: 'HOTS (C5 - Evaluasi)', color: '#E5484D' }
+      ];
+
+      const diffSegs = sasDiffOptions.map(d => `
+        <button class="${d.id === selSasDiff ? 'active' : ''}" onclick="selectSasDiff('${d.id}')">
+          <span class="dot" style="background:${d.color}"></span>${d.label}
+        </button>`).join('');
+
+      const poolLen = selSasCat === 'KAIDAH'
+        ? baseCount
+        : getFilteredSasQuestions(selSasCat, selSasDiff).length;
+
+      const countSegs = COUNT_OPTIONS.map(c => {
+        const label = c === 0 ? `Semua (${poolLen})` : `${c} Soal`;
+        return `<button class="${c === selCount ? 'active' : ''}" onclick="selectCount(${c})">${label}</button>`;
+      }).join('');
+
+      const n = selCount === 0 ? poolLen : Math.min(selCount, poolLen);
+
+      app.innerHTML = `
+        <section class="screen">
+          <div style="margin-bottom: 14px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+            <button class="pill-btn" onclick="goAllSubjects()">← Kembali ke 16 Mata Pelajaran</button>
+            <span class="chip">☁️ Tabel Supabase: public.bank_soal_sas (${totalSas} Soal)</span>
+          </div>
+
+          <div class="card section-banner" style="border-left: 5px solid ${subj.color};">
+            <div class="section-banner-left">
+              <div class="section-big-icon" style="background:${subj.color}18; color:${subj.color}; border:1px solid ${subj.color}30;">${subj.icon}</div>
+              <div>
+                <div style="font-size:12px; font-weight:650; color:${subj.color}; text-transform:uppercase; letter-spacing:0.06em;">Section Khusus SAS · ${esc(subj.category)}</div>
+                <h1 style="margin:3px 0 6px; font-size:clamp(1.5rem, 3.2vw, 2.1rem); letter-spacing:-0.03em;">Bahasa Indonesia — Bank Soal SAS HOTS</h1>
+                <p style="margin:0; color:var(--secondary); font-size:14px; max-width:600px;">100 soal HOTS berbasis cerita lengkap dengan kutipan wacana (stimulus), 5 opsi pilihan ganda (A–E), analisis struktur/kebahasaan, dan pembahasan mendalam.</p>
+              </div>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <span class="chip">📚 ${totalSas + baseCount} Total Soal</span>
+              ${best !== null ? `<span class="chip" style="color:var(--success)">🏆 Skor Terbaik: ${best}/100</span>` : ''}
+            </div>
+          </div>
+
+          <div class="section-label">
+            <span>1 · Pilih Kategori Teks SAS Bahasa Indonesia</span>
+            <span>Filter Level: ${selSasDiff === 'ALL' ? 'Semua HOTS' : selSasDiff}</span>
+          </div>
+          <div class="type-grid">${sasCards}</div>
+
+          <div class="section-label"><span>2 · Level Kognitif HOTS &amp; Jumlah Soal</span></div>
+          <div class="card setup-card">
+            <div class="setup-row">
+              <div class="control-group">
+                <span class="control-title">Level Kognitif Taksonomi Bloom</span>
+                <div class="segmented">${diffSegs}</div>
+              </div>
+              <div class="control-group">
+                <span class="control-title">Jumlah Soal Latihan</span>
+                <div class="segmented">${countSegs}</div>
+              </div>
+            </div>
+            <div class="setup-row" style="padding-top: 10px; border-top: 1px solid var(--hairline);">
+              <div style="font-size: 13.5px; color: var(--secondary);">
+                Kategori Aktif: <strong style="color:var(--text)">${esc(SAS_CATEGORIES[selSasCat].name)}</strong> · <strong style="color:var(--text)">${n} Soal</strong>
+              </div>
+              <button class="primary-btn" ${n === 0 ? 'disabled' : ''} onclick="startQuiz()">Mulai Latihan SAS (${n} Soal) →</button>
+            </div>
+          </div>
+        </section>`;
+      return;
+    }
+
+    // Standard Subject Section View for the other 15 subjects
+    const totalSubjQuestions = getSubjectQuestions(slug, 'M', 0).length;
     const typeCards = Object.keys(TYPES).map(t => {
       const countInLevel = getSubjectQuestions(slug, t, selLevel).length;
       const totalInType = getSubjectQuestions(slug, t, 0).length;
@@ -1127,19 +1011,17 @@
       </button>`).join('');
 
     const poolLen = getSubjectQuestions(slug, selType, selLevel).length;
-    const countSegs = COUNT_OPTIONS.map(c => {
+    const countSegs = [6, 10, 20, 0].map(c => {
       const label = c === 0 ? `Semua (${poolLen})` : `${c} Soal`;
       return `<button class="${c === selCount ? 'active' : ''}" onclick="selectCount(${c})">${label}</button>`;
     }).join('');
 
     const n = selCount === 0 ? poolLen : Math.min(selCount, poolLen);
-    const subjAttempts = recentAttempts.filter(a => a.subject_slug === slug).slice(0, 5);
 
     app.innerHTML = `
       <section class="screen">
-        <div style="margin-bottom: 14px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+        <div style="margin-bottom: 14px;">
           <button class="pill-btn" onclick="goAllSubjects()">← Kembali ke 16 Mata Pelajaran</button>
-          <button class="pill-btn" onclick="openAddQuestionModal()">＋ Tambah Soal ${esc(subj.name)}</button>
         </div>
 
         <div class="card section-banner" style="border-left: 5px solid ${subj.color};">
@@ -1177,37 +1059,41 @@
           </div>
           <div class="setup-row" style="padding-top: 10px; border-top: 1px solid var(--hairline);">
             <div style="font-size: 13.5px; color: var(--secondary);">
-              Siap dimainkan: <strong style="color:var(--text)">${esc(subj.name)}</strong> · <strong style="color:var(--text)">${selType === 'M' ? 'Tantangan Campuran (A–F)' : 'Type ' + selType + ' (' + TYPES[selType].name + ')'}</strong>
+              Siap dimainkan: <strong style="color:var(--text)">${esc(subj.name)}</strong>
             </div>
             <button class="primary-btn" ${n === 0 ? 'disabled' : ''} onclick="startQuiz()">Mulai Kuis ${esc(subj.name)} (${n} Soal) →</button>
           </div>
         </div>
-
-        ${subjAttempts.length ? `
-          <div style="margin-top:26px;">
-            <div class="section-label"><span>Riwayat Skor Terbaru di Supabase (${esc(subj.name)})</span></div>
-            <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px, 1fr)); gap:10px;">
-              ${subjAttempts.map(a => `
-                <div class="card" style="padding:14px 16px; border-radius:18px;">
-                  <div style="display:flex; justify-content:space-between; font-weight:700;">
-                    <span>${esc(a.player_name || 'Siswa')}</span>
-                    <span style="color:var(--success)">${a.score}/100</span>
-                  </div>
-                  <div style="font-size:12px; color:var(--secondary); margin-top:4px;">
-                    Benar ${a.correct_count}/${a.total_questions} · Tipe ${esc(a.question_type)}
-                  </div>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-        ` : ''}
       </section>`;
   }
 
   /* =====================================================
-     SCREEN 3: QUIZ PLAYER
+     SCREEN 3: QUIZ PLAYER (Supports 5-Option SAS Story Stimulus & Standard A-F)
      ===================================================== */
+  function convertSasRowToPlayable(row) {
+    const keys = ['A', 'B', 'C', 'D', 'E'].filter(k => row.opsi && row.opsi[k] !== undefined);
+    const opts = keys.map(k => row.opsi[k]);
+    const correctIdx = Math.max(0, keys.indexOf(row.kunci_jawaban));
+    return {
+      isSas: true,
+      sasId: row.id,
+      subject_slug: 'bahasa-indonesia',
+      question_type: 'A',
+      topic: row.kategori,
+      difficulty_label: row.tingkat_kesulitan,
+      stimulus: row.stimulus,
+      prompt: row.pertanyaan,
+      o: opts,
+      a: correctIdx,
+      explanation: row.pembahasan,
+      orig: row
+    };
+  }
+
   function prepareQuestion(q) {
+    if (q.stimulus && q.opsi && q.kunci_jawaban) {
+      return convertSasRowToPlayable(q);
+    }
     const opts = Array.isArray(q.options) ? q.options : [];
     const t = q.question_type;
     if (!['A', 'E', 'F'].includes(t)) {
@@ -1223,7 +1109,14 @@
   }
 
   function startQuiz(customList) {
-    const pool = customList || getSubjectQuestions(activeSubjectSlug, selType, selLevel);
+    let pool = [];
+    if (customList) {
+      pool = customList;
+    } else if (activeSubjectSlug === 'bahasa-indonesia' && selSasCat !== 'KAIDAH') {
+      pool = getFilteredSasQuestions(selSasCat, selSasDiff);
+    } else {
+      pool = getSubjectQuestions(activeSubjectSlug, selType, selLevel);
+    }
     if (!pool.length) return;
     const limit = customList ? customList.length : (selCount === 0 ? pool.length : Math.min(selCount, pool.length));
     quizQuestions = shuffle(pool).slice(0, limit).map(prepareQuestion);
@@ -1241,6 +1134,16 @@
     const T = TYPES[q.question_type] || TYPES.A;
     const pct = (current / quizQuestions.length) * 100;
 
+    const stimulusHtml = q.stimulus
+      ? `<div class="stimulus-box">
+           <div class="stimulus-label">
+             <span>📄 Stimulus Bacaan · ${esc(q.topic || 'SAS Bahasa Indonesia')}</span>
+             <span>${q.sasId ? 'Soal #' + q.sasId : ''}</span>
+           </div>
+           <div>${esc(q.stimulus)}</div>
+         </div>`
+      : '';
+
     let questionHtml = esc(q.prompt);
     if (q.question_type === 'C') {
       questionHtml = questionHtml.replace(/___/g, '<span class="blank">?</span>');
@@ -1257,26 +1160,30 @@
       const reported = q.question_type === 'D'
         ? `<div class="reported"><span>Pernyataan Utuh</span>${esc(q.o.join(' '))}</div>`
         : '';
-      body = reported + `<div class="options">${q.o.map((o, i) => `<button class="option" onclick="choose(${i})">${esc(o)}</button>`).join('')}</div>`;
+      body = reported + `<div class="options">${q.o.map((o, i) => `<button class="option" onclick="choose(${i})"><span>${esc(o)}</span></button>`).join('')}</div>`;
     }
+
+    const diffLabel = q.difficulty_label || levelName(Number(q.difficulty));
 
     app.innerHTML = `
       <section class="screen">
         <div class="card quiz-card">
           <div class="quiz-head">
             <span class="chip">${subj.icon} ${esc(subj.name)} · ${esc(q.topic || 'Umum')}</span>
-            <span class="chip"><span class="dot" style="background:${T.color}"></span>Type ${q.question_type} · ${T.name}</span>
+            <span class="chip"><span class="dot" style="background:#E5484D"></span>${esc(diffLabel)}</span>
           </div>
           <div class="quiz-head">
-            <span class="progress-text">Soal ${current + 1} dari ${quizQuestions.length} · ${levelName(Number(q.difficulty))}</span>
+            <span class="progress-text">Soal ${current + 1} dari ${quizQuestions.length}</span>
             <button class="pill-btn" onclick="openSubjectSection('${subj.slug}')">✕ Keluar</button>
           </div>
           <div class="track"><div class="fill" id="fill-bar" style="width:${pct}%"></div></div>
-          <div class="instruction">${T.instr}</div>
+          ${stimulusHtml}
+          <div class="instruction">${q.isSas ? 'Pilih satu jawaban yang paling tepat (A, B, C, D, atau E)' : T.instr}</div>
           <h2 class="question">${questionHtml}</h2>
           ${body}
           <div id="feedback"></div>
           <button class="primary-btn block hidden" id="next-btn" onclick="nextQuestion()">${current === quizQuestions.length - 1 ? 'Lihat Hasil Akhir →' : 'Soal Berikutnya →'}</button>
+          <div class="hint">Pintasan Keyboard: <kbd>A</kbd>–<kbd>E</kbd> atau <kbd>1</kbd>–<kbd>5</kbd> untuk memilih · <kbd>Enter</kbd> untuk lanjut</div>
         </div>
       </section>`;
 
@@ -1289,12 +1196,12 @@
     }
   }
 
-  function showFeedback(correct, correctText, explanation) {
+  function showFeedback(correct, correctLetter, correctText, explanation) {
     const fb = document.getElementById('feedback');
     fb.innerHTML = `
       <div class="feedback ${correct ? 'ok' : 'bad'}">
-        <b>${correct ? '✓ Jawaban Tepat!' : '✕ Kurang Tepat — Perhatikan Pembahasan:'}</b>
-        ${correct ? '' : `Kunci Jawaban: <strong>${esc(correctText)}</strong><br>`}
+        <b>${correct ? '✓ Jawaban Tepat!' : '✕ Kurang Tepat — Simak Pembahasan HOTS:'}</b>
+        ${correct ? '' : `Kunci Jawaban: <strong>${correctLetter ? correctLetter + '. ' : ''}${esc(correctText)}</strong><br>`}
         ${esc(explanation)}
       </div>`;
     document.getElementById('fill-bar').style.width = `${((current + 1) / quizQuestions.length) * 100}%`;
@@ -1312,8 +1219,9 @@
     });
     const correct = i === q.a;
     if (!correct) buttons[i].classList.add('wrong');
-    answers.push({ q, user: q.o[i], correct });
-    showFeedback(correct, q.o[q.a], q.explanation);
+    const letters = ['A', 'B', 'C', 'D', 'E'];
+    answers.push({ q, user: `${letters[i]}. ${q.o[i]}`, correct });
+    showFeedback(correct, letters[q.a], q.o[q.a], q.explanation);
   }
 
   function checkFill() {
@@ -1328,7 +1236,7 @@
     input.classList.add(correct ? 'correct' : 'wrong');
     document.getElementById('check-btn').disabled = true;
     answers.push({ q, user: val.trim(), correct });
-    showFeedback(correct, accepted.join(' / '), q.explanation);
+    showFeedback(correct, '', accepted.join(' / '), q.explanation);
   }
 
   function nextQuestion() {
@@ -1350,17 +1258,16 @@
 
     setBest(subj.slug, score);
 
-    // Save attempt to Supabase quiz_attempts table
     if (isSupabaseLive && subj.id) {
       try {
-        const res = await fetch(`${SUPABASE_URL}/rest/v1/quiz_attempts`, {
+        await fetch(`${SUPABASE_URL}/rest/v1/quiz_attempts`, {
           method: 'POST',
-          headers: { ...sbHeaders, 'Prefer': 'return=representation' },
+          headers: sbHeaders,
           body: JSON.stringify({
             subject_id: subj.id,
             subject_slug: subj.slug,
-            question_type: selType,
-            difficulty: selLevel,
+            question_type: activeSubjectSlug === 'bahasa-indonesia' ? 'A' : selType,
+            difficulty: 3,
             player_name: 'Siswa',
             score,
             correct_count: correctCount,
@@ -1368,34 +1275,31 @@
             duration_seconds: durationSec
           })
         });
-        if (res.ok) {
-          const inserted = await res.json();
-          if (Array.isArray(inserted) && inserted[0]) recentAttempts.unshift(inserted[0]);
-        }
       } catch (e) {}
     }
 
     const ringColor = score >= 80 ? 'var(--success)' : score >= 60 ? 'var(--primary)' : 'var(--error)';
     let msg = score === 100
-      ? `Sempurna! Kamu menguasai seluruh soal ${subj.name} tanpa terjebak pengecoh.`
+      ? `Sempurna! Kamu menaklukkan seluruh soal HOTS ${subj.name} dengan akurasi 100%.`
       : score >= 80
-      ? `Luar biasa! Pemahaman konsep ${subj.name} kamu sudah sangat matang.`
-      : `Terus berlatih! Pelajari pembahasan di bawah untuk menguasai bagian yang mengecoh.`;
+      ? `Sangat Bagus! Analisis wacana dan penalaran HOTS kamu sudah sangat kuat.`
+      : `Terus berlatih! Baca ulasan pembahasan di bawah untuk memahami logika setiap soal.`;
 
+    const letters = ['A', 'B', 'C', 'D', 'E'];
     const review = answers.map((a, i) => {
       const correctText = a.q.question_type === 'C'
         ? (Array.isArray(a.q.a) ? a.q.a.join(' / ') : a.q.a)
-        : a.q.o[a.q.a];
+        : `${letters[a.q.a]}. ${a.q.o[a.q.a]}`;
       return `
         <details class="review-item" ${a.correct ? '' : 'open'}>
           <summary>
             <span class="mark" style="background:${a.correct ? 'var(--success)' : 'var(--error)'}">${a.correct ? '✓' : '✕'}</span>
-            <span>${i + 1}. [${esc(a.q.topic || 'Umum')}] ${esc(a.q.prompt.split('\n')[0])}</span>
+            <span>${i + 1}. [${esc(a.q.topic || 'Umum')}] ${esc(a.q.prompt)}</span>
           </summary>
           <div class="review-body">
             <div>Jawabanmu: <span class="${a.correct ? 'good' : 'badc'}">${esc(a.user)}</span></div>
             ${a.correct ? '' : `<div>Kunci Jawaban: <span class="good">${esc(correctText)}</span></div>`}
-            <div style="margin-top:4px;">${esc(a.q.explanation)}</div>
+            <div style="margin-top:5px;"><strong>Pembahasan:</strong> ${esc(a.q.explanation)}</div>
           </div>
         </details>`;
     }).join('');
@@ -1403,9 +1307,9 @@
     app.innerHTML = `
       <section class="screen">
         <div class="card result-card">
-          <div class="chip" style="margin-bottom:10px;">${subj.icon} Section ${esc(subj.name)} · Tersimpan di Supabase</div>
-          <h2 style="margin:0 0 6px;">Kuis Selesai!</h2>
-          <p style="color:var(--secondary); max-width:420px; margin:0 auto;">${esc(msg)}</p>
+          <div class="chip" style="margin-bottom:10px;">${subj.icon} ${esc(subj.name)} · Tersimpan di Supabase</div>
+          <h2 style="margin:0 0 6px;">Evaluasi Selesai!</h2>
+          <p style="color:var(--secondary); max-width:440px; margin:0 auto;">${esc(msg)}</p>
           <div class="ring" id="ring" style="--ring-color:${ringColor}">
             <div class="ring-text">
               <div class="ring-score">${score}</div>
@@ -1419,12 +1323,12 @@
           </div>
           <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
             ${wrong.length ? `<button class="primary-btn" onclick="retryWrong()">Ulangi Soal yang Salah (${wrong.length})</button>` : ''}
-            <button class="pill-btn" onclick="startQuiz()">Mainkan Set Baru</button>
+            <button class="pill-btn" onclick="startQuiz()">Latihan Paket Acak Baru</button>
             <button class="pill-btn" onclick="openSubjectSection('${subj.slug}')">Kembali ke Section ${esc(subj.name)}</button>
             <button class="pill-btn" onclick="goAllSubjects()">Semua Mapel (16)</button>
           </div>
           <div class="review">
-            <div class="section-label"><span>Pembahasan Lengkap</span></div>
+            <div class="section-label"><span>Review &amp; Pembahasan Lengkap</span></div>
             ${review}
           </div>
         </div>
@@ -1445,72 +1349,7 @@
   }
 
   /* =====================================================
-     ADD NEW QUESTION DIRECTLY TO SUPABASE
-     ===================================================== */
-  function openAddQuestionModal() {
-    populateSubjectDropdown();
-    document.getElementById('add-modal').classList.remove('hidden');
-  }
-  function closeAddQuestionModal() {
-    document.getElementById('add-modal').classList.add('hidden');
-  }
-
-  async function submitNewQuestion(e) {
-    e.preventDefault();
-    const btn = document.getElementById('save-q-btn');
-    const slug = document.getElementById('q-subject').value;
-    const qType = document.getElementById('q-type').value;
-    const diff = Number(document.getElementById('q-diff').value);
-    const topic = document.getElementById('q-topic').value.trim();
-    const prompt = document.getElementById('q-prompt').value.trim();
-    const rawOpts = document.getElementById('q-options').value.split('\n').map(s => s.trim()).filter(Boolean);
-    const explanation = document.getElementById('q-expl').value.trim();
-
-    const subj = subjects.find(s => s.slug === slug);
-    if (!subj || rawOpts.length < 1) return;
-
-    const options = qType === 'B' ? ['Benar', 'Salah'] : rawOpts;
-    const correct_index = qType === 'B' && rawOpts[0]?.toLowerCase() === 'salah' ? 1 : 0;
-
-    btn.disabled = true;
-    btn.textContent = 'Menyimpan ke Supabase...';
-
-    const payload = {
-      subject_id: subj.id,
-      subject_slug: slug,
-      question_type: qType,
-      difficulty: diff,
-      topic,
-      prompt,
-      options,
-      correct_index,
-      explanation
-    };
-
-    try {
-      const res = await fetch(`${SUPABASE_URL}/rest/v1/questions`, {
-        method: 'POST',
-        headers: { ...sbHeaders, 'Prefer': 'return=representation' },
-        body: JSON.stringify(payload)
-      });
-      if (res.ok) {
-        const created = await res.json();
-        if (Array.isArray(created) && created[0]) allQuestions.push(created[0]);
-      } else {
-        allQuestions.push(payload);
-      }
-    } catch (err) {
-      allQuestions.push(payload);
-    }
-
-    btn.disabled = false;
-    btn.textContent = 'Simpan ke Supabase';
-    closeAddQuestionModal();
-    openSubjectSection(slug);
-  }
-
-  /* =====================================================
-     KEYBOARD SHORTCUTS & DOWNLOAD
+     KEYBOARD SHORTCUTS (Supports A-E and 1-5)
      ===================================================== */
   document.addEventListener('keydown', e => {
     if (!quizQuestions.length || !document.querySelector('.quiz-card')) return;
@@ -1521,7 +1360,7 @@
       return;
     }
     if (answered || ['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) return;
-    const map = { '1': 0, '2': 1, '3': 2, '4': 3, a: 0, b: 1, c: 2, d: 3 };
+    const map = { '1': 0, '2': 1, '3': 2, '4': 3, '5': 4, a: 0, b: 1, c: 2, d: 3, e: 4 };
     const idx = map[e.key.toLowerCase()];
     const q = quizQuestions[current];
     if (idx !== undefined && q.o && idx < q.o.length) choose(idx);
@@ -1532,14 +1371,13 @@
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'nusantara-16-subject-quiz.html';
+    a.download = 'nusantara-quiz-sas-bahasa-indonesia.html';
     document.body.appendChild(a);
     a.click();
     a.remove();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
 
-  // Initial render + live Supabase fetch
   renderAllSubjectsDirectory();
   syncFromSupabase();
 </script>

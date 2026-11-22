@@ -16,13 +16,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Tokoh biologi yang meletakkan dasar sistem tata nama ganda (Binomial Nomenclature) dan dijuluki sebagai Bapak Taksonomi Modern adalah…',
     options: [
-      { key: 'A', text: 'Charles Robert Darwin' },
-      { key: 'B', text: 'Carolus Linnaeus' },
-      { key: 'C', text: 'Robert H. Whittaker' },
-      { key: 'D', text: 'Gregor Johann Mendel' },
-      { key: 'E', text: 'Ernst Haeckel' }
+      { key: 'A', text: "Carolus Linnaeus" },
+      { key: 'B', text: "Gregor Johann Mendel" },
+      { key: 'C', text: "Robert H. Whittaker" },
+      { key: 'D', text: "Ernst Haeckel" },
+      { key: 'E', text: "Charles Robert Darwin" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'A',
     hint: 'Ilmuwan asal Swedia ini menulis buku Species Plantarum dan Systema Naturae pada abad ke-18.',
     explanation:
       'Carolus Linnaeus (Carl von Linné) mempelopori pengelompokan makhluk hidup secara hierarkis (takson) dan membakukan sistem tata nama ilmiah dua kata (Binomial Nomenclature).',
@@ -40,11 +40,11 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Urutan tingkatan takson pada tumbuhan dari tingkat tertinggi (paling umum) hingga tingkat terendah (paling spesifik) yang benar adalah…',
     options: [
-      { key: 'A', text: 'Kingdom – Filum – Kelas – Ordo – Famili – Genus – Spesies' },
-      { key: 'B', text: 'Kingdom – Divisi – Kelas – Ordo – Famili – Genus – Spesies' },
-      { key: 'C', text: 'Kingdom – Divisi – Ordo – Kelas – Famili – Genus – Spesies' },
-      { key: 'D', text: 'Divisi – Kingdom – Kelas – Famili – Ordo – Genus – Spesies' },
-      { key: 'E', text: 'Spesies – Genus – Famili – Ordo – Kelas – Divisi – Kingdom' }
+      { key: 'A', text: "Kingdom – Divisi – Ordo – Kelas – Famili – Genus – Spesies" },
+      { key: 'B', text: "Kingdom – Divisi – Kelas – Ordo – Famili – Genus – Spesies" },
+      { key: 'C', text: "Kingdom – Filum – Kelas – Ordo – Famili – Genus – Spesies" },
+      { key: 'D', text: "Spesies – Genus – Famili – Ordo – Kelas – Divisi – Kingdom" },
+      { key: 'E', text: "Divisi – Kingdom – Kelas – Famili – Ordo – Genus – Spesies" }
     ],
     correct_answer: 'B',
     hint: 'Perhatikan bahwa pada tumbuhan digunakan istilah "Divisi" (Divisio), sedangkan pada hewan digunakan istilah "Filum" (Phylum).',
@@ -64,13 +64,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Penulisan nama ilmiah tanaman padi menurut aturan Binomial Nomenclature yang benar pada teks cetak adalah…',
     options: [
-      { key: 'A', text: 'Oryza Sativa' },
-      { key: 'B', text: 'oryza sativa' },
-      { key: 'C', text: 'Oryza sativa (dicetak miring)' },
-      { key: 'D', text: 'ORYZA SATIVA (digarisbawahi bersama)' },
-      { key: 'E', text: 'oryza Sativa (dicetak tebal)' }
+      { key: 'A', text: "ORYZA SATIVA (digarisbawahi bersama)" },
+      { key: 'B', text: "oryza Sativa (dicetak tebal)" },
+      { key: 'C', text: "oryza sativa" },
+      { key: 'D', text: "Oryza Sativa" },
+      { key: 'E', text: "Oryza sativa (dicetak miring)" }
     ],
-    correct_answer: 'C',
+    correct_answer: 'E',
     hint: 'Kata pertama adalah nama genus (huruf awal kapital), kata kedua adalah penunjuk spesies (huruf kecil seluruhnya), dan wajib dicetak miring.',
     explanation:
       'Kaidah Binomial Nomenclature: (1) Terdiri atas dua kata bahasa Latin/dilatinkan; (2) Kata pertama menunjukkan Genus (diawali huruf kapital); (3) Kata kedua menunjukkan penunjuk spesies/epithet spesifik (huruf kecil semua); (4) Dicetak miring (Oryza sativa) atau digarisbawahi terpisah per kata jika ditulis tangan.',
@@ -88,13 +88,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Dalam sistem klasifikasi Lima Kingdom yang dikemukakan oleh Robert H. Whittaker (1969), seluruh organisme dikelompokkan menjadi…',
     options: [
-      { key: 'A', text: 'Plantae, Animalia, Protista, Virus, dan Prion' },
-      { key: 'B', text: 'Monera, Protista, Fungi, Plantae, dan Animalia' },
-      { key: 'C', text: 'Archaebacteria, Eubacteria, Virus, Fungi, dan Plantae' },
-      { key: 'D', text: 'Bryophyta, Pteridophyta, Spermatophyta, Vertebrata, dan Invertebrata' },
-      { key: 'E', text: 'Prokariota, Eukariota, Autotrof, Heterotrof, dan Dekomposer' }
+      { key: 'A', text: "Monera, Protista, Fungi, Plantae, dan Animalia" },
+      { key: 'B', text: "Prokariota, Eukariota, Autotrof, Heterotrof, dan Dekomposer" },
+      { key: 'C', text: "Archaebacteria, Eubacteria, Virus, Fungi, dan Plantae" },
+      { key: 'D', text: "Plantae, Animalia, Protista, Virus, dan Prion" },
+      { key: 'E', text: "Bryophyta, Pteridophyta, Spermatophyta, Vertebrata, dan Invertebrata" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'A',
     hint: 'Whittaker memisahkan jamur (Fungi) dari tumbuhan (Plantae) berdasarkan cara memperoleh makanannya.',
     explanation:
       'Sistem 5 Kingdom Robert H. Whittaker (1969) mengelompokkan makhluk hidup berdasarkan tipe sel (prokariotik/eukariotik), organisasi sel (uniseluler/multiseluler), dan tipe nutrisi menjadi: Monera, Protista, Fungi, Plantae, dan Animalia.',
@@ -112,13 +112,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Alasan ilmiah utama Robert H. Whittaker mengeluarkan kelompok jamur (Fungi) dari Kingdom Plantae dan menempatkannya ke dalam kingdom tersendiri adalah…',
     options: [
-      { key: 'A', text: 'Jamur bersifat prokariotik karena tidak memiliki membran inti sel' },
-      { key: 'B', text: 'Jamur tidak memiliki klorofil (bersifat heterotrof absorptif) dan dinding selnya tersusun atas zat kitin, bukan selulosa' },
-      { key: 'C', text: 'Jamur dapat bergerak aktif berpindah tempat menggunakan kaki semu (pseudopodia)' },
-      { key: 'D', text: 'Jamur tidak memiliki dinding sel sama sekali seperti sel hewan' },
-      { key: 'E', text: 'Jamur hanya dapat bereproduksi di dalam sel hidup seperti virus' }
+      { key: 'A', text: "Jamur bersifat prokariotik karena tidak memiliki membran inti sel" },
+      { key: 'B', text: "Jamur tidak memiliki dinding sel sama sekali seperti sel hewan" },
+      { key: 'C', text: "Jamur tidak memiliki klorofil (bersifat heterotrof absorptif) dan dinding selnya tersusun atas zat kitin, bukan selulosa" },
+      { key: 'D', text: "Jamur hanya dapat bereproduksi di dalam sel hidup seperti virus" },
+      { key: 'E', text: "Jamur dapat bergerak aktif berpindah tempat menggunakan kaki semu (pseudopodia)" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'C',
     hint: 'Bandingkan cara tumbuhan hijau membuat makanan (fotosintesis) dan komposisi dinding selnya (selulosa) dengan cara hidup jamur.',
     explanation:
       'Meskipun jamur tampak tidak berpindah tempat seperti tumbuhan, jamur tidak memiliki kloroplas/klorofil sehingga bersifat heterotrof (menyerap nutrisi organik dari lingkungan secara saprofit/parasit) dan dinding selnya tersusun atas kitin (chitin), bukan selulosa.',
@@ -136,11 +136,11 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Pengelompokan tumbuhan menjadi kelompok tanaman obat, tanaman sayur, tanaman hias, dan tanaman pelindung jalan oleh masyarakat sehari-hari merupakan contoh sistem klasifikasi…',
     options: [
-      { key: 'A', text: 'Sistem Filogenetik berdasarkan analisis sekuens rRNA' },
-      { key: 'B', text: 'Sistem Artifisial (Buatan / Praktis) berdasarkan kegunaan atau manfaat bagi manusia' },
-      { key: 'C', text: 'Sistem Kladistik berdasarkan nenek moyang bersama' },
-      { key: 'D', text: 'Sistem Tiga Domain Carl Woese' },
-      { key: 'E', text: 'Sistem Kemotaksonomi molekuler' }
+      { key: 'A', text: "Sistem Filogenetik berdasarkan analisis sekuens rRNA" },
+      { key: 'B', text: "Sistem Artifisial (Buatan / Praktis) berdasarkan kegunaan atau manfaat bagi manusia" },
+      { key: 'C', text: "Sistem Tiga Domain Carl Woese" },
+      { key: 'D', text: "Sistem Kladistik berdasarkan nenek moyang bersama" },
+      { key: 'E', text: "Sistem Kemotaksonomi molekuler" }
     ],
     correct_answer: 'B',
     hint: 'Sistem ini tidak melihat hubungan kekerabatan evolusi, melainkan kemudahan pemanfaatan praktis.',
@@ -160,13 +160,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Semakin rendah tingkatan takson yang dimiliki bersama oleh dua organisme (misalnya berada dalam satu Genus yang sama dibandingkan hanya satu Kelas yang sama), maka…',
     options: [
-      { key: 'A', text: 'Semakin sedikit persamaan ciri yang dimiliki dan semakin banyak jumlah anggotanya' },
-      { key: 'B', text: 'Semakin banyak persamaan ciri morfologi-genetiknya dan semakin dekat hubungan kekerabatannya' },
-      { key: 'C', text: 'Semakin jauh hubungan kekerabatan evolusinya' },
-      { key: 'D', text: 'Kedua organisme tersebut tidak memiliki persamaan struktur anatomi sama sekali' },
-      { key: 'E', text: 'Jumlah spesies di dalam takson tersebut menjadi tak terhingga' }
+      { key: 'A', text: "Semakin banyak persamaan ciri morfologi-genetiknya dan semakin dekat hubungan kekerabatannya" },
+      { key: 'B', text: "Jumlah spesies di dalam takson tersebut menjadi tak terhingga" },
+      { key: 'C', text: "Semakin sedikit persamaan ciri yang dimiliki dan semakin banyak jumlah anggotanya" },
+      { key: 'D', text: "Kedua organisme tersebut tidak memiliki persamaan struktur anatomi sama sekali" },
+      { key: 'E', text: "Semakin jauh hubungan kekerabatan evolusinya" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'A',
     hint: 'Bandingkan tingkat kemiripan antara singa dan harimau (satu genus Panthera) dengan singa dan katak (hanya satu filum Chordata).',
     explanation:
       'Dalam hierarki taksonomi, semakin ke bawah (menuju tingkat Spesies): jumlah anggota takson semakin sedikit, namun jumlah persamaan ciri semakin banyak dan hubungan kekerabatan antaranggota semakin dekat.',
@@ -184,13 +184,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Dalam sistem klasifikasi Tiga Domain yang diusulkan oleh Carl Woese berdasarkan analisis urutan basa rRNA subunit kecil (16S/18S rRNA), seluruh makhluk hidup di bumi dibagi menjadi tiga domain utama, yaitu…',
     options: [
-      { key: 'A', text: 'Monera, Protista, dan Eukarya' },
-      { key: 'B', text: 'Bacteria, Archaea, dan Eukarya' },
-      { key: 'C', text: 'Plantae, Animalia, dan Fungi' },
-      { key: 'D', text: 'Virus, Prokarya, dan Metazoa' },
-      { key: 'E', text: 'Autotrof, Heterotrof, dan Kemoautotrof' }
+      { key: 'A', text: "Plantae, Animalia, dan Fungi" },
+      { key: 'B', text: "Virus, Prokarya, dan Metazoa" },
+      { key: 'C', text: "Monera, Protista, dan Eukarya" },
+      { key: 'D', text: "Autotrof, Heterotrof, dan Kemoautotrof" },
+      { key: 'E', text: "Bacteria, Archaea, dan Eukarya" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'E',
     hint: 'Carl Woese memisahkan prokariota menjadi dua domain berbeda karena perbedaan struktur membran lipid dan sekuens rRNA.',
     explanation:
       'Carl Woese (1977, 1990) membagi kehidupan menjadi 3 Domain di atas tingkat Kingdom: Domain Bacteria (Eubacteria), Domain Archaea (Archaebacteria), dan Domain Eukarya (mencakup Protista, Fungi, Plantae, dan Animalia).',
@@ -208,13 +208,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Alat bantu identifikasi taksonomi yang terdiri atas serangkaian pasangan pernyataan berlawanan (kuplet 1a–1b, 2a–2b, dst.) mengenai ciri morfologi untuk menentukan nama kelompok atau spesies suatu spesimen disebut…',
     options: [
-      { key: 'A', text: 'Pohon filogenetik molekuler' },
-      { key: 'B', text: 'Kunci determinasi dikotomis' },
-      { key: 'C', text: 'Tabel periodik unsur biologis' },
-      { key: 'D', text: 'Herbarium basah' },
-      { key: 'E', text: 'Peta kromosom (Kariotipe)' }
+      { key: 'A', text: "Kunci determinasi dikotomis" },
+      { key: 'B', text: "Pohon filogenetik molekuler" },
+      { key: 'C', text: "Peta kromosom (Kariotipe)" },
+      { key: 'D', text: "Herbarium basah" },
+      { key: 'E', text: "Tabel periodik unsur biologis" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'A',
     hint: 'Istilah "dikotomis" berarti bercabang menjadi dua pilihan yang saling bertolak belakang pada setiap nomor.',
     explanation:
       'Kunci determinasi dikotomis adalah daftar pasangan pernyataan ciri yang berlawanan (misalnya 1a. Bertulang belakang vs 1b. Tidak bertulang belakang) yang memandu peneliti mengidentifikasi takson suatu organisme secara bertahap.',
@@ -232,13 +232,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Akhiran baku (sufiks) yang digunakan untuk menandai tingkatan takson Famili (Suku) pada klasifikasi tumbuhan menurut Kode Internasional Tata Nama Tumbuhan adalah…',
     options: [
-      { key: 'A', text: '-ophyta' },
-      { key: 'B', text: '-opsida' },
-      { key: 'C', text: '-ales' },
-      { key: 'D', text: '-aceae' },
-      { key: 'E', text: '-idae' }
+      { key: 'A', text: "-idae" },
+      { key: 'B', text: "-aceae" },
+      { key: 'C', text: "-ophyta" },
+      { key: 'D', text: "-ales" },
+      { key: 'E', text: "-opsida" }
     ],
-    correct_answer: 'D',
+    correct_answer: 'B',
     hint: 'Contoh nama famili tumbuhan adalah Solanaceae, Fabaceae, Poaceae, dan Arecaceae.',
     explanation:
       'Dalam tata nama takson tumbuhan: Divisi berakhiran -ophyta (Spermatophyta), Kelas berakhiran -opsida/-inae, Ordo berakhiran -ales (Zingiberales), dan Famili berakhiran -aceae (Zingiberaceae, Poaceae). Adapun -idae adalah akhiran famili untuk hewan (Felidae).',
@@ -261,13 +261,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Seorang siswa mengamati seekor Trenggiling (Manis javanica) yang memiliki sisik pelindung di punggungnya namun melahirkan anak, menyusui anaknya dengan kelenjar susu, dan memiliki rambut di bagian perut. Urutan nomor kunci determinasi yang tepat untuk Trenggiling adalah…',
     options: [
-      { key: 'A', text: '1a – 2b – 4a (Kelas Reptilia)' },
-      { key: 'B', text: '1a – 2a – 3a (Kelas Mammalia)' },
-      { key: 'C', text: '1a – 2a – 3b (Kelas Aves)' },
-      { key: 'D', text: '1b – 2b – 4b (Kelas Amphibia)' },
-      { key: 'E', text: '1a – 2b – 3a (Kelas Mammalia)' }
+      { key: 'A', text: "1a – 2b – 3a (Kelas Mammalia)" },
+      { key: 'B', text: "1a – 2a – 3b (Kelas Aves)" },
+      { key: 'C', text: "1a – 2b – 4a (Kelas Reptilia)" },
+      { key: 'D', text: "1a – 2a – 3a (Kelas Mammalia)" },
+      { key: 'E', text: "1b – 2b – 4b (Kelas Amphibia)" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'D',
     hint: 'Jangan terkecoh dengan sisik keratin trenggiling! Perhatikan bahwa trenggiling berdarah panas (homoioterm), berambut, dan memiliki kelenjar susu.',
     explanation:
       'Trenggiling (Manis javanica) adalah hewan bertulang belakang (1a), bersifat homoioterm/berdarah panas (2a), serta memiliki rambut dan kelenjar susu untuk menyusui anaknya (3a), sehingga tergolong Kelas Mammalia (bukan Reptilia).',
@@ -286,13 +286,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Berdasarkan informasi taksonomi di atas, pernyataan hubungan kekerabatan yang paling tepat adalah…',
     options: [
-      { key: 'A', text: 'Tanaman (1) dan (2) memiliki kekerabatan paling dekat karena berada dalam satu Genus yang sama (Solanum)' },
-      { key: 'B', text: 'Tanaman (2) dan (4) memiliki kekerabatan paling dekat karena penunjuk spesiesnya sama-sama berakhiran -um' },
-      { key: 'C', text: 'Tanaman (1), (2), dan (3) berada dalam satu Spesies yang sama namun berbeda Famili' },
-      { key: 'D', text: 'Tanaman (1) dan (3) berada dalam satu Genus yang sama yaitu Solanaceae' },
-      { key: 'E', text: 'Keempat tanaman tersebut memiliki tingkat kekerabatan yang sama persis' }
+      { key: 'A', text: "Tanaman (1), (2), dan (3) berada dalam satu Spesies yang sama namun berbeda Famili" },
+      { key: 'B', text: "Tanaman (2) dan (4) memiliki kekerabatan paling dekat karena penunjuk spesiesnya sama-sama berakhiran -um" },
+      { key: 'C', text: "Tanaman (1) dan (3) berada dalam satu Genus yang sama yaitu Solanaceae" },
+      { key: 'D', text: "Tanaman (1) dan (2) memiliki kekerabatan paling dekat karena berada dalam satu Genus yang sama (Solanum)" },
+      { key: 'E', text: "Keempat tanaman tersebut memiliki tingkat kekerabatan yang sama persis" }
     ],
-    correct_answer: 'A',
+    correct_answer: 'D',
     hint: 'Perhatikan kata pertama dari nama ilmiah (nama Genus) pada kentang dan tomat.',
     explanation:
       'Kentang (Solanum tuberosum) dan tomat (Solanum lycopersicum) berada dalam satu Genus yang sama (Solanum), sehingga kekerabatannya paling dekat. Cabai rawit (Capsicum frutescens) berbeda genus namun masih satu Famili (Solanaceae) dengan kentang dan tomat.',
@@ -310,13 +310,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Dalam sistem klasifikasi filogenetik, sayap kelelawar, sirip dada paus, dan tangan manusia digunakan sebagai dasar pengelompokan ketiganya ke dalam Kelas Mammalia karena ketiga organ tersebut bersifat…',
     options: [
-      { key: 'A', text: 'Analog (asal-usul struktur dasar berbeda, tetapi fungsinya sama untuk terbang)' },
-      { key: 'B', text: 'Homolog (memiliki struktur anatomi dasar dan asal-usul embriologis yang sama dari nenek moyang bersama meskipun fungsinya berbeda)' },
-      { key: 'C', text: 'Vestigial (organ sisa yang sudah tidak memiliki tulang maupun jaringan otot)' },
-      { key: 'D', text: 'Identik secara fungsi lokomosi di udara' },
-      { key: 'E', text: 'Hasil evolusi konvergen antara serangga dan mamalia' }
+      { key: 'A', text: "Homolog (memiliki struktur anatomi dasar dan asal-usul embriologis yang sama dari nenek moyang bersama meskipun fungsinya berbeda)" },
+      { key: 'B', text: "Vestigial (organ sisa yang sudah tidak memiliki tulang maupun jaringan otot)" },
+      { key: 'C', text: "Hasil evolusi konvergen antara serangga dan mamalia" },
+      { key: 'D', text: "Identik secara fungsi lokomosi di udara" },
+      { key: 'E', text: "Analog (asal-usul struktur dasar berbeda, tetapi fungsinya sama untuk terbang)" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'A',
     hint: 'Bandingkan struktur tulang humerus, radius, ulna, karpal, dan falang pada tangan manusia, sirip paus, dan sayap kelelawar.',
     explanation:
       'Organ homolog adalah organ yang memiliki struktur dasar anatomi dan asal-usul evolusi/embriologi yang sama (pola tulang anggota gerak depan tetrapoda), meskipun telah beradaptasi untuk fungsi berbeda (memegang, berenang, terbang). Klasifikasi filogenetik didasarkan pada homologi, bukan analogi.',
@@ -335,13 +335,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Berdasarkan ciri-ciri morfologi dan anatomi tersebut, tumbuhan yang ditemukan siswa harus diklasifikasikan ke dalam divisi…',
     options: [
-      { key: 'A', text: 'Bryophyta (Tumbuhan Lumut)' },
-      { key: 'B', text: 'Pteridophyta (Tumbuhan Paku)' },
-      { key: 'C', text: 'Gymnospermae (Tumbuhan Berbiji Terbuka)' },
-      { key: 'D', text: 'Angiospermae (Tumbuhan Berbiji Tertutup)' },
-      { key: 'E', text: 'Basidiomycota (Jamur Makroskopis)' }
+      { key: 'A', text: "Angiospermae (Tumbuhan Berbiji Tertutup)" },
+      { key: 'B', text: "Basidiomycota (Jamur Makroskopis)" },
+      { key: 'C', text: "Pteridophyta (Tumbuhan Paku)" },
+      { key: 'D', text: "Bryophyta (Tumbuhan Lumut)" },
+      { key: 'E', text: "Gymnospermae (Tumbuhan Berbiji Terbuka)" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'C',
     hint: 'Tumbuhan ini sudah berpembuluh (Tracheophyta) tetapi belum menghasilkan biji, dan ciri khas daun mudanya menggulung.',
     explanation:
       'Divisi Pteridophyta (tumbuhan paku) memiliki ciri kunci: sudah berupa kormus sejati berpembuluh (xilem-floem), daun muda menggulung (circinate vernation), dan bereproduksi dengan spora (terkumpul dalam sorus di bawah daun troposporofil). Bryophyta belum berpembuluh, sedangkan Spermatophyta menghasilkan biji.',
@@ -359,13 +359,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Seorang peneliti menemukan organisme mikroskopis uniseluler di air kolam yang memiliki membran inti sel (eukariotik), bergerak aktif menggunakan bulu cambuk (flagela), serta memiliki kloroplas untuk berfotosintesis saat ada cahaya maupun menyerap bahan organik saat gelap. Dalam sistem Lima Kingdom Whittaker, organisme ini dimasukkan ke dalam Kingdom…',
     options: [
-      { key: 'A', text: 'Monera' },
-      { key: 'B', text: 'Protista' },
-      { key: 'C', text: 'Fungi' },
-      { key: 'D', text: 'Plantae' },
-      { key: 'E', text: 'Animalia' }
+      { key: 'A', text: "Fungi" },
+      { key: 'B', text: "Monera" },
+      { key: 'C', text: "Protista" },
+      { key: 'D', text: "Plantae" },
+      { key: 'E', text: "Animalia" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'C',
     hint: 'Organisme ini adalah Euglena viridis yang bersifat eukariotik uniseluler.',
     explanation:
       'Kingdom Protista mencakup organisme eukariotik (memiliki membran inti) yang umumnya uniseluler atau multiseluler sederhana (belum terdiferensiasi menjadi jaringan sejati). Euglena termasuk Protista mirip tumbuhan/hewan (miksotrof).',
@@ -383,13 +383,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Dalam kaidah penulisan taksonomi, kadang ditemukan penulisan nama ilmiah dengan tiga kata (Trinomial Nomenclature) seperti Oryza sativa glutinosa (ketan) atau Panthera tigris sumatrae (harimau sumatera). Kata ketiga pada penulisan tersebut menunjukkan tingkatan takson di bawah spesies, yaitu…',
     options: [
-      { key: 'A', text: 'Nama Genus kedua dari hasil mutasi' },
-      { key: 'B', text: 'Varietas (pada tumbuhan) atau Subspesies/Ras geografis (pada hewan)' },
-      { key: 'C', text: 'Nama Famili dan Ordo asal organisme tersebut' },
-      { key: 'D', text: 'Nama penemu yang membiayai ekspedisi penelitian' },
-      { key: 'E', text: 'Nama habitat ekosistem tempat organisme tersebut punah' }
+      { key: 'A', text: "Nama habitat ekosistem tempat organisme tersebut punah" },
+      { key: 'B', text: "Nama penemu yang membiayai ekspedisi penelitian" },
+      { key: 'C', text: "Varietas (pada tumbuhan) atau Subspesies/Ras geografis (pada hewan)" },
+      { key: 'D', text: "Nama Genus kedua dari hasil mutasi" },
+      { key: 'E', text: "Nama Famili dan Ordo asal organisme tersebut" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'C',
     hint: 'Harimau sumatera, harimau benggala, dan harimau siberia masih satu spesies Panthera tigris, tetapi berbeda subspesies.',
     explanation:
       'Sistem Trinomial Nomenclature (tata nama tiga kata) digunakan untuk menamai takson intraspesifik (di bawah tingkat spesies), yaitu Subspesies pada hewan (Panthera tigris sumatrae) atau Varietas pada tumbuhan (Oryza sativa var. glutinosa).',
@@ -408,11 +408,11 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Pasangan contoh tumbuhan yang tepat untuk Kelompok P dan Kelompok Q secara berurutan adalah…',
     options: [
-      { key: 'A', text: 'Kelompok P: Mangga dan Kacang tanah; Kelompok Q: Padi dan Jagung' },
-      { key: 'B', text: 'Kelompok P: Jagung (Zea mays) dan Kelapa (Cocos nucifera); Kelompok Q: Mangga (Mangifera indica) dan Kacang tanah (Arachis hypogaea)' },
-      { key: 'C', text: 'Kelompok P: Pakis haji dan Melinjo; Kelompok Q: Lumut hati dan Paku suplir' },
-      { key: 'D', text: 'Kelompok P: Pinus dan Damar; Kelompok Q: Anggrek dan Pisang' },
-      { key: 'E', text: 'Kelompok P: Jamur tiram dan Ragi; Kelompok Q: Padi dan Gandum' }
+      { key: 'A', text: "Kelompok P: Jamur tiram dan Ragi; Kelompok Q: Padi dan Gandum" },
+      { key: 'B', text: "Kelompok P: Jagung (Zea mays) dan Kelapa (Cocos nucifera); Kelompok Q: Mangga (Mangifera indica) dan Kacang tanah (Arachis hypogaea)" },
+      { key: 'C', text: "Kelompok P: Mangga dan Kacang tanah; Kelompok Q: Padi dan Jagung" },
+      { key: 'D', text: "Kelompok P: Pinus dan Damar; Kelompok Q: Anggrek dan Pisang" },
+      { key: 'E', text: "Kelompok P: Pakis haji dan Melinjo; Kelompok Q: Lumut hati dan Paku suplir" }
     ],
     correct_answer: 'B',
     hint: 'Kelompok P adalah ciri khas kelas Monokotil (Liliopsida), sedangkan Kelompok Q adalah ciri khas kelas Dikotil (Magnoliopsida).',
@@ -432,13 +432,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Pada penulisan nama ilmiah jagung, tertulis Zea mays L. Huruf "L." yang dicantumkan dengan huruf tegak di belakang nama spesies tersebut memiliki arti…',
     options: [
-      { key: 'A', text: 'Menunjukkan bahwa jagung berasal dari kawasan Amerika Latin' },
-      { key: 'B', text: 'Singkatan nama author/deskripsi pertama spesies tersebut, yaitu Carolus Linnaeus' },
-      { key: 'C', text: 'Kode laboratorium tempat benih jagung tersebut dimodifikasi secara genetik' },
-      { key: 'D', text: 'Menandakan bahwa spesies tersebut termasuk tumbuhan langka yang dilindungi' },
-      { key: 'E', text: 'Menunjukkan ukuran biji jagung berukuran lebar (Large)' }
+      { key: 'A', text: "Menunjukkan bahwa jagung berasal dari kawasan Amerika Latin" },
+      { key: 'B', text: "Menunjukkan ukuran biji jagung berukuran lebar (Large)" },
+      { key: 'C', text: "Kode laboratorium tempat benih jagung tersebut dimodifikasi secara genetik" },
+      { key: 'D', text: "Menandakan bahwa spesies tersebut termasuk tumbuhan langka yang dilindungi" },
+      { key: 'E', text: "Singkatan nama author/deskripsi pertama spesies tersebut, yaitu Carolus Linnaeus" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'E',
     hint: 'Dalam publikasi taksonomi formal, nama orang yang pertama kali memublikasikan deskripsi valid suatu spesies dicantumkan di belakang epithet spesifik.',
     explanation:
       'Sitasi nama author (seperti "L." untuk Carolus Linnaeus pada Zea mays L. atau Oryza sativa L.) ditulis dengan huruf tegak di belakang nama ilmiah untuk merujuk pada ilmuwan yang pertama kali mendeskripsikan dan menerbitkan nama spesies tersebut secara sah.',
@@ -456,13 +456,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Pakis haji (Cycas rumphii), melinjo (Gnetum gnemon), dan pinus (Pinus merkusii) dikelompokkan bersama ke dalam subdivisi Gymnospermae karena ketiganya memiliki persamaan ciri utama berupa…',
     options: [
-      { key: 'A', text: 'Bakal biji tidak tertutup oleh daun buah (karpel/ovarium) dan alat reproduksinya berupa runjung (strobilus)' },
-      { key: 'B', text: 'Mengalami pembuahan ganda yang menghasilkan endosperma triploid (3n) di dalam buah sejati' },
-      { key: 'C', text: 'Tidak memiliki jaringan pembuluh xilem maupun floem' },
-      { key: 'D', text: 'Berkembang biak menggunakan spora haploid di permukaan bawah daun' },
-      { key: 'E', text: 'Memiliki mahkota bunga berwarna mencolok untuk menarik serangga penyerbuk' }
+      { key: 'A', text: "Memiliki mahkota bunga berwarna mencolok untuk menarik serangga penyerbuk" },
+      { key: 'B', text: "Bakal biji tidak tertutup oleh daun buah (karpel/ovarium) dan alat reproduksinya berupa runjung (strobilus)" },
+      { key: 'C', text: "Tidak memiliki jaringan pembuluh xilem maupun floem" },
+      { key: 'D', text: "Berkembang biak menggunakan spora haploid di permukaan bawah daun" },
+      { key: 'E', text: "Mengalami pembuahan ganda yang menghasilkan endosperma triploid (3n) di dalam buah sejati" }
     ],
-    correct_answer: 'A',
+    correct_answer: 'B',
     hint: 'Istilah Gymnospermae berasal dari kata Yunani "gymnos" (telanjang/terbuka) dan "sperma" (biji).',
     explanation:
       'Tumbuhan Gymnospermae (berbiji terbuka) memiliki bakal biji yang terbuka (tidak terbungkus bakal buah/ovarium), tidak memiliki bunga sejati melainkan organ reproduksi berbentuk strobilus (runjung), dan umumnya mengalami pembuahan tunggal.',
@@ -480,13 +480,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Dalam pembuatan kunci determinasi dikotomis untuk 5 spesies hewan berbeda yang akan dipisahkan satu per satu hingga tuntas, berapakah jumlah minimal pasangan pernyataan (kuplet bernomor) yang diperlukan?',
     options: [
-      { key: 'A', text: '2 kuplet' },
-      { key: 'B', text: '4 kuplet' },
-      { key: 'C', text: '5 kuplet' },
-      { key: 'D', text: '10 kuplet' },
-      { key: 'E', text: '25 kuplet' }
+      { key: 'A', text: "10 kuplet" },
+      { key: 'B', text: "2 kuplet" },
+      { key: 'C', text: "5 kuplet" },
+      { key: 'D', text: "25 kuplet" },
+      { key: 'E', text: "4 kuplet" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'E',
     hint: 'Setiap 1 kuplet percabangan dikotomis memisahkan minimal 1 takson hingga tersisa takson terakhir; gunakan rumus (N - 1).',
     explanation:
       'Secara matematis pada pohon biner/kunci dikotomis, untuk memisahkan N takson/spesies secara tuntas diperlukan tepat (N - 1) titik percabangan (kuplet). Untuk 5 spesies diperlukan 5 - 1 = 4 kuplet pasangan pernyataan (kuplet 1, 2, 3, dan 4).',
@@ -542,13 +542,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Berdasarkan analisis kladogram vertebrata di atas, pernyataan yang PALING TEPAT mengenai hubungan kekerabatan filogenetik dan kepemilikan karakter turunan bersama (sinapomorfi) adalah…',
     options: [
-      { key: 'A', text: 'Salamander memiliki kekerabatan lebih dekat dengan Ikan Hiu dibandingkan dengan Kadal karena sama-sama hidup di dekat air.' },
-      { key: 'B', text: 'Kadal dan Harimau membentuk satu klad (kelompok monofiletik Amniota) yang berbagi nenek moyang bersama paling dekat dengan karakter sinapomorfi berupa rahang, empat tungkai, dan telur amniotik.' },
-      { key: 'C', text: 'Karakter telur amniotik (3) dimiliki oleh Lamprey, Ikan Hiu, dan Salamander, tetapi hilang pada Harimau.' },
-      { key: 'D', text: 'Ikan Hiu tidak memiliki rahang berengsel karena cabangnya muncul setelah titik karakter (1).' },
-      { key: 'E', text: 'Harimau hanya memiliki karakter rambut & kelenjar susu (4), tanpa mewarisi karakter (1), (2), dan (3).' }
+      { key: 'A', text: "Salamander memiliki kekerabatan lebih dekat dengan Ikan Hiu dibandingkan dengan Kadal karena sama-sama hidup di dekat air." },
+      { key: 'B', text: "Harimau hanya memiliki karakter rambut & kelenjar susu (4), tanpa mewarisi karakter (1), (2), dan (3)." },
+      { key: 'C', text: "Ikan Hiu tidak memiliki rahang berengsel karena cabangnya muncul setelah titik karakter (1)." },
+      { key: 'D', text: "Kadal dan Harimau membentuk satu klad (kelompok monofiletik Amniota) yang berbagi nenek moyang bersama paling dekat dengan karakter sinapomorfi berupa rahang, empat tungkai, dan telur amniotik." },
+      { key: 'E', text: "Karakter telur amniotik (3) dimiliki oleh Lamprey, Ikan Hiu, dan Salamander, tetapi hilang pada Harimau." }
     ],
-    correct_answer: 'B',
+    correct_answer: 'D',
     hint: 'Pada kladogram, setiap titik karakter merah diwariskan kepada seluruh cabang yang berada di sebelah atas/kanan titik tersebut.',
     explanation:
       'Dalam analisis kladistik, takson yang berada setelah suatu titik karakter mewarisi seluruh karakter tersebut. Kadal dan Harimau berbagi titik percabangan (nenek moyang bersama) paling akhir setelah munculnya karakter (3) Telur Amniotik, sehingga keduanya memiliki rahang (1), empat tungkai (2), dan membran amniotik (3), sedangkan Harimau memiliki tambahan karakter (4) Rambut & Kelenjar Susu.',
@@ -603,13 +603,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Tabel di atas menampilkan perbandingan sekuens asam amino protein respirasi Sitokrom-c pada lima spesies vertebrata. Berdasarkan prinsip taksonomi molekuler, urutan spesies dari yang memiliki hubungan kekerabatan evolusi PALING JAUH hingga PALING DEKAT terhadap Manusia adalah…',
     options: [
-      { key: 'A', text: 'Spesies P – Spesies Q – Spesies R – Spesies S' },
-      { key: 'B', text: 'Spesies S – Spesies R – Spesies Q – Spesies P' },
-      { key: 'C', text: 'Spesies R – Spesies S – Spesies P – Spesies Q' },
-      { key: 'D', text: 'Spesies Q – Spesies P – Spesies S – Spesies R' },
-      { key: 'E', text: 'Keempat spesies memiliki jarak kekerabatan yang sama karena sama-sama memiliki protein Sitokrom-c' }
+      { key: 'A', text: "Spesies S – Spesies R – Spesies Q – Spesies P" },
+      { key: 'B', text: "Spesies R – Spesies S – Spesies P – Spesies Q" },
+      { key: 'C', text: "Spesies P – Spesies Q – Spesies R – Spesies S" },
+      { key: 'D', text: "Spesies Q – Spesies P – Spesies S – Spesies R" },
+      { key: 'E', text: "Keempat spesies memiliki jarak kekerabatan yang sama karena sama-sama memiliki protein Sitokrom-c" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'A',
     hint: 'Semakin banyak jumlah mutasi/perbedaan asam amino pada protein homolog, semakin awal garis evolusi kedua spesies tersebut berpisah.',
     explanation:
       'Dalam filogenetik molekuler, jumlah perbedaan residu asam amino pada protein Sitokrom-c berbanding lurus dengan jarak waktu divergensi evolusi dari nenek moyang bersama. Urutan dari kekerabatan paling jauh (perbedaan terbanyak) ke paling dekat (perbedaan paling sedikit) terhadap manusia adalah: Spesies S (21 perbedaan) → Spesies R (12 perbedaan) → Spesies Q (1 perbedaan) → Spesies P (0 perbedaan).',
@@ -670,13 +670,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Berdasarkan matriks perbandingan biokimia molekuler pada tabel di atas, mengapa Carl Woese merombak sistem 5 Kingdom Whittaker (yang menyatukan Kelompok X dan Y dalam satu Kingdom Monera) menjadi sistem 3 Domain, serta simpulan kekerabatan manakah yang paling mengejutkan dari data tersebut?',
     options: [
-      { key: 'A', text: 'Kelompok X adalah Archaea dan Kelompok Y adalah Bacteria; keduanya sama-sama memiliki dinding peptidoglikan.' },
-      { key: 'B', text: 'Meskipun Kelompok Y (Archaea) tidak memiliki membran inti seperti Kelompok X (Bacteria), mekanisme genetik dan biokimia Kelompok Y (inisiator Metionin, resistensi streptomisin, tanpa peptidoglikan) justru berkerabat lebih dekat dengan Domain Eukarya (Kelompok Z).' },
-      { key: 'C', text: 'Kelompok Z adalah Virus yang tidak memiliki ribosom sehingga tidak dapat dihambat oleh antibiotik streptomisin.' },
-      { key: 'D', text: 'Kelompok X dan Kelompok Z harus digabungkan ke dalam satu Kingdom Monera karena sama-sama memiliki lipid ikatan ester.' },
-      { key: 'E', text: 'Tabel tersebut membuktikan bahwa seluruh organisme prokariotik memiliki struktur biokimia yang 100% identik.' }
+      { key: 'A', text: "Kelompok X adalah Archaea dan Kelompok Y adalah Bacteria; keduanya sama-sama memiliki dinding peptidoglikan." },
+      { key: 'B', text: "Tabel tersebut membuktikan bahwa seluruh organisme prokariotik memiliki struktur biokimia yang 100% identik." },
+      { key: 'C', text: "Kelompok Z adalah Virus yang tidak memiliki ribosom sehingga tidak dapat dihambat oleh antibiotik streptomisin." },
+      { key: 'D', text: "Meskipun Kelompok Y (Archaea) tidak memiliki membran inti seperti Kelompok X (Bacteria), mekanisme genetik dan biokimia Kelompok Y (inisiator Metionin, resistensi streptomisin, tanpa peptidoglikan) justru berkerabat lebih dekat dengan Domain Eukarya (Kelompok Z)." },
+      { key: 'E', text: "Kelompok X dan Kelompok Z harus digabungkan ke dalam satu Kingdom Monera karena sama-sama memiliki lipid ikatan ester." }
     ],
-    correct_answer: 'B',
+    correct_answer: 'D',
     hint: 'Bandingkan baris Peptidoglikan, Asam Amino Inisiator Translasi, dan Sensitivitas Streptomisin antara Kelompok Y (Archaea) dan Kelompok Z (Eukarya).',
     explanation:
       'Kelompok X adalah Domain Bacteria, Kelompok Y adalah Domain Archaea, dan Kelompok Z adalah Domain Eukarya. Data biokimia menunjukkan bahwa Archaea tidak memiliki peptidoglikan, memiliki lipid ikatan eter bercabang (tahan suhu/asam ekstrem), dan mesin transkripsi-translasinya (inisiator Metionin, RNA polimerase, ketahanan terhadap streptomisin) justru lebih mirip Eukarya dibandingkan Bacteria.',
@@ -757,13 +757,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Dalam rekonstruksi pohon filogenetik menggunakan matriks karakter biner (0 = tidak ada, 1 = ada) di atas, apa fungsi diikutsertakannya "Lancelet (Branchiostoma)" yang memiliki skor 0 pada seluruh karakter, dan mengapa Ikan Mas ditempatkan berkerabat lebih dekat dengan Katak Pohon dibandingkan dengan Ikan Pari?',
     options: [
-      { key: 'A', text: 'Lancelet berfungsi sebagai ingroup utama; Ikan Mas lebih dekat ke Katak Pohon karena keduanya bernapas dengan paru-paru.' },
-      { key: 'B', text: 'Lancelet berfungsi sebagai kelompok luar (outgroup) untuk membedakan karakter leluhur (plesiomorfi) dari karakter turunan baru (apomorfi); Ikan Mas dan Katak Pohon berbagi karakter turunan "Rangka Tulang Sejati (Osteichthyes)" yang belum dimiliki Ikan Pari (Chondrichthyes).' },
-      { key: 'C', text: 'Lancelet merupakan hasil evolusi terakhir dari Elang Jawa yang mengalami kemunduran organ.' },
-      { key: 'D', text: 'Ikan Mas dan Ikan Pari tidak memiliki tulang belakang sama sekali sehingga harus digabung dengan Lancelet.' },
-      { key: 'E', text: 'Katak Pohon lebih dekat kekerabatannya dengan Ikan Pari dibandingkan dengan Kura-kura.' }
+      { key: 'A', text: "Katak Pohon lebih dekat kekerabatannya dengan Ikan Pari dibandingkan dengan Kura-kura." },
+      { key: 'B', text: "Ikan Mas dan Ikan Pari tidak memiliki tulang belakang sama sekali sehingga harus digabung dengan Lancelet." },
+      { key: 'C', text: "Lancelet merupakan hasil evolusi terakhir dari Elang Jawa yang mengalami kemunduran organ." },
+      { key: 'D', text: "Lancelet berfungsi sebagai kelompok luar (outgroup) untuk membedakan karakter leluhur (plesiomorfi) dari karakter turunan baru (apomorfi); Ikan Mas dan Katak Pohon berbagi karakter turunan \"Rangka Tulang Sejati (Osteichthyes)\" yang belum dimiliki Ikan Pari (Chondrichthyes)." },
+      { key: 'E', text: "Lancelet berfungsi sebagai ingroup utama; Ikan Mas lebih dekat ke Katak Pohon karena keduanya bernapas dengan paru-paru." }
     ],
-    correct_answer: 'B',
+    correct_answer: 'D',
     hint: 'Dalam kladistik, outgroup digunakan sebagai titik acuan awal percabangan, sedangkan kedekatan kekerabatan dilihat dari kepemilikan karakter turunan bersama (angka 1) yang paling akhir.',
     explanation:
       'Kelompok luar (outgroup) seperti Lancelet digunakan sebagai pembanding dasar untuk menentukan polaritas evolusi karakter (mana ciri primitif dan mana ciri turunan/apomorfi). Meskipun Ikan Pari dan Ikan Mas sama-sama hidup di air, Ikan Mas (Osteichthyes) berbagi sinapomorfi "Rangka Tulang Sejati" dengan Tetrapoda (Katak, Kura-kura, Elang), sedangkan Ikan Pari masih berangka tulang rawan (Chondrichthyes).',
@@ -808,11 +808,11 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Perhatikan bagan pohon determinasi tumbuhan berpembuluh (Tracheophyta) di atas. Apabila seorang siswa memiliki empat spesimen tumbuhan yaitu: (1) Paku tanduk rusa (Platycerium bifurcatum), (2) Anggrek bulan (Phalaenopsis amabilis), (3) Pakis haji (Cycas rumphii), dan (4) Jambu biji (Psidium guajava), maka penempatan keempat spesimen tersebut pada Takson A, B, C, dan D yang tepat adalah…',
     options: [
-      { key: 'A', text: 'Takson A = Pakis haji; Takson B = Paku tanduk rusa; Takson C = Anggrek bulan; Takson D = Jambu biji' },
-      { key: 'B', text: 'Takson A = Paku tanduk rusa; Takson B = Pakis haji; Takson C = Anggrek bulan; Takson D = Jambu biji' },
-      { key: 'C', text: 'Takson A = Paku tanduk rusa; Takson B = Anggrek bulan; Takson C = Pakis haji; Takson D = Jambu biji' },
-      { key: 'D', text: 'Takson A = Anggrek bulan; Takson B = Pakis haji; Takson C = Jambu biji; Takson D = Paku tanduk rusa' },
-      { key: 'E', text: 'Takson A = Jambu biji; Takson B = Pakis haji; Takson C = Paku tanduk rusa; Takson D = Anggrek bulan' }
+      { key: 'A', text: "Takson A = Pakis haji; Takson B = Paku tanduk rusa; Takson C = Anggrek bulan; Takson D = Jambu biji" },
+      { key: 'B', text: "Takson A = Paku tanduk rusa; Takson B = Pakis haji; Takson C = Anggrek bulan; Takson D = Jambu biji" },
+      { key: 'C', text: "Takson A = Paku tanduk rusa; Takson B = Anggrek bulan; Takson C = Pakis haji; Takson D = Jambu biji" },
+      { key: 'D', text: "Takson A = Anggrek bulan; Takson B = Pakis haji; Takson C = Jambu biji; Takson D = Paku tanduk rusa" },
+      { key: 'E', text: "Takson A = Jambu biji; Takson B = Pakis haji; Takson C = Paku tanduk rusa; Takson D = Anggrek bulan" }
     ],
     correct_answer: 'B',
     hint: 'Jangan tertukar antara "Paku tanduk rusa" (Pteridophyta berspora) dengan "Pakis haji" (Gymnospermae berstrobilus)!',
@@ -855,11 +855,11 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Perhatikan pohon filogenetik Archosauria pada diagram di atas. Buaya memiliki nenek moyang bersama paling dekat dengan Burung (Aves) dibandingkan dengan Kadal maupun Kura-kura. Apabila seorang taksonom membuat kelompok "Reptilia Klasik" (kotak merah putus-putus) yang mencakup Kura-kura, Kadal, dan Buaya namun SENGAJA mengeluarkan Burung (Aves), maka kelompok tersebut dalam taksonomi kladistik dinilai tidak valid secara filogenetik karena bersifat…',
     options: [
-      { key: 'A', text: 'Monofiletik (mencakup nenek moyang bersama beserta seluruh keturunannya secara utuh)' },
-      { key: 'B', text: 'Parafiletik (mencakup nenek moyang bersama, tetapi mengecualikan salah satu cabang keturunannya yaitu Aves)' },
-      { key: 'C', text: 'Polifiletik (menggabungkan spesies dari Kingdom Plantae dan Kingdom Animalia)' },
-      { key: 'D', text: 'Artifisial berdasarkan kesamaan habitat hidup di dalam air laut' },
-      { key: 'E', text: 'Homolog sempurna karena Buaya tidak memiliki hubungan evolusi dengan Burung' }
+      { key: 'A', text: "Artifisial berdasarkan kesamaan habitat hidup di dalam air laut" },
+      { key: 'B', text: "Parafiletik (mencakup nenek moyang bersama, tetapi mengecualikan salah satu cabang keturunannya yaitu Aves)" },
+      { key: 'C', text: "Monofiletik (mencakup nenek moyang bersama beserta seluruh keturunannya secara utuh)" },
+      { key: 'D', text: "Homolog sempurna karena Buaya tidak memiliki hubungan evolusi dengan Burung" },
+      { key: 'E', text: "Polifiletik (menggabungkan spesies dari Kingdom Plantae dan Kingdom Animalia)" }
     ],
     correct_answer: 'B',
     hint: 'Ingat tiga istilah kladistik: Monofiletik (leluhur + semua keturunan), Parafiletik (leluhur + sebagian keturunan, ada cabang yang dikeluarkan), dan Polifiletik (tanpa leluhur bersama langsung).',
@@ -880,13 +880,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Mengapa ahli taksonomi modern TIDAK menempatkan lumba-lumba dan ikan hiu ke dalam kelas yang sama, meskipun bentuk luar (morfologi) tubuh keduanya tampak sangat mirip?',
     options: [
-      { key: 'A', text: 'Karena lumba-lumba hidup di air tawar sedangkan ikan hiu hanya hidup di air laut.' },
-      { key: 'B', text: 'Karena kemiripan bentuk torpedo keduanya merupakan sifat analog akibat evolusi konvergen (adaptasi terhadap lingkungan air yang sama), padahal secara anatomi dan filogenetik lumba-lumba adalah Mammalia (berparu-paru, berplasenta, menyusui) sedangkan hiu adalah Chondrichthyes.' },
-      { key: 'C', text: 'Karena ikan hiu termasuk kelompok hewan homoioterm berdarah panas sedangkan lumba-lumba poikiloterm.' },
-      { key: 'D', text: 'Karena lumba-lumba berkembang biak dengan bertelur (ovipar) di pantai berpasir seperti penyu.' },
-      { key: 'E', text: 'Karena sirip dada lumba-lumba tidak memiliki kerangka tulang sama sekali.' }
+      { key: 'A', text: "Karena lumba-lumba hidup di air tawar sedangkan ikan hiu hanya hidup di air laut." },
+      { key: 'B', text: "Karena ikan hiu termasuk kelompok hewan homoioterm berdarah panas sedangkan lumba-lumba poikiloterm." },
+      { key: 'C', text: "Karena kemiripan bentuk torpedo keduanya merupakan sifat analog akibat evolusi konvergen (adaptasi terhadap lingkungan air yang sama), padahal secara anatomi dan filogenetik lumba-lumba adalah Mammalia (berparu-paru, berplasenta, menyusui) sedangkan hiu adalah Chondrichthyes." },
+      { key: 'D', text: "Karena sirip dada lumba-lumba tidak memiliki kerangka tulang sama sekali." },
+      { key: 'E', text: "Karena lumba-lumba berkembang biak dengan bertelur (ovipar) di pantai berpasir seperti penyu." }
     ],
-    correct_answer: 'B',
+    correct_answer: 'C',
     hint: 'Bedakan kemiripan akibat adaptasi lingkungan yang sama (evolusi konvergen / analogi) dengan kemiripan akibat warisan leluhur (homologi).',
     explanation:
       'Kemiripan bentuk tubuh torpedo pada hiu (ikan bertulang rawan) dan lumba-lumba (mamalia laut) adalah hasil Evolusi Konvergen (struktur analog) karena tekanan seleksi hidrodinamika lingkungan laut yang sama. Secara filogenetik dan anatomis, lumba-lumba memiliki paru-paru, jantung 4 ruang, kelenjar susu, dan tulang jari di dalam sirip dadanya (Kelas Mammalia).',
@@ -905,13 +905,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Berdasarkan Konsep Spesies Biologis (Biological Species Concept) yang dikemukakan oleh Ernst Mayr, apakah Kuda dan Keledai dapat digabungkan menjadi satu spesies yang sama karena berhasil kawin dan melahirkan Bagal?',
     options: [
-      { key: 'A', text: 'Ya, karena syarat satu spesies hanya ditentukan oleh kemampuan melakukan kopulasi dan melahirkan anak hidup.' },
-      { key: 'B', text: 'Tidak, karena menurut Konsep Spesies Biologis dua individu baru dinyatakan satu spesies apabila hasil perkawinannya mampu menghasilkan keturunan yang FERTIL (subur), sedangkan Bagal (2n = 63 ganjil) bersifat steril akibat gagal melakukan sinapsis kromosom saat meiosis.' },
-      { key: 'C', text: 'Ya, karena Kuda dan Keledai memiliki jumlah kromosom yang sama persis di dalam sel gametnya.' },
-      { key: 'D', text: 'Tidak, karena Kuda dan Keledai berasal dari dua Famili dan dua Ordo yang berbeda.' },
-      { key: 'E', text: 'Ya, karena Bagal merupakan spesies baru yang dapat berkembang biak secara vegetatif.' }
+      { key: 'A', text: "Ya, karena syarat satu spesies hanya ditentukan oleh kemampuan melakukan kopulasi dan melahirkan anak hidup." },
+      { key: 'B', text: "Ya, karena Kuda dan Keledai memiliki jumlah kromosom yang sama persis di dalam sel gametnya." },
+      { key: 'C', text: "Ya, karena Bagal merupakan spesies baru yang dapat berkembang biak secara vegetatif." },
+      { key: 'D', text: "Tidak, karena Kuda dan Keledai berasal dari dua Famili dan dua Ordo yang berbeda." },
+      { key: 'E', text: "Tidak, karena menurut Konsep Spesies Biologis dua individu baru dinyatakan satu spesies apabila hasil perkawinannya mampu menghasilkan keturunan yang FERTIL (subur), sedangkan Bagal (2n = 63 ganjil) bersifat steril akibat gagal melakukan sinapsis kromosom saat meiosis." }
     ],
-    correct_answer: 'B',
+    correct_answer: 'E',
     hint: 'Perhatikan jumlah kromosom Bagal (63, ganjil) ketika harus berpasangan secara homolog saat pembelahan meiosis pembentukan sel kelamin.',
     explanation:
       'Menurut Konsep Spesies Biologis (Ernst Mayr), satu spesies adalah kelompok populasi alam yang mampu saling kawin (interbreeding) dan menghasilkan keturunan yang FERTIL (subur). Kuda (n=32) dan Keledai (n=31) adalah dua spesies berbeda dalam satu genus Equus karena hibridanya (Bagal, 2n=63) bersifat steril (mandul) akibat isolasi reproduksi pascazigotik (kegagalan pasangan kromosom homolog saat meiosis).',
@@ -930,13 +930,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Bukti biologi seluler dan biokimia manakah yang mendasari pemindahan Oomycota dan Myxomycota dari Kingdom Fungi ke dalam Kingdom Protista?',
     options: [
-      { key: 'A', text: 'Keduanya memiliki kloroplas hijau dan melakukan fotosintesis seperti tumbuhan tingkat tinggi.' },
-      { key: 'B', text: 'Dinding sel Oomycota tersusun atas selulosa (bukan kitin seperti Fungi sejati), memiliki fase spora kembar berflagela (zoospora), sedangkan Myxomycota memiliki fase vegetatif amoeboid yang menelan makanan secara fagositosis.' },
-      { key: 'C', text: 'Keduanya tidak memiliki membran inti sel (prokariotik) sehingga harus digabungkan dengan bakteri.' },
-      { key: 'D', text: 'Keduanya memiliki jaringan pembuluh xilem dan floem untuk mengangkut spora.' },
-      { key: 'E', text: 'Fungi sejati selalu bersifat uniseluler, sedangkan Oomycota selalu bersifat multiseluler.' }
+      { key: 'A', text: "Dinding sel Oomycota tersusun atas selulosa (bukan kitin seperti Fungi sejati), memiliki fase spora kembar berflagela (zoospora), sedangkan Myxomycota memiliki fase vegetatif amoeboid yang menelan makanan secara fagositosis." },
+      { key: 'B', text: "Keduanya tidak memiliki membran inti sel (prokariotik) sehingga harus digabungkan dengan bakteri." },
+      { key: 'C', text: "Keduanya memiliki kloroplas hijau dan melakukan fotosintesis seperti tumbuhan tingkat tinggi." },
+      { key: 'D', text: "Fungi sejati selalu bersifat uniseluler, sedangkan Oomycota selalu bersifat multiseluler." },
+      { key: 'E', text: "Keduanya memiliki jaringan pembuluh xilem dan floem untuk mengangkut spora." }
     ],
-    correct_answer: 'B',
+    correct_answer: 'A',
     hint: 'Ingat ciri mutlak Kingdom Fungi sejati: dinding sel dari zat kitin, heterotrof absorptif (tidak pernah fagositosis), dan tidak memiliki sel berflagela pada fase hidupnya.',
     explanation:
       'Oomycota dan Myxomycota dikeluarkan dari Kingdom Fungi karena menyimpang dari karakter sinapomorfi Fungi sejati: (1) Dinding sel Oomycota tersusun atas selulosa (bukan kitin) dan menghasilkan zoospora berflagela; (2) Myxomycota pada fase plasmodiumnya tidak berdinding sel, bergerak amoeboid, dan makan secara fagositosis (holozoik), bukan absorptif.',
@@ -955,13 +955,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Metode taksonomi modern apakah yang paling akurat digunakan oleh laboratorium forensik biologi untuk mengidentifikasi spesies dari potongan jaringan tersebut hingga tingkat spesies?',
     options: [
-      { key: 'A', text: 'Menimbang berat potongan daging dan mencocokkannya dengan buku kunci determinasi Linnaeus.' },
-      { key: 'B', text: 'DNA Barcoding menggunakan amplifikasi PCR dan sekuensing gen penanda standar (seperti gen mitokondria Cytochrome c Oxidase I / COI pada hewan), lalu mencocokkannya dengan basis data GenBank/BOLD.' },
-      { key: 'C', text: 'Mengamati warna darah pada potongan daging menggunakan kaca pembesar (lup).' },
-      { key: 'D', text: 'Menanam potongan daging tersebut pada medium agar miring agar tumbuh menjadi hewan utuh.' },
-      { key: 'E', text: 'Memasak potongan daging tersebut untuk menguji aroma dan teksturnya secara organoleptik.' }
+      { key: 'A', text: "Menanam potongan daging tersebut pada medium agar miring agar tumbuh menjadi hewan utuh." },
+      { key: 'B', text: "Mengamati warna darah pada potongan daging menggunakan kaca pembesar (lup)." },
+      { key: 'C', text: "DNA Barcoding menggunakan amplifikasi PCR dan sekuensing gen penanda standar (seperti gen mitokondria Cytochrome c Oxidase I / COI pada hewan), lalu mencocokkannya dengan basis data GenBank/BOLD." },
+      { key: 'D', text: "Memasak potongan daging tersebut untuk menguji aroma dan teksturnya secara organoleptik." },
+      { key: 'E', text: "Menimbang berat potongan daging dan mencocokkannya dengan buku kunci determinasi Linnaeus." }
     ],
-    correct_answer: 'B',
+    correct_answer: 'C',
     hint: 'Setiap spesies hewan memiliki "kode batang" urutan basa nukleotida yang unik pada gen mitokondria COI.',
     explanation:
       'Ketika karakter morfologi rusak atau hilang (seperti pada potongan sirip hiu langka, daging satwa dilindungi, atau serbuk tanaman obat), identifikasi taksonomi menggunakan teknik DNA Barcoding (mengamplifikasi segmen gen mitokondria COI ~650 bp pada hewan atau gen kloroplas rbcL/matK pada tumbuhan) dan membandingkan sekuensnya dengan basis data referensi global.',
@@ -979,13 +979,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Di Pulau Jawa, masyarakat menyebut buah Carica papaya dengan nama "pepaya", di Jawa Barat disebut "gedang", sedangkan di Jawa Tengah kata "gedang" justru merujuk pada buah pisang (Musa paradisiaca). Fenomena kebahasaan ini membuktikan urgensi penggunaan sistem Binomial Nomenclature dalam komunikasi ilmiah karena…',
     options: [
-      { key: 'A', text: 'Bahasa daerah lebih mudah dipahami oleh seluruh ilmuwan di dunia dibandingkan bahasa Latin.' },
-      { key: 'B', text: 'Nama lokal (vernacular name) bersifat полиsemik dan berbeda-beda antarwilayah sehingga memicu ambiguitas, sedangkan nama ilmiah Latin bersifat universal, stabil, memiliki satu nama unik untuk satu spesies, dan menunjukkan hubungan kekerabatan genus.' },
-      { key: 'C', text: 'Pepaya dan pisang sebenarnya merupakan satu spesies yang sama karena sama-sama disebut gedang.' },
-      { key: 'D', text: 'Bahasa Latin masih digunakan sebagai bahasa percakapan sehari-hari oleh petani di seluruh benua.' },
-      { key: 'E', text: 'Nama ilmiah sengaja dibuat rumit agar masyarakat umum tidak dapat mempelajari biologi.' }
+      { key: 'A', text: "Pepaya dan pisang sebenarnya merupakan satu spesies yang sama karena sama-sama disebut gedang." },
+      { key: 'B', text: "Bahasa Latin masih digunakan sebagai bahasa percakapan sehari-hari oleh petani di seluruh benua." },
+      { key: 'C', text: "Nama ilmiah sengaja dibuat rumit agar masyarakat umum tidak dapat mempelajari biologi." },
+      { key: 'D', text: "Nama lokal (vernacular name) bersifat полиsemik dan berbeda-beda antarwilayah sehingga memicu ambiguitas, sedangkan nama ilmiah Latin bersifat universal, stabil, memiliki satu nama unik untuk satu spesies, dan menunjukkan hubungan kekerabatan genus." },
+      { key: 'E', text: "Bahasa daerah lebih mudah dipahami oleh seluruh ilmuwan di dunia dibandingkan bahasa Latin." }
     ],
-    correct_answer: 'B',
+    correct_answer: 'D',
     hint: 'Mengapa Linnaeus memilih bahasa Latin (bahasa mati yang tidak berubah maknanya) dan sistem nama ganda yang diatur oleh kode internasional?',
     explanation:
       'Nama daerah (vernacular name) tidak memiliki standar global: satu kata yang sama ("gedang") dapat merujuk pada dua spesies berbeda di daerah berbeda, atau satu spesies memiliki puluhan nama lokal. Binomial Nomenclature mengatasi ambiguitas tersebut karena bersifat universal, diatur kode internasional (ICN/ICZN), menggunakan bahasa Latin yang statis, serta menginformasikan takson Genus.',
@@ -1004,13 +1004,13 @@ export const topic3Klasifikasi: BiologyQuestionSeed[] = [
     question_text:
       'Dalam taksonomi modern, fenomena ditemukannya dua atau lebih spesies berbeda yang dulunya dianggap sebagai satu spesies tunggal karena morfologi luarnya sangat mirip disebut sebagai…',
     options: [
-      { key: 'A', text: 'Spesies Kriptik (Cryptic species) yang terungkap melalui pendekatan taksonomi integratif (molekuler, bioakustik, dan isolasi perilaku)' },
-      { key: 'B', text: 'Varietas pertanian hasil domestikasi buatan manusia' },
-      { key: 'C', text: 'Mutasi somatik sementara akibat perbedaan makanan di laboratorium' },
-      { key: 'D', text: 'Polimorfisme seksual antara katak jantan dan katak betina dalam satu keluarga' },
-      { key: 'E', text: 'Kegagalan alat sekuensing DNA karena morfologi luar adalah satu-satunya penentu spesies' }
+      { key: 'A', text: "Polimorfisme seksual antara katak jantan dan katak betina dalam satu keluarga" },
+      { key: 'B', text: "Varietas pertanian hasil domestikasi buatan manusia" },
+      { key: 'C', text: "Kegagalan alat sekuensing DNA karena morfologi luar adalah satu-satunya penentu spesies" },
+      { key: 'D', text: "Mutasi somatik sementara akibat perbedaan makanan di laboratorium" },
+      { key: 'E', text: "Spesies Kriptik (Cryptic species) yang terungkap melalui pendekatan taksonomi integratif (molekuler, bioakustik, dan isolasi perilaku)" }
     ],
-    correct_answer: 'A',
+    correct_answer: 'E',
     hint: 'Istilah ini berasal dari kata Yunani "kryptos" yang berarti tersembunyi.',
     explanation:
       'Spesies kriptik (cryptic species) adalah dua atau lebih spesies berbeda yang terisolasi secara reproduktif dan genetik, namun secara morfologi luar tampak hampir tidak dapat dibedakan. Taksonomi integratif modern menggabungkan bukti morfologi, molekuler (DNA), perilaku/bioakustik (suara panggilan kawin sebagai isolasi reproduksi prazigotik), dan ekologi untuk memisahkan spesies kriptik.',

@@ -16,13 +16,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Urutan tingkat organisasi kehidupan dari tingkat paling sederhana (molekuler) hingga tingkat paling kompleks di permukaan bumi yang tepat adalah…',
     options: [
-      { key: 'A', text: 'Molekul – Sel – Jaringan – Organ – Sistem Organ – Individu – Populasi – Komunitas – Ekosistem – Bioma – Biosfer' },
-      { key: 'B', text: 'Molekul – Jaringan – Sel – Organ – Sistem Organ – Individu – Komunitas – Populasi – Ekosistem – Bioma – Biosfer' },
-      { key: 'C', text: 'Sel – Molekul – Jaringan – Sistem Organ – Organ – Individu – Populasi – Komunitas – Bioma – Ekosistem – Biosfer' },
-      { key: 'D', text: 'Atom – Sel – Organ – Jaringan – Sistem Organ – Populasi – Individu – Komunitas – Ekosistem – Biosfer – Bioma' },
-      { key: 'E', text: 'Molekul – Organel – Jaringan – Sel – Organ – Individu – Populasi – Ekosistem – Komunitas – Bioma – Biosfer' }
+      { key: 'A', text: "Atom – Sel – Organ – Jaringan – Sistem Organ – Populasi – Individu – Komunitas – Ekosistem – Biosfer – Bioma" },
+      { key: 'B', text: "Molekul – Sel – Jaringan – Organ – Sistem Organ – Individu – Populasi – Komunitas – Ekosistem – Bioma – Biosfer" },
+      { key: 'C', text: "Molekul – Jaringan – Sel – Organ – Sistem Organ – Individu – Komunitas – Populasi – Ekosistem – Bioma – Biosfer" },
+      { key: 'D', text: "Sel – Molekul – Jaringan – Sistem Organ – Organ – Individu – Populasi – Komunitas – Bioma – Ekosistem – Biosfer" },
+      { key: 'E', text: "Molekul – Organel – Jaringan – Sel – Organ – Individu – Populasi – Ekosistem – Komunitas – Bioma – Biosfer" }
     ],
-    correct_answer: 'A',
+    correct_answer: 'B',
     hint: 'Ingat bahwa kumpulan sel membentuk jaringan, dan kumpulan populasi di suatu wilayah membentuk komunitas sebelum berinteraksi dengan faktor abiotik.',
     explanation:
       'Hierarki organisasi kehidupan secara berurutan dari terendah ke tertinggi adalah: Molekul (DNA/protein) → Organel → Sel (unit struktural/fungsional terkecil) → Jaringan → Organ → Sistem Organ → Individu (organisme) → Populasi → Komunitas → Ekosistem → Bioma → Biosfer.',
@@ -40,13 +40,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Cabang ilmu biologi yang secara khusus mempelajari struktur mikroskopis serta fungsi jaringan penyusun organ tubuh makhluk hidup adalah…',
     options: [
-      { key: 'A', text: 'Sitologi' },
-      { key: 'B', text: 'Histologi' },
-      { key: 'C', text: 'Anatomi' },
-      { key: 'D', text: 'Morfologi' },
-      { key: 'E', text: 'Embriologi' }
+      { key: 'A', text: "Anatomi" },
+      { key: 'B', text: "Sitologi" },
+      { key: 'C', text: "Histologi" },
+      { key: 'D', text: "Morfologi" },
+      { key: 'E', text: "Embriologi" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'C',
     hint: 'Istilah ini berasal dari bahasa Yunani "histos" yang berarti jaringan atau tenunan.',
     explanation:
       'Histologi adalah cabang biologi yang mengkaji struktur dan fungsi jaringan secara mikroskopis. Sitologi mempelajari sel, Anatomi mempelajari struktur organ bagian dalam, Morfologi mempelajari bentuk luar tubuh, dan Embriologi mempelajari perkembangan embrio.',
@@ -64,13 +64,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Sekelompok burung jalak bali (Leucopsar rothschildi) yang hidup dan berkembang biak di kawasan hutan Taman Nasional Bali Barat pada tahun 2026 merupakan objek kajian biologi pada tingkat…',
     options: [
-      { key: 'A', text: 'Individu' },
-      { key: 'B', text: 'Populasi' },
-      { key: 'C', text: 'Komunitas' },
-      { key: 'D', text: 'Ekosistem' },
-      { key: 'E', text: 'Bioma' }
+      { key: 'A', text: "Ekosistem" },
+      { key: 'B', text: "Individu" },
+      { key: 'C', text: "Bioma" },
+      { key: 'D', text: "Populasi" },
+      { key: 'E', text: "Komunitas" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'D',
     hint: 'Perhatikan bahwa objek yang disebutkan hanya terdiri atas satu spesies yang sama pada ruang dan waktu tertentu.',
     explanation:
       'Populasi adalah kumpulan individu dari satu spesies yang sama (Leucopsar rothschildi) yang menempati suatu habitat tertentu pada waktu yang sama dan dapat melakukan perkawinan silang (interbreeding).',
@@ -88,13 +88,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Dalam metode ilmiah, jawaban sementara terhadap rumusan masalah yang disusun berdasarkan landasan teori dan masih harus diuji kebenarannya melalui eksperimen disebut…',
     options: [
-      { key: 'A', text: 'Observasi' },
-      { key: 'B', text: 'Hipotesis' },
-      { key: 'C', text: 'Variabel kontrol' },
-      { key: 'D', text: 'Kesimpulan' },
-      { key: 'E', text: 'Teori ilmiah' }
+      { key: 'A', text: "Kesimpulan" },
+      { key: 'B', text: "Teori ilmiah" },
+      { key: 'C', text: "Hipotesis" },
+      { key: 'D', text: "Variabel kontrol" },
+      { key: 'E', text: "Observasi" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'C',
     hint: 'Tahap ini berada tepat setelah perumusan masalah dan kajian pustaka, sebelum peneliti merancang percobaan.',
     explanation:
       'Hipotesis adalah dugaan atau jawaban sementara terhadap masalah penelitian yang disusun secara deduktif berdasarkan teori ilmiah dan wajib diuji secara empiris melalui eksperimen atau observasi terstruktur.',
@@ -112,13 +112,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Simbol keselamatan kerja laboratorium (K3) bergambar tengkorak manusia dengan dua tulang bersilang di belakangnya menunjukkan bahwa bahan kimia di dalam botol tersebut bersifat…',
     options: [
-      { key: 'A', text: 'Mudah terbakar (Flammable)' },
-      { key: 'B', text: 'Korosif terhadap jaringan kulit (Corrosive)' },
-      { key: 'C', text: 'Beracun dan mematikan jika tertelan atau terhirup (Toxic)' },
-      { key: 'D', text: 'Mudah meledak karena guncangan (Explosive)' },
-      { key: 'E', text: 'Memancarkan radiasi pengion (Radioactive)' }
+      { key: 'A', text: "Mudah terbakar (Flammable)" },
+      { key: 'B', text: "Memancarkan radiasi pengion (Radioactive)" },
+      { key: 'C', text: "Korosif terhadap jaringan kulit (Corrosive)" },
+      { key: 'D', text: "Mudah meledak karena guncangan (Explosive)" },
+      { key: 'E', text: "Beracun dan mematikan jika tertelan atau terhirup (Toxic)" }
     ],
-    correct_answer: 'C',
+    correct_answer: 'E',
     hint: 'Lambang tengkorak dan tulang bersilang digunakan secara internasional untuk zat seperti sianida, merkuri, dan arsenik.',
     explanation:
       'Simbol tengkorak dan tulang bersilang menandakan bahan bersifat Toxic (beracun akut) yang dapat menyebabkan keracunan serius hingga kematian apabila terhirup, tertelan, atau terserap melalui kulit.',
@@ -136,11 +136,11 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Pasangan cabang ilmu biologi beserta objek kajiannya yang tepat di bawah ini adalah…',
     options: [
-      { key: 'A', text: 'Mikologi – mempelajari struktur dan klasifikasi tumbuhan lumut' },
-      { key: 'B', text: 'Entomologi – mempelajari kehidupan serangga dan peranannya' },
-      { key: 'C', text: 'Ornitologi – mempelajari kehidupan ikan dan ekosistem perairan' },
-      { key: 'D', text: 'Virologi – mempelajari bakteri menguntungkan dan patogen' },
-      { key: 'E', text: 'Ikhtiologi – mempelajari kehidupan burung dan migrasinya' }
+      { key: 'A', text: "Ornitologi – mempelajari kehidupan ikan dan ekosistem perairan" },
+      { key: 'B', text: "Entomologi – mempelajari kehidupan serangga dan peranannya" },
+      { key: 'C', text: "Mikologi – mempelajari struktur dan klasifikasi tumbuhan lumut" },
+      { key: 'D', text: "Ikhtiologi – mempelajari kehidupan burung dan migrasinya" },
+      { key: 'E', text: "Virologi – mempelajari bakteri menguntungkan dan patogen" }
     ],
     correct_answer: 'B',
     hint: 'Perhatikan akar kata "entomon" (serangga), "mykes" (jamur), "ornis" (burung), dan "ichthys" (ikan).',
@@ -160,13 +160,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Seorang peneliti selalu mencantumkan data hasil pengamatan apa adanya sesuai pengukuran di lapangan meskipun hasil tersebut menolak hipotesis awalnya. Sikap ilmiah yang ditunjukkan peneliti tersebut adalah…',
     options: [
-      { key: 'A', text: 'Subjektif dan dogmatis' },
-      { key: 'B', text: 'Jujur dan objektif terhadap fakta empiris' },
-      { key: 'C', text: 'Skeptis terhadap seluruh alat ukur laboratorium' },
-      { key: 'D', text: 'Mengutamakan opini pribadi di atas data eksperimen' },
-      { key: 'E', text: 'Tertutup terhadap kritik dari peneliti lain' }
+      { key: 'A', text: "Tertutup terhadap kritik dari peneliti lain" },
+      { key: 'B', text: "Skeptis terhadap seluruh alat ukur laboratorium" },
+      { key: 'C', text: "Jujur dan objektif terhadap fakta empiris" },
+      { key: 'D', text: "Subjektif dan dogmatis" },
+      { key: 'E', text: "Mengutamakan opini pribadi di atas data eksperimen" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'C',
     hint: 'Seorang ilmuwan tidak boleh memanipulasi data agar sesuai dengan keinginannya.',
     explanation:
       'Sikap jujur dan objektif menuntut peneliti melaporkan data empiris secara faktual tanpa rekayasa, sekalipun hasil eksperimen tidak mendukung hipotesis yang diajukan.',
@@ -184,13 +184,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Pemanfaatan bakteri Escherichia coli transgenik yang telah disisipi gen manusia untuk memproduksi hormon insulin bagi penderita diabetes melitus merupakan contoh kontribusi biologi dalam bidang…',
     options: [
-      { key: 'A', text: 'Pertanian konvensional' },
-      { key: 'B', text: 'Kedokteran dan bioteknologi farmasi' },
-      { key: 'C', text: 'Paleontologi dan geologi' },
-      { key: 'D', text: 'Taksonomi tumbuhan tingkat tinggi' },
-      { key: 'E', text: 'Konservasi satwa liar ex-situ' }
+      { key: 'A', text: "Pertanian konvensional" },
+      { key: 'B', text: "Konservasi satwa liar ex-situ" },
+      { key: 'C', text: "Taksonomi tumbuhan tingkat tinggi" },
+      { key: 'D', text: "Paleontologi dan geologi" },
+      { key: 'E', text: "Kedokteran dan bioteknologi farmasi" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'E',
     hint: 'Produk yang dihasilkan berupa obat/hormon terapi bagi penyakit gangguan endokrin manusia.',
     explanation:
       'Teknik rekayasa genetika (DNA rekombinan) untuk menghasilkan hormon insulin manusia menggunakan plasmid bakteri E. coli merupakan terobosan biologi molekuler di bidang kedokteran dan bioteknologi farmasi.',
@@ -208,13 +208,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Data pengamatan biologi yang dinyatakan dalam bentuk deskripsi ciri kualitas (bukan angka hasil pengukuran), seperti perubahan warna daun menjadi kekuningan atau tekstur permukaan biji yang berkerut, disebut data…',
     options: [
-      { key: 'A', text: 'Kuantitatif diskrit' },
-      { key: 'B', text: 'Kuantitatif kontinu' },
-      { key: 'C', text: 'Kualitatif' },
-      { key: 'D', text: 'Statistik parametrik' },
-      { key: 'E', text: 'Koefisien korelasi' }
+      { key: 'A', text: "Kualitatif" },
+      { key: 'B', text: "Koefisien korelasi" },
+      { key: 'C', text: "Kuantitatif diskrit" },
+      { key: 'D', text: "Kuantitatif kontinu" },
+      { key: 'E', text: "Statistik parametrik" }
     ],
-    correct_answer: 'C',
+    correct_answer: 'A',
     hint: 'Bandingkan istilah untuk data berbasis kualitas/sifat dengan data berbasis kuantitas/angka.',
     explanation:
       'Data kualitatif adalah data hasil pengamatan panca indra atau instrumen yang dinyatakan dalam bentuk kata-kata atau deskripsi sifat (warna, aroma, tekstur, bentuk), sedangkan data kuantitatif dinyatakan dalam angka hasil pengukuran.',
@@ -232,13 +232,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Ketika terjadi tumpahan larutan asam kuat (HCl pekat) pada kulit tangan saat praktikum di laboratorium biologi, tindakan pertolongan pertama yang paling tepat dilakukan adalah…',
     options: [
-      { key: 'A', text: 'Mengoleskan mentega atau minyak tanah pada bagian kulit yang terkena asam' },
-      { key: 'B', text: 'Membilas bagian kulit yang terkena di bawah air mengalir terus-menerus selama minimal 10–15 menit' },
-      { key: 'C', text: 'Menyiramkan larutan basa kuat NaOH pekat secara langsung ke atas kulit' },
-      { key: 'D', text: 'Menutup luka rapat-rapat dengan plester kedap udara tanpa dicuci' },
-      { key: 'E', text: 'Menggosok kulit dengan kertas saring kering sekuat tenaga' }
+      { key: 'A', text: "Menggosok kulit dengan kertas saring kering sekuat tenaga" },
+      { key: 'B', text: "Menutup luka rapat-rapat dengan plester kedap udara tanpa dicuci" },
+      { key: 'C', text: "Menyiramkan larutan basa kuat NaOH pekat secara langsung ke atas kulit" },
+      { key: 'D', text: "Membilas bagian kulit yang terkena di bawah air mengalir terus-menerus selama minimal 10–15 menit" },
+      { key: 'E', text: "Mengoleskan mentega atau minyak tanah pada bagian kulit yang terkena asam" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'D',
     hint: 'Jangan pernah menetralkan asam kuat di atas kulit dengan basa kuat karena reaksi netralisasinya bersifat eksoterm (menghasilkan panas tinggi).',
     explanation:
       'Prosedur K3 standar untuk paparan bahan kimia korosif pada kulit adalah segera mengguyur area terdampak dengan air bersih yang mengalir selama 10–15 menit untuk mengencerkan dan membuang sisa zat kimia serta menyerap panas reaksi.',
@@ -261,13 +261,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Berdasarkan rancangan percobaan di atas, identifikasi variabel bebas, variabel terikat, dan variabel kontrol yang tepat secara berurutan adalah…',
     options: [
-      { key: 'A', text: 'Variabel bebas: pertambahan tinggi tanaman; Variabel terikat: konsentrasi POC; Variabel kontrol: jenis tanah dan cahaya' },
-      { key: 'B', text: 'Variabel bebas: konsentrasi POC kulit pisang; Variabel terikat: pertambahan tinggi tanaman cabai; Variabel kontrol: volume air, jenis tanah, dan cahaya' },
-      { key: 'C', text: 'Variabel bebas: volume air dan cahaya; Variabel terikat: konsentrasi POC; Variabel kontrol: tinggi tanaman cabai' },
-      { key: 'D', text: 'Variabel bebas: tanaman cabai rawit; Variabel terikat: lama waktu 28 hari; Variabel kontrol: konsentrasi POC 0%' },
-      { key: 'E', text: 'Variabel bebas: jenis tanah; Variabel terikat: volume air penyiraman; Variabel kontrol: pertambahan tinggi tanaman' }
+      { key: 'A', text: "Variabel bebas: volume air dan cahaya; Variabel terikat: konsentrasi POC; Variabel kontrol: tinggi tanaman cabai" },
+      { key: 'B', text: "Variabel bebas: tanaman cabai rawit; Variabel terikat: lama waktu 28 hari; Variabel kontrol: konsentrasi POC 0%" },
+      { key: 'C', text: "Variabel bebas: pertambahan tinggi tanaman; Variabel terikat: konsentrasi POC; Variabel kontrol: jenis tanah dan cahaya" },
+      { key: 'D', text: "Variabel bebas: konsentrasi POC kulit pisang; Variabel terikat: pertambahan tinggi tanaman cabai; Variabel kontrol: volume air, jenis tanah, dan cahaya" },
+      { key: 'E', text: "Variabel bebas: jenis tanah; Variabel terikat: volume air penyiraman; Variabel kontrol: pertambahan tinggi tanaman" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'D',
     hint: 'Variabel bebas adalah faktor yang sengaja diubah-ubah oleh peneliti, sedangkan variabel terikat adalah hasil yang diukur akibat perubahan tersebut.',
     explanation:
       'Variabel bebas (manipulasi) adalah konsentrasi POC (0%, 5%, 10%, 15%). Variabel terikat (respon) adalah pertambahan tinggi tanaman cabai rawit. Variabel kontrol adalah faktor lain yang dibuat seragam (volume air, media tanah, cahaya) agar tidak membiaskan hasil.',
@@ -285,13 +285,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Pada penelitian tentang pengaruh konsentrasi pupuk terhadap pertumbuhan tanaman, kelompok pot yang hanya disiram air murni (konsentrasi pupuk 0%) berfungsi sebagai…',
     options: [
-      { key: 'A', text: 'Kelompok perlakuan utama untuk mempercepat pembungaan' },
-      { key: 'B', text: 'Kelompok pembanding (kontrol negatif) untuk mengetahui pertumbuhan alami tanaman tanpa pemberian pupuk' },
-      { key: 'C', text: 'Variabel pengganggu yang harus dibuang sebelum analisis statistik' },
-      { key: 'D', text: 'Pengganti variabel terikat apabila tanaman pada pot lain mati' },
-      { key: 'E', text: 'Penentu nilai rata-rata suhu udara di sekitar rumah kaca' }
+      { key: 'A', text: "Pengganti variabel terikat apabila tanaman pada pot lain mati" },
+      { key: 'B', text: "Variabel pengganggu yang harus dibuang sebelum analisis statistik" },
+      { key: 'C', text: "Kelompok perlakuan utama untuk mempercepat pembungaan" },
+      { key: 'D', text: "Kelompok pembanding (kontrol negatif) untuk mengetahui pertumbuhan alami tanaman tanpa pemberian pupuk" },
+      { key: 'E', text: "Penentu nilai rata-rata suhu udara di sekitar rumah kaca" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'D',
     hint: 'Tanpa kelompok 0% ini, peneliti tidak bisa membuktikan apakah tanaman tumbuh tinggi karena pupuk atau memang tumbuh secara alami.',
     explanation:
       'Kelompok kontrol (perlakuan 0% / tanpa zat uji) berfungsi sebagai tolok ukur pembanding (baseline) untuk memastikan bahwa perbedaan pertumbuhan pada kelompok perlakuan benar-benar disebabkan oleh variabel bebas (pupuk), bukan faktor lingkungan lain.',
@@ -310,13 +310,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Permasalahan medis yang dialami pasien pada kasus di atas dikaji secara spesifik pada tingkat organisasi kehidupan…',
     options: [
-      { key: 'A', text: 'Molekul dan Populasi' },
-      { key: 'B', text: 'Jaringan, Organ, dan Sistem Organ' },
-      { key: 'C', text: 'Individu, Komunitas, dan Ekosistem' },
-      { key: 'D', text: 'Organel sel dan Bioma' },
-      { key: 'E', text: 'Komunitas dan Biosfer' }
+      { key: 'A', text: "Molekul dan Populasi" },
+      { key: 'B', text: "Organel sel dan Bioma" },
+      { key: 'C', text: "Jaringan, Organ, dan Sistem Organ" },
+      { key: 'D', text: "Individu, Komunitas, dan Ekosistem" },
+      { key: 'E', text: "Komunitas dan Biosfer" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'C',
     hint: 'Perhatikan objek yang mengalami gangguan: otot miokardium (jaringan), jantung & pembuluh koroner (organ), serta peredaran darah (sistem organ).',
     explanation:
       'Kerusakan otot miokardium berada pada tingkat Jaringan, gangguan jantung dan arteri koronaria berada pada tingkat Organ, serta kegagalan sirkulasi darah ke seluruh tubuh berada pada tingkat Sistem Organ (sistem kardiovaskular).',
@@ -334,13 +334,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Seorang peneliti ingin menguji apakah pemberian ekstrak daun sirsak berpengaruh terhadap mortalitas (kematian) larva nyamuk Aedes aegypti. Rumusan hipotesis nol (H0) yang tepat untuk penelitian tersebut adalah…',
     options: [
-      { key: 'A', text: 'Pemberian ekstrak daun sirsak berpengaruh signifikan meningkatkan kematian larva nyamuk Aedes aegypti.' },
-      { key: 'B', text: 'Tidak terdapat pengaruh pemberian ekstrak daun sirsak terhadap tingkat mortalitas larva nyamuk Aedes aegypti.' },
-      { key: 'C', text: 'Semakin tinggi konsentrasi ekstrak daun sirsak, semakin cepat larva Aedes aegypti berubah menjadi pupa.' },
-      { key: 'D', text: 'Bagaimanakah pengaruh ekstrak daun sirsak terhadap kematian larva nyamuk Aedes aegypti?' },
-      { key: 'E', text: 'Ekstrak daun sirsak lebih efektif dibandingkan bubuk abate sintetis dalam membunuh nyamuk dewasa.' }
+      { key: 'A', text: "Tidak terdapat pengaruh pemberian ekstrak daun sirsak terhadap tingkat mortalitas larva nyamuk Aedes aegypti." },
+      { key: 'B', text: "Pemberian ekstrak daun sirsak berpengaruh signifikan meningkatkan kematian larva nyamuk Aedes aegypti." },
+      { key: 'C', text: "Ekstrak daun sirsak lebih efektif dibandingkan bubuk abate sintetis dalam membunuh nyamuk dewasa." },
+      { key: 'D', text: "Semakin tinggi konsentrasi ekstrak daun sirsak, semakin cepat larva Aedes aegypti berubah menjadi pupa." },
+      { key: 'E', text: "Bagaimanakah pengaruh ekstrak daun sirsak terhadap kematian larva nyamuk Aedes aegypti?" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'A',
     hint: 'Hipotesis nol (H0) selalu menyatakan tidak adanya pengaruh atau perbedaan antara variabel bebas dan variabel terikat.',
     explanation:
       'Dalam statistika penelitian ilmiah, Hipotesis Nol (H0) menyatakan tidak ada hubungan atau pengaruh antara variabel bebas (ekstrak daun sirsak) terhadap variabel terikat (mortalitas larva), sedangkan Hipotesis Alternatif (H1/Ha) menyatakan adanya pengaruh.',
@@ -358,13 +358,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Saat mengamati preparat penampang melintang daun Rhoeo discolor menggunakan mikroskop cahaya dengan lensa okuler 10× dan lensa objektif 40×, bayangan sel tampak masih agak buram. Bagian mikroskop yang harus diputar secara perlahan agar bayangan menjadi tajam tanpa merusak kaca preparat adalah…',
     options: [
-      { key: 'A', text: 'Pemutar kasar (Makrometer) ke arah bawah dengan cepat' },
-      { key: 'B', text: 'Pemutar halus (Mikrometer) secara perlahan' },
-      { key: 'C', text: 'Revolver untuk mengganti lensa objektif ke perbesaran 100× tanpa minyak imersi' },
-      { key: 'D', text: 'Kaki mikroskop dan lengan mikroskop' },
-      { key: 'E', text: 'Penjepit kaca benda (klip preparat)' }
+      { key: 'A', text: "Pemutar kasar (Makrometer) ke arah bawah dengan cepat" },
+      { key: 'B', text: "Revolver untuk mengganti lensa objektif ke perbesaran 100× tanpa minyak imersi" },
+      { key: 'C', text: "Pemutar halus (Mikrometer) secara perlahan" },
+      { key: 'D', text: "Kaki mikroskop dan lengan mikroskop" },
+      { key: 'E', text: "Penjepit kaca benda (klip preparat)" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'C',
     hint: 'Pada perbesaran kuat (40×), jarak antara ujung lensa objektif dan kaca penutup sangat dekat.',
     explanation:
       'Pada perbesaran objektif kuat (40× atau 100×), pemfokusan akhir wajib menggunakan mikrometer (pemutar halus). Penggunaan makrometer (pemutar kasar) pada perbesaran kuat berisiko membuat lensa objektif menekan dan memecahkan kaca preparat.',
@@ -382,13 +382,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Jika seorang siswa mengamati sel epitel rongga mulut menggunakan mikroskop dengan perbesaran lensa okuler 15× dan lensa objektif 40×, maka perbesaran total bayangan objek yang terlihat adalah…',
     options: [
-      { key: 'A', text: '55 kali' },
-      { key: 'B', text: '150 kali' },
-      { key: 'C', text: '400 kali' },
-      { key: 'D', text: '600 kali' },
-      { key: 'E', text: '1.500 kali' }
+      { key: 'A', text: "150 kali" },
+      { key: 'B', text: "1.500 kali" },
+      { key: 'C', text: "55 kali" },
+      { key: 'D', text: "400 kali" },
+      { key: 'E', text: "600 kali" }
     ],
-    correct_answer: 'D',
+    correct_answer: 'E',
     hint: 'Perbesaran total mikroskop majemuk merupakan hasil kali perbesaran lensa okuler dengan perbesaran lensa objektif.',
     explanation:
       'Rumus perbesaran total mikroskop cahaya majemuk adalah: M_total = M_okuler × M_objektif = 15 × 40 = 600 kali.',
@@ -407,11 +407,11 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Untuk meneliti fenomena di atas secara komprehensif, kombinasi cabang ilmu biologi yang paling relevan dilibatkan adalah…',
     options: [
-      { key: 'A', text: 'Ekologi, Biologi Kelautan, Fisiologi, dan Ikhtiologi' },
-      { key: 'B', text: 'Ornitologi, Entomologi, Paleontologi, dan Bryologi' },
-      { key: 'C', text: 'Embriologi Manusia, Neurologi, dan Kardiologi' },
-      { key: 'D', text: 'Pteridologi, Dendrologi, dan Agronomi Daratan' },
-      { key: 'E', text: 'Virologi, Osteologi Mamalia, dan Miologi' }
+      { key: 'A', text: "Ekologi, Biologi Kelautan, Fisiologi, dan Ikhtiologi" },
+      { key: 'B', text: "Virologi, Osteologi Mamalia, dan Miologi" },
+      { key: 'C', text: "Embriologi Manusia, Neurologi, dan Kardiologi" },
+      { key: 'D', text: "Pteridologi, Dendrologi, dan Agronomi Daratan" },
+      { key: 'E', text: "Ornitologi, Entomologi, Paleontologi, dan Bryologi" }
     ],
     correct_answer: 'A',
     hint: 'Pilih cabang biologi yang mengkaji interaksi ekosistem laut, fungsi jaringan karang-mikroalga, dan kehidupan ikan.',
@@ -431,13 +431,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Seorang peneliti menemukan urutan langkah kerja yang teracak dalam catatan laboratoriumnya:\n(1) Merumuskan hipotesis\n(2) Mengumpulkan dan menganalisis data eksperimen\n(3) Mengidentifikasi dan merumuskan masalah dari hasil observasi\n(4) Menarik kesimpulan dan menyusun laporan\n(5) Merancang dan melaksanakan eksperimen terkontrol\nUrutan tahapan metode ilmiah yang sistematis adalah…',
     options: [
-      { key: 'A', text: '(1) – (3) – (5) – (2) – (4)' },
-      { key: 'B', text: '(3) – (1) – (5) – (2) – (4)' },
-      { key: 'C', text: '(3) – (5) – (1) – (2) – (4)' },
-      { key: 'D', text: '(2) – (3) – (1) – (5) – (4)' },
-      { key: 'E', text: '(5) – (1) – (3) – (4) – (2)' }
+      { key: 'A', text: "(2) – (3) – (1) – (5) – (4)" },
+      { key: 'B', text: "(3) – (5) – (1) – (2) – (4)" },
+      { key: 'C', text: "(1) – (3) – (5) – (2) – (4)" },
+      { key: 'D', text: "(5) – (1) – (3) – (4) – (2)" },
+      { key: 'E', text: "(3) – (1) – (5) – (2) – (4)" }
     ],
-    correct_answer: 'B',
+    correct_answer: 'E',
     hint: 'Metode ilmiah selalu diawali dengan kepekaan menemukan masalah melalui observasi awal.',
     explanation:
       'Tahapan baku metode ilmiah dimulai dari: Observasi & Perumusan Masalah (3) → Penyusunan Kerangka Teori & Hipotesis (1) → Pelaksanaan Eksperimen (5) → Pengolahan/Analisis Data (2) → Penarikan Kesimpulan & Publikasi (4).',
@@ -455,13 +455,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Dalam praktikum uji kandungan amilum dan glukosa pada bahan makanan, siswa perlu memanaskan tabung reaksi berisi larutan Benedict hingga mendidih. Prosedur keselamatan kerja yang benar saat memanaskan cairan di dalam tabung reaksi di atas pembakar spiritus adalah…',
     options: [
-      { key: 'A', text: 'Menyumbat mulut tabung reaksi rapat-rapat dengan gabus karet agar uap tidak keluar' },
-      { key: 'B', text: 'Memegang dinding tabung reaksi langsung dengan jari tangan agar mudah merasakan suhunya' },
-      { key: 'C', text: 'Mengisi tabung reaksi hingga penuh sampai ke bibir atas tabung' },
-      { key: 'D', text: 'Menggunakan penjepit kayu/logam, memiringkan tabung sekitar 45°, dan mengarahkan mulut tabung ke tempat yang tidak ada orang' },
-      { key: 'E', text: 'Mengarahkan mulut tabung reaksi lurus ke wajah sendiri untuk mengamati perubahan warna dari dekat' }
+      { key: 'A', text: "Mengarahkan mulut tabung reaksi lurus ke wajah sendiri untuk mengamati perubahan warna dari dekat" },
+      { key: 'B', text: "Memegang dinding tabung reaksi langsung dengan jari tangan agar mudah merasakan suhunya" },
+      { key: 'C', text: "Menggunakan penjepit kayu/logam, memiringkan tabung sekitar 45°, dan mengarahkan mulut tabung ke tempat yang tidak ada orang" },
+      { key: 'D', text: "Mengisi tabung reaksi hingga penuh sampai ke bibir atas tabung" },
+      { key: 'E', text: "Menyumbat mulut tabung reaksi rapat-rapat dengan gabus karet agar uap tidak keluar" }
     ],
-    correct_answer: 'D',
+    correct_answer: 'C',
     hint: 'Cairan yang mendidih di dalam tabung sempit dapat memercik tiba-tiba (bumping) keluar dari mulut tabung.',
     explanation:
       'Saat memanaskan cairan dalam tabung reaksi, volume cairan maksimal hanya 1/3–1/2 tabung, dijepit dengan penjepit tabung, dimiringkan ~45° sambil digoyang perlahan, dan mulut tabung wajib diarahkan menjauhi wajah sendiri maupun orang lain untuk menghindari semburan cairan panas.',
@@ -479,11 +479,11 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Pada teknik kultur jaringan tumbuhan (mikropropagasi) untuk menghasilkan ribuan bibit anggrek unggul yang seragam dalam waktu singkat, sifat dasar sel tumbuhan yang dimanfaatkan sehingga satu sel somatik mampu tumbuh menjadi individu utuh adalah…',
     options: [
-      { key: 'A', text: 'Fagositosis' },
-      { key: 'B', text: 'Totipotensi' },
-      { key: 'C', text: 'Apoptosis' },
-      { key: 'D', text: 'Plasmolisis' },
-      { key: 'E', text: 'Partenogenesis' }
+      { key: 'A', text: "Plasmolisis" },
+      { key: 'B', text: "Totipotensi" },
+      { key: 'C', text: "Apoptosis" },
+      { key: 'D', text: "Partenogenesis" },
+      { key: 'E', text: "Fagositosis" }
     ],
     correct_answer: 'B',
     hint: 'Konsep ini dikemukakan oleh G. Haberlandt dan F.C. Steward melalui percobaan eksplan empulur wortel.',
@@ -539,13 +539,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Berdasarkan data tabel eksperimen perkecambahan kacang hijau (Vigna radiata) di atas, seorang siswa menyimpulkan bahwa "Tanaman yang ditanam di tempat gelap tumbuh paling sehat dan subur karena paling tinggi". Evaluasi ilmiah manakah yang paling tepat untuk mengoreksi kesimpulan siswa tersebut?',
     options: [
-      { key: 'A', text: 'Kesimpulan siswa sudah tepat karena satu-satunya indikator kesehatan tanaman adalah panjang batang.' },
-      { key: 'B', text: 'Kesimpulan siswa keliru karena pertambahan tinggi ekstrem di tempat gelap merupakan gejala etiolasi akibat hormon auksin tidak terurai cahaya, namun klorofil gagal terbentuk sehingga batang lemah.' },
-      { key: 'C', text: 'Kesimpulan siswa keliru karena cahaya matahari 5.000 lux bersifat racun yang mematikan seluruh jaringan meristem apikal.' },
-      { key: 'D', text: 'Data tabel tidak valid karena tanaman tidak mungkin bertambah tinggi sama sekali tanpa adanya cahaya matahari.' },
-      { key: 'E', text: 'Pot A tumbuh paling tinggi karena di tempat gelap laju fotosintesis berlangsung tiga kali lebih cepat daripada di tempat terang.' }
+      { key: 'A', text: "Kesimpulan siswa keliru karena cahaya matahari 5.000 lux bersifat racun yang mematikan seluruh jaringan meristem apikal." },
+      { key: 'B', text: "Kesimpulan siswa sudah tepat karena satu-satunya indikator kesehatan tanaman adalah panjang batang." },
+      { key: 'C', text: "Pot A tumbuh paling tinggi karena di tempat gelap laju fotosintesis berlangsung tiga kali lebih cepat daripada di tempat terang." },
+      { key: 'D', text: "Kesimpulan siswa keliru karena pertambahan tinggi ekstrem di tempat gelap merupakan gejala etiolasi akibat hormon auksin tidak terurai cahaya, namun klorofil gagal terbentuk sehingga batang lemah." },
+      { key: 'E', text: "Data tabel tidak valid karena tanaman tidak mungkin bertambah tinggi sama sekali tanpa adanya cahaya matahari." }
     ],
-    correct_answer: 'B',
+    correct_answer: 'D',
     hint: 'Analisis hubungan antara data kuantitatif (tinggi 18,4 cm) dengan data kualitatif (daun kuning pucat, batang rapuh) serta sifat hormon auksin terhadap cahaya.',
     explanation:
       'Pertumbuhan cepat di tempat gelap (18,4 cm) bukan pertanda tanaman subur, melainkan fenomena etiolasi. Tanpa cahaya, hormon auksin bekerja maksimum memanjangkan sel batang untuk mencari cahaya, tetapi sintesis klorofil terhambat (klorosis) sehingga daun kuning pucat dan batang rapuh.',
@@ -598,13 +598,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Seorang peneliti ingin membuktikan hipotesis bahwa "Semakin tinggi kadar detergen, semakin cepat frekuensi pernapasan ikan nila". Ketika rancangan eksperimen pada tabel di atas diperiksa oleh tim penguji, eksperimen tersebut dinyatakan CACAT METODOLOGIS. Apa penyebab utama ketidakvalidan desain eksperimen pada tabel tersebut?',
     options: [
-      { key: 'A', text: 'Peneliti tidak menyertakan satuan menit pada kolom frekuensi bukaan operkulum ikan.' },
-      { key: 'B', text: 'Terdapat tiga variabel bebas yang diubah secara bersamaan (suhu, pH, dan kadar detergen), sehingga tidak dapat dipastikan faktor mana yang menyebabkan kenaikan frekuensi operkulum.' },
-      { key: 'C', text: 'Gelas kimia I menggunakan kadar detergen 0 ppm sehingga merusak perhitungan rata-rata.' },
-      { key: 'D', text: 'Frekuensi bukaan operkulum ikan seharusnya menurun ketika kadar polutan meningkat.' },
-      { key: 'E', text: 'Ikan nila merupakan organisme air tawar yang tidak memiliki operkulum (tutup insang).' }
+      { key: 'A', text: "Ikan nila merupakan organisme air tawar yang tidak memiliki operkulum (tutup insang)." },
+      { key: 'B', text: "Gelas kimia I menggunakan kadar detergen 0 ppm sehingga merusak perhitungan rata-rata." },
+      { key: 'C', text: "Frekuensi bukaan operkulum ikan seharusnya menurun ketika kadar polutan meningkat." },
+      { key: 'D', text: "Peneliti tidak menyertakan satuan menit pada kolom frekuensi bukaan operkulum ikan." },
+      { key: 'E', text: "Terdapat tiga variabel bebas yang diubah secara bersamaan (suhu, pH, dan kadar detergen), sehingga tidak dapat dipastikan faktor mana yang menyebabkan kenaikan frekuensi operkulum." }
     ],
-    correct_answer: 'B',
+    correct_answer: 'E',
     hint: 'Dalam eksperimen terkontrol yang valid, hanya boleh ada SATU variabel bebas yang dimanipulasi pada satu rangkaian uji.',
     explanation:
       'Prinsip utama eksperimen terkontrol adalah hanya mengubah satu variabel bebas (kadar detergen) sembari menjaga variabel kontrol (suhu dan pH air) tetap konstan di seluruh gelas kimia. Mengubah suhu, pH, dan detergen sekaligus menimbulkan variabel perancu (confounding variables).',
@@ -640,13 +640,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Perhatikan grafik hubungan pH terhadap laju reaksi dua jenis enzim pencernaan manusia pada diagram di atas. Apabila seorang peneliti biokimia mengisolasi Enzim X lalu memasukkannya ke dalam larutan penyangga bersuasana basa (pH 8), apa yang akan terjadi beserta penjelasan tingkat molekuler yang tepat?',
     options: [
-      { key: 'A', text: 'Enzim X akan beradaptasi dan menggeser puncak aktivitas optimumnya mengikuti Enzim Y pada pH 8.' },
-      { key: 'B', text: 'Enzim X mengalami denaturasi akibat perubahan muatan ionik gugus R asam amino pada pH 8, sehingga konformasi sisi aktifnya berubah dan tidak dapat mengikat substrat.' },
-      { key: 'C', text: 'Enzim X dan Enzim Y akan bergabung membentuk koenzim baru yang bekerja optimal pada pH netral 7.' },
-      { key: 'D', text: 'Laju reaksi Enzim X meningkat dua kali lipat karena pH 8 menyediakan lebih banyak ion hidroksida.' },
-      { key: 'E', text: 'Enzim X akan berubah struktur kimianya dari molekul protein menjadi molekul polisakarida.' }
+      { key: 'A', text: "Enzim X dan Enzim Y akan bergabung membentuk koenzim baru yang bekerja optimal pada pH netral 7." },
+      { key: 'B', text: "Enzim X akan berubah struktur kimianya dari molekul protein menjadi molekul polisakarida." },
+      { key: 'C', text: "Laju reaksi Enzim X meningkat dua kali lipat karena pH 8 menyediakan lebih banyak ion hidroksida." },
+      { key: 'D', text: "Enzim X akan beradaptasi dan menggeser puncak aktivitas optimumnya mengikuti Enzim Y pada pH 8." },
+      { key: 'E', text: "Enzim X mengalami denaturasi akibat perubahan muatan ionik gugus R asam amino pada pH 8, sehingga konformasi sisi aktifnya berubah dan tidak dapat mengikat substrat." }
     ],
-    correct_answer: 'B',
+    correct_answer: 'E',
     hint: 'Enzim X bekerja di lingkungan sangat asam seperti lambung (pepsin). Perhatikan kurva merah pada saat nilai pH melewati angka 5.',
     explanation:
       'Grafik menunjukkan Enzim X (seperti pepsin lambung) memiliki pH optimum ~2 dan kehilangan seluruh aktivitasnya di atas pH 5. Pada pH 8, konsentrasi ion H+ yang sangat rendah mengubah ikatan ionik dan hidrogen penyusun struktur tersier protein enzim (denaturasi), sehingga sisi aktifnya rusak.',
@@ -687,13 +687,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Perhatikan diagram alir kajian terpadu penyakit malaria di atas. Jika seorang ahli epidemiologi mengkaji "Level 4" yang mencakup interaksi antara genangan air rawa (abiotik), suhu udara, kerapatan vegetasi, populasi nyamuk Anopheles, dan populasi manusia, maka Level 4 beserta strategi intervensi yang tepat adalah…',
     options: [
-      { key: 'A', text: 'Tingkat Jaringan; intervensinya berupa pemberian transfusi trombosit di ruang operasi.' },
-      { key: 'B', text: 'Tingkat Populasi; intervensinya berupa penyuntingan sekuens basa DNA manusia dengan CRISPR.' },
-      { key: 'C', text: 'Tingkat Ekosistem; intervensinya berupa pengelolaan lingkungan fisik (drainase rawa) dan pengendalian biologis larva Anopheles dengan ikan pemakan jentik.' },
-      { key: 'D', text: 'Tingkat Komunitas; intervensinya hanya mengukur keasaman air rawa tanpa memperhatikan organisme hidup.' },
-      { key: 'E', text: 'Tingkat Organel Sel; intervensinya berupa pemberian antibiotik penghambat sintesis dinding sel peptidoglikan.' }
+      { key: 'A', text: "Tingkat Organel Sel; intervensinya berupa pemberian antibiotik penghambat sintesis dinding sel peptidoglikan." },
+      { key: 'B', text: "Tingkat Ekosistem; intervensinya berupa pengelolaan lingkungan fisik (drainase rawa) dan pengendalian biologis larva Anopheles dengan ikan pemakan jentik." },
+      { key: 'C', text: "Tingkat Jaringan; intervensinya berupa pemberian transfusi trombosit di ruang operasi." },
+      { key: 'D', text: "Tingkat Komunitas; intervensinya hanya mengukur keasaman air rawa tanpa memperhatikan organisme hidup." },
+      { key: 'E', text: "Tingkat Populasi; intervensinya berupa penyuntingan sekuens basa DNA manusia dengan CRISPR." }
     ],
-    correct_answer: 'C',
+    correct_answer: 'B',
     hint: 'Level 4 melibatkan komponen biotik (manusia, nyamuk, vegetasi) sekaligus komponen abiotik (genangan air rawa, curah hujan, suhu).',
     explanation:
       'Interaksi timbal balik antara komunitas makhluk hidup (manusia, vektor nyamuk Anopheles, vegetasi) dengan faktor abiotik lingkungannya (air rawa, curah hujan, suhu) merupakan kajian tingkat Ekosistem. Intervensi tingkat ekosistem meliputi rekayasa habitat abiotik dan biokontrol predator alami.',
@@ -748,11 +748,11 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Perhatikan tabel hasil uji daya hambat ekstrak bawang putih (Allium sativum) terhadap bakteri Staphylococcus aureus di atas. Apa fungsi dari Kelompok D (Kloramfenikol) serta kelemahan utama dari desain jumlah sampel pada tabel tersebut?',
     options: [
-      { key: 'A', text: 'Kelompok D adalah kontrol negatif; kelemahannya adalah terlalu banyak menggunakan konsentrasi ekstrak.' },
-      { key: 'B', text: 'Kelompok D adalah kontrol positif untuk memvalidasi prosedur uji dan membandingkan efektivitas ekstrak terhadap obat standar; kelemahannya adalah tidak adanya ulangan (replikasi hanya 1 cawan per perlakuan) sehingga rawan galat acak.' },
-      { key: 'C', text: 'Kelompok D adalah variabel bebas utama; kelemahannya adalah menggunakan akuades steril pada Kelompok A.' },
-      { key: 'D', text: 'Kelompok D adalah variabel pengganggu; kelemahannya adalah diameter zona hambat diukur dalam satuan milimeter.' },
-      { key: 'E', text: 'Kelompok D berfungsi membunuh bawang putih; kelemahannya adalah bakteri Staphylococcus aureus tidak dapat tumbuh di cawan Petri.' }
+      { key: 'A', text: "Kelompok D adalah variabel bebas utama; kelemahannya adalah menggunakan akuades steril pada Kelompok A." },
+      { key: 'B', text: "Kelompok D adalah kontrol positif untuk memvalidasi prosedur uji dan membandingkan efektivitas ekstrak terhadap obat standar; kelemahannya adalah tidak adanya ulangan (replikasi hanya 1 cawan per perlakuan) sehingga rawan galat acak." },
+      { key: 'C', text: "Kelompok D berfungsi membunuh bawang putih; kelemahannya adalah bakteri Staphylococcus aureus tidak dapat tumbuh di cawan Petri." },
+      { key: 'D', text: "Kelompok D adalah variabel pengganggu; kelemahannya adalah diameter zona hambat diukur dalam satuan milimeter." },
+      { key: 'E', text: "Kelompok D adalah kontrol negatif; kelemahannya adalah terlalu banyak menggunakan konsentrasi ekstrak." }
     ],
     correct_answer: 'B',
     hint: 'Bedakan peran Akuades Steril (kontrol negatif) dengan Antibiotik Standar yang sudah pasti menghasilkan zona hambat (kontrol positif), lalu perhatikan kolom Jumlah Sampel.',
@@ -787,13 +787,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Seorang auditor keselamatan laboratorium (K3) menemukan tata letak penyimpanan bahan kimia seperti pada gambar di atas. Evaluasi risiko bahaya paling fatal beserta rekomendasi perbaikan yang wajib dilakukan adalah…',
     options: [
-      { key: 'A', text: 'Penyimpanan sudah sesuai standar internasional karena bahan dikelompokkan berdasarkan abjad.' },
-      { key: 'B', text: 'Pelarut mudah terbakar (etanol, eter) yang disatukan dengan oksidator kuat di dekat sumber panas berisiko memicu kebakaran/ledakan, sedangkan asam kuat (H2SO4) dan basa kuat (NaOH) harus dipisahkan dalam baki sekunder tahan korosi.' },
-      { key: 'C', text: 'Botol kaca asam sulfat pekat berukuran 2,5 liter seharusnya dipindahkan ke rak paling atas setinggi di atas kepala agar tidak dijangkau tikus.' },
-      { key: 'D', text: 'Etanol 96% dan dietil eter seharusnya dipanaskan terlebih dahulu sebelum disimpan di lemari tertutup.' },
-      { key: 'E', text: 'Asam sulfat pekat dan natrium hidroksida pekat sebaiknya dicampur di dalam satu wadah besar untuk menghemat ruang rak.' }
+      { key: 'A', text: "Pelarut mudah terbakar (etanol, eter) yang disatukan dengan oksidator kuat di dekat sumber panas berisiko memicu kebakaran/ledakan, sedangkan asam kuat (H2SO4) dan basa kuat (NaOH) harus dipisahkan dalam baki sekunder tahan korosi." },
+      { key: 'B', text: "Penyimpanan sudah sesuai standar internasional karena bahan dikelompokkan berdasarkan abjad." },
+      { key: 'C', text: "Asam sulfat pekat dan natrium hidroksida pekat sebaiknya dicampur di dalam satu wadah besar untuk menghemat ruang rak." },
+      { key: 'D', text: "Botol kaca asam sulfat pekat berukuran 2,5 liter seharusnya dipindahkan ke rak paling atas setinggi di atas kepala agar tidak dijangkau tikus." },
+      { key: 'E', text: "Etanol 96% dan dietil eter seharusnya dipanaskan terlebih dahulu sebelum disimpan di lemari tertutup." }
     ],
-    correct_answer: 'B',
+    correct_answer: 'A',
     hint: 'Perhatikan interaksi segitiga api antara bahan Flammable + Oxidizer + Sumber Panas di Rak Atas, serta bahaya korosif Asam vs Basa di Rak Bawah.',
     explanation:
       'Terdapat dua pelanggaran K3 fatal: (1) Bahan mudah terbakar (etanol, aseton, eter) dilarang disimpan bersama oksidator kuat (KMnO4) apalagi di dekat sumber api/sinar matahari langsung karena berisiko meledak; (2) Asam kuat pekat dan basa kuat pekat tidak boleh disimpan berdampingan tanpa baki penampung sekunder (secondary containment) karena jika botol pecah akan bereaksi eksotermik hebat.',
@@ -842,13 +842,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Berdasarkan data pemantauan agroekosistem sawah selama 5 tahun pada tabel di atas, terjadi penurunan drastis persentase kematian hama wereng meskipun dosis pestisida dinaikkan empat kali lipat, diikuti ledakan populasi wereng (resurgensi). Analisis biologis lintas tingkat organisasi yang paling tepat menjelaskan fenomena tersebut adalah…',
     options: [
-      { key: 'A', text: 'Pestisida berubah menjadi pupuk nitrogen yang menyuburkan tanaman padi sehingga wereng tidak lagi memakan padi.' },
-      { key: 'B', text: 'Pada tingkat populasi terjadi seleksi alam terhadap alel resisten pestisida pada wereng, sementara pada tingkat komunitas terjadi kepunahan lokal predator alami (laba-laba) sehingga kendali hayati runtuh.' },
-      { key: 'C', text: 'Laba-laba predator mengalami mutasi menjadi hama pemakan daun padi pada tahun ke-5.' },
-      { key: 'D', text: 'Dosis 8,0 mL/L terlalu encer dibandingkan dosis 2,0 mL/L sehingga tidak mampu menembus kutikula serangga.' },
-      { key: 'E', text: 'Wereng coklat berkembang biak secara vegetatif melalui pembelahan biner ketika terpapar pestisida.' }
+      { key: 'A', text: "Pada tingkat populasi terjadi seleksi alam terhadap alel resisten pestisida pada wereng, sementara pada tingkat komunitas terjadi kepunahan lokal predator alami (laba-laba) sehingga kendali hayati runtuh." },
+      { key: 'B', text: "Laba-laba predator mengalami mutasi menjadi hama pemakan daun padi pada tahun ke-5." },
+      { key: 'C', text: "Pestisida berubah menjadi pupuk nitrogen yang menyuburkan tanaman padi sehingga wereng tidak lagi memakan padi." },
+      { key: 'D', text: "Wereng coklat berkembang biak secara vegetatif melalui pembelahan biner ketika terpapar pestisida." },
+      { key: 'E', text: "Dosis 8,0 mL/L terlalu encer dibandingkan dosis 2,0 mL/L sehingga tidak mampu menembus kutikula serangga." }
     ],
-    correct_answer: 'B',
+    correct_answer: 'A',
     hint: 'Hubungkan fenomena genetika populasi (wereng yang bertahan hidup mewariskan gen kebal) dengan interaksi rantai makanan di tingkat komunitas (hilangnya predator laba-laba).',
     explanation:
       'Penggunaan pestisida dosis tinggi secara terus-menerus memicu dua dampak: (1) Tingkat molekul/populasi: individu wereng yang memiliki mutasi gen resisten bertahan hidup dan berkembang biak mendominasi populasi; (2) Tingkat komunitas/ekosistem: musuh alami (laba-laba predator) ikut terbunuh (18 → 1 ekor/m²), menyebabkan resurgensi (ledakan populasi hama).',
@@ -867,11 +867,11 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Berdasarkan ruang lingkup kajian biologi, pasangan cabang ilmu dan objek tingkat organisasi yang diteliti oleh tim investigasi tersebut adalah…',
     options: [
-      { key: 'A', text: 'Toksikologi & Biokimia (tingkat molekul: inhibisi enzim oleh timbal), Histologi (tingkat jaringan: kerusakan epitel insang), serta Ekotoksikologi (tingkat ekosistem: bioakumulasi logam berat).' },
-      { key: 'B', text: 'Taksonomi (tingkat bioma), Paleontologi (tingkat fosil), serta Astronomi (tingkat biosfer).' },
-      { key: 'C', text: 'Morfologi tumbuhan (tingkat organel), Genetika Mendel (tingkat populasi), serta Bryologi (tingkat jaringan).' },
-      { key: 'D', text: 'Virologi (tingkat molekul), Mikologi (tingkat sel), serta Ornitologi (tingkat individu).' },
-      { key: 'E', text: 'Fisiologi tumbuhan (tingkat jaringan), Entomologi (tingkat organ), serta Geologi (tingkat komunitas).' }
+      { key: 'A', text: "Toksikologi & Biokimia (tingkat molekul: inhibisi enzim oleh timbal), Histologi (tingkat jaringan: kerusakan epitel insang), serta Ekotoksikologi (tingkat ekosistem: bioakumulasi logam berat)." },
+      { key: 'B', text: "Fisiologi tumbuhan (tingkat jaringan), Entomologi (tingkat organ), serta Geologi (tingkat komunitas)." },
+      { key: 'C', text: "Morfologi tumbuhan (tingkat organel), Genetika Mendel (tingkat populasi), serta Bryologi (tingkat jaringan)." },
+      { key: 'D', text: "Taksonomi (tingkat bioma), Paleontologi (tingkat fosil), serta Astronomi (tingkat biosfer)." },
+      { key: 'E', text: "Virologi (tingkat molekul), Mikologi (tingkat sel), serta Ornitologi (tingkat individu)." }
     ],
     correct_answer: 'A',
     hint: 'Peleburan baterai bekas melepaskan logam berat Timbal (Pb) yang menghambat enzim sintesis hemoglobin, merusak jaringan insang, dan terakumulasi di ekosistem sungai.',
@@ -892,13 +892,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Ditinjau dari prinsip metode ilmiah yang ketat, mengapa klaim peneliti tersebut TIDAK dapat diterima sebagai kesimpulan ilmiah yang sahih?',
     options: [
-      { key: 'A', text: 'Karena penelitian bidang kedokteran tidak boleh menggunakan metode ilmiah maupun hipotesis.' },
-      { key: 'B', text: 'Karena ukuran sampel sangat kecil (5 orang), tidak ada kelompok kontrol (plasebo/perawatan standar saja), serta efek kesembuhan terbaur dengan terapi infus rumah sakit.' },
-      { key: 'C', text: 'Karena demam berdarah disebabkan oleh bakteri yang hanya bisa sembuh dalam waktu 30 hari.' },
-      { key: 'D', text: 'Karena peneliti melakukan pengamatan di rumah sakit, bukan di hutan hujan tropis.' },
-      { key: 'E', text: 'Karena seluruh pasien sembuh sehingga data kuantitatif tidak dapat dihitung.' }
+      { key: 'A', text: "Karena peneliti melakukan pengamatan di rumah sakit, bukan di hutan hujan tropis." },
+      { key: 'B', text: "Karena seluruh pasien sembuh sehingga data kuantitatif tidak dapat dihitung." },
+      { key: 'C', text: "Karena demam berdarah disebabkan oleh bakteri yang hanya bisa sembuh dalam waktu 30 hari." },
+      { key: 'D', text: "Karena penelitian bidang kedokteran tidak boleh menggunakan metode ilmiah maupun hipotesis." },
+      { key: 'E', text: "Karena ukuran sampel sangat kecil (5 orang), tidak ada kelompok kontrol (plasebo/perawatan standar saja), serta efek kesembuhan terbaur dengan terapi infus rumah sakit." }
     ],
-    correct_answer: 'B',
+    correct_answer: 'E',
     hint: 'Apakah peneliti dapat membedakan apakah pasien sembuh karena minuman herbal X, karena terapi infus rumah sakit, atau karena fase penyembuhan alami sistem imun?',
     explanation:
       'Klaim tersebut cacat secara metodologis karena: (1) Tanpa kelompok kontrol pembanding (pasien yang hanya menerima terapi standar tanpa herbal X), peneliti tidak dapat mengisolasi efek variabel bebas; (2) Terapi infus medis menjadi variabel perancu (confounding variable); (3) Ukuran sampel (n=5) terlalu kecil untuk generalisasi statistik.',
@@ -917,13 +917,13 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Berdasarkan wacana di atas, sikap dan tindakan ilmiah yang paling bertanggung jawab secara bioetika dalam menyikapi dilema penerapan bioteknologi tersebut adalah…',
     options: [
-      { key: 'A', text: 'Melarang seluruh penelitian biologi molekuler dan kembali menggunakan pestisida kimia dosis tinggi.' },
-      { key: 'B', text: 'Menanam jagung Bt di seluruh kawasan hutan lindung tanpa perlu melakukan analisis mengenai dampak lingkungan.' },
-      { key: 'C', text: 'Melakukan uji keamanan hayati (biosafety) jangka panjang, menerapkan zona penyangga (refugia) tanaman non-Bt untuk mencegah resistensi hama, dan memantau populasi serangga non-target secara berkala.' },
-      { key: 'D', text: 'Mengabaikan peringatan ahli ekologi karena keuntungan ekonomi jangka pendek lebih penting daripada keseimbangan rantai makanan.' },
-      { key: 'E', text: 'Memusnahkan seluruh kupu-kupu di sekitar lahan pertanian agar tidak terkena serbuk sari jagung Bt.' }
+      { key: 'A', text: "Memusnahkan seluruh kupu-kupu di sekitar lahan pertanian agar tidak terkena serbuk sari jagung Bt." },
+      { key: 'B', text: "Mengabaikan peringatan ahli ekologi karena keuntungan ekonomi jangka pendek lebih penting daripada keseimbangan rantai makanan." },
+      { key: 'C', text: "Melarang seluruh penelitian biologi molekuler dan kembali menggunakan pestisida kimia dosis tinggi." },
+      { key: 'D', text: "Melakukan uji keamanan hayati (biosafety) jangka panjang, menerapkan zona penyangga (refugia) tanaman non-Bt untuk mencegah resistensi hama, dan memantau populasi serangga non-target secara berkala." },
+      { key: 'E', text: "Menanam jagung Bt di seluruh kawasan hutan lindung tanpa perlu melakukan analisis mengenai dampak lingkungan." }
     ],
-    correct_answer: 'C',
+    correct_answer: 'D',
     hint: 'Bioetika menuntut keseimbangan antara pemanfaatan inovasi bioteknologi (kesejahteraan manusia) dan prinsip kehati-hatian ekologis (kelestarian lingkungan).',
     explanation:
       'Dalam perspektif bioetika dan manajemen agroekosistem, inovasi transgenik seperti jagung Bt harus disertai uji keamanan hayati (biosafety), penerapan strategi refugia (menanam jalur tanaman non-Bt di sekitar lahan agar alel rentan pada hama tetap terpelihara dan menghambat evolusi hama resisten), serta pemantauan serangga polinator non-target.',
@@ -941,11 +941,11 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Seorang peneliti mengamati sebuah sel tumbuhan menggunakan mikroskop cahaya. Pada perbesaran lensa okuler 10× dan lensa objektif 10×, diameter bidang pandang mikroskop terukur sebesar 1,6 mm (1.600 µm) dan tampak 8 sel epidermis berderet memanjang memenuhi garis tengah bidang pandang. Apabila peneliti memutar revolver ke lensa objektif 40×, berapakah perkiraan ukuran panjang satu sel epidermis dan berapa jumlah sel yang kini tampak dalam satu garis tengah bidang pandang?',
     options: [
-      { key: 'A', text: 'Panjang satu sel = 200 µm; jumlah sel yang tampak pada objektif 40× = 2 sel' },
-      { key: 'B', text: 'Panjang satu sel = 200 µm; jumlah sel yang tampak pada objektif 40× = 32 sel' },
-      { key: 'C', text: 'Panjang satu sel = 800 µm; jumlah sel yang tampak pada objektif 40× = 4 sel' },
-      { key: 'D', text: 'Panjang satu sel = 50 µm; jumlah sel yang tampak pada objektif 40× = 8 sel' },
-      { key: 'E', text: 'Panjang satu sel = 400 µm; jumlah sel yang tampak pada objektif 40× = 16 sel' }
+      { key: 'A', text: "Panjang satu sel = 200 µm; jumlah sel yang tampak pada objektif 40× = 2 sel" },
+      { key: 'B', text: "Panjang satu sel = 800 µm; jumlah sel yang tampak pada objektif 40× = 4 sel" },
+      { key: 'C', text: "Panjang satu sel = 50 µm; jumlah sel yang tampak pada objektif 40× = 8 sel" },
+      { key: 'D', text: "Panjang satu sel = 400 µm; jumlah sel yang tampak pada objektif 40× = 16 sel" },
+      { key: 'E', text: "Panjang satu sel = 200 µm; jumlah sel yang tampak pada objektif 40× = 32 sel" }
     ],
     correct_answer: 'A',
     hint: 'Ukuran asli sel tidak berubah. Ketika perbesaran lensa objektif dinaikkan 4 kali lipat (dari 10× ke 40×), diameter bidang pandang menyempit menjadi 1/4 kalinya.',
@@ -978,11 +978,11 @@ export const topic1RuangLingkup: BiologyQuestionSeed[] = [
     question_text:
       'Grafik di atas merepresentasikan eksperimen klasik G.F. Gause ketika dua spesies protozoa (Paramecium aurelia dan Paramecium caudatum) dikultur bersama dalam satu tabung dengan sumber makanan bakteri yang terbatas. Berdasarkan grafik tersebut, kesimpulan ilmiah dan tingkat organisasi biologi yang dikaji adalah…',
     options: [
-      { key: 'A', text: 'Tingkat Populasi tunggal; kedua spesies bersimbiosis mutualisme sehingga keduanya mencapai daya dukung maksimum.' },
-      { key: 'B', text: 'Tingkat Komunitas; terjadi prinsip eksklusi kompetitif (Competitive Exclusion Principle) di mana dua spesies dengan relung ekologi (niche) identik tidak dapat hidup berdampingan secara stabil karena P. aurelia lebih efisien memanfaatkan nutrisi.' },
-      { key: 'C', text: 'Tingkat Seluler; Paramecium aurelia merupakan predator karnivora yang menelan Paramecium caudatum secara fagositosis.' },
-      { key: 'D', text: 'Tingkat Jaringan; kematian Paramecium caudatum disebabkan oleh suhu inkubator yang mendidih pada hari ke-6.' },
-      { key: 'E', text: 'Tingkat Bioma; kedua spesies mengalami mutasi spontan menjadi alga multiseluler pada hari ke-16.' }
+      { key: 'A', text: "Tingkat Bioma; kedua spesies mengalami mutasi spontan menjadi alga multiseluler pada hari ke-16." },
+      { key: 'B', text: "Tingkat Komunitas; terjadi prinsip eksklusi kompetitif (Competitive Exclusion Principle) di mana dua spesies dengan relung ekologi (niche) identik tidak dapat hidup berdampingan secara stabil karena P. aurelia lebih efisien memanfaatkan nutrisi." },
+      { key: 'C', text: "Tingkat Seluler; Paramecium aurelia merupakan predator karnivora yang menelan Paramecium caudatum secara fagositosis." },
+      { key: 'D', text: "Tingkat Populasi tunggal; kedua spesies bersimbiosis mutualisme sehingga keduanya mencapai daya dukung maksimum." },
+      { key: 'E', text: "Tingkat Jaringan; kematian Paramecium caudatum disebabkan oleh suhu inkubator yang mendidih pada hari ke-6." }
     ],
     correct_answer: 'B',
     hint: 'Interaksi kompetisi terjadi antarpopulasi dua spesies berbeda (tingkat komunitas) yang memperebutkan sumber daya yang sama.',

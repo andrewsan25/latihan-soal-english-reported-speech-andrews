@@ -1,0 +1,1533 @@
+[
+  {
+    "code": "PJOK-BSK-001",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 1,
+    "topic": "Bola Basket",
+    "subtopic": "Dasar-Dasar",
+    "prompt": "Berapakah tinggi standar ring basket dari permukaan lantai lapangan menurut regulasi resmi FIBA dan jumlah pemain inti yang bertanding di lapangan untuk setiap regu?",
+    "options": [
+      "Tinggi ring 2,85 meter dengan 6 pemain inti per regu di lapangan",
+      "Tinggi ring 3,20 meter dengan 5 pemain inti per regu di lapangan",
+      "Tinggi ring 3,05 meter dengan 5 pemain inti per regu di lapangan",
+      "Tinggi ring 3,00 meter dengan 6 pemain inti per regu di lapangan",
+      "Tinggi ring 2,95 meter dengan 4 pemain inti per regu di lapangan"
+    ],
+    "correct_index": 2,
+    "hint": "Ingat konversi tinggi ring standar 10 kaki (feet) dalam satuan meter dan format permainan basket lima lawan lima.",
+    "explanation": "Menurut regulasi resmi FIBA, tinggi ring basket dari lantai lapangan adalah 3,05 meter (10 kaki), dan setiap tim menurunkan 5 pemain inti di lapangan (dengan maksimal 7 pemain cadangan di bangku tim).",
+    "tags": [
+      "bola-basket",
+      "dasar-dasar",
+      "fiba",
+      "perlengkapan"
+    ]
+  },
+  {
+    "code": "PJOK-BSK-002",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 1,
+    "topic": "Bola Basket",
+    "subtopic": "Dasar-Dasar",
+    "prompt": "Dalam pertandingan bola basket resmi aturan FIBA, durasi waktu bermain normal serta ukuran standar panjang dan lebar lapangan adalah…",
+    "options": [
+      "4 kuarter × 10 menit waktu bersih dengan lapangan 28 meter × 15 meter",
+      "2 babak × 20 menit dengan lapangan 40 meter × 20 meter",
+      "4 kuarter × 12 menit dengan lapangan 26 meter × 14 meter",
+      "3 babak × 15 menit dengan lapangan 30 meter × 16 meter",
+      "4 kuarter × 8 menit dengan lapangan 28 meter × 18 meter"
+    ],
+    "correct_index": 0,
+    "hint": "Bandingkan durasi kuarter FIBA (lebih singkat 2 menit dari NBA yang 12 menit) serta dimensi lapangan 28 m × 15 m.",
+    "explanation": "Pertandingan resmi FIBA berlangsung selama 4 kuarter × 10 menit (40 menit total waktu efektif) di atas lapangan standar berukuran panjang 28 meter dan lebar 15 meter.",
+    "tags": [
+      "bola-basket",
+      "dasar-dasar",
+      "durasi",
+      "lapangan"
+    ]
+  },
+  {
+    "code": "PJOK-BSK-003",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 1,
+    "topic": "Bola Basket",
+    "subtopic": "Teknik Dasar",
+    "prompt": "Teknik mengoper bola basket dengan cara mendorong bola sejajar dada memakai kedua tangan lurus menuju dada rekan satu tim yang berada pada jarak dekat hingga menengah disebut…",
+    "options": [
+      "Overhead pass",
+      "Baseball pass",
+      "Bounce pass",
+      "Behind-the-back pass",
+      "Chest pass"
+    ],
+    "correct_index": 4,
+    "hint": "Istilah bahasa Inggris untuk teknik ini secara harfiah berarti operan setinggi dada.",
+    "explanation": "Chest pass adalah operan datar setinggi dada yang cepat dan akurat, sangat efektif digunakan saat tidak ada pemain bertahan tinggi di antara pengumpan dan penerima.",
+    "tags": [
+      "bola-basket",
+      "teknik-dasar",
+      "passing"
+    ]
+  },
+  {
+    "code": "PJOK-BSK-004",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Bola Basket",
+    "subtopic": "Teknik Dasar",
+    "prompt": "Agar operan pantul (bounce pass) mampu melewati penjagaan lawan bertubuh tinggi dan memantul tepat setinggi pinggang penerima, titik pantul bola ke lantai yang paling ideal adalah…",
+    "options": [
+      "Tepat di depan kaki sendiri sekitar 1/5 jarak ke penerima",
+      "Sekitar 2/3 jarak dari pengumpan menuju ke penerima",
+      "Tepat sejajar di bawah ketiak pemain bertahan lawan",
+      "Sedekat mungkin dengan ujung kaki penerima agar langsung naik vertikal",
+      "Tepat 1/4 jarak dari pengumpan dengan sudut pantul hampir tegak lurus"
+    ],
+    "correct_index": 1,
+    "hint": "Pantulan terlalu dekat dengan pengumpan membuat bola lemah; titik terbaik lebih dekat ke arah penerima melewati garis jangkauan lawan.",
+    "explanation": "Titik pantul sekitar 2/3 jarak dari pengumpan ke penerima menghasilkan sudut pantul ideal sehingga bola naik kembali tepat di ketinggian pinggang hingga dada penerima dan sulit dipotong defender.",
+    "tags": [
+      "bola-basket",
+      "teknik-dasar",
+      "bounce-pass"
+    ]
+  },
+  {
+    "code": "PJOK-BSK-005",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Bola Basket",
+    "subtopic": "Teknik Dasar",
+    "prompt": "Dalam teknik pivot pada permainan bola basket, aturan gerakan kaki yang benar setelah pemain menangkap bola dan berhenti mendribel adalah…",
+    "options": [
+      "Mengangkat kedua kaki sekaligus untuk berbalik arah ke belakang",
+      "Menggeser kedua telapak kaki bergantian saat berputar menghindari lawan",
+      "Melangkah tiga kali ke samping sambil menjaga bola di atas kepala",
+      "Menetapkan satu kaki sebagai poros tetap di lantai sementara kaki lainnya bebas melangkah memutar ke segala arah",
+      "Memantulkan bola satu kali tiap kali memindahkan kaki poros ke tempat baru"
+    ],
+    "correct_index": 3,
+    "hint": "Salah satu kaki bertindak seperti engsel/poros yang tidak boleh terangkat sebelum bola dioper, ditembakkan, atau mulai didribel.",
+    "explanation": "Pivot adalah gerakan memutar badan bertumpu pada satu kaki poros (pivot foot) yang tetap menempel di lantai sementara kaki satunya bergerak bebas untuk melindungi bola atau mencari ruang operan.",
+    "tags": [
+      "bola-basket",
+      "teknik-dasar",
+      "pivot"
+    ]
+  },
+  {
+    "code": "PJOK-BSK-006",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Bola Basket",
+    "subtopic": "Teknik Dasar",
+    "prompt": "Urutan gerakan teknik lay-up shoot kanan yang efektif ketika penyerang menggiring bola mendekati ring dari sisi kanan lapangan adalah…",
+    "options": [
+      "Langkah kaki kanan – langkah kaki kiri lalu menolak kuat ke atas dengan lutut kanan diangkat dan melepas bola menggunakan tangan kanan",
+      "Langkah kaki kiri – langkah kaki kanan lalu menolak memakai kedua kaki bersamaan ke arah depan",
+      "Berhenti dua kaki tepat di bawah ring lalu melompat vertikal tanpa memanfaatkan papan pantul",
+      "Langkah kaki kanan – langkah kaki kiri – langkah kaki kanan tambahan untuk menambah daya dorong",
+      "Melompat dari garis 3 poin dengan tangan kiri memutar bola ke arah ring"
+    ],
+    "correct_index": 0,
+    "hint": "Pada lay-up kanan, langkah akhir penentu tolakan dilakukan oleh kaki kiri (berlawanan dengan tangan menembak) sambil mengangkat lutut kanan.",
+    "explanation": "Lay-up kanan diawali tangkapan bola pada langkah kaki kanan, disusul langkah pendek-kuat kaki kiri sebagai tumpuan tolakan, mengangkat lutut kanan, dan mengarahkan bola ke kotak kecil papan pantul dengan tangan kanan.",
+    "tags": [
+      "bola-basket",
+      "teknik-dasar",
+      "lay-up"
+    ]
+  },
+  {
+    "code": "PJOK-BSK-007",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 1,
+    "topic": "Bola Basket",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Jika seorang pemain bola basket melakukan tembakan dari luar garis setengah lingkaran (busur tiga poin) dan bola masuk, lalu disusul pelanggaran (foul) saat menembak sehingga mendapat 1 tembakan bebas yang juga masuk, berapakah total poin yang diperoleh tim tersebut?",
+    "options": [
+      "2 poin",
+      "3 poin",
+      "4 poin",
+      "5 poin",
+      "1 poin"
+    ],
+    "correct_index": 2,
+    "hint": "Jumlahkan nilai tembakan luar busur tiga poin dengan nilai keberhasilan satu kali free throw.",
+    "explanation": "Tembakan masuk dari luar busur bernilai 3 poin, ditambah 1 poin dari keberhasilan tembakan bebas (and-one), sehingga total tim memperoleh 4 poin (four-point play).",
+    "tags": [
+      "bola-basket",
+      "dasar-dasar",
+      "scoring",
+      "foul"
+    ]
+  },
+  {
+    "code": "PJOK-BSK-008",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Bola Basket",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Seorang point guard yang baru menguasai bola hasil throw-in di area pertahanannya sendiri (backcourt) gagal membawa bola melewati garis tengah hingga waktu serangan berjalan 9 detik. Pelanggaran waktu yang dijatuhkan wasit adalah…",
+    "options": [
+      "3-second violation",
+      "5-second violation",
+      "24-second shot clock violation",
+      "Backcourt violation",
+      "8-second violation"
+    ],
+    "correct_index": 4,
+    "hint": "Aturan FIBA membatasi waktu tim menyerang untuk keluar dari zona pertahanan sendiri menuju area lawan (frontcourt).",
+    "explanation": "Dalam aturan bola basket FIBA, tim penguasa bola wajib membawa bola melewati garis tengah lapangan ke area lawan (frontcourt) dalam maksimal 8 detik; lebih dari itu merupakan 8-second violation.",
+    "tags": [
+      "bola-basket",
+      "foul",
+      "pelanggaran-waktu"
+    ]
+  },
+  {
+    "code": "PJOK-BSK-009",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Bola Basket",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Apa perbedaan mendasar antara pelanggaran travelling dan double dribble dalam bola basket?",
+    "options": [
+      "Travelling terjadi saat bola menyentuh kaki, sedangkan double dribble terjadi saat bola keluar garis",
+      "Travelling ialah melangkah terlalu banyak atau menggeser kaki poros tanpa mendribel, sedangkan double dribble ialah mendribel lagi setelah berhenti atau mendribel memakai dua tangan bersamaan",
+      "Travelling hanya dihukum lemparan bebas, sedangkan double dribble berujung kartu kuning",
+      "Travelling dilakukan pemain bertahan di area kunci, sedangkan double dribble dilakukan pengumpan di garis samping",
+      "Travelling adalah mengoper bola ke area backcourt sendiri, sedangkan double dribble adalah menahan bola lebih dari 3 detik"
+    ],
+    "correct_index": 1,
+    "hint": "Perhatikan kata kunci langkah kaki (travelling) vs penghentian serta pantulan ganda bola (double dribble).",
+    "explanation": "Travelling (walking) adalah pelanggaran gerak kaki berlebih/menggeser kaki tumpuan tanpa memantulkan bola. Double dribble terjadi jika pemain mendribel dengan dua tangan sekaligus atau mendribel ulang sesudah memegang bola dengan dua tangan/menghentikan dribel.",
+    "tags": [
+      "bola-basket",
+      "foul",
+      "violation"
+    ]
+  },
+  {
+    "code": "PJOK-BSK-010",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 3,
+    "topic": "Bola Basket",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Seorang pemain penyerang menerobos masuk ke area bersyarat lawan dan menabrak pemain bertahan yang sebelumnya sudah berdiri tegak dengan kedua kaki menapak stabil di posisinya (legal guarding position). Pelanggaran yang diputuskan wasit adalah…",
+    "options": [
+      "Blocking foul terhadap pemain bertahan dengan sanksi 2 tembakan bebas",
+      "Backcourt violation karena kontak terjadi di dekat garis bebas",
+      "Technical foul karena pemain bertahan tidak melompat menghindar",
+      "Charging foul (offensive foul) oleh penyerang sehingga penguasaan bola berpindah ke tim bertahan",
+      "Double foul sehingga dilakukan jump ball di lingkaran tengah"
+    ],
+    "correct_index": 3,
+    "hint": "Apabila defender lebih dulu menguasai posisi sah di lintasan penyerang dengan dua kaki stabil, penyerang yang menabrak dianggap melakukan kesalahan ofensif.",
+    "explanation": "Ketika pemain bertahan telah menetapkan legal guarding position (kedua kaki menapak di lantai menghadap penyerang) sebelum tabrakan terjadi, kontak dari penyerang dinilai sebagai charging foul (offensive foul) dan bola berpindah ke lawan.",
+    "tags": [
+      "bola-basket",
+      "foul",
+      "charging-blocking"
+    ]
+  },
+  {
+    "code": "PJOK-BSK-011",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 3,
+    "topic": "Bola Basket",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Di tengah serangan di area frontcourt, seorang forward memantulkan bola terlalu keras sehingga memantul melewati garis tengah kembali ke area pertahanan timnya sendiri (backcourt), lalu ia berlari mengejar dan menyentuh bola itu pertama kali di backcourt. Keputusan wasit yang tepat adalah…",
+    "options": [
+      "Permainan tetap berjalan karena bola sempat memantul di lantai",
+      "Shot clock diulang kembali menjadi 24 detik penuh",
+      "Dihukum technical foul dan diberikan 2 free throw kepada lawan",
+      "Bola dianggap keluar lapangan dan diulang dengan jump ball",
+      "Terjadi backcourt violation (backball) sehingga tim lawan memperoleh throw-in dari garis samping"
+    ],
+    "correct_index": 4,
+    "hint": "Tim yang membawa bola ke frontcourt tidak diperbolehkan mengembalikannya ke backcourt dan menyentuhnya lagi pertama kali di sana.",
+    "explanation": "Karena tim penyerang adalah pihak terakhir yang menyentuh bola di frontcourt sebelum bola kembali ke backcourt, lalu pemain tim yang sama menyentuhnya pertama kali di backcourt, terjadi backcourt violation dan bola diberikan ke lawan.",
+    "tags": [
+      "bola-basket",
+      "foul",
+      "backcourt"
+    ]
+  },
+  {
+    "code": "PJOK-BSK-012",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 3,
+    "topic": "Bola Basket",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Berapakah batas maksimal personal foul yang membuat seorang pemain dikeluarkan permanen dari sisa pertandingan (foul out) menurut regulasi FIBA, serta bagaimana konsekuensi dari technical foul?",
+    "options": [
+      "Batas 6 personal foul; technical foul memberi 2 free throw dan jump ball",
+      "Batas 4 personal foul; technical foul otomatis kartu merah langsung",
+      "Batas 5 personal foul; technical foul memberi 1 free throw untuk lawan plus penguasaan bola lanjutan",
+      "Batas 5 personal foul; technical foul tidak memberi free throw melainkan hanya peringatan",
+      "Tidak ada batas foul pribadi; hanya akumulasi foul tim yang menentukan pengusiran"
+    ],
+    "correct_index": 2,
+    "hint": "FIBA menetapkan batas foul individu lebih sedikit 1 angka dibandingkan NBA (6), serta sanksi 1 tembakan bebas bagi perilaku non-kontak tidak sportif.",
+    "explanation": "Menurut aturan FIBA, pemain terkena foul out setelah mengumpulkan 5 foul (gabungan personal dan unsportsmanlike/technical tertentu). Technical foul akibat perilaku tidak sportif memberi lawan 1 free throw dan tetap melanjutkan penguasaan bola.",
+    "tags": [
+      "bola-basket",
+      "foul",
+      "fiba",
+      "sanksi"
+    ]
+  },
+  {
+    "code": "PJOK-BSK-013",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Bola Basket",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Pelanggaran 3-second violation terjadi apabila seorang pemain penyerang berdiri di dalam area bersyarat (key/paint area) lawan lebih dari tiga detik berturut-turut ketika…",
+    "options": [
+      "Timnya sedang menguasai bola hidup di frontcourt dan jam pertandingan sedang berjalan",
+      "Bola masih dalam penguasaan tim bertahan di backcourt mereka",
+      "Kedua tim sedang melakukan perebutan bola di udara usai tembakan (rebound bebas)",
+      "Pemain tersebut sedang menunggu bola masuk dari lemparan bebas pemain lain",
+      "Bola berada di tangan wasit sebelum lemparan ke dalam (throw-in) dimulai"
+    ],
+    "correct_index": 0,
+    "hint": "Aturan 3 detik melarang penyerang berdiam di area kunci saat timnya aktif membangun serangan di area lawan.",
+    "explanation": "Pelanggaran 3 detik hanya dihitung ketika tim penyerang menguasai bola hidup di zona frontcourt dan waktu pertandingan aktif berjalan, untuk mencegah pemain bertubuh tinggi terus parkir di bawah ring.",
+    "tags": [
+      "bola-basket",
+      "foul",
+      "3-second"
+    ]
+  },
+  {
+    "code": "PJOK-BSK-014",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 3,
+    "topic": "Bola Basket",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Sebuah tim penyerang melepaskan tembakan tiga poin saat shot clock tersisa 2 detik; bola memantul mengenai ring basket (tanpa masuk) dan berhasil direbut kembali melalui offensive rebound oleh rekannya. Berapa waktu shot clock yang diberikan selanjutnya menurut aturan FIBA terkini?",
+    "options": [
+      "24 detik penuh karena terjadi penguasaan baru",
+      "Tetap 2 detik melanjutkan sisa waktu sebelum tembakan",
+      "8 detik sesuai waktu melintasi garis tengah",
+      "14 detik reset karena bola menyentuh ring dan direbut kembali oleh tim penyerang",
+      "5 detik sesuai aturan closely guarded"
+    ],
+    "correct_index": 3,
+    "hint": "Sejak revisi aturan FIBA, offensive rebound setelah bola menyentuh ring tidak lagi mengulang shot clock ke 24 detik penuh.",
+    "explanation": "Menurut aturan FIBA modern, jika tembakan menyentuh ring dan berhasil diamankan kembali lewat offensive rebound oleh tim penyerang yang sama, shot clock di-reset menjadi 14 detik untuk mempercepat tempo permainan.",
+    "tags": [
+      "bola-basket",
+      "dasar-dasar",
+      "shot-clock",
+      "rebound",
+      "foul"
+    ]
+  },
+  {
+    "code": "PJOK-BSK-015",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Bola Basket",
+    "subtopic": "Teknik Dasar",
+    "prompt": "Pada fase melakukan jump shot yang baik dalam permainan bola basket, fungsi utama melakukan gerakan follow-through (pergelangan tangan lemas menekuk ke bawah usai bola lepas dari ujung jari) adalah…",
+    "options": [
+      "Mencegah pemain bertahan menyentuh bola setelah dilepaskan",
+      "Memberikan putaran balik (backspin) yang stabil dan menjaga arah tembakan lurus ke sasaran ring",
+      "Mempercepat pemain turun mendarat agar segera berlari mundur bertahan",
+      "Menambah kekuatan benturan siku agar bola memantul lebih keras ke papan",
+      "Menyamarkan pandangan penjaga agar tidak mengetahui arah lompatan"
+    ],
+    "correct_index": 1,
+    "hint": "Gerakan lanjutan jari dan pergelangan tangan menciptakan rotasi bola yang lembut sehingga peluang masuk saat menyentuh ring meningkat.",
+    "explanation": "Follow-through yang rileks (tangan seperti mengambil kue di toples tinggi) menciptakan backspin teratur pada bola sehingga lintasan melengkung konsisten dan pantulan di bibir ring lebih lunak.",
+    "tags": [
+      "bola-basket",
+      "teknik-dasar",
+      "shooting"
+    ]
+  },
+  {
+    "code": "PJOK-FUT-001",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 1,
+    "topic": "Futsal",
+    "subtopic": "Dasar-Dasar",
+    "prompt": "Berdasarkan Laws of the Game FIFA Futsal, berapakah jumlah pemain per tim di lapangan, ukuran gawang standar, dan karakteristik khusus bola futsal dibandingkan sepak bola lapangan?",
+    "options": [
+      "7 pemain per tim, gawang 4 × 2 meter, bola nomor 5 dengan tekanan tinggi",
+      "5 pemain per tim (termasuk kiper), gawang 3 × 2 meter, bola ukuran 4 berpantulan rendah (low-bounce)",
+      "5 pemain per tim, gawang 3,5 × 2,44 meter, bola ukuran 3 tanpa pantulan",
+      "6 pemain per tim, gawang 3 × 2 meter, bola ukuran 5 berbahan kulit tebal",
+      "4 pemain per tim, gawang 2 × 1,5 meter, bola ukuran 4 dengan pantulan maksimal"
+    ],
+    "correct_index": 1,
+    "hint": "Permainan dalam ruangan dengan lapangan keras dan relatif sempit memakai bola nomor 4 yang tidak memantul liar.",
+    "explanation": "FIFA Futsal dimainkan oleh 5 pemain per tim (1 penjaga gawang dan 4 outfield), gawang berukuran lebar 3 meter dan tinggi 2 meter, serta bola ukuran 4 yang bersifat low-bounce agar kontrol bola di lantai datar tetap presisi.",
+    "tags": [
+      "futsal",
+      "dasar-dasar",
+      "fifa",
+      "peraturan"
+    ]
+  },
+  {
+    "code": "PJOK-FUT-002",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 1,
+    "topic": "Futsal",
+    "subtopic": "Dasar-Dasar",
+    "prompt": "Bagaimana sistem waktu bermain serta peraturan pergantian pemain (substitution) pada pertandingan futsal resmi FIFA?",
+    "options": [
+      "2 × 30 menit waktu kotor dengan maksimal 5 kali pergantian pemain per tim",
+      "4 × 10 menit waktu berjalan dengan pergantian hanya boleh saat bola mati",
+      "2 × 25 menit dengan jatah 7 pemain pengganti sekali masuk",
+      "3 × 15 menit tanpa time-out dengan 10 pergantian maksimal",
+      "2 × 20 menit waktu bersih (stop-clock saat bola mati) dan pergantian pemain tidak terbatas secara bergulir"
+    ],
+    "correct_index": 4,
+    "hint": "Jam pertandingan dihentikan tiap kali permainan berhenti dan pemain bebas keluar-masuk melewati zona pergantian.",
+    "explanation": "Futsal resmi menggunakan 2 babak × 20 menit waktu bersih (stop-clock) ditambah 1 kali time-out (1 menit) per babak, serta rolling substitution tanpa batas selama keluar-masuk di zona pergantian resmi.",
+    "tags": [
+      "futsal",
+      "dasar-dasar",
+      "waktu",
+      "substitusi"
+    ]
+  },
+  {
+    "code": "PJOK-FUT-003",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 1,
+    "topic": "Futsal",
+    "subtopic": "Teknik Dasar",
+    "prompt": "Teknik menahan dan menghentikan bola menggunakan telapak kaki (sole control) sangat dominan diajarkan dalam futsal karena…",
+    "options": [
+      "Permukaan lantai yang rata dan ukuran lapangan yang sempit menuntut kontrol cepat tepat di bawah kaki untuk langsung mengoper atau berbalik arah",
+      "Peraturan futsal melarang pemain menyentuh bola menggunakan punggung kaki maupun kaki bagian dalam",
+      "Bola futsal terbuat dari karet padat sehingga menyakitkan bila dihentikan memakai sisi kaki dalam",
+      "Wasit memberi pelanggaran jika bola memantul sedikit pun dari permukaan lantai",
+      "Telapak kaki memungkinkan pemain menahan bola selama lebih dari 6 detik tanpa dikejar lawan"
+    ],
+    "correct_index": 0,
+    "hint": "Kontrol telapak kaki membuat bola langsung diam di bawah sepatu sehingga siap digulirkan atau diputar pada ruang sempit.",
+    "explanation": "Lantai futsal yang rata membuat aliran bola cepat dan presisi. Menghentikan bola memakai telapak sepatu (sole) membuat bola langsung terkunci di bawah kendali dan siap dioper, ditarik (pull-back), atau ditembak seketika.",
+    "tags": [
+      "futsal",
+      "teknik-dasar",
+      "kontrol"
+    ]
+  },
+  {
+    "code": "PJOK-FUT-004",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Futsal",
+    "subtopic": "Teknik Dasar",
+    "prompt": "Ketika pemain berada tepat di depan area penalti dengan jarak sangat rapat bersama bek lawan sehingga tidak memiliki ruang ayunan kaki lebar, teknik tendangan khas futsal yang sangat efektif untuk melepaskan tembakan mendadak adalah…",
+    "options": [
+      "Tendangan voli memutar dengan sisi luar telapak sepatu",
+      "Tendangan lambung melengkung memakai kaki bagian luar",
+      "Tendangan cungkil ke atas memakai tumit kaki belakang",
+      "Tendangan ujung kaki/ujung sepatu (toe poke / concok) yang menghasilkan laju bola cepat tanpa ayunan panjang",
+      "Tendangan mendatar jarak jauh dengan ancang-ancang lima langkah ke belakang"
+    ],
+    "correct_index": 3,
+    "hint": "Teknik ini dilakukan cepat dengan ujung jari kaki menyodok bagian tengah bola sehingga penjaga gawang sulit membaca arahnya.",
+    "explanation": "Toe poke (tendangan ujung kaki/concok) membutuhkan ruang gerak minimal namun menghasilkan lesatan bola keras dan mendadak, sangat efektif digunakan pivot atau flank di area padat di depan gawang futsal.",
+    "tags": [
+      "futsal",
+      "teknik-dasar",
+      "shooting",
+      "toe-poke"
+    ]
+  },
+  {
+    "code": "PJOK-FUT-005",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Futsal",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Seorang pemain melakukan pelanggaran aturan kick-in (tendangan ke dalam) dalam futsal apabila…",
+    "options": [
+      "Mengoper bola langsung mendatar ke arah pivot yang berdiri di tengah lapangan",
+      "Menunggu bola berhenti diam sempurna di atas garis samping sebelum menendang",
+      "Mengambil waktu lebih dari 4 detik setelah bola siap di garis samping atau menempatkan kaki tumpu tidak berada di luar/atas garis sesuai ketentuan serta bola belum diam",
+      "Menempatkan kedua tangan di pinggang sambil melihat posisi rekan sebelum menendang",
+      "Menendang bola menyusur lantai tanpa menyentuh kaki penjaga gawang sendiri"
+    ],
+    "correct_index": 2,
+    "hint": "Ingat batas hitung wasit pada saat bola keluar lapangan futsal serta posisi sah bola saat dieksekusi dengan kaki.",
+    "explanation": "Dalam kick-in futsal, bola harus diam di garis samping (atau maksimal 25 cm di luar garis), penendang punya waktu 4 detik setelah wasit/pemain siap; melebihi 4 detik membuat kick-in berpindah kepada tim lawan.",
+    "tags": [
+      "futsal",
+      "foul",
+      "kick-in",
+      "4-detik"
+    ]
+  },
+  {
+    "code": "PJOK-FUT-006",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Futsal",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Aturan batasan waktu 4 detik milik penjaga gawang (kiper) futsal saat menguasai bola berlaku apabila…",
+    "options": [
+      "Kiper sudah berada di separuh lapangan lawan untuk membantu serangan (power play)",
+      "Pertandingan memasuki babak adu penalti setelah waktu normal imbang",
+      "Kiper menangkap bola hasil tendangan sudut langsung dari luar arena",
+      "Kiper hanya berdiri di luar kotak penalti tanpa menyentuh bola sama sekali",
+      "Kiper menguasai bola dengan tangan maupun kaki di separuh lapangan timnya sendiri atau saat melakukan pembersihan gawang (goal clearance)"
+    ],
+    "correct_index": 4,
+    "hint": "Di area pertahanan sendiri kiper dibatasi waktu agar tidak mengulur tempo, sedangkan di area lawan batasan 4 detik ini tidak berlaku bagi sentuhan kaki.",
+    "explanation": "Di separuh lapangan sendiri, kiper maksimal menguasai bola (baik dengan tangan maupun kaki) selama 4 detik sejak siap dimainkan. Aturan 4 detik ini terhenti jika kiper melintasi garis tengah ke area lawan.",
+    "tags": [
+      "futsal",
+      "foul",
+      "kiper",
+      "4-detik"
+    ]
+  },
+  {
+    "code": "PJOK-FUT-007",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 3,
+    "topic": "Futsal",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Kiper tim A memulai serangan dengan melempar bola (goal clearance) kepada bek tim A di daerah sendiri. Tanpa bola melewati garis tengah atau disentuh tim B, sang bek kembali mengoper bola datar tersebut ke kiper tim A di area pertahanan sendiri lalu kiper menerimanya dengan kaki. Hukuman yang tepat adalah…",
+    "options": [
+      "Penalti langsung dari titik 6 meter tanpa kartu",
+      "Tendangan bebas tidak langsung untuk tim B karena melanggar aturan back-pass kiper futsal",
+      "Permainan tetap lanjut karena kiper menerima bola menggunakan kaki, bukan tangan",
+      "Kick-in untuk tim B dari sudut lapangan terdekat",
+      "Kartu kuning bagi kiper disertai penalti titik kedua 10 meter"
+    ],
+    "correct_index": 1,
+    "hint": "Dalam futsal, setelah kiper melepas bola, ia dilarang menerima operan balik dari rekan di separuh lapangannya sebelum bola menyentuh lawan atau melewati tengah.",
+    "explanation": "Berbeda dengan sepak bola lapangan, aturan back-pass di futsal melarang kiper menyentuh bola kembali (walaupun dengan kaki!) dari operan sengaja rekan di separuh lapangan sendiri jika bola belum disentuh lawan maupun melintasi garis tengah. Sanksinya: indirect free kick bagi lawan.",
+    "tags": [
+      "futsal",
+      "foul",
+      "back-pass",
+      "kiper"
+    ]
+  },
+  {
+    "code": "PJOK-FUT-008",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 3,
+    "topic": "Futsal",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Sebuah tim tercatat sudah melakukan 5 pelanggaran akumulatif (accumulated fouls) pada babak pertama, lalu seorang beknya kembali melakukan tekel ceroboh di lingkaran tengah lapangan. Apa sanksi tendangan bebas yang diberikan kepada lawan?",
+    "options": [
+      "Tendangan bebas tidak langsung dengan pagar betis empat pemain",
+      "Tendangan bebas langsung dari titik tengah lapangan dengan pagar betis jarak 5 meter",
+      "Penalti langsung dari jarak 6 meter",
+      "Tendangan bebas langsung tanpa pagar betis dari titik penalti kedua berjarak 10 meter dari gawang",
+      "Lemparan bebas kiper langsung menuju tengah lapangan"
+    ],
+    "correct_index": 3,
+    "hint": "Mulai pelanggaran langsung ke-6 dan seterusnya dalam satu babak, lawan memperoleh kesempatan tembakan terbuka dari titik penalti kedua.",
+    "explanation": "Dalam futsal, pelanggaran langsung (direct free kick fouls) ke-6 dan berikutnya di tiap babak membuahkan direct free kick tanpa pagar betis (kiper saja yang boleh menjaga gawang minimal 5 m dari bola) dari titik 10 meter (atau titik pelanggaran jika lebih dekat).",
+    "tags": [
+      "futsal",
+      "foul",
+      "akumulasi-foul",
+      "10-meter"
+    ]
+  },
+  {
+    "code": "PJOK-FUT-009",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Futsal",
+    "subtopic": "Teknik Dasar",
+    "prompt": "Dalam pola permainan futsal cepat, kombinasi umpan satu-dua (wall pass / give-and-go) dirancang dengan urutan gerak berupa…",
+    "options": [
+      "Pemain A mengoper pendek ke rekan B lalu segera berlari ke ruang kosong di belakang penjaga lawan untuk menerima pantulan operan balik satu sentuhan dari B",
+      "Pemain A menggiring bola memutar selama 8 detik lalu menembak langsung dari daerah pertahanan",
+      "Penjaga gawang melempar bola tinggi melampaui seluruh pemain menuju tiang jauh",
+      "Seluruh empat pemain berbaris sejajar garis tengah sambil menunggu bola pantulan",
+      "Pemain A mengumpan mundur kepada bek tengah lalu berhenti di posisi semula"
+    ],
+    "correct_index": 0,
+    "hint": "Rekan penerima bertindak seperti 'dinding' (wall) yang langsung memantulkan umpan balik ke lintasan lari pengumpan awal.",
+    "explanation": "Wall pass (one-two) dilakukan dengan umpan cepat menuju rekan yang membelakangi/menghadap gawang, diikuti akselerasi tanpa bola (run into space) dari pengumpan untuk menerima operan balik instan melewati defender.",
+    "tags": [
+      "futsal",
+      "teknik-dasar",
+      "taktik",
+      "wall-pass"
+    ]
+  },
+  {
+    "code": "PJOK-FUT-010",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 3,
+    "topic": "Futsal",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Apabila seorang pemain futsal diganjar kartu merah oleh wasit akibat pelanggaran berat di menit ke-10 babak pertama, bagaimana aturan jumlah pemain tim tersebut selanjutnya?",
+    "options": [
+      "Tim tetap bermain 4 lawan 5 sampai peluit akhir pertandingan tanpa boleh menambah pemain lagi",
+      "Pemain lain di bangku cadangan boleh langsung menggantikan pemain terhukum saat itu juga",
+      "Tim bermain dengan 4 pemain (kurang 1) selama 2 menit, atau langsung kembali berjumlah 5 pemain lebih awal jika kebobolan gol oleh lawan dalam rentang 2 menit itu",
+      "Pertandingan langsung dihentikan dan tim yang terkena kartu merah dinyatakan kalah WO",
+      "Kiper wajib bertukar posisi dengan penyerang selama 5 menit hukuman"
+    ],
+    "correct_index": 2,
+    "hint": "Pemain yang dikartu merah tidak bisa main lagi, namun timnya bisa melengkapi kembali 5 pemain di lapangan setelah durasi 2 menit (atau bila kebobolan lebih dulu).",
+    "explanation": "Pemain yang dikartu merah langsung diusir selamanya dari laga. Timnya tampil dengan 4 pemain selama 2 menit penuh; apabila lawan mencetak gol saat unggul jumlah (4v5), tim terhukum langsung diizinkan memasukkan pemain pengganti berbeda untuk kembali genap 5 orang.",
+    "tags": [
+      "futsal",
+      "foul",
+      "kartu-merah",
+      "sanksi"
+    ]
+  },
+  {
+    "code": "PJOK-FUT-011",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Futsal",
+    "subtopic": "Dasar-Dasar",
+    "prompt": "Dalam formasi dasar futsal 1-2-1 (diamond), pembagian peran spesifik posisi anchor, flank, dan pivot yang tepat adalah…",
+    "options": [
+      "Pivot menjaga area paling belakang tepat di depan kiper, sementara anchor selalu menunggu di sudut kotak penalti lawan",
+      "Anchor menjaga lini paling belakang dan mengatur ritme dari bawah, dua flank bergerak dinamis di sisi sayap kiri/kanan, dan pivot menjadi ujung tombak pembuka ruang serta tembok pantul di lini depan",
+      "Flank hanya bertugas mengambil kick-in tanpa diperbolehkan menembak ke gawang",
+      "Anchor berdiri diam di lingkaran tengah sementara kiper menjadi pengatur serangan utama",
+      "Keempat pemain lapangan dilarang bertukar posisi selama satu babak penuh"
+    ],
+    "correct_index": 1,
+    "hint": "Bentuk wajik (diamond) menempatkan jangkar pertahanan (anchor) di bawah, sayap (flank) di kiri-kanan, dan poros serang (pivot) paling depan.",
+    "explanation": "Dalam formasi 1-2-1 (diamond), Anchor berada paling belakang untuk menggalang pertahanan dan membangun serangan (build-up), dua Flank beraksi di koridor sayap kiri-kanan, dan Pivot beroperasi di posisi terdepan sebagai pemantul bola maupun eksekutor gol.",
+    "tags": [
+      "futsal",
+      "dasar-dasar",
+      "posisi",
+      "formasi"
+    ]
+  },
+  {
+    "code": "PJOK-FUT-012",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 1,
+    "topic": "Futsal",
+    "subtopic": "Teknik Dasar",
+    "prompt": "Bagian kaki yang paling dianjurkan untuk melakukan umpan datar jarak dekat dan menengah secara akurat (passing dasar) pada permainan futsal adalah…",
+    "options": [
+      "Kaki bagian dalam (inside of the foot) dengan pergelangan kaki dikunci kuat dan pandangan tetap terarah pada bola serta target",
+      "Tumit kaki bagian belakang tanpa melihat arah rekan satu tim",
+      "Ujung kuku jari kaki yang diayunkan tinggi di atas pinggang",
+      "Sisi luar telapak sepatu sambil melompat dua kaki",
+      "Punggung kaki penuh sambil menundukkan dagu rapat ke lutut"
+    ],
+    "correct_index": 0,
+    "hint": "Permukaan terluas yang datar pada sepatu memberi bidang kontak paling stabil saat mengarahkan umpan menyusur lantai.",
+    "explanation": "Mengoper menggunakan kaki bagian dalam memberikan bidang kontak yang luas dan stabil sehingga arah bola datar mudah dikendalikan serta cepat dihentikan rekan setim dengan telapak kaki.",
+    "tags": [
+      "futsal",
+      "teknik-dasar",
+      "passing"
+    ]
+  },
+  {
+    "code": "PJOK-FUT-013",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 3,
+    "topic": "Futsal",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Mengapa tekel meluncur (sliding tackle) terhadap lawan yang sedang menguasai bola jauh lebih ketat diawasi dan sering langsung dianggap pelanggaran dalam permainan futsal?",
+    "options": [
+      "Karena sliding tackle otomatis menambah durasi waktu bersih pertandingan",
+      "Karena bola futsal tidak boleh terhenti sebelum menyentuh tiang gawang",
+      "Karena benturan dengan sepatu tanpa pul akan mempercepat kerusakan cat garis lapangan",
+      "Karena wasit tidak memiliki kewenangan memberikan kartu kuning di area penalti",
+      "Karena permukaan lantai keras dalam ruangan sangat berisiko mencederai tubuh akibat kontak berbahaya saat melakukan tekel ke arah kaki/badan lawan"
+    ],
+    "correct_index": 4,
+    "hint": "Berbeda dari rumput lunak sepak bola lapangan, lapangan futsal keras dan sempit sehingga tekel langsung pada lawan berbahaya sekali.",
+    "explanation": "Dalam regulasi FIFA Futsal maupun kompetisi sekolah, kontak sliding tackle langsung terhadap kaki atau jalur lari lawan berpotensi menimbulkan cedera serius di lantai keras serta termasuk pelanggaran direct free kick (berisiko kartu/akumulasi foul); pemain bertahan lebih aman merebut bola secara berdiri atau memblok jalur umpan.",
+    "tags": [
+      "futsal",
+      "foul",
+      "sliding-tackle",
+      "keamanan"
+    ]
+  },
+  {
+    "code": "PJOK-FUT-014",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Futsal",
+    "subtopic": "Teknik Dasar",
+    "prompt": "Saat berhadapan satu lawan satu (1v1) dengan penyerang di area 6 meter, posisi bertahan khas penjaga gawang futsal yang efektif menutup sudut tembak mendatar disebut teknik…",
+    "options": [
+      "Flying kick menyamping melompati kepala penyerang",
+      "Menoleh ke belakang sambil berlari masuk ke dalam jaring gawang",
+      "Split atau blok lutut rendah (cross-barrier) dengan satu kaki ditekuk menutup celah bawah dan lengan terentang menjaga sudut atas",
+      "Berdiri tegak rapat dengan kedua tangan dilipat di depan dada",
+      "Menunggu di atas garis gawang sambil menutup kedua mata"
+    ],
+    "correct_index": 2,
+    "hint": "Gawang futsal berukuran lebih kecil daripada gawang sepak bola sehingga kiper maju mempersempit sudut tembak lalu merendahkan tungkai.",
+    "explanation": "Teknik split/penutupan sudut (closing the angle) memadukan langkah maju cepat menyudutkan ruang tembak lawan dengan posisi kaki rendah terbuka serta tangan terbuka agar bola datar dari toe poke maupun instep sulit melewati badan kiper.",
+    "tags": [
+      "futsal",
+      "teknik-dasar",
+      "kiper",
+      "split"
+    ]
+  },
+  {
+    "code": "PJOK-FUT-015",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 3,
+    "topic": "Futsal",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Apakah perbedaan keputusan hukuman antara pelanggaran kontak fisik (misalnya mendorong, menjegal, atau handball sengaja di luar area penalti) dengan pelanggaran teknis non-kontak (misalnya kiper back-pass atau menghalangi lawan tanpa kontak langsung) di futsal?",
+    "options": [
+      "Keduanya wajib dihentikan melalui lemparan ke dalam menggunakan kedua tangan",
+      "Keduanya langsung berhadiah tendangan bebas tanpa pagar betis dari titik 10 meter",
+      "Pelanggaran kontak memberi tendangan bebas tidak langsung, sedangkan back-pass berhadiah kartu merah dan penalti",
+      "Pelanggaran kontak langsung berbuah tendangan bebas langsung dan dihitung ke akumulasi foul tim, sedangkan pelanggaran teknis non-kontak berbuah tendangan bebas tidak langsung tanpa menambah hitungan akumulasi foul",
+      "Pelanggaran non-kontak menambah poin skor untuk tim penyerang secara otomatis"
+    ],
+    "correct_index": 3,
+    "hint": "Cermati mana yang boleh langsung ditembak ke gawang serta masuk catatan 5+ akumulasi foul, dan mana yang harus menyentuh pemain lain terlebih dahulu (indirect).",
+    "explanation": "Dalam FIFA Futsal, pelanggaran berat/kontak fisik maupun handball disengaja dihukum tendangan bebas langsung (atau penalti bila di area penalti) dan menambah hitungan akumulasi foul tim; sebaliknya pelanggaran teknis seperti back-pass kiper atau aturan 4 detik dihukum tendangan bebas tidak langsung dan tidak dihitung sebagai akumulasi foul.",
+    "tags": [
+      "futsal",
+      "foul",
+      "free-kick"
+    ]
+  },
+  {
+    "code": "PJOK-LMP-001",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 1,
+    "topic": "Lompat Jauh",
+    "subtopic": "Dasar-Dasar",
+    "prompt": "Berdasarkan standar ukuran sarana atletik resmi World Athletics, berapakah lebar bak pasir pendaratan lompat jauh serta lebar papan tumpuan (take-off board)?",
+    "options": [
+      "Lebar bak pasir 4,00 meter dengan papan tumpu selebar 30 sentimeter",
+      "Lebar bak pasir 2,00 meter dengan papan tumpu selebar 10 sentimeter",
+      "Lebar bak pasir 3,50 meter dengan papan tumpu selebar 25 sentimeter",
+      "Lebar bak pasir 2,75–3,00 meter dengan papan tumpu selebar 20 sentimeter",
+      "Lebar bak pasir 1,50 meter dengan papan tumpu selebar 15 sentimeter"
+    ],
+    "correct_index": 3,
+    "hint": "Lebar bak pasir hampir 3 meter untuk menampung pendaratan aman dan lebar papan tumpu 0,20 meter.",
+    "explanation": "Standar lintasan dan bak lompat jauh menetapkan lebar bak pasir antara 2,75 meter hingga 3,00 meter (panjang jarak bak minimal hingga 10 meter dari papan tumpu), sedangkan papan tolakan memiliki lebar 20 cm (0,20 m) dan panjang 1,22 m.",
+    "tags": [
+      "lompat-jauh",
+      "dasar-dasar",
+      "sarana-prasarana"
+    ]
+  },
+  {
+    "code": "PJOK-LMP-002",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 1,
+    "topic": "Lompat Jauh",
+    "subtopic": "Dasar-Dasar",
+    "prompt": "Urutan empat fase pokok yang berkesinambungan dalam melakukan gerakan lompat jauh secara utuh adalah…",
+    "options": [
+      "Pemanasan – melangkah – meloncat ke belakang – mendarat satu kaki",
+      "Awalan (approach) – tolakan/tumpuan (take-off) – melayang di udara (flight) – mendarat (landing)",
+      "Tolakan dua kaki – lari mundur – berguling di udara – mendarat tengkurap",
+      "Awalan zig-zag – melompat tiga langkah berturut-turut – mendarat di atas papan tumpu",
+      "Peregangan di papan tumpu – melayang menyamping – berjalan mundur keluar bak"
+    ],
+    "correct_index": 1,
+    "hint": "Dimulai dengan membangun kecepatan horizontal lalu mengubahnya menjadi daya angkat di udara sebelum menyentuh pasir.",
+    "explanation": "Empat fase teknik lompat jauh secara urut adalah: (1) Awalan (lari percepatan), (2) Tolakan (tumpuan satu kaki di papan), (3) Sikap melayang di udara, dan (4) Pendaratan di bak pasir.",
+    "tags": [
+      "lompat-jauh",
+      "dasar-dasar",
+      "fase-gerak"
+    ]
+  },
+  {
+    "code": "PJOK-LMP-003",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 1,
+    "topic": "Lompat Jauh",
+    "subtopic": "Dasar-Dasar",
+    "prompt": "Tiga gaya utama dalam nomor lompat jauh (gaya jongkok, gaya menggantung, dan gaya berjalan di udara) dibedakan satu sama lain terutama berdasarkan…",
+    "options": [
+      "Posisi dan teknik gerak tubuh saat berada pada fase melayang di udara",
+      "Jenis sepatu berpaku (spikes) yang dipakai atlet pada saat lari awalan",
+      "Jumlah langkah pada lintasan awalan sebelum mencapai papan tumpuan",
+      "Cara berjalan keluar dari bak pasir setelah hasil jarak dicatat juri",
+      "Kaki mana yang dipilih untuk mendarat terlebih dahulu secara bergantian"
+    ],
+    "correct_index": 0,
+    "hint": "Ketiga gaya memiliki fase awalan dan pendaratan prinsipnya sama, yang paling kontras terlihat sewaktu atlet berada di udara.",
+    "explanation": "Pengelompokan gaya lompat jauh — Jongkok (tuck/orthodok), Menggantung/Melenting (hang/schnepper), dan Berjalan di Udara (walking in the air/hitch-kick) — didasarkan pada sikap tubuh atlet ketika melayang di udara untuk menjaga keseimbangan rotasi ke depan.",
+    "tags": [
+      "lompat-jauh",
+      "dasar-dasar",
+      "gaya-lompat"
+    ]
+  },
+  {
+    "code": "PJOK-LMP-004",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Lompat Jauh",
+    "subtopic": "Teknik Dasar",
+    "prompt": "Bagaimana teknik melakukan fase tolakan (take-off) yang benar di atas papan tumpuan pada lompat jauh agar menghasilkan sudut dan dorongan optimal?",
+    "options": [
+      "Berhenti sejenak di atas papan lalu meloncat menggunakan tolakan dua kaki bersamaan",
+      "Memperlambat langkah terakhir sejauh 50% sambil menundukkan kepala ke lutut",
+      "Mendaratkan tumit jauh di depan pinggul lalu menggeser tubuh ke samping lintasan",
+      "Melompat berjinjit ringan memakai kedua ujung jari kaki setelah melewati garis plastisin",
+      "Menapakkan satu kaki terkuat secara aktif penuh dari tumit ke ujung kaki tanpa mengurangi kecepatan lari sambil mengayun lutut kaki bebas dan lengan ke atas-depan"
+    ],
+    "correct_index": 4,
+    "hint": "Tolakan dilakukan memakai satu kaki terkuat agar momentum kecepatan lari awalan langsung terkonversi menjadi lintasan parabola ke depan-atas.",
+    "explanation": "Tolakan lompat jauh wajib menggunakan satu kaki terkuat (dua kaki dianggap foul/tidak efektif), menjaga kecepatan awalan tidak menurun drastis di langkah akhir, serta mengayun lutut kaki bebas dan tangan untuk mengangkat pusat massa tubuh.",
+    "tags": [
+      "lompat-jauh",
+      "teknik-dasar",
+      "tolakan"
+    ]
+  },
+  {
+    "code": "PJOK-LMP-005",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Lompat Jauh",
+    "subtopic": "Teknik Dasar",
+    "prompt": "Ciri khas sikap tubuh atlet pada lompat jauh gaya berjalan di udara (walking in the air / hitch-kick) ketika sudah terlepas dari papan tolakan adalah…",
+    "options": [
+      "Kedua lutut ditekuk rapat menempel ke dada sepanjang waktu di udara",
+      "Badan melengkung pasif ke belakang bagaikan busur panah dengan kedua lengan terangkat diam",
+      "Kedua kaki melakukan ayunan langkah bergantian layaknya gerakan lari/berjalan di udara (1,5 atau 2,5 langkah) untuk melawan rotasi ke depan sebelum kedua tungkai dijulurkan bersama ke depan saat mendarat",
+      "Tubuh diputar menyamping 90 derajat sambil menunduk mencari letak garis bak pasir",
+      "Tangan menyentuh kedua ujung sepatu secara terus-menerus hingga menyentuh pasir"
+    ],
+    "correct_index": 2,
+    "hint": "Gerakan mengayunkan kedua kaki secara bergantian di udara berfungsi menstabilkan torsi putaran badan ke depan sehingga pendaratan tidak jatuh lebih awal.",
+    "explanation": "Pada gaya berjalan di udara (hitch-kick), atlet mengayuhkan kaki seperti melangkah di udara disertai putaran lengan untuk mengimbangi putaran tubuh ke depan (hukum kekekalan momentum sudut), sehingga tungkai dapat terjulur jauh saat mendarat.",
+    "tags": [
+      "lompat-jauh",
+      "teknik-dasar",
+      "walking-in-the-air"
+    ]
+  },
+  {
+    "code": "PJOK-LMP-006",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Lompat Jauh",
+    "subtopic": "Teknik Dasar",
+    "prompt": "Prinsip gerak fase pendaratan (landing) lompat jauh yang tepat agar hasil pengukuran jarak tidak berkurang adalah…",
+    "options": [
+      "Menjulurkan kedua tungkai lurus ke depan menyentuh pasir terlebih dahulu lalu menekuk lutut sambil mendorong pinggul/dada ke depan-samping, bukan menjatuhkan pantat atau tangan ke belakang",
+      "Mendarat dengan salah satu kaki terlebih dahulu lalu duduk tegak ke belakang di atas pasir",
+      "Menapakkan kedua telapak tangan di belakang pinggul untuk menahan agar badan tidak jatuh ke depan",
+      "Meluruskan tubuh vertikal tegak ke atas sehingga tumit tenggelam sedalam-dalamnya",
+      "Berguling ke belakang melewati tanda pendaratan menuju arah papan tolakan"
+    ],
+    "correct_index": 0,
+    "hint": "Ingat bahwa titik pengukuran selalu diambil dari bekas bagian tubuh mana pun di pasir yang paling dekat dengan garis papan tumpuan.",
+    "explanation": "Karena juri mengukur dari tanda bekas tubuh terdekat ke papan tolakan, menyandarkan pantat atau tangan di belakang tumit akan memotong jarak resmi secara drastis. Oleh sebab itu kedua kaki dijulurkan ke depan dan berat badan dibawa maju/menyamping melewati jejak kaki.",
+    "tags": [
+      "lompat-jauh",
+      "teknik-dasar",
+      "pendaratan"
+    ]
+  },
+  {
+    "code": "PJOK-LMP-007",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 1,
+    "topic": "Lompat Jauh",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Fungsi utama dipasang papan plastisin (plasticine indicator board) tepat di tepi depan papan tolakan menghadap bak pasir adalah…",
+    "options": [
+      "Sebagai penambah daya pantul karet pada saat ujung sepatu menginjak papan",
+      "Sebagai penanda warna agar atlet tahu posisi 5 meter sebelum garis batas",
+      "Melindungi kaki atlet dari gesekan papan kayu keras setelah melompat",
+      "Merekam bekas jejak ujung sepatu secara jelas apabila atlet melewati garis batas tolakan (foul)",
+      "Membatasi lebar lintasan lari awalan agar tidak melebar ke lintasan lari jarak pendek"
+    ],
+    "correct_index": 3,
+    "hint": "Material lunak setebal sedikit miring di depan papan tumpu akan tercetak lekukan seketika jika ujung kaki melampaui garis sah.",
+    "explanation": "Papan plastisin (atau sensor optik/kamera modern sebagai pendamping) membantu juri memastikan secara objektif apakah ujung sepatu atlet menyentuh atau melampaui garis batas depan papan tumpu sehingga dinyatakan foul (bendera merah).",
+    "tags": [
+      "lompat-jauh",
+      "foul",
+      "plastisin",
+      "peraturan"
+    ]
+  },
+  {
+    "code": "PJOK-LMP-008",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Lompat Jauh",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Dalam suatu perlombaan resmi, seorang atlet berhasil menumpu tepat di belakang garis batas papan tolakan dan mendarat sejauh 6,95 meter di bak pasir. Namun setelah berdiri, ia berjalan mundur melintasi bak pasir kembali ke arah lintasan awalan. Bagaimana keputusan juri?",
+    "options": [
+      "Lompatan tetap sah dan dicatat sejauh 6,95 meter karena pendaratan awal sudah bersih",
+      "Lompatan diulang sekali lagi tanpa dihitung sebagai kegagalan",
+      "Lompatan dinyatakan foul (tidak sah / diskualifikasi percobaan tersebut) karena atlet berjalan mundur keluar bak lebih dekat ke garis tumpu dibanding bekas pendaratannya",
+      "Jarak tetap diukur namun dikurangi 0,50 meter sebagai penalti sikap",
+      "Atlet langsung dikeluarkan dari seluruh cabang atletik hari itu"
+    ],
+    "correct_index": 2,
+    "hint": "Pelompat wajib meninggalkan bak pasir ke arah depan atau samping melewati titik bekas pendaratan, bukan berbalik mundur menembus area ukur.",
+    "explanation": "Sesuai peraturan World Athletics, apabila pelompat berjalan mundur di dalam bak menuju papan tolakan (meninggalkan bak lebih dekat ke take-off line daripada bekas pendaratan pertamanya), percobaan tersebut otomatis dinyatakan foul (X).",
+    "tags": [
+      "lompat-jauh",
+      "foul",
+      "pendaratan",
+      "diskualifikasi"
+    ]
+  },
+  {
+    "code": "PJOK-LMP-009",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 3,
+    "topic": "Lompat Jauh",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Seorang pelompat mendarat dengan tumit kanan di angka 6,40 m, tumit kiri di angka 6,55 m, lalu tubuhnya kehilangan keseimbangan dan telapak tangan kirinya sempat menyentuh pasir di titik 6,05 m sementara lututnya belum menyentuh pasir. Dari titik manakah juri mengukur jarak lompatan tersebut?",
+    "options": [
+      "Dari tepi belakang papan tolakan ke titik tumit terjauh yaitu 6,55 meter",
+      "Rata-rata antara kedua jejak tumit yaitu 6,475 meter",
+      "Dari tepi depan papan tolakan ke titik tumit kanan yaitu 6,40 meter",
+      "Lompatan langsung dinyatakan foul karena tangan menyentuh pasir",
+      "Dari garis batas depan papan tolakan ke bekas tepi terdekat jejak telapak tangan kiri yaitu 6,05 meter"
+    ],
+    "correct_index": 4,
+    "hint": "Aturan resmi mengukur dari tepi depan garis tolakan (take-off line) tegak lurus ke tanda tubuh mana pun di pasir yang paling dekat dengan garis tolakan.",
+    "explanation": "Lompatan tersebut masih sah (selama tidak menyentuh luar bak pasir di belakang tanda pendaratan), namun jaraknya diukur dari take-off line hingga bekas paling belakang/terdekat di bak pasir — dalam kasus ini bekas telapak tangan kiri di 6,05 meter.",
+    "tags": [
+      "lompat-jauh",
+      "dasar-dasar",
+      "pengukuran",
+      "foul"
+    ]
+  },
+  {
+    "code": "PJOK-LMP-010",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 3,
+    "topic": "Lompat Jauh",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Manakah kombinasi situasi berikut yang SELURUHNYA menyebabkan juri mengibarkan bendera merah (foul) pada nomor lompat jauh?",
+    "options": [
+      "Menolak dengan satu kaki di atas papan tumpu namun tidak mengenai papan plastisin, memakai gaya menggantung, serta berjalan keluar lewat ujung depan bak",
+      "Menolak melewati garis batas pada plastisin, menolak menggunakan dua kaki sekaligus, melakukan gerakan salto di udara, serta menyentuh permukaan luar bak pasir di belakang tanda pendaratan",
+      "Mengubah panjang langkah check-mark pada saat pemanasan serta memilih gaya berjalan di udara di final",
+      "Menolak beberapa sentimeter di belakang papan kayu tolakan selama masih berada di lintasan lurus",
+      "Mendarat di bak pasir dengan posisi kedua lutut tertekuk ke samping arah depan garis batas"
+    ],
+    "correct_index": 1,
+    "hint": "Carilah kelompok yang benar-benar berisi pelanggaran tolakan dua kaki, melewati garis plastisin, akrobatik terlarang (salto), dan sentuhan di luar area bak.",
+    "explanation": "Semua kondisi dalam opsi tepat itu merupakan foul resmi World Athletics: menyentuh/melewati take-off line pada plastisin, menolak dari luar atau memakai dua kaki, melakukan somersault (salto), dan menyentuh tanah di luar bak lebih dekat ke garis tolakan daripada bekas pendaratan.",
+    "tags": [
+      "lompat-jauh",
+      "foul",
+      "diskualifikasi"
+    ]
+  },
+  {
+    "code": "PJOK-LMP-011",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Lompat Jauh",
+    "subtopic": "Teknik Dasar",
+    "prompt": "Dalam fase awalan lompat jauh, tujuan penggunaan tanda ukur pribadi (check-mark) di sisi lintasan lari sebelum perlombaan adalah…",
+    "options": [
+      "Menentukan lebar bak pasir yang harus diinjak oleh atlet",
+      "Mengukur batas angin dari arah belakang atau depan oleh juri pengukur angin",
+      "Membantu atlet mengatur konsistensi ritme dan panjang langkah sehingga kaki terkuat menumpu tepat pada papan tolakan dengan kecepatan maksimal tanpa perlu melirik ke bawah",
+      "Menggantikan fungsi papan plastisin bila terjadi hujan di arena terbuka",
+      "Menandai tempat berhentinya atlet untuk melakukan peregangan di tengah awalan"
+    ],
+    "correct_index": 2,
+    "hint": "Jika atlet sering menunduk melihat papan tumpuan, kecepatannya turun dan postur tubuh membungkuk sehingga tolakan menjadi rusak.",
+    "explanation": "Check-mark dikalibrasi saat pemanasan agar jumlah dan irama langkah (biasanya 16–22 langkah pada atlet terlatih) selalu berakhir tepat di papan tumpu, sehingga pandangan atlet tetap fokus lurus ke depan.",
+    "tags": [
+      "lompat-jauh",
+      "teknik-dasar",
+      "awalan",
+      "check-mark"
+    ]
+  },
+  {
+    "code": "PJOK-LMP-012",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 3,
+    "topic": "Lompat Jauh",
+    "subtopic": "Teknik Dasar",
+    "prompt": "Secara mekanika gerak dan sudut elevasi, mengapa sudut tolakan (take-off angle) pelompat jauh elit berkisar antara 18°–24° dan bukan 45° seperti rumus parabola benda diam?",
+    "options": [
+      "Karena peraturan World Athletics melarang lintasan tubuh lebih tinggi dari 1 meter di atas tanah",
+      "Karena sudut 45° memaksa atlet berhenti sejenak sehingga terjadi pelanggaran dua kaki",
+      "Karena pakaian lomba terlalu berat untuk diangkat pada lintasan vertikal curam",
+      "Karena ketinggian lutut atlet akan otomatis berkurang apabila gaya yang dipakai adalah gaya jongkok",
+      "Karena mempertahankan kecepatan lari horizontal yang sangat tinggi dari awalan lebih berkontribusi besar terhadap jarak jauh total dibandingkan mengorbankan laju horizontal demi meraih sudut 45°"
+    ],
+    "correct_index": 4,
+    "hint": "Semakin besar upaya mendongakkan sudut lompatan menuju 45°, waktu kontak di papan semakin lama dan kecepatan horizontal awalan justru merosot tajam.",
+    "explanation": "Dalam biomedik/biomekanika lompat jauh, kelajuan awal (~9–10,5 m/s) tidak bisa diubah utuh menjadi gerak vertikal dalam 0,12 detik waktu tumpu tanpa mengorbankan energi horizontal secara besar. Oleh karena itu kompromi paling jauh secara fisika nyata dicapai pada sudut lepasan ~18°–24°.",
+    "tags": [
+      "lompat-jauh",
+      "teknik-dasar",
+      "biomekanika"
+    ]
+  },
+  {
+    "code": "PJOK-LMP-013",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Lompat Jauh",
+    "subtopic": "Teknik Dasar",
+    "prompt": "Gerakan melentingkan dada ke depan dengan kedua tangan terentang ke belakang/atas dan kedua lutut ditekuk sedikit ke belakang ketika melayang di udara merupakan ciri khas lompat jauh…",
+    "options": [
+      "Gaya jongkok (tuck style)",
+      "Gaya menggantung / melenting (hang style)",
+      "Gaya berjalan di udara (hitch-kick)",
+      "Gaya melompat harimau (tiger sprong)",
+      "Gaya melangkah menyamping (side step)"
+    ],
+    "correct_index": 1,
+    "hint": "Posisi badan tampak seperti menggantung panjang di udara membusurkan dada sebelum kedua kaki dan lengan diayun ke depan untuk mendarat.",
+    "explanation": "Pada gaya menggantung (hang style/schnepper), segera setelah menumpu atlet menurunkan kaki bebas dan melentingkan tubuh sehingga terlihat mengapung memanjang, lalu menutup serentak ke depan saat bersiap mendarat.",
+    "tags": [
+      "lompat-jauh",
+      "teknik-dasar",
+      "hang-style"
+    ]
+  },
+  {
+    "code": "PJOK-LMP-014",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 3,
+    "topic": "Lompat Jauh",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Seorang pelompat melakukan tolakan dari tepi samping lintasan di luar lebar papan tumpuan sepanjang 1,22 meter (di sebelah kiri papan tolakan), meski ujung sepatunya masih berada di belakang garis perpanjangan papan plastisin. Bagaimana status lompatan tersebut?",
+    "options": [
+      "Sah karena ujung sepatunya belum melampaui garis depan papan plastisin",
+      "Sah dengan pengurangan jarak sejauh 10 sentimeter",
+      "Diulang karena juri tidak dapat melihat bagian samping lintasan",
+      "Tidak sah (foul) karena tolakan wajib dilakukan dari area antara dua garis tepi samping dan di belakang garis depan papan tumpuan",
+      "Diperbolehkan khusus pada percobaan ketiga di babak penyisihan"
+    ],
+    "correct_index": 3,
+    "hint": "Batasan area sah tolakan tidak hanya garis depan, tetapi juga sisi kiri dan kanan papan tolakan sepanjang 1,22 meter.",
+    "explanation": "Aturan World Athletics menyatakan atlet dianggap foul jika menolak dari sisi luar kanan atau kiri tepi ujung papan tumpuan (meski di belakang garis perpanjangan papan), karena tolakan sah harus tetap pada jalur lebar lintasan awalan menuju bak pasir.",
+    "tags": [
+      "lompat-jauh",
+      "foul",
+      "papan-tumpu"
+    ]
+  },
+  {
+    "code": "PJOK-LMP-015",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Lompat Jauh",
+    "subtopic": "Dasar-Dasar",
+    "prompt": "Apabila dua orang atlet pada akhir perlombaan lompat jauh memperoleh catatan jarak terbaik yang persis sama (misalnya sama-sama 7,42 meter), bagaimana panitia menentukan peringkat pemenang yang lebih tinggi?",
+    "options": [
+      "Membandingkan catatan lompatan terbaik kedua (second best performance) dari masing-masing atlet, jika masih sama baru dilanjutkan ke terbaik ketiga dan seterusnya",
+      "Memberikan medali emas ganda langsung tanpa melihat lima percobaan lainnya",
+      "Memilih atlet yang memiliki berat badan lebih ringan atau usia lebih muda",
+      "Menjumlahkan seluruh jarak dari enam kali lompatan termasuk lompatan foul",
+      "Melakukan pengundian koin tanpa tambahan uji teknik di lapangan"
+    ],
+    "correct_index": 0,
+    "hint": "Konsistensi rangkaian percobaan di atas papan sebelum atau sesudah lompatan terbaik menjadi penentu pemecah seri (tie-breaker).",
+    "explanation": "Menurut aturan tie-breaker World Athletics nomor lompat horizontal, apabila dua atlet mencatatkan hasil terbaik sama persis, pemenang ditentukan berdasarkan hasil terbaik kedua terbesar (second best mark), berlanjut ke ketiga dst; hanya jika semua sama persis baru ada lompatan penentu (untuk posisi 1) atau seri bersama.",
+    "tags": [
+      "lompat-jauh",
+      "dasar-dasar",
+      "peraturan",
+      "tie-breaker"
+    ]
+  },
+  {
+    "code": "PJOK-SNM-001",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 1,
+    "topic": "Senam Lantai",
+    "subtopic": "Dasar-Dasar",
+    "prompt": "Komponen kebugaran fisik dan kemampuan gerak utama yang paling dominan dikembangkan melalui latihan senam lantai (floor exercise), serta perlengkapan keselamatan wajib yang digunakan di sekolah adalah…",
+    "options": [
+      "Daya tahan kardiorespirasi jarak jauh dan papan tolak plastik tanpa alas",
+      "Kecepatan lari sprint 100 meter dan sepatu berpaku tajam",
+      "Kemampuan menahan napas di dalam air dengan matras apung tipis",
+      "Kekuatan genggaman raket dan jaring pengaman di sisi tengah ruang",
+      "Kekuatan otot lengan-perut, keseimbangan, kelentukan (flexibility), dan koordinasi gerak di atas matras busa empuk yang rata"
+    ],
+    "correct_index": 4,
+    "hint": "Ingat gerakan dasar roll, kayang, meroda, hingga handstand membutuhkan kelenturan tulang belakang serta alas peredam benturan.",
+    "explanation": "Senam lantai sangat bertumpu pada kelentukan tulang belakang dan sendi bahu, kekuatan otot inti-lengan sebagai tumpuan, serta keseimbangan tubuh di atas matras yang berfungsi meredam benturan tubuh.",
+    "tags": [
+      "senam-lantai",
+      "dasar-dasar",
+      "matras"
+    ]
+  },
+  {
+    "code": "PJOK-SNM-002",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 1,
+    "topic": "Senam Lantai",
+    "subtopic": "Teknik Dasar",
+    "prompt": "Pada gerakan guling depan (forward roll) dengan awalan jongkok, urutan kontak bagian tubuh dengan matras yang aman dan benar setelah kedua telapak tangan bertumpu adalah…",
+    "options": [
+      "Ubun-ubun kepala – dahi – tulang ekor – lutut",
+      "Dahi – bahu – pinggang bagian samping – kaki",
+      "Tengkuk/belakang bahu atas (dengan dagu rapat ke dada) – punggung atas – pinggang – panggul – tumit jongkok",
+      "Puncak kepala tegak – telinga kanan – bahu kiri – punggung bawah",
+      "Kedua siku lurus – dada rata – perut – lutut"
+    ],
+    "correct_index": 2,
+    "hint": "Merapatkan dagu ke dada otomatis mencegah puncak kepala terbentur keras ke matras sehingga tubuh menggelinding mulus lewat punggung bulat.",
+    "explanation": "Menarik dagu hingga menempel ke dada membuat kepala tertekuk ke depan dan leher terlindungi. Tengkuk/bahu bagian atas yang lebih dulu menyentuh matras diikuti punggung yang membulat layaknya roda hingga kembali jongkok seimbang.",
+    "tags": [
+      "senam-lantai",
+      "teknik-dasar",
+      "guling-depan"
+    ]
+  },
+  {
+    "code": "PJOK-SNM-003",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 1,
+    "topic": "Senam Lantai",
+    "subtopic": "Teknik Dasar",
+    "prompt": "Dalam gerakan sikap lilin (shoulder stand) pada senam lantai, bagian tubuh manakah yang berfungsi sebagai tumpuan utama di atas matras sementara kedua tangan menopang pinggul dan kaki lurus rapat ke atas?",
+    "options": [
+      "Puncak ubun-ubun kepala dan kedua ujung jari kaki",
+      "Bahu bagian atas/pundak beserta tengkuk dan lengan atas dengan siku menapak kuat di matras",
+      "Kedua telapak tangan penuh sejajar pinggul tanpa menyentuhkan punggung atas",
+      "Tulang leher bagian tengah saja tanpa bantuan kedua siku maupun tangan",
+      "Bagian punggung bawah (pinggang) dengan kedua lengan terentang lebar ke samping"
+    ],
+    "correct_index": 1,
+    "hint": "Berbeda dengan headstand atau handstand, berat badan pada sikap lilin ditahan bahu atas dan siku yang ditekuk menopang pinggang.",
+    "explanation": "Sikap lilin dilakukan dari posisi terlentang: pinggul diangkat ke atas hingga kaki tegak lurus, berat tubuh bertumpu pada punggung atas/pundak serta tengkuk dengan kedua siku rapat di matras sementara telapak tangan menyangga sisi pinggul.",
+    "tags": [
+      "senam-lantai",
+      "teknik-dasar",
+      "sikap-lilin"
+    ]
+  },
+  {
+    "code": "PJOK-SNM-004",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Senam Lantai",
+    "subtopic": "Teknik Dasar",
+    "prompt": "Pada gerakan guling belakang (backward roll), penempatan kedua telapak tangan yang paling tepat sebelum dan saat pinggul memutar melewati kepala adalah…",
+    "options": [
+      "Diletakkan di matras tepat di samping telinga dengan telapak tangan menghadap ke atas dan ibu jari mendekati telinga untuk mendorong matras kuat-kuat",
+      "Diluruskan jauh ke depan melewati lutut agar tidak mengganggu putaran kepala",
+      "Disilangkan menempel di depan dada selama seluruh rangkaian gulingan berlangsung",
+      "Diposisikan di belakang pinggul dengan telapak tangan menghadap ke bawah menjauhi bahu",
+      "Direntangkan selebar-lebarnya ke kanan dan ke kiri seperti sayap pesawat"
+    ],
+    "correct_index": 0,
+    "hint": "Saat bahu menyentuh matras ke belakang, telapak tangan di samping telinga menempel lantai guna mendorong tubuh sehingga beban tidak menekan leher.",
+    "explanation": "Penempatan tangan di samping telinga (jari menghadap ke bahu, telapak ke atas saat jongkok membelakangi) membuat telapak tangan otomatis menapak rata di matras ketika badan terguling ke belakang dan siap mendorong tubuh berdiri.",
+    "tags": [
+      "senam-lantai",
+      "teknik-dasar",
+      "guling-belakang"
+    ]
+  },
+  {
+    "code": "PJOK-SNM-005",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Senam Lantai",
+    "subtopic": "Teknik Dasar",
+    "prompt": "Urutan tumpuan tangan dan kaki yang tepat dalam gerak dasar meroda (cartwheel) ke arah kanan secara berurutan sehingga membentuk garis lurus adalah…",
+    "options": [
+      "Tangan kiri – kaki kanan – tangan kanan – kaki kiri secara silang",
+      "Kedua tangan bersama-sama – kedua lutut bersama-sama – mendarat menghadap depan",
+      "Kaki kanan – kaki kiri – tangan kanan – tangan kiri mengarah mundur",
+      "Tangan kanan – tangan kiri – kaki kiri – kaki kanan dengan badan sempat tegak terbalik dan kaki membuka lebar (huruf V)",
+      "Siku kanan – bahu kiri – punggung atas – kedua telapak kaki"
+    ],
+    "correct_index": 3,
+    "hint": "Bayangkan empat jari-jari roda menyentuh lantai satu demi satu mengikuti putaran menyamping ke arah kanan.",
+    "explanation": "Saat meroda ke kanan, badan memutar menyamping melewati satu garis lurus: tangan kanan menumpu lebih dulu, diikuti tangan kiri di garis yang sama, lalu tubuh berputar melewati sikap handstand kaki kangkang sebelum mendaratkan kaki kiri lalu kaki kanan.",
+    "tags": [
+      "senam-lantai",
+      "teknik-dasar",
+      "meroda"
+    ]
+  },
+  {
+    "code": "PJOK-SNM-006",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Senam Lantai",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Kesalahan teknik berbahaya yang sering dilakukan pemula ketika melakukan guling depan (forward roll) dan berpotensi mencederai ruas leher adalah…",
+    "options": [
+      "Merapatkan dagu terlalu dekat ke dada sehingga bahu membulat sempurna",
+      "Menjadikan puncak ubun-ubun kepala sebagai tumpuan utama tanpa menempelkan dagu ke dada sehingga leher tertekan berat badan saat mengguling",
+      "Meletakkan kedua telapak tangan selebar bahu menghadap lurus ke depan",
+      "Mendorong kedua ujung kaki bersamaan ketika pantat mulai terangkat",
+      "Menjulurkan kedua tangan lurus ke depan pada akhir fase berdiri seimbang"
+    ],
+    "correct_index": 1,
+    "hint": "Kesalahan posisi kepala terangkat atau dagu terlepas membuat beban badan menimpa tulang leher (servikal) secara langsung.",
+    "explanation": "Jika dagu tidak ditekuk rapat ke dada, ubun-ubun/dahi menancap di matras dan punggung tidak membulat. Akibatnya putaran terhambat, badan jatuh miring, dan tekanan vertikal berlebih membebani tulang leher.",
+    "tags": [
+      "senam-lantai",
+      "foul",
+      "kesalahan-teknik",
+      "keamanan"
+    ]
+  },
+  {
+    "code": "PJOK-SNM-007",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 3,
+    "topic": "Senam Lantai",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Dalam evaluasi perlombaan resmi senam lantai (FIG Floor Exercise di arena 12 m × 12 m), tindakan manakah yang langsung dikenai pengurangan poin (penalti/deduction) oleh juri garis dan panel penilaian?",
+    "options": [
+      "Menahan elemen keseimbangan statis seperti handstand secara tegak selama 2 detik penuh",
+      "Memadukan gerakan meroda yang mulus dengan guling belakang di tengah matras",
+      "Melakukan pendaratan bersih dengan kedua kaki rapat tanpa langkah tambahan",
+      "Menunjukkan transisi kelentukan kayang yang stabil mengikuti tempo rangkaian",
+      "Keluar menginjak area di luar garis batas matras 12 × 12 meter (out of bounds), jatuh bertumpu tangan berlebih saat mendarat, atau tidak menahan sikap keseimbangan statis sesuai durasi minimal"
+    ],
+    "correct_index": 4,
+    "hint": "Panel juri garis fokus memantau garis batas luar matras, sementara panel eksekusi mengurangi nilai jika pesenam jatuh atau goyah pada pendaratan.",
+    "explanation": "Menurut kode poin senam lantai FIG, menginjak atau keluar garis batas arena 12×12 m terkena penalti line deduction (0,1 hingga 0,3 per kejadian), sedangkan jatuh ke matras, menyentuh tangan ekstra saat mendarat, dan kaki menekuk/terbuka mengurangi skor eksekusi.",
+    "tags": [
+      "senam-lantai",
+      "foul",
+      "penalti",
+      "fig"
+    ]
+  },
+  {
+    "code": "PJOK-SNM-008",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Senam Lantai",
+    "subtopic": "Teknik Dasar",
+    "prompt": "Perbedaan prinsip tumpuan keseimbangan antara gerakan handstand dan headstand pada senam lantai yang benar adalah…",
+    "options": [
+      "Handstand bertumpu hanya pada kedua telapak tangan dengan lengan lurus vertikal, sedangkan headstand membentuk tumpuan segitiga sama sisi antara dahi/kepala bagian atas-depan dan kedua telapak tangan",
+      "Handstand mewajibkan kedua lutut menempel di siku, sedangkan headstand bertumpu pada tengkuk dan punggung bawah",
+      "Keduanya sama-sama bertumpu pada puncak kepala namun berbeda posisi lebar kedua kakinya di atas",
+      "Handstand dilakukan sambil berjalan menyamping, sedangkan headstand harus didahului lari awalan cepat",
+      "Handstand memakai bantuan dagu di matras, sedangkan headstand hanya menggunakan telapak tangan tanpa kepala"
+    ],
+    "correct_index": 0,
+    "hint": "Kata 'hand' merujuk penuh pada tumpuan dua tangan, sementara 'head' memadukan kepala bagian atas-depan dan dua tangan membentuk segitiga kokoh.",
+    "explanation": "Pada handstand seluruh berat badan ditopang oleh kedua tangan dengan siku terkunci lurus dan tubuh vertikal segaris. Pada headstand kedua tangan dan bagian dahi atas kepala membentuk segitiga sama sisi di matras agar titik pusat massa stabil dan leher aman.",
+    "tags": [
+      "senam-lantai",
+      "teknik-dasar",
+      "handstand",
+      "headstand"
+    ]
+  },
+  {
+    "code": "PJOK-SNM-009",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 1,
+    "topic": "Senam Lantai",
+    "subtopic": "Teknik Dasar",
+    "prompt": "Manfaat utama dari gerakan kayang (bridge) serta posisi otot dan persendian yang bekerja maksimal saat melakukannya adalah…",
+    "options": [
+      "Meningkatkan kecepatan reaksi sprint dan kekuatan telapak kaki saja",
+      "Mengurangi fleksibilitas punggung bawah agar tulang belakang selalu kaku lurus",
+      "Melatih kelentukan (fleksibilitas) tulang belakang, pinggul, dan bahu sekaligus menguatkan otot lengan, punggung, serta tungkai sebagai penyangga",
+      "Melatih gerakan berputar 360 derajat di udara sebelum menyentuh bak pasir",
+      "Meredam momentum benturan kepala sebelum melakukan gerakan lompat harimau"
+    ],
+    "correct_index": 2,
+    "hint": "Sikap melengkung membusur seperti busur panah dengan tangan dan kaki di matras meregangkan sisi depan tubuh dan melenturkan punggung.",
+    "explanation": "Kayang adalah sikap membusur dengan tumpuan kedua telapak kaki dan tangan di matras; gerakan ini secara efektif meningkatkan mobilitas/kelentukan tulang belakang serta sendi bahu sambil melatih kekuatan otot lengan dan tungkai.",
+    "tags": [
+      "senam-lantai",
+      "teknik-dasar",
+      "kayang"
+    ]
+  },
+  {
+    "code": "PJOK-SNM-010",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 3,
+    "topic": "Senam Lantai",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Seorang siswa mencoba guling belakang (backward roll), tetapi di tengah gerakan ia gagal mengguling lurus ke belakang melainkan terguling miring keluar matras. Analisis penyebab utama dan perbaikan teknik yang tepat adalah…",
+    "options": [
+      "Penyebabnya dagu terlalu menempel ke dada; perbaikannya kepala harus mendongak sejauh mungkin ke belakang",
+      "Penyebabnya siku terlalu rapat ke samping tubuh; perbaikannya kaki harus dilebarkan sejauh mungkin sebelum duduk",
+      "Penyebabnya gerakan tidak diawali lari cepat sepanjang 15 meter dari luar matras",
+      "Penyebabnya tolakan kedua tangan tidak seimbang/lemah atau kepala menengadah sehingga lutut tidak tertarik ke dada; perbaikannya menjaga dagu rapat ke dada dan kedua telapak tangan mendorong matras bersamaan secara simetris",
+      "Penyebabnya matras terlalu empuk sehingga seluruh latihan wajib dipindahkan langsung ke lantai semen keras"
+    ],
+    "correct_index": 3,
+    "hint": "Gulingan yang miring hampir selalu berawal dari satu tangan mendorong lebih lemah atau tubuh yang kurang membulat.",
+    "explanation": "Apabila salah satu tangan tidak mendorong kuat bersamaan di samping telinga atau kepala menoleh/mendongak ke samping, momen putar menjadi miring dan tersangkut. Menarik lutut dekat ke dada, menjaga dagu rapat ke dada, serta tolakan simetris dua tangan mengatasi hal ini.",
+    "tags": [
+      "senam-lantai",
+      "foul",
+      "koreksi-teknik",
+      "guling-belakang"
+    ]
+  },
+  {
+    "code": "PJOK-SNM-011",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Senam Lantai",
+    "subtopic": "Teknik Dasar",
+    "prompt": "Pada teknik lompat harimau (tiger sprong), cara mendarat paling aman sesudah tubuh melayang melewati rintangan di udara adalah…",
+    "options": [
+      "Mendaratkan kedua telapak tangan lurus sedikit lentur menyentuh matras lalu segera menekuk siku dan merapatkan dagu ke dada untuk melakukan gerakan guling depan (forward roll)",
+      "Mendarat menggunakan dada dan dagu terlebih dahulu dengan kedua tangan diangkat ke belakang punggung",
+      "Mendaratkan puncak kepala terlebih dahulu agar momentum lari langsung berhenti di tempat",
+      "Mengunci kedua siku kaku tanpa menekuk sama sekali lalu menumbukkan lutut ke matras",
+      "Berusaha berhenti tegak di atas kedua telapak tangan tanpa melakukan gulingan sama sekali"
+    ],
+    "correct_index": 0,
+    "hint": "Lompat harimau adalah pengembangan langsung dari teknik guling depan ditambah fase melayang; benturan diredam lewat gulingan membulat.",
+    "explanation": "Dalam lompat harimau, saat tangan menyentuh matras setelah melayang, siku segera menekuk elastis untuk meredam tumbukan sementara dagu dirapatkan ke dada sehingga tengkuk menyentuh matras dan tubuh mengguling maju ke sikap jongkok-berdiri.",
+    "tags": [
+      "senam-lantai",
+      "teknik-dasar",
+      "lompat-harimau"
+    ]
+  },
+  {
+    "code": "PJOK-SNM-012",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Senam Lantai",
+    "subtopic": "Dasar-Dasar",
+    "prompt": "Jika seseorang berperan sebagai pembantu/pengaman (spotter) ketika temannya berlatih gerakan kayang dari posisi berdiri ke belakang maupun handstand, posisi berdiri dan pegangan pengaman yang benar adalah…",
+    "options": [
+      "Berdiri tepat di belakang garis kepala pelaku sehingga menghalangi lintasan jatuh tungkai",
+      "Berdiri di sisi samping tubuh pelaku sambil menyangga bagian pinggang/punggung bawah atau memegang pangkal paha/pergelangan kaki secara sigap untuk menjaga keseimbangan",
+      "Duduk di sudut matras sambil memberi aba-aba lisan tanpa menyentuh area latihan",
+      "Memegang erat ujung jari tangan pelaku agar tidak pernah menyentuh permukaan matras",
+      "Berdiri jauh di luar matras setidaknya 4 meter agar tidak terganggu gerakannya"
+    ],
+    "correct_index": 1,
+    "hint": "Spotter berdiri di samping sisi aman agar tidak tertendang tungkai, dekat dengan pusat massa tubuh pelaku (pinggang/paha).",
+    "explanation": "Pengaman (spotter) wajib berada di samping pelaku — bukan di jalur ayun depan/belakang — dengan fokus menopang pinggang/punggung pada kayang atau pinggul/tungkai pada handstand untuk mencegah cedera bila keseimbangan hilang.",
+    "tags": [
+      "senam-lantai",
+      "dasar-dasar",
+      "spotting",
+      "keselamatan"
+    ]
+  },
+  {
+    "code": "PJOK-SNM-013",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 3,
+    "topic": "Senam Lantai",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Sewaktu mengamati gerakan headstand yang salah dilakukan siswa di kelas, terlihat posisi kedua kaki di atas selalu terjatuh melampaui kepala ke depan dan leher terasa sakit. Kesalahan geometri tumpuan dan koreksi yang paling akurat adalah…",
+    "options": [
+      "Telapak tangan diletakkan terlalu jauh di belakang pinggul sehingga harus dipindahkan ke belakang leher",
+      "Gerakan terlalu lambat sehingga siswa wajib melompat keras memakai dua kaki sekaligus menuju udara",
+      "Pandangan mata diarahkan ke belakang langit-langit ruangan sementara pinggul selalu ditekuk menyamping",
+      "Kepala dan kedua tangan sejajar dalam satu garis lurus (bukan segitiga) atau bertumpu pada tengkuk/muka dahi terlalu depan; koreksinya membentuk segitiga sama sisi antara dahi bagian atas-depan dan kedua tangan agar alas tumpuan stabil ke depan-belakang",
+      "Kedua kaki terlalu rapat di udara sehingga harus dibuka selebar 180 derajat sejak tolakan awal"
+    ],
+    "correct_index": 3,
+    "hint": "Tiga titik tumpu yang berada dalam satu garis lurus tidak memiliki stabilitas arah depan-belakang seperti bangun segitiga sama sisi.",
+    "explanation": "Agar seimbang secara mekanis terhadap sumbu depan-belakang, titik kontak kepala (dahi atas) dan dua telapak tangan harus membentuk segitiga sama sisi di matras. Bila sejajar satu garis lurus, tubuh mudah terguling ke depan atau menumpu terlalu berat pada sendi leher.",
+    "tags": [
+      "senam-lantai",
+      "foul",
+      "headstand",
+      "koreksi-teknik"
+    ]
+  },
+  {
+    "code": "PJOK-SNM-014",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 2,
+    "topic": "Senam Lantai",
+    "subtopic": "Dasar-Dasar",
+    "prompt": "Mengapa pemanasan dinamis khusus pada leher, pergelangan tangan, sendi bahu, dan tulang belakang wajib dilakukan sebelum memulai latihan senam lantai?",
+    "options": [
+      "Untuk mengurangi berat badan sesaat sebelum berdiri di atas timbangan lomba",
+      "Untuk membuat otot punggung menjadi kaku agar tidak mudah bengkok ketika melakukan kayang",
+      "Untuk menggantikan fungsi matras bila matras tidak tersedia di aula sekolah",
+      "Untuk menghentikan produksi cairan sinovial di dalam persendian siku dan lutut",
+      "Untuk meningkatkan suhu otot, melumasi sendi dengan cairan sinovial, dan menyiapkan kelenturan jaringan ikat terhadap beban tumpuan terbalik maupun putaran"
+    ],
+    "correct_index": 4,
+    "hint": "Leher, pergelangan tangan, dan tulang belakang menanggung beban tekan serta rentang gerak ekstrem pada roll, handstand, dan kayang.",
+    "explanation": "Pemanasan menyiapkan sistem muskuloskeletal (leher, pergelangan tangan, bahu, tulang belakang) agar elastisitas tendon/otot dan pelumasan sendi meningkat sehingga risiko cedera terkilir atau salah urat turun drastis.",
+    "tags": [
+      "senam-lantai",
+      "dasar-dasar",
+      "pemanasan",
+      "keselamatan"
+    ]
+  },
+  {
+    "code": "PJOK-SNM-015",
+    "subject_id": "bc59af2f-3761-43a2-a3b6-bd4bc498af63",
+    "subject_slug": "pjok",
+    "question_type": "A",
+    "difficulty": 3,
+    "topic": "Senam Lantai",
+    "subtopic": "Foul & Pelanggaran",
+    "prompt": "Dalam praktik maupun penilaian meroda (cartwheel), mengapa kesalahan berupa membengkokkan panggul menyudut ke samping dan membiarkan tungkai berayun rendah melewati sisi depan dada menyebabkan kehilangan nilai serta risiko jatuh?",
+    "options": [
+      "Karena gerakan meroda wajib berakhir dalam posisi tidur terlentang di atas matras",
+      "Karena juri melarang penggunaan tangan kiri lebih dulu bagi semua atlet",
+      "Karena sumbu putar tidak melewati titik puncak vertikal di atas bahu sehingga pusat massa jatuh keluar dari garis tumpuan tangan",
+      "Karena lutut seharusnya saling bertabrakan ketika melayang vertikal di atas",
+      "Karena ukuran standar matras sekolah tidak cukup panjang untuk melangkah dua kali"
+    ],
+    "correct_index": 2,
+    "hint": "Gerakan meroda yang benar harus melewati bidang vertikal penuh layaknya jari-jari roda lurus, bukan condong menekuk pinggul ke depan.",
+    "explanation": "Agar putaran meroda mulus satu garis lurus, panggul harus diangkat lurus melampaui titik tertinggi tepat di atas kedua bahu dan lengan lurus vertikal dengan kaki kangkang terbuka lebar. Bila panggul jatuh ke samping depan, proyeksi pusat massa melenceng dari alas tangan dan merusak eksekusi.",
+    "tags": [
+      "senam-lantai",
+      "foul",
+      "meroda",
+      "biomekanika"
+    ]
+  }
+]

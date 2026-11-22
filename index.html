@@ -612,7 +612,7 @@
      ===================================================== */
   const DEFAULT_SUBJECTS = [
     { slug: 'bahasa-indonesia', name: 'Bahasa Indonesia', category: 'Bahasa & Sastra', description: '100 Soal HOTS SAS Berbasis Cerita (Teks LHO, Teks Anekdot, Teks Hikayat) + Kaidah EYD V.', icon: '📖', color: '#3B82F6', display_order: 1 },
-    { slug: 'pjok', name: 'PJOK', category: 'Karakter, Seni & Kebugaran', description: 'Kebugaran jasmani, aturan permainan bola besar/kecil, atletik, renang, dan kesehatan olahraga.', icon: '🏃', color: '#10B981', display_order: 2 },
+    { slug: 'pjok', name: 'PJOK', category: 'Karakter, Seni & Kebugaran', description: '60+ Soal Pilihan Ganda Bola Basket, Futsal, Lompat Jauh, dan Senam Lantai (Dasar-dasar, Foul/Pelanggaran, dan Teknik Dasar).', icon: '🏃', color: '#10B981', display_order: 2 },
     { slug: 'bahasa-inggris', name: 'Bahasa Inggris', category: 'Bahasa & Sastra', description: 'Reported speech, conditional sentences, passive voice, tenses, reading, dan error spotting.', icon: '🇬🇧', color: '#6366F1', display_order: 3 },
     { slug: 'sejarah', name: 'Sejarah', category: 'Sosial & Humaniora', description: 'Sejarah Nusantara, pergerakan nasional, kemerdekaan RI, reformasi, dan sejarah dunia modern.', icon: '🏛️', color: '#D97706', display_order: 4 },
     { slug: 'matematika', name: 'Matematika', category: 'Sains & STEM', description: 'Aljabar, fungsi kuadrat, trigonometri, matriks, barisan & deret, peluang, dan kalkulus dasar.', icon: '📐', color: '#2563EB', display_order: 5 },
@@ -642,6 +642,20 @@
   let bioQuestions = []; // 160 rows from public.biologi_questions
   let selBioTopic = 'ALL_BIO';
   let selBioDiff = 'ALL'; // 'ALL' | 'mudah' | 'medium' | 'sulit'
+
+  // Categories for PJOK Pilgan (Bola Basket, Futsal, Lompat Jauh, Senam Lantai)
+  const PJOK_TOPIC_NAMES = ['Bola Basket', 'Futsal', 'Lompat Jauh', 'Senam Lantai'];
+  const PJOK_TOPICS = {
+    ALL_PJOK: { topic: '', badge: 'ALL', name: 'Semua Cabang PJOK', desc: 'Campuran lengkap Bola Basket, Futsal, Lompat Jauh, dan Senam Lantai', color: '#10B981', tint: 'rgba(16,185,129,0.12)' },
+    BASKET: { topic: 'Bola Basket', badge: '🏀', name: 'Bola Basket', desc: 'Dasar permainan FIBA, 3/5/8/24s & foul, chest/bounce pass, pivot, lay-up', color: '#F97316', tint: 'rgba(249,115,22,0.12)' },
+    FUTSAL: { topic: 'Futsal', badge: '⚽', name: 'Futsal', desc: 'Aturan FIFA, 4s & back-pass kiper, akumulasi foul 10m, sole control, toe poke', color: '#2563EB', tint: 'rgba(37,99,235,0.12)' },
+    LOMPAT_JAUH: { topic: 'Lompat Jauh', badge: '👟', name: 'Lompat Jauh', desc: 'Bak pasir & plastisin, foul tolakan/pendaratan, awalan & 3 gaya melayang', color: '#8B5CF6', tint: 'rgba(139,92,246,0.12)' },
+    SENAM_LANTAI: { topic: 'Senam Lantai', badge: '🤸', name: 'Senam Lantai', desc: 'Guling depan/belakang, sikap lilin, kayang, meroda, handstand & keamanan', color: '#EC4899', tint: 'rgba(236,72,153,0.12)' }
+  };
+
+  let selPjokTopic = 'ALL_PJOK';
+  let selPjokFocus = 'ALL'; // 'ALL' | 'dasar-dasar' | 'foul' | 'teknik-dasar'
+  let selPjokDiff = 'ALL'; // 'ALL' | '1' | '2' | '3'
   // Categories for SAS Bahasa Indonesia (from table public.bank_soal_sas)
   const SAS_CATEGORIES = {
     ALL_SAS: { name: 'Semua Soal SAS (HOTS)', desc: 'Campuran Teks LHO, Teks Anekdot, dan Teks Hikayat (Pilihan Ganda A–E berbasis cerita).', color: '#3B82F6', tint: 'rgba(59, 130, 246, 0.14)', filter: null },
@@ -762,6 +776,14 @@
       if (localRes.ok) sasQuestions = await localRes.json();
       const localBio = await fetch('./data/bank_soal_biologi_kelas_x.json');
       if (localBio.ok) bioQuestions = await localBio.json();
+      const localPjok = await fetch('./data/bank_soal_pjok_60.json');
+      if (localPjok.ok) {
+        const pjokData = await localPjok.json();
+        if (Array.isArray(pjokData) && pjokData.length > 0) {
+          const existingCodes = new Set(allQuestions.map(x => x.code).filter(Boolean));
+          allQuestions = [...allQuestions, ...pjokData.filter(x => !existingCodes.has(x.code))];
+        }
+      }
     } catch (e) {}
     updateDbBadge(false, `Mode Lokal (${sasQuestions.length} Soal SAS)`);
     if (!quizQuestions.length) {
@@ -802,6 +824,23 @@
       const matchTop = !topObj.slug || q.topic_slug === topObj.slug;
       const matchDiff = diffFilter === 'ALL' || q.difficulty === diffFilter;
       return matchTop && matchDiff;
+    });
+  }
+
+  function getFilteredPjokQuestions(topicKey = selPjokTopic, focusFilter = selPjokFocus, diffFilter = selPjokDiff) {
+    const topObj = PJOK_TOPICS[topicKey];
+    if (!topObj) return [];
+    return allQuestions.filter(q => {
+      if (q.subject_slug !== 'pjok' || q.question_type !== 'A') return false;
+      const inPilganBank = (typeof q.code === 'string' && q.code.startsWith('PJOK-')) || PJOK_TOPIC_NAMES.includes(q.topic);
+      if (!inPilganBank) return false;
+      if (topObj.topic && q.topic !== topObj.topic) return false;
+      if (focusFilter !== 'ALL') {
+        const tags = Array.isArray(q.tags) ? q.tags : [];
+        if (!tags.includes(focusFilter)) return false;
+      }
+      if (diffFilter !== 'ALL' && Number(q.difficulty) !== Number(diffFilter)) return false;
+      return true;
     });
   }
 
@@ -912,6 +951,9 @@
   function selectSasDiff(d) { selSasDiff = d; renderSubjectSection(activeSubjectSlug); }
   function selectBioTopic(k) { selBioTopic = k; renderSubjectSection(activeSubjectSlug); }
   function selectBioDiff(d) { selBioDiff = d; renderSubjectSection(activeSubjectSlug); }
+  function selectPjokTopic(k) { selPjokTopic = k; renderSubjectSection(activeSubjectSlug); }
+  function selectPjokFocus(f) { selPjokFocus = f; renderSubjectSection(activeSubjectSlug); }
+  function selectPjokDiff(d) { selPjokDiff = d; renderSubjectSection(activeSubjectSlug); }
   function selectLevel(l) { selLevel = l; renderSubjectSection(activeSubjectSlug); }
   function selectCount(c) { selCount = c; renderSubjectSection(activeSubjectSlug); }
 
@@ -1111,6 +1153,112 @@
       return;
     }
 
+    if (slug === 'pjok' && getFilteredPjokQuestions('ALL_PJOK', 'ALL', 'ALL').length > 0) {
+      const totalPjok = getFilteredPjokQuestions('ALL_PJOK', 'ALL', 'ALL').length;
+      const pjokCards = Object.keys(PJOK_TOPICS).map(k => {
+        const top = PJOK_TOPICS[k];
+        const count = getFilteredPjokQuestions(k, selPjokFocus, selPjokDiff).length;
+        const totalInTop = getFilteredPjokQuestions(k, 'ALL', 'ALL').length;
+        return `
+          <button class="type-card ${k === selPjokTopic ? 'active' : ''}" onclick="selectPjokTopic('${k}')">
+            <span class="type-letter" style="background:${top.tint}; color:${top.color}; border:1px solid ${top.color}30;">${top.badge}</span>
+            <span style="flex:1">
+              <div class="type-name">${esc(top.name)}</div>
+              <div class="type-desc">${esc(top.desc)}</div>
+              <div class="type-meta">
+                <span class="meta-pill">${count} soal cocok</span>
+                <span>${totalInTop} total</span>
+              </div>
+            </span>
+          </button>`;
+      }).join('');
+
+      const focusOptions = [
+        { id: 'ALL', label: 'Semua Materi', color: '#10B981' },
+        { id: 'dasar-dasar', label: 'Dasar-Dasar', color: '#3A7BFF' },
+        { id: 'foul', label: 'Foul & Pelanggaran', color: '#E5484D' },
+        { id: 'teknik-dasar', label: 'Teknik Dasar', color: '#F59E0B' }
+      ];
+      const focusSegs = focusOptions.map(f => `
+        <button class="${f.id === selPjokFocus ? 'active' : ''}" onclick="selectPjokFocus('${f.id}')">
+          <span class="dot" style="background:${f.color}"></span>${f.label}
+        </button>`).join('');
+
+      const pjokDiffOptions = [
+        { id: 'ALL', label: 'Semua Level', color: '#10B981' },
+        { id: '1', label: 'Mudah', color: '#2EB872' },
+        { id: '2', label: 'Sedang', color: '#F59E0B' },
+        { id: '3', label: 'Sulit / HOTS', color: '#E5484D' }
+      ];
+      const diffSegs = pjokDiffOptions.map(d => `
+        <button class="${d.id === selPjokDiff ? 'active' : ''}" onclick="selectPjokDiff('${d.id}')">
+          <span class="dot" style="background:${d.color}"></span>${d.label}
+        </button>`).join('');
+
+      const poolLen = getFilteredPjokQuestions(selPjokTopic, selPjokFocus, selPjokDiff).length;
+      const countSegs = COUNT_OPTIONS.map(c => {
+        const label = c === 0 ? `Semua (${poolLen})` : `${c} Soal`;
+        return `<button class="${c === selCount ? 'active' : ''}" onclick="selectCount(${c})">${label}</button>`;
+      }).join('');
+
+      const n = selCount === 0 ? poolLen : Math.min(selCount, poolLen);
+      const focusLabel = (focusOptions.find(f => f.id === selPjokFocus) || focusOptions[0]).label;
+
+      app.innerHTML = `
+        <section class="screen">
+          <div style="margin-bottom: 14px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+            <button class="pill-btn" onclick="goAllSubjects()">← Kembali ke 16 Mata Pelajaran</button>
+            <span class="chip">🏃 Pilihan Ganda (A–E) · ${totalPjok} Soal PJOK</span>
+          </div>
+
+          <div class="card section-banner" style="border-left: 5px solid ${subj.color};">
+            <div class="section-banner-left">
+              <div class="section-big-icon" style="background:${subj.color}18; color:${subj.color}; border:1px solid ${subj.color}30;">${subj.icon}</div>
+              <div>
+                <div style="font-size:12px; font-weight:650; color:${subj.color}; text-transform:uppercase; letter-spacing:0.06em;">Section Khusus Pilihan Ganda · ${esc(subj.category)}</div>
+                <h1 style="margin:3px 0 6px; font-size:clamp(1.5rem, 3.2vw, 2.1rem); letter-spacing:-0.03em;">PJOK — Bola Basket, Futsal, Lompat Jauh &amp; Senam Lantai</h1>
+                <p style="margin:0; color:var(--secondary); font-size:14px; max-width:640px;">${esc(subj.description)} Seluruh soal berbentuk Pilihan Ganda 5 opsi (A–E) dengan opsi acak dan pembahasan lengkap.</p>
+              </div>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <span class="chip">📋 ${totalPjok} Soal Pilgan</span>
+              ${best !== null ? `<span class="chip" style="color:var(--success)">🏆 Skor Terbaik: ${best}/100</span>` : ''}
+            </div>
+          </div>
+
+          <div class="section-label">
+            <span>1 · Pilih Cabang Olahraga PJOK</span>
+            <span>Materi: ${esc(focusLabel)}</span>
+          </div>
+          <div class="type-grid">${pjokCards}</div>
+
+          <div class="section-label"><span>2 · Fokus Materi, Tingkat Kesulitan &amp; Jumlah Soal</span></div>
+          <div class="card setup-card">
+            <div class="setup-row">
+              <div class="control-group">
+                <span class="control-title">Fokus Materi</span>
+                <div class="segmented">${focusSegs}</div>
+              </div>
+              <div class="control-group">
+                <span class="control-title">Tingkat Kesulitan</span>
+                <div class="segmented">${diffSegs}</div>
+              </div>
+              <div class="control-group">
+                <span class="control-title">Jumlah Soal Latihan</span>
+                <div class="segmented">${countSegs}</div>
+              </div>
+            </div>
+            <div class="setup-row" style="padding-top: 10px; border-top: 1px solid var(--hairline);">
+              <div style="font-size: 13.5px; color: var(--secondary);">
+                Cabang Aktif: <strong style="color:var(--text)">${esc(PJOK_TOPICS[selPjokTopic].name)}</strong> · ${esc(focusLabel)} · <strong style="color:var(--text)">${n} Soal</strong>
+              </div>
+              <button class="primary-btn" ${n === 0 ? 'disabled' : ''} onclick="startQuiz()">Mulai Latihan PJOK (${n} Soal) →</button>
+            </div>
+          </div>
+        </section>`;
+      return;
+    }
+
     // Standard Subject Section View for the other 15 subjects
     const totalSubjQuestions = getSubjectQuestions(slug, 'M', 0).length;
     const typeCards = Object.keys(TYPES).map(t => {
@@ -1200,8 +1348,9 @@
      ===================================================== */
   function convertSasRowToPlayable(row) {
     const keys = ['A', 'B', 'C', 'D', 'E'].filter(k => row.opsi && row.opsi[k] !== undefined);
-    const opts = keys.map(k => row.opsi[k]);
-    const correctIdx = Math.max(0, keys.indexOf(row.kunci_jawaban));
+    const rawOpts = keys.map(k => row.opsi[k]);
+    const rawCorrectIdx = Math.max(0, keys.indexOf(row.kunci_jawaban));
+    const idx = shuffle(rawOpts.map((_, i) => i));
     return {
       isSas: true,
       sasId: row.id,
@@ -1211,8 +1360,8 @@
       difficulty_label: row.tingkat_kesulitan,
       stimulus: row.stimulus,
       prompt: row.pertanyaan,
-      o: opts,
-      a: correctIdx,
+      o: idx.map(i => rawOpts[i]),
+      a: Math.max(0, idx.indexOf(rawCorrectIdx)),
       explanation: row.pembahasan,
       orig: row
     };
@@ -1221,8 +1370,9 @@
   function convertBioRowToPlayable(row) {
     const optsArr = Array.isArray(row.options) ? row.options : [];
     const keys = optsArr.map(o => o.key);
-    const texts = optsArr.map(o => o.text);
-    const correctIdx = Math.max(0, keys.indexOf(row.correct_answer));
+    const rawTexts = optsArr.map(o => o.text);
+    const rawCorrectIdx = Math.max(0, keys.indexOf(row.correct_answer));
+    const idx = shuffle(rawTexts.map((_, i) => i));
     return {
       isBio: true,
       bioCode: row.code,
@@ -1234,15 +1384,15 @@
       stimulus_content: row.stimulus_content,
       prompt: row.question_text,
       hint: row.hint,
-      o: texts,
-      a: correctIdx,
+      o: idx.map(i => rawTexts[i]),
+      a: Math.max(0, idx.indexOf(rawCorrectIdx)),
       explanation: row.explanation,
       orig: row
     };
   }
 
   function prepareQuestion(q) {
-    if (q.code && q.question_text && Array.isArray(q.options)) {
+    if (q.code && q.question_text && Array.isArray(q.options) && q.options[0] && typeof q.options[0] === 'object') {
       return convertBioRowToPlayable(q);
     }
     if (q.stimulus && q.opsi && q.kunci_jawaban) {
@@ -1270,6 +1420,8 @@
       pool = getFilteredSasQuestions(selSasCat, selSasDiff);
     } else if (activeSubjectSlug === 'biologi' && bioQuestions.length > 0) {
       pool = getFilteredBioQuestions(selBioTopic, selBioDiff);
+    } else if (activeSubjectSlug === 'pjok' && getFilteredPjokQuestions('ALL_PJOK', 'ALL', 'ALL').length > 0) {
+      pool = getFilteredPjokQuestions(selPjokTopic, selPjokFocus, selPjokDiff);
     } else {
       pool = getSubjectQuestions(activeSubjectSlug, selType, selLevel);
     }
@@ -1353,7 +1505,7 @@
           </div>
           <div class="track"><div class="fill" id="fill-bar" style="width:${pct}%"></div></div>
           ${stimulusHtml}
-          <div class="instruction">${(q.isSas || q.isBio) ? 'Pilih satu jawaban yang paling tepat (A, B, C, D, atau E)' : T.instr}</div>
+          <div class="instruction">${(q.isSas || q.isBio || (q.question_type === 'A' && q.o && q.o.length === 5)) ? 'Pilih satu jawaban yang paling tepat (A, B, C, D, atau E)' : T.instr}</div>
           <h2 class="question">${questionHtml}</h2>
           ${hintHtml}
           ${body}

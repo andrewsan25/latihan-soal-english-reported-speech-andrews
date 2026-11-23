@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nusantara Quiz Studio — Bank Soal SAS Bahasa Indonesia (100 Soal HOTS) & 16 Mapel</title>
+<title>Latihan Soal SAS Semester 1 — 16 Mata Pelajaran</title>
 <style>
   /* =========================================================
      SOFT APPLE DESIGN SYSTEM (macOS Sequoia & iOS 18 Pastel)
@@ -558,14 +558,13 @@
   <div class="topbar-inner">
     <button class="brand" onclick="goAllSubjects()">
       <span class="brand-icon">🎓</span>
-      <span class="brand-text">Nusantara Quiz Studio · 16 Mapel &amp; SAS Bahasa Indonesia</span>
+      <span class="brand-text">Latihan Soal SAS Semester 1</span>
     </button>
     <div class="topbar-actions">
-      <span class="db-badge" id="db-status-badge" title="Connected to Supabase Project Bahasa Indonesia (bgqhdqmgdvdiebxlpyhc)">
+      <span class="db-badge" id="db-status-badge" title="Terhubung ke Database Cloud Supabase">
         <span class="db-dot" id="db-status-dot"></span>
         <span id="db-status-text">Supabase Cloud</span>
       </span>
-      <button class="pill-btn" onclick="openSubjectSection('bahasa-indonesia')">📖 Bank Soal SAS (100 HOTS)</button>
       <button class="pill-btn" onclick="downloadPage()" title="Download single offline HTML file">⬇ Download HTML</button>
       <button class="icon-btn" id="theme-btn" onclick="toggleTheme()" title="Switch Light / Dark Appearance">☀️</button>
     </div>
@@ -574,7 +573,7 @@
 
 <main id="app"></main>
 
-<footer>Terhubung ke Supabase Project Bahasa Indonesia (`bgqhdqmgdvdiebxlpyhc`) · Tabel `bank_soal_sas` (100 Soal HOTS) &amp; 16 Mata Pelajaran</footer>
+<footer>Latihan Soal SAS Semester 1 · 16 Mata Pelajaran</footer>
 
 <script>
   const PAGE_HTML = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
@@ -930,36 +929,11 @@
         </button>`;
     }).join('');
 
-    const lhoCount = sasQuestions.filter(q => q.kategori === 'Teks LHO').length;
-    const anekdotCount = sasQuestions.filter(q => q.kategori === 'Teks Anekdot').length;
-    const hikayatCount = sasQuestions.filter(q => q.kategori === 'Teks Hikayat').length;
-
     app.innerHTML = `
       <section class="screen">
         <div class="hero">
-          <div class="hero-badge">
-            <span>☁️</span>
-            <span>Supabase Project Bahasa Indonesia · 100 Soal HOTS SAS + 16 Mata Pelajaran</span>
-          </div>
-          <h1>Nusantara Quiz Studio</h1>
-          <p>Pilih section mata pelajaran di bawah ini atau langsung mulai latihan <strong>Bank Soal SAS Bahasa Indonesia (100 Soal HOTS Berbasis Cerita)</strong>.</p>
-        </div>
-
-        <div class="sas-hero-card">
-          <div style="display:flex; align-items:center; gap:16px;">
-            <div class="section-big-icon" style="background:#3B82F620; color:#3B82F6; border:1px solid #3B82F640;">📖</div>
-            <div>
-              <div style="font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--primary);">Terintegrasi Penuh di Tabel Supabase bank_soal_sas</div>
-              <h2 style="margin:3px 0 6px; font-size:1.35rem; letter-spacing:-0.02em;">Bank Soal SAS Bahasa Indonesia — 100 Soal HOTS Berbasis Cerita</h2>
-              <div style="display:flex; gap:8px; flex-wrap:wrap; font-size:12.5px; color:var(--secondary);">
-                <span class="chip">🌿 Teks LHO: ${lhoCount || 34} Soal</span>
-                <span class="chip">🎭 Teks Anekdot: ${anekdotCount || 33} Soal</span>
-                <span class="chip">📜 Teks Hikayat: ${hikayatCount || 33} Soal</span>
-                <span class="chip">🧠 Pilihan Ganda A–E + Stimulus Bacaan</span>
-              </div>
-            </div>
-          </div>
-          <button class="primary-btn" onclick="openSubjectSection('bahasa-indonesia')">Buka Latihan SAS Bahasa Indonesia →</button>
+          <h1>Latihan Soal SAS Semester 1</h1>
+          <p>Pilih section mata pelajaran di bawah ini untuk mulai latihan soal.</p>
         </div>
 
         <div class="filter-bar">
@@ -1860,7 +1834,7 @@
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'nusantara-quiz-sas-bahasa-indonesia.html';
+    a.download = 'latihan-soal-sas-semester-1.html';
     document.body.appendChild(a);
     a.click();
     a.remove();
